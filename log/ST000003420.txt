@@ -1,0 +1,4 @@
+23/01/2022 10:06:13 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 10:06:17 - {"licencaCnpj":"40279755000191","chNFe":"35220140279755000191550010000034201014017640","tpAmb":"2","versao":"4.00"}
+23/01/2022 10:06:40 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 10:06:43 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"2","verAplic":"SP_NFE_PL009_V4","cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","cUF":"35","dhRecbto":"2022-01-23T10:06:24-03:00","versao":"4.00"}}

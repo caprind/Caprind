@@ -1,0 +1,44 @@
+28/06/2022 11:21:20 - [CONSULTA_SITUACAO_DADOS]
+28/06/2022 11:21:25 - {"licencaCnpj":"10766336000113","chNFe":"35220610766336000113550010000255441705547500","tpAmb":"1","versao":"4.00"}
+28/06/2022 11:21:26 - [CONSULTA_SITUACAO_RESPOSTA]
+28/06/2022 11:21:32 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2022-06-28T11:21:26-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35220610766336000113550010000255441705547500","dhRecbto":"2022-06-28T09:27:33-03:00","nProt":"135220844535190","digVal":"k1YU9zy1mtQe0M5oo4KXiiLkMFY=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}
+28/06/2022 11:21:33 - [CONSULTA_DADOS]
+28/06/2022 11:21:33 - {"CNPJ":"10766336000113","nsNRec":"5479026","tpAmb":"1"}
+28/06/2022 11:21:34 - [CONSULTA_RESPOSTA]
+28/06/2022 11:21:34 - {"status":200,"motivo":"Consulta realizada com sucesso","chNFe":"35220610766336000113550010000255441705547500","cStat":-1,"xMotivo":"Documento já autorizado no NSNRec 5471778"}
+28/06/2022 12:16:44 - [CONSULTA_SITUACAO_DADOS]
+28/06/2022 12:16:45 - {"licencaCnpj":"10766336000113","chNFe":"35220610766336000113550010000255441705547500","tpAmb":"1","versao":"4.00"}
+28/06/2022 12:17:15 - [CONSULTA_SITUACAO_RESPOSTA]
+28/06/2022 12:17:15 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2022-06-28T12:16:51-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35220610766336000113550010000255441705547500","dhRecbto":"2022-06-28T09:27:33-03:00","nProt":"135220844535190","digVal":"k1YU9zy1mtQe0M5oo4KXiiLkMFY=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}
+28/06/2022 12:18:11 - [CONSULTA_DADOS]
+28/06/2022 12:18:21 - {"CNPJ":"10766336000113","nsNRec":"5479026","tpAmb":"1"}
+28/06/2022 12:18:45 - [CONSULTA_RESPOSTA]
+28/06/2022 12:18:54 - {"status":200,"motivo":"Consulta realizada com sucesso","chNFe":"35220610766336000113550010000255441705547500","cStat":-1,"xMotivo":"Documento já autorizado no NSNRec 5471778"}
+28/06/2022 12:22:10 - [CONSULTA_SITUACAO_DADOS]
+28/06/2022 12:22:17 - {"licencaCnpj":"10766336000113","chNFe":"35220610766336000113550010000255441705547500","tpAmb":"1","versao":"4.00"}
+28/06/2022 12:22:38 - [CONSULTA_SITUACAO_RESPOSTA]
+28/06/2022 12:22:45 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2022-06-28T12:22:24-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35220610766336000113550010000255441705547500","dhRecbto":"2022-06-28T09:27:33-03:00","nProt":"135220844535190","digVal":"k1YU9zy1mtQe0M5oo4KXiiLkMFY=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}
+28/06/2022 12:36:48 - [CONSULTA_DADOS]
+28/06/2022 12:36:53 - {"CNPJ":"10766336000113","nsNRec":"5479026","tpAmb":"1"}
+28/06/2022 12:36:55 - [CONSULTA_RESPOSTA]
+28/06/2022 12:37:00 - {"status":200,"motivo":"Consulta realizada com sucesso","chNFe":"35220610766336000113550010000255441705547500","cStat":-1,"xMotivo":"Documento já autorizado no NSNRec 5471778"}
+28/06/2022 12:39:30 - [CONSULTA_SITUACAO_DADOS]
+28/06/2022 12:39:35 - {"licencaCnpj":"10766336000113","chNFe":"35220610766336000113550010000255441705547500","tpAmb":"1","versao":"4.00"}
+28/06/2022 12:39:36 - [CONSULTA_SITUACAO_RESPOSTA]
+28/06/2022 12:39:41 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2022-06-28T12:39:34-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35220610766336000113550010000255441705547500","dhRecbto":"2022-06-28T09:27:33-03:00","nProt":"135220844535190","digVal":"k1YU9zy1mtQe0M5oo4KXiiLkMFY=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}
+28/06/2022 12:40:46 - [DOWNLOAD_NFE_DADOS]
+28/06/2022 12:40:51 - {"chNFe":"35220610766336000113550010000255441705547500","tpDown":"P","tpAmb":"1"}
+28/06/2022 12:40:52 - [DOWNLOAD_NFE_RESPOSTA]
+28/06/2022 12:40:57 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"Documento nao Localizado em nosso banco de dados ou não autorizado"}}
+28/06/2022 12:41:36 - [CONSULTA_SITUACAO_DADOS]
+28/06/2022 12:41:41 - {"licencaCnpj":"10766336000113","chNFe":"35220610766336000113550010000255441705547500","tpAmb":"1","versao":"4.00"}
+28/06/2022 12:41:42 - [CONSULTA_SITUACAO_RESPOSTA]
+28/06/2022 12:41:42 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2022-06-28T12:41:41-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35220610766336000113550010000255441705547500","dhRecbto":"2022-06-28T09:27:33-03:00","nProt":"135220844535190","digVal":"k1YU9zy1mtQe0M5oo4KXiiLkMFY=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}
+28/06/2022 12:42:22 - [CONSULTA_SITUACAO_DADOS]
+28/06/2022 12:42:23 - {"licencaCnpj":"10766336000113","chNFe":"35220610766336000113550010000255441705547500","tpAmb":"1","versao":"4.00"}
+28/06/2022 12:42:23 - [CONSULTA_SITUACAO_RESPOSTA]
+28/06/2022 12:42:23 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2022-06-28T12:42:21-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35220610766336000113550010000255441705547500","dhRecbto":"2022-06-28T09:27:33-03:00","nProt":"135220844535190","digVal":"k1YU9zy1mtQe0M5oo4KXiiLkMFY=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}
+28/06/2022 12:44:00 - [CONSULTA_SITUACAO_DADOS]
+28/06/2022 12:44:00 - {"licencaCnpj":"10766336000113","chNFe":"35220610766336000113550010000255441705547500","tpAmb":"1","versao":"4.00"}
+28/06/2022 12:44:01 - [CONSULTA_SITUACAO_RESPOSTA]
+28/06/2022 12:44:01 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2022-06-28T12:43:59-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35220610766336000113550010000255441705547500","dhRecbto":"2022-06-28T09:27:33-03:00","nProt":"135220844535190","digVal":"k1YU9zy1mtQe0M5oo4KXiiLkMFY=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}

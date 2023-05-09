@@ -1,0 +1,4 @@
+24/01/2022 14:31:09 - [ENVIO_EMAIL_DADOS]
+24/01/2022 14:31:09 - {"chNFe":"35220140279755000191650010000000011774740092","enviaEmailDoc":true,"tpAmb":2,"anexarPDF":true,"email":["vendas@caprind.com.br"]}
+24/01/2022 14:31:10 - [ENVIO_EMAIL_RESPOSTA]
+24/01/2022 14:31:10 - {"status":200,"motivo":"Reenvio de e-mail agendado com sucesso"}

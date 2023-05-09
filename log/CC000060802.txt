@@ -1,0 +1,24 @@
+28/02/2022 16:29:02 - [CANCELAMENTO_DADOS]
+28/02/2022 16:29:06 - {"chNFe":"35220246086864000179550010000608021579518616","tpAmb":"1","dhEvento":"2022-02-28T16:28:24-03:00","nProt":"135220228137709","xJust":"ERRO EMISSAO NOTA FISCAL ELETRONICA"}
+28/02/2022 16:38:55 - [CANCELAMENTO_RESPOSTA]
+28/02/2022 16:38:59 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"690 -  Rejeição: Pedido de Cancelamento para NF-e com CT-e ou MDF-e"}}
+28/02/2022 16:41:02 - [CANCELAMENTO_DADOS]
+28/02/2022 16:41:10 - {"chNFe":"35220246086864000179550010000608021579518616","tpAmb":"1","dhEvento":"2022-02-28T16:28:24-03:00","nProt":"135220228137709","xJust":"ERRO EMISSAO NOTA FISCAL ELETRONICA"}
+28/02/2022 16:46:28 - [CANCELAMENTO_RESPOSTA]
+28/02/2022 16:46:35 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"690 -  Rejeição: Pedido de Cancelamento para NF-e com CT-e ou MDF-e"}}
+28/02/2022 16:50:29 - [CANCELAMENTO_DADOS]
+28/02/2022 16:50:29 - {"chNFe":"35220246086864000179550010000608021579518616","tpAmb":"1","dhEvento":"2022-02-28T16:50:22-03:00","nProt":"135220228137709","xJust":"ERRO EMISSAO NOTA FISCAL ELETRONICA"}
+28/02/2022 16:50:29 - [CANCELAMENTO_RESPOSTA]
+28/02/2022 16:50:29 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"690 -  Rejeição: Pedido de Cancelamento para NF-e com CT-e ou MDF-e"}}
+28/02/2022 16:50:57 - [CANCELAMENTO_DADOS]
+28/02/2022 16:50:57 - {"chNFe":"35220246086864000179550010000608021579518616","tpAmb":"1","dhEvento":"2022-02-28T16:50:55-03:00","nProt":"135220228137709","xJust":"ERRO EMISSAO NFE"}
+28/02/2022 16:50:57 - [CANCELAMENTO_RESPOSTA]
+28/02/2022 16:50:57 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"690 -  Rejeição: Pedido de Cancelamento para NF-e com CT-e ou MDF-e"}}
+28/02/2022 16:55:33 - [CANCELAMENTO_DADOS]
+28/02/2022 16:55:33 - {"chNFe":"35220246086864000179550010000608021579518616","tpAmb":"1","dhEvento":"2022-02-28T16:55:23-03:00","nProt":"135220228137709","xJust":"ERRO EMISSAO NFE"}
+28/02/2022 16:55:33 - [CANCELAMENTO_RESPOSTA]
+28/02/2022 16:55:33 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"690 -  Rejeição: Pedido de Cancelamento para NF-e com CT-e ou MDF-e"}}
+28/02/2022 16:57:33 - [CANCELAMENTO_DADOS]
+28/02/2022 16:57:33 - {"chNFe":"35220246086864000179550010000608021579518616","tpAmb":"1","dhEvento":"2022-02-28T16:57:31-03:00","nProt":"135220228137709","xJust":"ERRO EMISSAO NFE"}
+28/02/2022 16:57:33 - [CANCELAMENTO_RESPOSTA]
+28/02/2022 16:57:33 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"Could not establish secure channel for SSL/TLS with authority 'nfe.fazenda.sp.gov.br'."}}

@@ -1,0 +1,20 @@
+23/01/2022 09:51:01 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 09:51:01 - {"chNFe":"35220140279755000191650010000034331705547504","tpAmb":"2"}
+23/01/2022 09:51:24 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 09:51:28 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000034331705547504","dhRecbto":"2022-01-23T09:51:05-03:00","nProt":null,"digVal":null,"verAplic":null}}
+23/01/2022 09:52:08 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 09:52:08 - {"chNFe":"35220140279755000191650010000034331705547504","tpAmb":"2"}
+23/01/2022 09:52:10 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 09:52:10 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000034331705547504","dhRecbto":"2022-01-23T09:52:06-03:00","nProt":null,"digVal":null,"verAplic":null}}
+23/01/2022 09:52:16 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 09:52:16 - {"chNFe":"35220140279755000191650010000034331705547504","tpAmb":"2"}
+23/01/2022 09:52:33 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 09:52:33 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000034331705547504","dhRecbto":"2022-01-23T09:52:20-03:00","nProt":null,"digVal":null,"verAplic":null}}
+23/01/2022 09:52:37 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 09:52:37 - {"chNFe":"35220140279755000191650010000034331705547504","tpAmb":"2"}
+23/01/2022 09:52:41 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 09:52:41 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000034331705547504","dhRecbto":"2022-01-23T09:52:34-03:00","nProt":null,"digVal":null,"verAplic":null}}
+23/01/2022 09:52:54 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 09:52:54 - {"chNFe":"35220140279755000191650010000034321301948003","tpAmb":"2"}
+23/01/2022 09:52:56 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 09:52:56 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000034321301948003","dhRecbto":"2022-01-23T09:52:51-03:00","nProt":null,"digVal":null,"verAplic":null}}

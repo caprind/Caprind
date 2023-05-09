@@ -1,0 +1,20 @@
+24/01/2022 14:53:56 - [ENVIO_EMAIL_DADOS]
+24/01/2022 14:53:56 - {"chNFe":"35220140279755000191650010000000111705547501","enviaEmailDoc":true,"tpAmb":2,"anexarPDF":true,"email":["vendas@caprind.com.br"]}
+24/01/2022 14:53:57 - [ENVIO_EMAIL_RESPOSTA]
+24/01/2022 14:53:57 - {"status":200,"motivo":"Reenvio de e-mail agendado com sucesso"}
+24/01/2022 14:57:28 - [ENVIO_EMAIL_DADOS]
+24/01/2022 14:57:28 - {"chNFe":"35220140279755000191650010000000111705547501","enviaEmailDoc":true,"tpAmb":2,"anexarPDF":true,"email":["vendas@caprind.com.br"]}
+24/01/2022 14:57:45 - [ENVIO_EMAIL_RESPOSTA]
+24/01/2022 14:57:50 - {"status":200,"motivo":"Reenvio de e-mail agendado com sucesso"}
+24/01/2022 15:01:15 - [ENVIO_EMAIL_DADOS]
+24/01/2022 15:01:15 - {"chNFe":"35220140279755000191650010000000111705547501","enviaEmailDoc":true,"email":["vendas@caprind.com.br"]}
+24/01/2022 15:01:31 - [ENVIO_EMAIL_RESPOSTA]
+24/01/2022 15:01:35 - {"status":200,"motivo":"Reenvio de e-mail agendado com sucesso"}
+24/01/2022 15:13:46 - [ENVIO_EMAIL_DADOS]
+24/01/2022 15:13:50 - {"chNFe":"35220140279755000191650010000000111705547501","enviaEmailDoc":true,"email":["vendas@caprind.com.br"]}
+24/01/2022 15:14:04 - [ENVIO_EMAIL_RESPOSTA]
+24/01/2022 15:14:04 - {"status":200,"motivo":"Reenvio de e-mail agendado com sucesso"}
+24/01/2022 15:49:58 - [ENVIO_EMAIL_DADOS]
+24/01/2022 15:49:58 - {"chNFe":"35220140279755000191650010000000111705547501","enviaEmailDoc":true,"email":["vendas@caprind.com.br"]}
+24/01/2022 15:49:59 - [ENVIO_EMAIL_RESPOSTA]
+24/01/2022 15:49:59 - {"status":200,"motivo":"Reenvio de e-mail agendado com sucesso"}

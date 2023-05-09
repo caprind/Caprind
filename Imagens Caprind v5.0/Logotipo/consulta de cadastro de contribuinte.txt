@@ -1,0 +1,80 @@
+Private Sub cmdConsultarCad_Click()
+    On Error GoTo SAI
+    Dim retorno As String
+     
+    Dim status As String
+    Dim restContCad As String
+    Dim infCons As String
+    Dim auxInfCad As Variant
+    Dim respInfCad As String
+    Dim infCad As String
+    
+    Dim ie As String
+    Dim cnpj As String
+    Dim xNome As String
+    Dim xLgr As String
+    Dim nro As String
+    Dim xCpl As String
+    Dim xBairro As String
+    Dim cMun As String
+    Dim CEP As String
+            
+    retorno = consultarCadastroContribuinte(txtCNPJCont.Text, txtUF.Text, txtCNPJ_CPF.Text, cbTtipoContrib.Text)
+    
+    status = LerDadosJSON(retorno, "status", "", "")
+    
+    If (status = 200) Then
+        cStat = LerDadosJSON(retorno, "retConsCad", "infCons", "cStat")
+
+        If (cStat = "111") Or (cStat = "112") Then
+            motivo = LerDadosJSON(retorno, "motivo", "", "")
+            MsgBox (motivo)
+            auxInfCad = Split(retorno, """infCad"":[")
+            auxInfCad = Split(auxInfCad(1), "]")
+            auxInfCad = Split(auxInfCad(0), "},")
+
+            If (UBound(auxinfCons) = 0) Then
+            
+                infCad = auxinfCons(0)
+                
+                xMotivo = LerDadosJSON(infCons, xMotivo, "", "")
+                
+                txtRetornoXmotivo.Text = xMotivo
+
+            Else
+                Dim i As Integer
+                For i = 0 To UBound(auxInfCad)
+                    infCad = auxInfCad(i)
+
+                    If (i <> UBound(auxInfCad)) Then
+                        infCad = infCad & "}"
+                    End If
+
+                    ie = LerDadosJSON(infCad, "IE", "", "")
+                    cnpj = LerDadosJSON(infCad, "CNPJ", "", "")
+                    UF = LerDadosJSON(infCad, "UF", "", "")
+                    xNome = LerDadosJSON(infCad, "xNome", "", "")
+                    xLgr = LerDadosJSON(infCad, "ender", "xLgr", "")
+                    CEP = LerDadosJSON(infCad, "ender", "CEP", "")
+                Next
+            End If
+        End If
+        
+        If (cStat <> "111") Then
+            xMotivo = LerDadosJSON(retorno, "retConsCad", "infCons", "xMotivo")
+            MsgBox (xMotivo)
+        End If
+
+        
+    End If
+     
+    If (status <> 200) Then
+        motivo = LerDadosJSON(retorno, "motivo", "", "")
+        MsgBox (xMotivo)
+    End If
+    
+Exit Sub
+    
+SAI:
+    MsgBox (vbNewLine & Err.Description), vbInformation, titleNFeAPI
+End Sub

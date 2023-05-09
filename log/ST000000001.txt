@@ -1,0 +1,44 @@
+23/01/2022 10:59:59 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 11:00:02 - {"chNFe":"35220140279755000191650010000000011705547505","tpAmb":"2"}
+23/01/2022 11:00:47 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 11:00:50 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000000011705547505","dhRecbto":"2022-01-23T11:00:04-03:00","nProt":null,"digVal":null,"verAplic":null}}
+23/01/2022 12:35:38 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 12:35:38 - {"chNFe":"35220140279755000191650010000000011705547505","tpAmb":"2"}
+23/01/2022 12:35:39 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 12:35:39 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000000011705547505","dhRecbto":"2022-01-23T12:35:35-03:00","nProt":null,"digVal":null,"verAplic":null}}
+23/01/2022 13:24:18 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 13:24:18 - {"chNFe":"35220140279755000191650010000000011705547505","tpAmb":"2"}
+23/01/2022 13:24:18 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 13:24:18 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000000011705547505","dhRecbto":"2022-01-23T13:24:15-03:00","nProt":null,"digVal":null,"verAplic":null}}
+23/01/2022 13:31:16 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 13:31:16 - {"chNFe":"35220140279755000191650010000000011774740092","tpAmb":"2"}
+23/01/2022 13:31:17 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 13:31:17 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"100","xMotivo":"Autorizado o uso da NF-e","chNFe":"35220140279755000191650010000000011774740092","dhRecbto":"2022-01-23T10:51:21-03:00","nProt":"135220000024919","digVal":"8OxbLyxCRphSfwM2RxUQgRCH5vc=","verAplic":"SP_NFCE_PL_009_V400"}}
+23/01/2022 13:32:18 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 13:32:25 - {"chNFe":"35220140279755000191650010000000011774740092","tpAmb":"2"}
+23/01/2022 13:33:00 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 13:33:03 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"100","xMotivo":"Autorizado o uso da NF-e","chNFe":"35220140279755000191650010000000011774740092","dhRecbto":"2022-01-23T10:51:21-03:00","nProt":"135220000024919","digVal":"8OxbLyxCRphSfwM2RxUQgRCH5vc=","verAplic":"SP_NFCE_PL_009_V400"}}
+23/01/2022 13:37:24 - [DOWNLOAD_NFCE_DADOS]
+23/01/2022 13:37:24 - {"chNFe":"35220140279755000191650010000000031579518615","tpAmb":"2","impressao":{"tipo":"pdf","ecologica":false,"itemLinhas":"1","itemDesconto":false,"larguraPapel":"80mm"}}
+23/01/2022 13:37:24 - [DOWNLOAD_NFCE_STATUS]
+23/01/2022 13:37:24 - 100
+23/01/2022 13:37:46 - [DOWNLOAD_NFE_DADOS]
+23/01/2022 13:37:46 - {"chNFe":"35220140279755000191550010000034271790480007","tpDown":"P","tpAmb":"2"}
+23/01/2022 13:37:46 - [DOWNLOAD_NFE_RESPOSTA]
+23/01/2022 13:37:46 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"Documento nao Localizado em nosso banco de dados ou não autorizado"}}
+23/01/2022 13:38:45 - [DOWNLOAD_NFE_DADOS]
+23/01/2022 13:38:47 - {"chNFe":"35220140279755000191550010000034271790480007","tpDown":"P","tpAmb":"2"}
+23/01/2022 13:39:01 - [DOWNLOAD_NFE_RESPOSTA]
+23/01/2022 13:39:01 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"Documento nao Localizado em nosso banco de dados ou não autorizado"}}
+23/01/2022 13:40:17 - [DOWNLOAD_NFE_DADOS]
+23/01/2022 13:40:22 - {"chNFe":"35220140279755000191550010000034271790480007","tpDown":"P","tpAmb":"2"}
+23/01/2022 13:40:54 - [DOWNLOAD_NFE_RESPOSTA]
+23/01/2022 13:40:54 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"Documento nao Localizado em nosso banco de dados ou não autorizado"}}
+23/01/2022 13:42:19 - [DOWNLOAD_NFE_DADOS]
+23/01/2022 13:42:19 - {"chNFe":"35220140279755000191550010000034271790480007","tpDown":"P","tpAmb":"2"}
+23/01/2022 13:42:19 - [DOWNLOAD_NFE_RESPOSTA]
+23/01/2022 13:42:19 - {"status":-999,"motivo":"Erro interno ao processar a requisicao","erro":{"cStat":999,"xMotivo":"Documento nao Localizado em nosso banco de dados ou não autorizado"}}
+24/01/2022 11:11:48 - [CONSULTA_SITUACAO_DADOS]
+24/01/2022 11:11:48 - {"chNFe":"35220140279755000191650010000000011774740092","tpAmb":"2"}
+24/01/2022 11:11:48 - [CONSULTA_SITUACAO_RESPOSTA]
+24/01/2022 11:11:48 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"100","xMotivo":"Autorizado o uso da NF-e","chNFe":"35220140279755000191650010000000011774740092","dhRecbto":"2022-01-23T10:51:21-03:00","nProt":"135220000024919","digVal":"8OxbLyxCRphSfwM2RxUQgRCH5vc=","verAplic":"SP_NFCE_PL_009_V400"}}

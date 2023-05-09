@@ -1,0 +1,4 @@
+28/06/2022 12:42:53 - [CONSULTA_SITUACAO_DADOS]
+28/06/2022 12:42:58 - {"licencaCnpj":"10766336000113","chNFe":"35220610766336000113550010000255481301948006","tpAmb":"1","versao":"4.00"}
+28/06/2022 12:42:58 - [CONSULTA_SITUACAO_RESPOSTA]
+28/06/2022 12:43:03 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2022-06-28T12:42:55-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35220610766336000113550010000255481301948006","dhRecbto":"2022-06-28T10:30:51-03:00","nProt":"135220845056040","digVal":"0DbhRAVb7RTvElUfS96SJrjGb6M=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}

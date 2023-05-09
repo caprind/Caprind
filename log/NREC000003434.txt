@@ -1,0 +1,8 @@
+22/01/2022 21:55:03 - [LISTA_NSNRECS_DADOS]
+22/01/2022 21:55:03 - {"chNFe":"35220140279755000191650010000034341774740099"}
+22/01/2022 21:55:03 - [LISTA_NSNRECS_RESPOSTA]
+22/01/2022 21:55:03 - {"status":-3,"motivo":"Nao foi possivel realizar a operacao","erro":{"cStat":997,"xMotivo":"Documento não localizado em nosso banco de dados"}}
+22/01/2022 21:55:34 - [LISTA_NSNRECS_DADOS]
+22/01/2022 21:55:34 - {"chNFe":"35220140279755000191650010000034341774740099"}
+22/01/2022 21:55:34 - [LISTA_NSNRECS_RESPOSTA]
+22/01/2022 21:55:34 - {"status":-3,"motivo":"Nao foi possivel realizar a operacao","erro":{"cStat":997,"xMotivo":"Documento não localizado em nosso banco de dados"}}

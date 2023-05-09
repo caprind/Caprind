@@ -1,0 +1,16 @@
+22/01/2022 22:22:58 - [CONSULTA_SITUACAO_DADOS]
+22/01/2022 22:22:58 - {"chNFe":"35220140279755000191650010000034321301948003","tpAmb":"2"}
+22/01/2022 22:22:58 - [CONSULTA_SITUACAO_RESPOSTA]
+22/01/2022 22:22:58 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000034321301948003","dhRecbto":"2022-01-22T22:22:55-03:00","nProt":null,"digVal":null,"verAplic":null}}
+22/01/2022 22:23:14 - [CONSULTA_SITUACAO_DADOS]
+22/01/2022 22:23:14 - {"chNFe":"35220140279755000191650010000034321301948003","tpAmb":"2"}
+22/01/2022 22:23:14 - [CONSULTA_SITUACAO_RESPOSTA]
+22/01/2022 22:23:14 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000034321301948003","dhRecbto":"2022-01-22T22:23:11-03:00","nProt":null,"digVal":null,"verAplic":null}}
+23/01/2022 09:52:57 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 09:52:57 - {"chNFe":"35220140279755000191650010000034321301948003","tpAmb":"2"}
+23/01/2022 09:52:59 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 09:52:59 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"217","xMotivo":"Rejeição: NF-e não consta na base de dados da SEFAZ","chNFe":"35220140279755000191650010000034321301948003","dhRecbto":"2022-01-23T09:52:54-03:00","nProt":null,"digVal":null,"verAplic":null}}
+23/01/2022 09:53:19 - [CONSULTA_SITUACAO_DADOS]
+23/01/2022 09:53:19 - {"chNFe":"35220140279755000191650010000034381705547500","tpAmb":"2"}
+23/01/2022 09:53:27 - [CONSULTA_SITUACAO_RESPOSTA]
+23/01/2022 09:53:29 - {"status":100,"motivo":"Situacao da NFC-e obtida com sucesso","nfeProc":{"cStat":"100","xMotivo":"Autorizado o uso da NF-e","chNFe":"35220140279755000191650010000034381705547500","dhRecbto":"2022-01-23T08:51:41-03:00","nProt":"135220000024888","digVal":"KFQVp+pZUcyqv8F28p8471msjTM=","verAplic":"SP_NFCE_PL_009_V400"}}
