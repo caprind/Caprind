@@ -125,14 +125,14 @@ Begin VB.Form frmFaturamento_Prod_Serv
       TabCaption(2)   =   "Produtos"
       TabPicture(2)   =   "frmFaturamento_Prod_serv.frx":107A
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "USToolBar2"
-      Tab(2).Control(1)=   "ListaProdutos"
-      Tab(2).Control(2)=   "Frame2"
-      Tab(2).Control(3)=   "Frame1(10)"
-      Tab(2).Control(4)=   "Frame1(11)"
-      Tab(2).Control(5)=   "Frame1(9)"
-      Tab(2).Control(6)=   "txtidproduto"
-      Tab(2).Control(7)=   "Txt_IDestoque"
+      Tab(2).Control(0)=   "Txt_IDestoque"
+      Tab(2).Control(1)=   "txtidproduto"
+      Tab(2).Control(2)=   "Frame1(9)"
+      Tab(2).Control(3)=   "Frame1(11)"
+      Tab(2).Control(4)=   "Frame1(10)"
+      Tab(2).Control(5)=   "Frame2"
+      Tab(2).Control(6)=   "ListaProdutos"
+      Tab(2).Control(7)=   "USToolBar2"
       Tab(2).ControlCount=   8
       TabCaption(3)   =   "Serviços"
       TabPicture(3)   =   "frmFaturamento_Prod_serv.frx":1096
@@ -176,7 +176,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Height          =   495
          Left            =   14280
          Locked          =   -1  'True
-         TabIndex        =   390
+         TabIndex        =   389
          TabStop         =   0   'False
          ToolTipText     =   "Ordem de faturamento."
          Top             =   9030
@@ -185,7 +185,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
       Begin DrawSuite2022.USLabel USLabel1 
          Height          =   720
          Left            =   -74700
-         TabIndex        =   389
+         TabIndex        =   388
          Top             =   9120
          Width           =   14955
          _ExtentX        =   26379
@@ -603,7 +603,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin MSMask.MaskEdBox txt_DtEmissao 
             Height          =   315
             Left            =   1590
-            TabIndex        =   330
+            TabIndex        =   329
             ToolTipText     =   "Data de saída/entrada."
             Top             =   510
             Width           =   960
@@ -628,7 +628,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton cmdDataemi 
             Height          =   315
             Left            =   2550
-            TabIndex        =   331
+            TabIndex        =   330
             ToolTipText     =   "Consultar data de entrada ou saida"
             Top             =   510
             Width           =   315
@@ -694,14 +694,14 @@ Begin VB.Form frmFaturamento_Prod_Serv
             AutoSize        =   -1  'True
             BackColor       =   &H80000005&
             BackStyle       =   0  'Transparent
-            Caption         =   "Data saida"
+            Caption         =   "Dt saida"
             ForeColor       =   &H00000080&
             Height          =   195
             Index           =   44
-            Left            =   3833
+            Left            =   3915
             TabIndex        =   145
             Top             =   300
-            Width           =   765
+            Width           =   615
          End
          Begin VB.Label Label1 
             Appearance      =   0  'Flat
@@ -750,14 +750,14 @@ Begin VB.Form frmFaturamento_Prod_Serv
             AutoSize        =   -1  'True
             BackColor       =   &H80000005&
             BackStyle       =   0  'Transparent
-            Caption         =   "Data emissão"
+            Caption         =   "Dt emissão"
             ForeColor       =   &H00000000&
             Height          =   195
             Index           =   40
             Left            =   1650
             TabIndex        =   141
             Top             =   300
-            Width           =   960
+            Width           =   780
          End
          Begin VB.Label Label1 
             Appearance      =   0  'Flat
@@ -821,21 +821,21 @@ Begin VB.Form frmFaturamento_Prod_Serv
             AutoSize        =   -1  'True
             BackColor       =   &H80000005&
             BackStyle       =   0  'Transparent
-            Caption         =   "Hora saida"
+            Caption         =   "Hr saida"
             ForeColor       =   &H00000080&
             Height          =   195
             Index           =   21
-            Left            =   5025
+            Left            =   5100
             TabIndex        =   129
             Top             =   300
-            Width           =   765
+            Width           =   615
          End
       End
       Begin VB.Frame Frame7 
          BackColor       =   &H00E0E0E0&
          Height          =   1335
          Left            =   13860
-         TabIndex        =   358
+         TabIndex        =   357
          Top             =   2970
          Width           =   1545
          Begin VB.ComboBox cmbFinalidade_emissao 
@@ -847,7 +847,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   60
             List            =   "frmFaturamento_Prod_serv.frx":18B48
             Style           =   2  'Dropdown List
-            TabIndex        =   360
+            TabIndex        =   359
             ToolTipText     =   "Finalidade de emissão."
             Top             =   345
             Width           =   1425
@@ -861,7 +861,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   60
             List            =   "frmFaturamento_Prod_serv.frx":18B99
             Style           =   2  'Dropdown List
-            TabIndex        =   359
+            TabIndex        =   358
             ToolTipText     =   "Operação com consumidor final."
             Top             =   900
             Width           =   1425
@@ -876,7 +876,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   54
             Left            =   45
-            TabIndex        =   362
+            TabIndex        =   361
             Top             =   150
             Width           =   1425
          End
@@ -890,7 +890,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   55
             Left            =   90
-            TabIndex        =   361
+            TabIndex        =   360
             Top             =   720
             Width           =   1350
          End
@@ -900,7 +900,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Caption         =   "Dados do destinatário"
          Height          =   1335
          Left            =   60
-         TabIndex        =   332
+         TabIndex        =   331
          Top             =   2970
          Width           =   13785
          Begin VB.TextBox cbo_UF 
@@ -921,7 +921,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   12360
             Locked          =   -1  'True
             MaxLength       =   60
-            TabIndex        =   357
+            TabIndex        =   356
             TabStop         =   0   'False
             ToolTipText     =   "Número."
             Top             =   345
@@ -944,7 +944,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   9990
             Locked          =   -1  'True
             MaxLength       =   60
-            TabIndex        =   354
+            TabIndex        =   353
             TabStop         =   0   'False
             ToolTipText     =   "Cidade."
             Top             =   900
@@ -967,7 +967,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   5490
             Locked          =   -1  'True
             MaxLength       =   60
-            TabIndex        =   353
+            TabIndex        =   352
             TabStop         =   0   'False
             ToolTipText     =   "Bairro."
             Top             =   900
@@ -990,7 +990,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   6915
             Locked          =   -1  'True
             MaxLength       =   30
-            TabIndex        =   341
+            TabIndex        =   340
             TabStop         =   0   'False
             ToolTipText     =   "CNPJ/CPF."
             Top             =   345
@@ -1014,7 +1014,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   4770
             Locked          =   -1  'True
             MaxLength       =   60
-            TabIndex        =   340
+            TabIndex        =   339
             TabStop         =   0   'False
             ToolTipText     =   "Número."
             Top             =   900
@@ -1037,7 +1037,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   12795
             Locked          =   -1  'True
             MaxLength       =   12
-            TabIndex        =   339
+            TabIndex        =   338
             TabStop         =   0   'False
             ToolTipText     =   "CEP."
             Top             =   345
@@ -1060,7 +1060,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   9900
             Locked          =   -1  'True
             MaxLength       =   15
-            TabIndex        =   338
+            TabIndex        =   337
             TabStop         =   0   'False
             ToolTipText     =   "Inscrição estadual."
             Top             =   345
@@ -1083,7 +1083,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   165
             Locked          =   -1  'True
             MaxLength       =   60
-            TabIndex        =   337
+            TabIndex        =   336
             TabStop         =   0   'False
             ToolTipText     =   "Endereço."
             Top             =   900
@@ -1106,7 +1106,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   11295
             Locked          =   -1  'True
             MaxLength       =   15
-            TabIndex        =   336
+            TabIndex        =   335
             TabStop         =   0   'False
             ToolTipText     =   "Inscrição estadual tributária."
             Top             =   345
@@ -1129,7 +1129,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   315
             Left            =   150
             Locked          =   -1  'True
-            TabIndex        =   335
+            TabIndex        =   334
             TabStop         =   0   'False
             ToolTipText     =   "Código do cliente."
             Top             =   345
@@ -1152,7 +1152,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   780
             Locked          =   -1  'True
             MaxLength       =   60
-            TabIndex        =   334
+            TabIndex        =   333
             TabStop         =   0   'False
             ToolTipText     =   "Destinatário."
             Top             =   345
@@ -1175,7 +1175,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   8520
             Locked          =   -1  'True
             MaxLength       =   30
-            TabIndex        =   333
+            TabIndex        =   332
             TabStop         =   0   'False
             ToolTipText     =   "N° telefone destinatário"
             Top             =   345
@@ -1184,7 +1184,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton cmdCliente 
             Height          =   315
             Left            =   6570
-            TabIndex        =   342
+            TabIndex        =   341
             ToolTipText     =   "Consultar destinatário"
             Top             =   345
             Width           =   315
@@ -1241,7 +1241,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   1860
             Locked          =   -1  'True
             MaxLength       =   10
-            TabIndex        =   350
+            TabIndex        =   349
             TabStop         =   0   'False
             ToolTipText     =   "Tipo do cliente."
             Top             =   1620
@@ -1257,7 +1257,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   49
             Left            =   11745
-            TabIndex        =   356
+            TabIndex        =   355
             Top             =   705
             Width           =   495
          End
@@ -1271,7 +1271,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   48
             Left            =   7507
-            TabIndex        =   355
+            TabIndex        =   354
             Top             =   705
             Width           =   420
          End
@@ -1285,7 +1285,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   16
             Left            =   8865
-            TabIndex        =   352
+            TabIndex        =   351
             Top             =   150
             Width           =   630
          End
@@ -1299,7 +1299,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   46
             Left            =   7485
-            TabIndex        =   351
+            TabIndex        =   350
             Top             =   150
             Width           =   375
          End
@@ -1313,7 +1313,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   3
             Left            =   10080
-            TabIndex        =   349
+            TabIndex        =   348
             Top             =   150
             Width           =   1020
          End
@@ -1327,7 +1327,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   4
             Left            =   2130
-            TabIndex        =   348
+            TabIndex        =   347
             Top             =   705
             Width           =   675
          End
@@ -1341,7 +1341,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   45
             Left            =   11370
-            TabIndex        =   347
+            TabIndex        =   346
             Top             =   150
             Width           =   915
          End
@@ -1355,7 +1355,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   50
             Left            =   13110
-            TabIndex        =   346
+            TabIndex        =   345
             Top             =   150
             Width           =   285
          End
@@ -1369,7 +1369,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   51
             Left            =   4845
-            TabIndex        =   345
+            TabIndex        =   344
             Top             =   705
             Width           =   555
          End
@@ -1383,7 +1383,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   52
             Left            =   12495
-            TabIndex        =   344
+            TabIndex        =   343
             Top             =   150
             Width           =   195
          End
@@ -1397,7 +1397,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   34
             Left            =   3015
-            TabIndex        =   343
+            TabIndex        =   342
             Top             =   150
             Width           =   1290
          End
@@ -1417,7 +1417,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H00000080&
          Height          =   915
          Left            =   -68370
-         TabIndex        =   327
+         TabIndex        =   326
          Top             =   1290
          Width           =   8805
          Begin VB.ComboBox Cmb_frete_contratado 
@@ -1437,7 +1437,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             List            =   "frmFaturamento_Prod_serv.frx":1FD5B
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   328
+            TabIndex        =   327
             ToolTipText     =   "Indicador da natureza do frete contratado."
             Top             =   360
             Width           =   8565
@@ -1458,7 +1458,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H00000080&
          Height          =   915
          Left            =   -74940
-         TabIndex        =   325
+         TabIndex        =   324
          Top             =   1290
          Width           =   6555
          Begin VB.ComboBox cmbFrete 
@@ -1478,7 +1478,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             List            =   "frmFaturamento_Prod_serv.frx":1FF82
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   326
+            TabIndex        =   325
             ToolTipText     =   "Indicador da natureza do frete contratado."
             Top             =   360
             Width           =   6225
@@ -1498,7 +1498,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          EndProperty
          Height          =   6075
          Left            =   -74940
-         TabIndex        =   302
+         TabIndex        =   301
          Top             =   3930
          Width           =   15375
          Begin VB.ComboBox cmbEntrega 
@@ -1517,7 +1517,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   120
             List            =   "frmFaturamento_Prod_serv.frx":200AD
             Style           =   2  'Dropdown List
-            TabIndex        =   385
+            TabIndex        =   384
             ToolTipText     =   "Endereço de entrega."
             Top             =   1170
             Width           =   6315
@@ -1537,7 +1537,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   330
             Left            =   120
             Style           =   2  'Dropdown List
-            TabIndex        =   311
+            TabIndex        =   310
             ToolTipText     =   "Espécie."
             Top             =   465
             Width           =   2115
@@ -1557,7 +1557,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   330
             Left            =   2580
             Style           =   2  'Dropdown List
-            TabIndex        =   310
+            TabIndex        =   309
             ToolTipText     =   "Marca."
             Top             =   465
             Width           =   2040
@@ -1579,7 +1579,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             List            =   "frmFaturamento_Prod_serv.frx":200CB
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   309
+            TabIndex        =   308
             ToolTipText     =   "Via de transporte."
             Top             =   465
             Width           =   1965
@@ -1599,7 +1599,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   330
             Left            =   11415
             MaxLength       =   7
-            TabIndex        =   308
+            TabIndex        =   307
             ToolTipText     =   "Número da placa do veículo."
             Top             =   465
             Width           =   975
@@ -1619,7 +1619,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   315
             Left            =   5910
             MaxLength       =   10
-            TabIndex        =   307
+            TabIndex        =   306
             ToolTipText     =   "Peso bruto."
             Top             =   465
             Width           =   1020
@@ -1639,7 +1639,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   315
             Left            =   7275
             MaxLength       =   10
-            TabIndex        =   306
+            TabIndex        =   305
             ToolTipText     =   "Peso líquido."
             Top             =   465
             Width           =   990
@@ -1662,7 +1662,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             List            =   "frmFaturamento_Prod_serv.frx":201A1
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   305
+            TabIndex        =   304
             ToolTipText     =   "UF."
             Top             =   465
             Width           =   600
@@ -1682,7 +1682,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   315
             Left            =   4965
             MaxLength       =   50
-            TabIndex        =   304
+            TabIndex        =   303
             Text            =   "0"
             ToolTipText     =   "Numeração."
             Top             =   465
@@ -1693,7 +1693,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   315
             Left            =   8280
             MaxLength       =   4
-            TabIndex        =   303
+            TabIndex        =   302
             Text            =   "0"
             ToolTipText     =   "Quantidade de volumes na nota fiscal"
             Top             =   465
@@ -1702,7 +1702,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton btnPeso 
             Height          =   285
             Left            =   6930
-            TabIndex        =   312
+            TabIndex        =   311
             ToolTipText     =   "Buscar peso dos itens da nota."
             Top             =   480
             Width           =   315
@@ -1747,7 +1747,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton BtnRedespacho 
             Height          =   555
             Left            =   13080
-            TabIndex        =   313
+            TabIndex        =   312
             Top             =   240
             Width           =   2145
             _ExtentX        =   3784
@@ -1790,7 +1790,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton cmdEspecie 
             Height          =   285
             Left            =   2250
-            TabIndex        =   321
+            TabIndex        =   320
             ToolTipText     =   "Consultar especie"
             Top             =   480
             Width           =   315
@@ -1834,7 +1834,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton cmdMarca 
             Height          =   285
             Left            =   4620
-            TabIndex        =   322
+            TabIndex        =   321
             ToolTipText     =   "Consultar marca"
             Top             =   480
             Width           =   315
@@ -1878,7 +1878,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton btnVolumes 
             Height          =   285
             Left            =   9090
-            TabIndex        =   378
+            TabIndex        =   377
             ToolTipText     =   "Buscar volumes dos itens da nota."
             Top             =   480
             Width           =   315
@@ -1930,7 +1930,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   25
             Left            =   2850
-            TabIndex        =   386
+            TabIndex        =   385
             Top             =   960
             Width           =   1515
          End
@@ -1944,7 +1944,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   130
             Left            =   7350
-            TabIndex        =   323
+            TabIndex        =   322
             Top             =   270
             Width           =   1695
          End
@@ -1958,7 +1958,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   32
             Left            =   855
-            TabIndex        =   320
+            TabIndex        =   319
             Top             =   270
             Width           =   540
          End
@@ -1972,7 +1972,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   123
             Left            =   11430
-            TabIndex        =   319
+            TabIndex        =   318
             Top             =   270
             Width           =   915
          End
@@ -1986,7 +1986,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   124
             Left            =   12600
-            TabIndex        =   318
+            TabIndex        =   317
             Top             =   270
             Width           =   195
          End
@@ -2000,7 +2000,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   127
             Left            =   3285
-            TabIndex        =   317
+            TabIndex        =   316
             Top             =   270
             Width           =   525
          End
@@ -2014,7 +2014,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   128
             Left            =   5025
-            TabIndex        =   316
+            TabIndex        =   315
             Top             =   270
             Width           =   900
          End
@@ -2028,7 +2028,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   129
             Left            =   6045
-            TabIndex        =   315
+            TabIndex        =   314
             Top             =   270
             Width           =   870
          End
@@ -2042,7 +2042,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   131
             Left            =   9870
-            TabIndex        =   314
+            TabIndex        =   313
             Top             =   270
             Width           =   1110
          End
@@ -2358,7 +2358,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USCheckBox chkRetorno 
             Height          =   195
             Left            =   14370
-            TabIndex        =   296
+            TabIndex        =   295
             Top             =   720
             Width           =   1275
             _ExtentX        =   2249
@@ -2379,7 +2379,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USCheckBox chkRemessa 
             Height          =   195
             Left            =   13410
-            TabIndex        =   295
+            TabIndex        =   294
             Top             =   720
             Width           =   1275
             _ExtentX        =   2249
@@ -2400,7 +2400,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USCheckBox chkNaoArredondar 
             Height          =   195
             Left            =   12150
-            TabIndex        =   294
+            TabIndex        =   293
             Top             =   360
             Width           =   2475
             _ExtentX        =   4366
@@ -2421,7 +2421,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USCheckBox Chk_tem_IPI_frete_prod 
             Height          =   195
             Left            =   12150
-            TabIndex        =   293
+            TabIndex        =   292
             Top             =   720
             Width           =   1275
             _ExtentX        =   2249
@@ -3187,7 +3187,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             ForeColor       =   &H00800000&
             Height          =   225
             Left            =   120
-            TabIndex        =   371
+            TabIndex        =   370
             Top             =   240
             Width           =   855
          End
@@ -3206,7 +3206,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             ForeColor       =   &H00000080&
             Height          =   225
             Left            =   120
-            TabIndex        =   370
+            TabIndex        =   369
             Top             =   450
             Width           =   1005
          End
@@ -3234,7 +3234,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             EndProperty
             Height          =   225
             Left            =   120
-            TabIndex        =   373
+            TabIndex        =   372
             Top             =   450
             Width           =   855
          End
@@ -3252,7 +3252,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             EndProperty
             Height          =   225
             Left            =   120
-            TabIndex        =   372
+            TabIndex        =   371
             Top             =   240
             Width           =   855
          End
@@ -3281,7 +3281,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             EndProperty
             Height          =   225
             Left            =   150
-            TabIndex        =   375
+            TabIndex        =   374
             Top             =   240
             Width           =   855
          End
@@ -3299,7 +3299,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             EndProperty
             Height          =   225
             Left            =   150
-            TabIndex        =   374
+            TabIndex        =   373
             Top             =   450
             Width           =   855
          End
@@ -3328,7 +3328,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             EndProperty
             Height          =   225
             Left            =   180
-            TabIndex        =   377
+            TabIndex        =   376
             Top             =   240
             Width           =   675
          End
@@ -3346,7 +3346,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             EndProperty
             Height          =   225
             Left            =   180
-            TabIndex        =   376
+            TabIndex        =   375
             Top             =   450
             Width           =   675
          End
@@ -3445,50 +3445,6 @@ Begin VB.Form frmFaturamento_Prod_Serv
             TabIndex        =   22
             Top             =   210
             Width           =   1425
-         End
-         Begin DrawSuite2022.USButton cmdD2 
-            Height          =   345
-            Left            =   13860
-            TabIndex        =   291
-            ToolTipText     =   "Abrir diretório DANFE-XML..."
-            Top             =   150
-            Width           =   1335
-            _ExtentX        =   2355
-            _ExtentY        =   609
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":8B20F
-            Caption         =   " Danfe | XML"
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Tahoma"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            BorderColor     =   8421504
-            BorderColorDown =   7907521
-            BorderColorOver =   7907521
-            ForeColor       =   0
-            ForeColorOver   =   0
-            ForeColorDown   =   0
-            GradientColor1  =   16777215
-            GradientColor2  =   14737632
-            GradientColor3  =   12632256
-            GradientColor4  =   12632256
-            GradientColorOver1=   14417407
-            GradientColorOver2=   12317439
-            GradientColorOver3=   4838399
-            GradientColorOver4=   9627391
-            GradientColorDown1=   10802943
-            GradientColorDown2=   7979263
-            GradientColorDown3=   4370174
-            GradientColorDown4=   7395582
-            PicAlign        =   6
-            PicSize         =   1
-            ShowFocusRect   =   0   'False
-            Theme           =   1
-            ToolTipTitle    =   "CAPRIND v5.0"
          End
       End
       Begin MSComctlLib.ListView ListaNota 
@@ -3824,7 +3780,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":8C417
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":8B20F
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -3939,7 +3895,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Left            =   4950
             Locked          =   -1  'True
             MaxLength       =   15
-            TabIndex        =   379
+            TabIndex        =   378
             ToolTipText     =   "Valor total do IPI."
             Top             =   435
             Width           =   1095
@@ -4206,7 +4162,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   405
             _ExtentX        =   714
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":8C4DE
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":8B2D6
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -4250,7 +4206,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   20
             Left            =   5002
-            TabIndex        =   380
+            TabIndex        =   379
             ToolTipText     =   "Valor total de IPI devolução"
             Top             =   240
             Width           =   990
@@ -4635,7 +4591,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   525
             _ExtentX        =   926
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":8C5A5
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":8B39D
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -4678,7 +4634,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   525
             _ExtentX        =   926
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":8FD49
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":8EB41
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -4762,7 +4718,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   525
             _ExtentX        =   926
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":93852
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":9264A
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -4805,7 +4761,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   525
             _ExtentX        =   926
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":97941
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":96739
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -4965,9 +4921,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   300
-            ItemData        =   "frmFaturamento_Prod_serv.frx":9B1CD
+            ItemData        =   "frmFaturamento_Prod_serv.frx":99FC5
             Left            =   6960
-            List            =   "frmFaturamento_Prod_serv.frx":9B1DA
+            List            =   "frmFaturamento_Prod_serv.frx":99FD2
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   25
@@ -4985,7 +4941,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   525
             _ExtentX        =   926
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":9B1FA
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":99FF2
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -5028,7 +4984,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   525
             _ExtentX        =   926
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":9E99E
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":9D796
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -5112,7 +5068,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   525
             _ExtentX        =   926
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":A24A7
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":A129F
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -5155,7 +5111,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   525
             _ExtentX        =   926
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":A6596
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":A538E
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -5298,7 +5254,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   315
             Left            =   12840
             Locked          =   -1  'True
-            TabIndex        =   369
+            TabIndex        =   368
             TabStop         =   0   'False
             ToolTipText     =   "ID da CFOP."
             Top             =   480
@@ -5311,7 +5267,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   315
             Left            =   12420
             Locked          =   -1  'True
-            TabIndex        =   368
+            TabIndex        =   367
             TabStop         =   0   'False
             ToolTipText     =   "ID da CFOP."
             Top             =   480
@@ -5324,7 +5280,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   315
             Left            =   12000
             Locked          =   -1  'True
-            TabIndex        =   367
+            TabIndex        =   366
             TabStop         =   0   'False
             ToolTipText     =   "ID da CFOP."
             Top             =   480
@@ -5337,7 +5293,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   315
             Left            =   11520
             Locked          =   -1  'True
-            TabIndex        =   366
+            TabIndex        =   365
             TabStop         =   0   'False
             ToolTipText     =   "ID da CFOP."
             Top             =   480
@@ -5348,7 +5304,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             BackColor       =   &H00FFFFFF&
             Height          =   315
             Left            =   6420
-            TabIndex        =   365
+            TabIndex        =   364
             TabStop         =   0   'False
             ToolTipText     =   "ID da CFOP."
             Top             =   1065
@@ -5359,7 +5315,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             BackColor       =   &H00FFFFFF&
             Height          =   315
             Left            =   5760
-            TabIndex        =   364
+            TabIndex        =   363
             TabStop         =   0   'False
             ToolTipText     =   "ID da CFOP."
             Top             =   1065
@@ -5372,7 +5328,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   315
             Left            =   2100
             Locked          =   -1  'True
-            TabIndex        =   363
+            TabIndex        =   362
             TabStop         =   0   'False
             ToolTipText     =   "ID da CFOP."
             Top             =   480
@@ -5808,7 +5764,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":A9E22
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":A8C1A
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -5851,7 +5807,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":AA9DE
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":A97D6
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -5894,7 +5850,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":B1B71
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":B0969
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -5938,7 +5894,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":B8D04
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":B7AFC
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -5989,13 +5945,13 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton cmdNatureza 
             Height          =   315
             Left            =   11190
-            TabIndex        =   384
+            TabIndex        =   383
             ToolTipText     =   "Buscar natureza de operação CFOP"
             Top             =   480
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":BFE97
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":BEC8F
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -6039,7 +5995,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   24
             Left            =   6480
-            TabIndex        =   383
+            TabIndex        =   382
             Top             =   870
             Width           =   540
          End
@@ -6053,7 +6009,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   23
             Left            =   3960
-            TabIndex        =   382
+            TabIndex        =   381
             Top             =   1470
             Width           =   375
          End
@@ -6067,7 +6023,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   21
             Left            =   4470
-            TabIndex        =   381
+            TabIndex        =   380
             Top             =   1470
             Width           =   870
          End
@@ -6081,7 +6037,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   2
             Left            =   11820
-            TabIndex        =   292
+            TabIndex        =   291
             Top             =   870
             Width           =   780
          End
@@ -6970,7 +6926,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             EndProperty
             Height          =   315
             Left            =   7110
-            TabIndex        =   324
+            TabIndex        =   323
             Top             =   1110
             Width           =   675
          End
@@ -6988,7 +6944,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             EndProperty
             Height          =   315
             Left            =   2070
-            TabIndex        =   301
+            TabIndex        =   300
             Top             =   510
             Width           =   435
          End
@@ -7004,12 +6960,12 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":C0A53
+            ItemData        =   "frmFaturamento_Prod_serv.frx":BF84B
             Left            =   180
-            List            =   "frmFaturamento_Prod_serv.frx":C0A60
+            List            =   "frmFaturamento_Prod_serv.frx":BF858
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   299
+            TabIndex        =   298
             ToolTipText     =   "Tipo da transportadora."
             Top             =   505
             Width           =   1875
@@ -7168,13 +7124,13 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton btnTransp 
             Height          =   315
             Left            =   8610
-            TabIndex        =   329
+            TabIndex        =   328
             ToolTipText     =   "Buscar transportadora"
             Top             =   510
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":C0A82
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":BF87A
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7219,7 +7175,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Height          =   195
             Index           =   1
             Left            =   960
-            TabIndex        =   300
+            TabIndex        =   299
             Top             =   300
             Width           =   390
          End
@@ -7383,7 +7339,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   615
             _ExtentX        =   1085
             _ExtentY        =   9022
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":C40D2
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":C2ECA
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7444,7 +7400,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   615
             _ExtentX        =   1085
             _ExtentY        =   4789
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":E21D7
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":E0FCF
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7529,9 +7485,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":1002DC
+            ItemData        =   "frmFaturamento_Prod_serv.frx":FF0D4
             Left            =   2610
-            List            =   "frmFaturamento_Prod_serv.frx":1002DE
+            List            =   "frmFaturamento_Prod_serv.frx":FF0D6
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   276
@@ -7572,9 +7528,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":1002E0
+            ItemData        =   "frmFaturamento_Prod_serv.frx":FF0D8
             Left            =   6570
-            List            =   "frmFaturamento_Prod_serv.frx":10031A
+            List            =   "frmFaturamento_Prod_serv.frx":FF112
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   278
@@ -7638,9 +7594,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":100428
+            ItemData        =   "frmFaturamento_Prod_serv.frx":FF220
             Left            =   5400
-            List            =   "frmFaturamento_Prod_serv.frx":10042A
+            List            =   "frmFaturamento_Prod_serv.frx":FF222
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   277
@@ -7657,7 +7613,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":10042C
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":FF224
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7699,7 +7655,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   405
             _ExtentX        =   714
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":11E531
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":11D329
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7740,7 +7696,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   1215
             _ExtentX        =   2143
             _ExtentY        =   1402
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":11EA92
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":11D88A
             Caption         =   "Gerar"
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7779,13 +7735,13 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton btnCondicoesComerciais 
             Height          =   315
             Left            =   13590
-            TabIndex        =   297
+            TabIndex        =   296
             ToolTipText     =   "Condições comerciais do pedido interno"
             Top             =   510
             Width           =   375
             _ExtentX        =   661
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":128BB5
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":1279AD
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7823,13 +7779,13 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USButton btnImpRetidos 
             Height          =   315
             Left            =   1500
-            TabIndex        =   298
+            TabIndex        =   297
             ToolTipText     =   "Consultar impostos retidos"
             Top             =   510
             Width           =   345
             _ExtentX        =   609
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":12FD35
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":12EB2D
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7899,7 +7855,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Index           =   26
             Left            =   1950
             MousePointer    =   1  'Arrow
-            TabIndex        =   387
+            TabIndex        =   386
             Top             =   300
             Width           =   570
          End
@@ -8283,7 +8239,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   180
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":136EB5
+            Img1            =   "frmFaturamento_Prod_serv.frx":135CAD
             Count           =   1
          End
       End
@@ -8621,7 +8577,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   90
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":13EBFA
+            Img1            =   "frmFaturamento_Prod_serv.frx":13D9F2
             Count           =   1
          End
       End
@@ -8870,7 +8826,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   210
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":14478A
+            Img1            =   "frmFaturamento_Prod_serv.frx":143582
             Count           =   1
          End
       End
@@ -9121,7 +9077,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   120
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":14A306
+            Img1            =   "frmFaturamento_Prod_serv.frx":1490FE
             Count           =   1
          End
       End
@@ -9253,7 +9209,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   0
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":1500E2
+            Img1            =   "frmFaturamento_Prod_serv.frx":14EEDA
             Count           =   1
          End
       End
@@ -9526,9 +9482,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":15221F
+            ItemData        =   "frmFaturamento_Prod_serv.frx":151017
             Left            =   9120
-            List            =   "frmFaturamento_Prod_serv.frx":152286
+            List            =   "frmFaturamento_Prod_serv.frx":15107E
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   53
@@ -9548,9 +9504,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":15230C
+            ItemData        =   "frmFaturamento_Prod_serv.frx":151104
             Left            =   9810
-            List            =   "frmFaturamento_Prod_serv.frx":152373
+            List            =   "frmFaturamento_Prod_serv.frx":15116B
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   54
@@ -9734,9 +9690,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":1523F9
+            ItemData        =   "frmFaturamento_Prod_serv.frx":1511F1
             Left            =   12180
-            List            =   "frmFaturamento_Prod_serv.frx":15244E
+            List            =   "frmFaturamento_Prod_serv.frx":151246
             Locked          =   -1  'True
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
@@ -9813,9 +9769,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":1524BE
+            ItemData        =   "frmFaturamento_Prod_serv.frx":1512B6
             Left            =   10545
-            List            =   "frmFaturamento_Prod_serv.frx":152513
+            List            =   "frmFaturamento_Prod_serv.frx":15130B
             Locked          =   -1  'True
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
@@ -9858,7 +9814,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":152583
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":15137B
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -9902,7 +9858,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   945
             _ExtentX        =   1667
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":170688
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":16F480
             Caption         =   "CFOP"
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -9946,7 +9902,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":18E78D
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":18D585
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -9990,7 +9946,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":195920
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":194718
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -10274,7 +10230,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Begin DrawSuite2022.USLabel lblSN 
             Height          =   195
             Left            =   8700
-            TabIndex        =   388
+            TabIndex        =   387
             Top             =   180
             Width           =   1845
             _ExtentX        =   3254
@@ -10357,7 +10313,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Height          =   335
          Left            =   -72000
          MaxLength       =   50
-         MouseIcon       =   "frmFaturamento_Prod_serv.frx":19CAB3
+         MouseIcon       =   "frmFaturamento_Prod_serv.frx":19B8AB
          MousePointer    =   1  'Arrow
          TabIndex        =   89
          Text            =   "0"
@@ -10508,7 +10464,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   210
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":19CDBD
+            Img1            =   "frmFaturamento_Prod_serv.frx":19BBB5
             Count           =   1
          End
       End
@@ -10709,12 +10665,13 @@ On Error GoTo tratar_erro
     
     
     If optProduto.Value = True Then 'Nota de produtos
-        StrSql = "Select ID_Nota, sum(DN.dbl_ValorTotal + ISNULL(dbl_ValorIPI, 0)) as vlrTotalNota, Nop.Retorno, NOP.Remessa from tbl_Detalhes_Nota DN inner join tbl_NaturezaOperacao NOP on NOP.IDCountCfop = DN.ID_CFOP where id_nota = " & txtId & " and NOP.remessa= 0  and NOP.retorno = 0 group by id_nota, NOP.Retorno, Nop.remessa order by ID_Nota"
+        StrSql = "Select ID_Nota, sum(DN.dbl_ValorTotal + ISNULL(dbl_ValorIPI, 0)) as vlrTotalNota, Nop.Retorno, NOP.Remessa from tbl_Detalhes_Nota DN inner join tbl_NaturezaOperacao NOP on NOP.IDCountCfop = DN.ID_CFOP where id_nota = " & txtid & " and NOP.remessa= 0  and NOP.retorno = 0 group by id_nota, NOP.Retorno, Nop.remessa order by ID_Nota"
     Else 'Nota de servicos
-        StrSql = "Select ID_Nota, sum(DN.dbl_ValorTotal) as vlrTotalNota, Nop.Retorno, NOP.Remessa from tbl_Detalhes_Nota DN inner join tbl_NaturezaOperacao NOP on NOP.IDCountCfop = DN.ID_CFOP where id_nota = " & txtId & " and NOP.remessa= 0  and NOP.retorno = 0 group by id_nota, NOP.Retorno, Nop.remessa order by ID_Nota"
+        StrSql = "Select ID_Nota, sum(DN.dbl_ValorTotal) as vlrTotalNota, Nop.Retorno, NOP.Remessa from tbl_Detalhes_Nota DN inner join tbl_NaturezaOperacao NOP on NOP.IDCountCfop = DN.ID_CFOP where id_nota = " & txtid & " and NOP.remessa= 0  and NOP.retorno = 0 group by id_nota, NOP.Retorno, Nop.remessa order by ID_Nota"
     End If
         
     Set TBAbrir = CreateObject("adodb.recordset")
+    Debug.Print StrSql
     TBAbrir.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
     
         If TBAbrir.EOF = False Then
@@ -10825,7 +10782,7 @@ On Error GoTo tratar_erro
 ' Verifica se tem duplicatas geradas
 '===================================
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select * from tbl_Detalhes_Recebimento where id_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select * from tbl_Detalhes_Recebimento where id_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
 
    USMsgBox ("Não é permitido salvar o frete, pois existe(m) duplicata(s) gerada(s)." & vbCrLf & "Por favor exclua a(s) duplicata(s) antes de adicionar o frete aos produtos."), vbExclamation, "CAPRIND v5.0"
@@ -10840,7 +10797,7 @@ If txt_VlrFrete.Text <> "" Then
 
 
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select * from tbl_Detalhes_Nota where id_nota = " & txtId & " and Tipo = 'P' order by int_codigo", Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select * from tbl_Detalhes_Nota where id_nota = " & txtid & " and Tipo = 'P' order by int_codigo", Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
 
 Do While TBProduto.EOF = False
@@ -10876,16 +10833,16 @@ PV = IIf(IsNull(TBProduto!dbl_ValorTotal), 0, TBProduto!dbl_ValorTotal)
 PV = (PV - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)) + IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete)
 '=============================================================================================================================================
 IntICMS = IIf(IsNull(TBProduto!int_ICMS), 0, TBProduto!int_ICMS)
-ProcCalculaBC IDEmpresa, IIf(Txt_CFOP_prod = "", "0.000", Txt_CFOP_prod), 0, PV, IIf(IsNull(TBProduto!dbl_valoripi), 0, TBProduto!dbl_valoripi), SomarIPI, SomarIPIST, TemReducaoBC, IIf(TBProduto!NaoArredondar = True, True, False), IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), Aplicacao, txtIDcliente, txt_Razao
+ProcCalculaBC IDempresa, IIf(Txt_CFOP_prod = "", "0.000", Txt_CFOP_prod), 0, PV, IIf(IsNull(TBProduto!dbl_valoripi), 0, TBProduto!dbl_valoripi), SomarIPI, SomarIPIST, TemReducaoBC, IIf(TBProduto!NaoArredondar = True, True, False), IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), Aplicacao, txtIDcliente, txt_Razao
 '==============================================================================================================
 ' verifica as CST do icms ipi pis e cofins
 '==============================================================================================================
-ProcAtualizaCST IDEmpresa, txtIDcliente, txt_Razao, cbo_UF, IIf(Cmb_consumidor = "", 1, Left(Cmb_consumidor, 1)), IIf(cmbFinalidade_emissao = "", 1, Left(cmbFinalidade_emissao, 1))
+ProcAtualizaCST IDempresa, txtIDcliente, txt_Razao, cbo_UF, IIf(Cmb_consumidor = "", 1, Left(Cmb_consumidor, 1)), IIf(cmbFinalidade_emissao = "", 1, Left(cmbFinalidade_emissao, 1))
 '==============================================================================================================
 ' CALCULA SUBSTITUIÇÃO TRIBUTÁRIA
 '==============================================================================================================
 If TBProduto!dbl_ValorTotal > 0 Then
-ProcSubstituicaoTributaria cbo_UF, IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, Format((IIf(IsNull(TBProduto!dbl_ValorTotal), 0, TBProduto!dbl_ValorTotal) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)) / IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), "###,##0.0000000000"), IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), BC, BCST, IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete), IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro), IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias), True, IIf(Left(Cmb_consumidor, 1) = 1, True, False), IDEmpresa
+ProcSubstituicaoTributaria cbo_UF, IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, Format((IIf(IsNull(TBProduto!dbl_ValorTotal), 0, TBProduto!dbl_ValorTotal) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)) / IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), "###,##0.0000000000"), IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), BC, BCST, IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete), IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro), IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias), True, IIf(Left(Cmb_consumidor, 1) = 1, True, False), IDempresa
 End If
 '==============================================================================================================
 TBProduto.MoveNext
@@ -10899,7 +10856,7 @@ If NotaFiscalPronta = False Then
 ProcGravarTotaisNota
 End If
 
-ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
 
 ProcLimpaCamposProd
 USMsgBox ("Valores dos itens atualizados com sucesso!"), vbInformation, "CAPRIND v5.0"
@@ -11200,7 +11157,7 @@ If txtCod_Produto <> "" Then
                     TBItem.Open "Select ID, PConsumo, PRevenda, ID_CF from Projproduto_clientes where Codproduto = " & TBProduto!Codproduto & " and IDCliente = " & txtIDcliente, Conexao, adOpenKeyset, adLockOptimistic
                     If TBItem.EOF = True Then
                         Set TBCiclo = CreateObject("adodb.recordset")
-                        TBCiclo.Open "Select Codigo from empresa where codigo = " & IDEmpresa & " and Bloquear_produtos = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+                        TBCiclo.Open "Select Codigo from empresa where codigo = " & IDempresa & " and Bloquear_produtos = 'True'", Conexao, adOpenKeyset, adLockOptimistic
                         If TBCiclo.EOF = False Then
                             USMsgBox ("Este produto não pertence ao cliente " & txt_Razao & "."), vbExclamation, "CAPRIND v5.0"
                             TBCiclo.Close
@@ -11329,7 +11286,7 @@ Private Sub ProcVerificaNFPedInt(IDprodserv As Long)
 On Error GoTo tratar_erro
 
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "Select * from tbl_Detalhes_Nota_pedidos NFPP INNER JOIN tbl_dados_nota_fiscal NF ON NF.ID = NFPP.ID_nota where NFPP.ID_prod_NF = " & IDprodserv & " and NF.ID = " & txtId & " and NF.Pedido_interno = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir.Open "Select * from tbl_Detalhes_Nota_pedidos NFPP INNER JOIN tbl_dados_nota_fiscal NF ON NF.ID = NFPP.ID_nota where NFPP.ID_prod_NF = " & IDprodserv & " and NF.ID = " & txtid & " and NF.Pedido_interno = 'True'", Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.EOF = False Then
     With txtVLUnit
         '.Locked = True
@@ -11447,7 +11404,7 @@ If txtcodServ <> "" Then
                     TBItem.Open "Select * from Projproduto_clientes where Codproduto = " & TBProduto!Codproduto & " and IDCliente = " & txtIDcliente, Conexao, adOpenKeyset, adLockOptimistic
                     If TBItem.EOF = True Then
                         Set TBCiclo = CreateObject("adodb.recordset")
-                        TBCiclo.Open "Select * from empresa where codigo = " & IDEmpresa & " and Bloquear_produtos = 'False'", Conexao, adOpenKeyset, adLockOptimistic
+                        TBCiclo.Open "Select * from empresa where codigo = " & IDempresa & " and Bloquear_produtos = 'False'", Conexao, adOpenKeyset, adLockOptimistic
                         If TBCiclo.EOF = False Then
                             If USMsgBox("Este serviço não pertence ao cliente " & txt_Razao & ", deseja prosseguir assim mesmo?", vbYesNo, "CAPRIND v5.0") = vbNo Then
                                 TBCiclo.Close
@@ -11598,7 +11555,7 @@ End If
 '    Exit Sub
 'End If
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "Select * from Empresa where Codigo = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir.Open "Select * from Empresa where Codigo = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.EOF = False Then
     If IsNull(TBAbrir!Registro_boleto) = True Or TBAbrir!Registro_boleto = "" Then
         USMsgBox ("Não é permitido emitir boleto, pois o mesmo não possui registro."), vbExclamation, "CAPRIND v5.0"
@@ -11675,7 +11632,7 @@ Private Sub ProcImpostos()
 On Error GoTo tratar_erro
 
 Acao = "visualizar os impostos"
-If txtId = "" Then
+If txtid = "" Then
     If Formulario = "Estoque/Ordem de faturamento" Then NomeCampo = "a ordem de faturamento" Else NomeCampo = "a nota fiscal"
     ProcVerificaAcao
     Exit Sub
@@ -11730,7 +11687,7 @@ End If
 
 If TemInternet = True And ErroDriverMYSQL = False Then
     Set TBFIltro = CreateObject("adodb.recordset")
-    TBFIltro.Open "Select CNPJ from Empresa where Codigo = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+    TBFIltro.Open "Select CNPJ from Empresa where Codigo = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
     If TBFIltro.EOF = False Then
         FunAbreBDSite
         If ConexaoMySql.State = 1 Then
@@ -11855,7 +11812,7 @@ If Alterar = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " você não tem acesso a este recurso."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-FunVerifAlteracaoNF txtId, True, OptServico
+FunVerifAlteracaoNF txtid, True, optServico
 If Permitido1 = False Or Permitido = False Then
     USMsgBox ("Não é permitido salvar, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
@@ -11863,16 +11820,16 @@ End If
 
 valor = IIf(txtICMSSN = "", 0, txtICMSSN)
 NovoValor = Replace(valor, ",", ".")
-Conexao.Execute "Update tbl_Detalhes_Nota Set ICMS_SN = " & NovoValor & " where ID_nota = " & txtId
+Conexao.Execute "Update tbl_Detalhes_Nota Set ICMS_SN = " & NovoValor & " where ID_nota = " & txtid
 
 valor = IIf(txtVLRMPA = "", 0, txtVLRMPA)
 Valor1 = IIf(txtVLRMOA = "", 0, txtVLRMOA)
 NovoValor = Replace(valor, ",", ".")
 NovoValor1 = Replace(Valor1, ",", ".")
-Conexao.Execute "Update tbl_Totais_Nota Set VLRMPA = " & NovoValor & ", VLRMOA = " & NovoValor1 & " where ID_nota = " & txtId
+Conexao.Execute "Update tbl_Totais_Nota Set VLRMPA = " & NovoValor & ", VLRMOA = " & NovoValor1 & " where ID_nota = " & txtid
 
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select NFP.Int_codigo, NFP.Tem_IPI_frete, NFP.ID_CF, NFP.ID_CFOP, NFP.dbl_ValorTotal, NFP.Valor_desconto, NFP.Valor_frete, NFP.int_ICMS, NFP.ICMS_SN, NFP.dbl_ValorIPI, NFP.NaoArredondar, NFP.txt_CST, NFP.CST_IPI, NFP.CST_PIS, NFP.CST_Cofins, NFP.dbl_ValorUnitario, NFP.int_Qtd, NFP.Valor_seguro, NFP.Valor_acessorias, NFP.VlrMPA, TN.Total_DAS from tbl_Detalhes_Nota NFP INNER JOIN tbl_Totais_Nota TN ON TN.ID_nota = NFP.ID_nota where NFP.id_nota = " & txtId.Text & " and NFP.Remessa = 'False' and NFP.Retorno = 'False' order by NFP.int_codigo", Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select NFP.Int_codigo, NFP.Tem_IPI_frete, NFP.ID_CF, NFP.ID_CFOP, NFP.dbl_ValorTotal, NFP.Valor_desconto, NFP.Valor_frete, NFP.int_ICMS, NFP.ICMS_SN, NFP.dbl_ValorIPI, NFP.NaoArredondar, NFP.txt_CST, NFP.CST_IPI, NFP.CST_PIS, NFP.CST_Cofins, NFP.dbl_ValorUnitario, NFP.int_Qtd, NFP.Valor_seguro, NFP.Valor_acessorias, NFP.VlrMPA, TN.Total_DAS from tbl_Detalhes_Nota NFP INNER JOIN tbl_Totais_Nota TN ON TN.ID_nota = NFP.ID_nota where NFP.id_nota = " & txtid.Text & " and NFP.Remessa = 'False' and NFP.Retorno = 'False' order by NFP.int_codigo", Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     Do While TBProduto.EOF = False
         ProcRecalculaICMS
@@ -11885,17 +11842,17 @@ USMsgBox ("Alteração efetuada com sucesso."), vbInformation, "CAPRIND v5.0"
 '==================================
 Modulo = Formulario
 Evento = "Salvar vlr. MP, MO aplicada e  vlr. do crédito de ICMS SN"
-ID_documento = txtId
-If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+ID_documento = txtid
+If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
 ProcVerificaTipoNF False
 Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
 Documento1 = ""
 ProcGravaEvento
 '==================================
 ProcCarregaLista
-If NF_alterada = True Then ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+If NF_alterada = True Then ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
 ProcGravarTotaisNota
-ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
 ProcCarregaListaNota (IIf(ReturnNumbersOnly(Left(lblPaginas(1).Caption, Len(lblPaginas(1).Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas(1).Caption, Len(lblPaginas(1).Caption) - 5))))
 
 Exit Sub
@@ -11914,23 +11871,6 @@ tratar_erro:
 End Sub
 
 
-Private Sub cmdD2_Click()
-On Error GoTo tratar_erro
-
-Set TBFI = CreateObject("adodb.recordset")
-TBFI.Open "Select * from Empresa where Empresa = '" & txtEmpresa.Text & "'", Conexao, adOpenKeyset, adLockReadOnly
-
-If TBFI.EOF = False Then
-    DiretorioXMLDanfe = IIf(IsNull(TBFI!Caminho_XMLDanfe), "", TBFI!Caminho_XMLDanfe)
-End If
-TBFI.Close
-
-  ShellExecute 0, "open", DiretorioXMLDanfe, "", "", vbNormalFocus
-
-Exit Sub
-tratar_erro:
-    USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
-End Sub
 
 Private Sub cmdDataemi_Click()
 On Error GoTo tratar_erro
@@ -12204,7 +12144,7 @@ nsUF = FunVerifUFEmpresa(str(txtIDEmpresa.Text))
 'If Usmsgbox("Deseja realmente consultar o status da SEFAZ?", vbYesNo, "CAPRIND 5.0") = vbNo Then Exit Sub
 
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "Select * from empresa where codigo = '" & IDEmpresa & "'", Conexao, adOpenKeyset, adLockReadOnly
+TBAbrir.Open "Select * from empresa where codigo = '" & IDempresa & "'", Conexao, adOpenKeyset, adLockReadOnly
 If TBAbrir.EOF = False Then
 CnpjNF = ReturnNumbersOnly(TBAbrir!CNPJ)
 End If
@@ -12344,7 +12284,7 @@ Private Sub Label4_DblClick()
 On Error GoTo tratar_erro
 
 If IsNumeric(txtIDEmpresa.Text) Then
-IDEmpresa = txtIDEmpresa.Text
+IDempresa = txtIDEmpresa.Text
 Lbl2.Caption = Format(FunVerifVlrTotalFat12UltMesesSomado(txtIDEmpresa.Text), "###,##0.00")
 USMsgBox Format(FunVerifVlrTotalFat12UltMesesSomado(txtIDEmpresa.Text), "###,##0.00"), vbInformation, "CAPRIND v5.0"
 End If
@@ -12613,14 +12553,14 @@ On Error GoTo tratar_erro
 
 If Lista_carteira_faturar.ListItems.Count = 0 Then Exit Sub
 ProcLimpaCamposNota
-txtId.Text = Lista_carteira_faturar.SelectedItem
-ProcCarregaDadosNota IIf(txtId = "", 0, txtId)
+txtid.Text = Lista_carteira_faturar.SelectedItem
+ProcCarregaDadosNota IIf(txtid = "", 0, txtid)
 CamposFiltro = "NF.ID, NF.dt_DataEmissao, NF.dt_Saida_Entrada, NF.int_NotaFiscal, NF.TipoNF, NF.Serie, TN.dbl_Valor_Total_Nota, NF.txt_Razao_Nome, NF.Int_status, NF.Imprimir, NF.ID_empresa, NF.Aplicacao, NF.DtValidacaoOF, NF.DtValidacao, NF.RPS"
-Strsql_Faturamento = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtId
-Strsql_FaturamentoTotal = "Select Sum(TN.dbl_Valor_Total_Nota) as Valor1, Sum(TN.Valor_Total_Receber_Pagar) as Valor2 from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtId & " and NF.Int_status = 1"
-Strsql_FaturamentoTotalCanc = "Select Sum(TN.dbl_Valor_Total_Nota) as Valor3 from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtId & " and NF.Int_status = 2"
-Strsql_FaturamentoNFe = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.TipoNF <> 'SA' AND NF.ID = " & txtId
-Strsql_FaturamentoNFSe = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.TipoNF = 'SA' AND NF.ID = " & txtId
+Strsql_Faturamento = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtid
+Strsql_FaturamentoTotal = "Select Sum(TN.dbl_Valor_Total_Nota) as Valor1, Sum(TN.Valor_Total_Receber_Pagar) as Valor2 from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtid & " and NF.Int_status = 1"
+Strsql_FaturamentoTotalCanc = "Select Sum(TN.dbl_Valor_Total_Nota) as Valor3 from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtid & " and NF.Int_status = 2"
+Strsql_FaturamentoNFe = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.TipoNF <> 'SA' AND NF.ID = " & txtid
+Strsql_FaturamentoNFSe = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.TipoNF = 'SA' AND NF.ID = " & txtid
 ProcCarregaListaNota (1)
 
 Exit Sub
@@ -12781,7 +12721,7 @@ With ListaNota
                         If .ListItems(InitFor).ListSubItems(10) = "Sim" Then
                             'Verifica se no cadastro da empresa é permitido fazer movimentação do estoque automaticamente se não ele bloqueia a validação
                             Set TBCodigoDesc = CreateObject("adodb.recordset")
-                            TBCodigoDesc.Open "Select Codigo from Empresa where Codigo = " & IDEmpresa & " and Baixa_Auto_Estoque_NF = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+                            TBCodigoDesc.Open "Select Codigo from Empresa where Codigo = " & IDempresa & " and Baixa_Auto_Estoque_NF = 'True'", Conexao, adOpenKeyset, adLockOptimistic
                             If TBCodigoDesc.EOF = True Then
                                 'Verifica se existe movimentação de estoque
                                 Set TBEstoque = CreateObject("adodb.recordset")
@@ -12943,7 +12883,7 @@ With ListaProdutos
         
             If Cmb_opcao_lista_Produtos = "Excluir" Then
                 If txtNFiscal = "" Then Familiatext = "a ordem de faturamento" Else Familiatext = "a nota fiscal"
-                If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtId, Familiatext, "produto", "excluir este", False, True) = False Then
+                If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtid, Familiatext, "produto", "excluir este", False, True) = False Then
                     .ListItems.Item(InitFor).Checked = False
                     Exit Sub
                 End If
@@ -12961,7 +12901,7 @@ With ListaProdutos
                 End If
                 
                 Set TBAbrir = CreateObject("adodb.recordset")
-                TBAbrir.Open "Select * From tbl_ContasPagar where ID_nota = " & txtId & " and Despesas_NF = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+                TBAbrir.Open "Select * From tbl_ContasPagar where ID_nota = " & txtid & " and Despesas_NF = 'True'", Conexao, adOpenKeyset, adLockOptimistic
                 If TBAbrir.EOF = False Then
                     USMsgBox ("Não é permitido excluir este produto, pois já existe(m) despesa(s) de importação cadastrada(s) para esta nota."), vbExclamation, "CAPRIND v5.0"
                     .ListItems.Item(InitFor).Checked = False
@@ -12987,7 +12927,7 @@ With ListaProdutos
                     End If
                     TBCarteira.Close
                         
-                    EstoqueAtual = FunVerificaQtdeEstoque(.ListItems(InitFor).ListSubItems(1), IDEmpresa, "")
+                    EstoqueAtual = FunVerificaQtdeEstoque(.ListItems(InitFor).ListSubItems(1), IDempresa, "")
                     'Verifica empenho de vendas
                     Valor1 = 0
                     Set TBFI = CreateObject("adodb.recordset")
@@ -13033,7 +12973,7 @@ With ListaServicos
     For InitFor = 1 To .ListItems.Count
         If .ListItems.Item(InitFor).Checked = True Then
             If txtNFiscal = "" Then Familiatext = "a ordem de faturamento" Else Familiatext = "a nota fiscal"
-            If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtId, Familiatext, "serviço", "excluir este", False, True) = False Then .ListItems.Item(InitFor).Checked = False
+            If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtid, Familiatext, "serviço", "excluir este", False, True) = False Then .ListItems.Item(InitFor).Checked = False
         End If
     Next InitFor
 End With
@@ -13058,7 +12998,7 @@ With frmFaturamento_Prod_Serv_Vencimento
     .txtVencimentoAntigo.Text = Format(TBLISTA!dt_Vencimento, "dd/mm/yyyy")
     .txtValorDuplicata = Format(TBLISTA!dbl_Valor, "###,##0.00")
     .txt_Duplicata.Text = TBLISTA!txt_Parcela
-    .Txt_vencimento.Value = Format(TBLISTA!dt_Vencimento, "dd/mm/yyyy")
+    .txt_Vencimento.Value = Format(TBLISTA!dt_Vencimento, "dd/mm/yyyy")
     If TBLISTA!txt_tipopagto <> "" Then
     .cmb_tipopagto = TBLISTA!txt_tipopagto
     End If
@@ -13095,11 +13035,11 @@ On Error GoTo tratar_erro
 ProcCarregaOpcaoListaProd
 
 If opt_Saida.Value = True Then
-lbldtEntSaid(44).Caption = "Data Saida"
-lblhrEntsaid(21).Caption = "Hora saida"
+lbldtEntSaid(44).Caption = "Dt Saida"
+lblhrEntsaid(21).Caption = "Hr saida"
 Else
-lbldtEntSaid(44).Caption = "Data Entrada"
-lblhrEntsaid(21).Caption = "Hora Entrada"
+lbldtEntSaid(44).Caption = "Dt Entrada"
+lblhrEntsaid(21).Caption = "Hr Entrada"
 End If
 
 Exit Sub
@@ -13166,11 +13106,11 @@ On Error GoTo tratar_erro
 ProcCarregaOpcaoListaProd
 
 If opt_Saida.Value = True Then
-lbldtEntSaid(44).Caption = "Data Saida"
-lblhrEntsaid(21).Caption = "Hora saida"
+lbldtEntSaid(44).Caption = "Dt Saida"
+lblhrEntsaid(21).Caption = "Hr saida"
 Else
-lbldtEntSaid(44).Caption = "Data Entrada"
-lblhrEntsaid(21).Caption = "Hora Entrada"
+lbldtEntSaid(44).Caption = "Dt Entrada"
+lblhrEntsaid(21).Caption = "Hr Entrada"
 End If
 
 
@@ -13482,7 +13422,7 @@ If Alterar = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " você não tem acesso a este recurso."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-FunVerifAlteracaoNF txtId, True, OptServico
+FunVerifAlteracaoNF txtid, True, optServico
 If Permitido1 = False Or Permitido = False Then
     USMsgBox ("Não é permitido salvar, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
@@ -13562,7 +13502,7 @@ End If
 'Se a unidade for diferente verifica se esta cadastrado o peso bruto e UN/KG
 If FunBloqueiaUnConversao(txtcodServ, txtunserv, Cmb_un_com_serv, False) = True Then Exit Sub
 
-Conexao.Execute "Update tbl_Dados_Nota_Fiscal Set Alterar = 'False' where id = " & txtId.Text
+Conexao.Execute "Update tbl_Dados_Nota_Fiscal Set Alterar = 'False' where id = " & txtid.Text
 NF_alterada = False
 
 Set TBProduto = CreateObject("adodb.recordset")
@@ -13582,7 +13522,7 @@ If TBProduto.EOF = False Then
     End If
     If Faturamento_NF_Saida = True And txtNFiscal <> "" And TBProduto!int_Qtd <> valor Then
         Set TBAbrir = CreateObject("adodb.recordset")
-        TBAbrir.Open "Select RespValidacaoOF from tbl_Dados_Nota_Fiscal where ID = " & txtId & " and RespValidacaoOF <> '" & pubUsuario & "'", Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select RespValidacaoOF from tbl_Dados_Nota_Fiscal where ID = " & txtid & " and RespValidacaoOF <> '" & pubUsuario & "'", Conexao, adOpenKeyset, adLockOptimistic
         If TBAbrir.EOF = False Then
             USMsgBox ("Só é permitido alterar a quantidade deste serviço pelo usuário " & TBAbrir!RespValidacaoOF & "."), vbExclamation, "CAPRIND v5.0"
             TBAbrir.Close
@@ -13600,7 +13540,7 @@ If NFe_liberada = True Then
     TBProduto!Ordem = IIf(txtof_servico = "", 0, txtof_servico)
 Else
     TBProduto!int_Cod_Produto = txtcodServ.Text
-    TBProduto!ID_nota = txtId.Text
+    TBProduto!ID_nota = txtid.Text
     TBProduto!Txt_descricao = txtDescserv.Text
     TBProduto!N_referencia = cmbReferenciaserv
     Set TBItem = CreateObject("adodb.recordset")
@@ -13646,7 +13586,7 @@ txtidservico = TBProduto!Int_codigo
 
     If Chk_CFOP_serv.Value = 1 Then
             If USMsgBox("Deseja salvar essa CFOP em todos os serviços?", vbYesNo, "CAPRIND v5.0") = vbYes Then
-                StrSql = "update tbl_Detalhes_Nota set ID_CFOP = '" & Txt_ID_CFOP_serv.Text & "' where ID_Nota = '" & txtId.Text & "'"
+                StrSql = "update tbl_Detalhes_Nota set ID_CFOP = '" & Txt_ID_CFOP_serv.Text & "' where ID_Nota = '" & txtid.Text & "'"
                 Conexao.Execute (StrSql)
             End If
 
@@ -13671,14 +13611,14 @@ End If
 Modulo = Formulario
 ID_documento = txtidservico
 ProcVerificaTipoNF False
-If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
 Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
 Documento1 = "Cód. interno: " & txtcodServ
 ProcGravaEvento
 '==================================
 Novo_Nota2 = False
 ProcGravarTotaisNota
-ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
 ProcCarregaListaNota (IIf(ReturnNumbersOnly(Left(lblPaginas(1).Caption, Len(lblPaginas(1).Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas(1).Caption, Len(lblPaginas(1).Caption) - 5))))
 
 Exit Sub
@@ -13694,10 +13634,10 @@ Valor_total = txtVlrtotalserv
 
 'Empresa
 ProcControleImposto IIf(Txt_ID_CFOP_serv = "", 0, Txt_ID_CFOP_serv), IIf(txtIDcliente = "", 0, txtIDcliente)
-ProcVerifImpostosEmpresa IDEmpresa, False, txtcodServ, Chk_servico_executado_cliente, Valor_total, True, TabelaSN, Lbl2.Caption
+ProcVerifImpostosEmpresa IDempresa, False, txtcodServ, Chk_servico_executado_cliente, Valor_total, True, TabelaSN, Lbl2.Caption
 If DAS > 0 Then
     NovoValor = Replace(DAS, ",", ".")
-    Conexao.Execute "UPDATE tbl_Totais_Nota Set DAS = " & NovoValor & " where ID_nota = " & txtId
+    Conexao.Execute "UPDATE tbl_Totais_Nota Set DAS = " & NovoValor & " where ID_nota = " & txtid
 End If
 If TBProduto!Imposto_manual_serv <> True Then
     TBProduto!PIS_Serv = PIS_Serv
@@ -13735,7 +13675,7 @@ End If
 
 If Novo_Nota2 = True Then
     Set TBTempo = CreateObject("adodb.recordset")
-    TBTempo.Open "Select * from tbl_Detalhes_Nota where ID_nota = " & IIf(txtId = "", 0, txtId) & " and Tipo = 'S' and ID_CFOP IS NOT NULL order by Int_codigo desc", Conexao, adOpenKeyset, adLockOptimistic
+    TBTempo.Open "Select * from tbl_Detalhes_Nota where ID_nota = " & IIf(txtid = "", 0, txtid) & " and Tipo = 'S' and ID_CFOP IS NOT NULL order by Int_codigo desc", Conexao, adOpenKeyset, adLockOptimistic
     If TBTempo.EOF = False Then
         If Chk_CFOP_serv.Value = 1 Then
             Txt_ID_CFOP_serv = TBTempo!ID_CFOP
@@ -13745,7 +13685,7 @@ If Novo_Nota2 = True Then
     If Permitido = False And Len(txttipocliente) = 2 Then
         'Verifica CFOP vinculada ao cliente
         Set TBTempo = CreateObject("adodb.recordset")
-        TBTempo.Open "Select * FROM Clientes_DadosComerciais where IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+        TBTempo.Open "Select * FROM Clientes_DadosComerciais where IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
         If TBTempo.EOF = False Then
             Txt_ID_CFOP_serv = IIf(IsNull(TBTempo!IDCFOP), "", TBTempo!IDCFOP)
         End If
@@ -13817,7 +13757,7 @@ Txt_CFOP_prod = ""
 Txt_natureza_operacao_prod = ""
 If Novo_Nota1 = True Then
     Set TBTempo = CreateObject("adodb.recordset")
-    TBTempo.Open "Select * from tbl_Detalhes_Nota where ID_nota = " & IIf(txtId = "", 0, txtId) & " and Tipo = 'P' and ID_CFOP IS NOT NULL order by Int_codigo desc", Conexao, adOpenKeyset, adLockOptimistic
+    TBTempo.Open "Select * from tbl_Detalhes_Nota where ID_nota = " & IIf(txtid = "", 0, txtid) & " and Tipo = 'P' and ID_CFOP IS NOT NULL order by Int_codigo desc", Conexao, adOpenKeyset, adLockOptimistic
     If TBTempo.EOF = False Then
         If Chk_CFOP_prod.Value = 1 Then
             Txt_ID_CFOP_prod = TBTempo!ID_CFOP
@@ -13827,7 +13767,7 @@ If Novo_Nota1 = True Then
     If Permitido = False And Len(txttipocliente) = 2 Then
         'Verifica CFOP vinculada ao cliente
         Set TBTempo = CreateObject("adodb.recordset")
-        TBTempo.Open "Select * FROM Clientes_DadosComerciais where IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+        TBTempo.Open "Select * FROM Clientes_DadosComerciais where IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
         If TBTempo.EOF = False Then
             Txt_ID_CFOP_prod = IIf(IsNull(TBTempo!IDCFOP), "", TBTempo!IDCFOP)
         End If
@@ -13897,7 +13837,7 @@ End If
 TBControleNF.Close
 
     
-ProcVerifImpostosSN IDEmpresa, TabelaSN, Lbl2.Caption
+ProcVerifImpostosSN IDempresa, TabelaSN, Lbl2.Caption
     
 '======================================================================================
     If AliquotaSN = 0 Then
@@ -13964,7 +13904,7 @@ TabelaSN = IIf(IsNull(TBControleNF!TabelaSN), 0, TBControleNF!TabelaSN)
 End If
 TBControleNF.Close
 
-    ProcVerifImpostosSN IDEmpresa, TabelaSN, Lbl2.Caption
+    ProcVerifImpostosSN IDempresa, TabelaSN, Lbl2.Caption
     txtICMSSN = IIf(IsNull(ICMS_SN), 0, Format(ICMS_SN, "###,##0.0000"))
 '======================================================================================
 '    If AliquotaSN = 0 Then
@@ -14077,7 +14017,7 @@ TBLISTA.Close
 
 
 NovoValor = Replace(valor, ",", ".")
-Conexao.Execute "Update tbl_Totais_Nota Set Valor_total_receber_pagar = " & NovoValor & " where ID_nota = " & txtId
+Conexao.Execute "Update tbl_Totais_Nota Set Valor_total_receber_pagar = " & NovoValor & " where ID_nota = " & txtid
 
 
 Exit Sub
@@ -14088,24 +14028,24 @@ End Sub
 Private Sub ProcAnterior()
 On Error GoTo tratar_erro
 
-If txtId = "" Then Exit Sub
+If txtid = "" Then Exit Sub
 Set TBLISTA = CreateObject("adodb.recordset")
 If Faturamento_NF_Saida = True Then TextoFiltro = "Aplicacao = 'P'" Else TextoFiltro = "Aplicacao = 'T'"
-TBLISTA.Open "Select * from tbl_Dados_Nota_Fiscal where " & TextoFiltro & " and ID_empresa = " & IDEmpresa & " order by dt_DataEmissao, id", Conexao, adOpenKeyset, adLockOptimistic
+TBLISTA.Open "Select * from tbl_Dados_Nota_Fiscal where " & TextoFiltro & " and ID_empresa = " & IDempresa & " order by dt_DataEmissao, id", Conexao, adOpenKeyset, adLockOptimistic
 If TBLISTA.BOF = False Then
-    TBLISTA.Find ("ID = " & txtId)
+    TBLISTA.Find ("ID = " & txtid)
     TBLISTA.MovePrevious
     If TBLISTA.BOF = False Then
-        txtId = TBLISTA!ID
-        ProcCarregaDadosNota IIf(txtId = "", 0, txtId)
+        txtid = TBLISTA!ID
+        ProcCarregaDadosNota IIf(txtid = "", 0, txtid)
         txtCod_Produto.Text = ""
         ProcLimpaCamposProd
-        ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+        ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
         ProcCarregaLista
         txtcodServ.Text = ""
         ProcLimpaCamposServicos
         ProcCarregaListaServicos
-        ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+        ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
         ProcLimpaCamposDuplicata
         ProcCarregaDuplicatas
         ProcLimpaCamposTransp
@@ -14165,14 +14105,14 @@ If TBAbrir.EOF = False Then
     If Left(Formulario, 7) <> "Estoque" And Right(Formulario, 9) <> "Terceiros" Then
         TipoNF = TBAbrir!TipoNF
         Set TBFI = CreateObject("adodb.recordset")
-        TBFI.Open "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where tipoNF = '" & TipoNF & "' and Aplicacao = '" & TBAbrir!Aplicacao & "' and Modelo = '" & Left(Cmb_modelo.Text, 2) & "' and ID_empresa = " & IDEmpresa & " and int_NotaFiscal IS NOT NULL order by dt_DataEmissao desc, NF desc", Conexao, adOpenKeyset, adLockOptimistic
+        TBFI.Open "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where tipoNF = '" & TipoNF & "' and Aplicacao = '" & TBAbrir!Aplicacao & "' and Modelo = '" & Left(Cmb_modelo.Text, 2) & "' and ID_empresa = " & IDempresa & " and int_NotaFiscal IS NOT NULL order by dt_DataEmissao desc, NF desc", Conexao, adOpenKeyset, adLockOptimistic
         If TBFI.EOF = False Then
             QuantsolicitadoN1 = TBFI!NF + 1
             FamiliaAntiga = QuantsolicitadoN1
             Familiatext = FunTamanhoTextoZeroEsq(FamiliaAntiga, 9)
             SerieNF = IIf(IsNull(TBFI!Serie), 1, TBFI!Serie)
         End If
-        Familiatext = FunVerifExisteNumNF(TipoNF, IDEmpresa, Familiatext, SerieNF, Left(Cmb_modelo.Text, 2))
+        Familiatext = FunVerifExisteNumNF(TipoNF, IDempresa, Familiatext, SerieNF, Left(Cmb_modelo.Text, 2))
     Else
         Familiatext = ""
     End If
@@ -14221,12 +14161,12 @@ If TBAbrir.EOF = False Then
     End If
     
     TBGravar.Update
-    txtId = TBGravar!ID
+    txtid = TBGravar!ID
     '==================================
     Modulo = Formulario
     Evento = "Novo"
     ID_documento = TBGravar!ID
-    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & Familiatext
+    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & Familiatext
     Documento = NomeCampo & " - Tipo: " & TBAbrir!TipoNF & " - Série: " & TBAbrir!Serie
     Documento1 = ""
     ProcGravaEvento
@@ -14324,7 +14264,7 @@ If TBAbrir.EOF = False Then
         TBGravar!Unidade_com = TBAbrir!Unidade_com
         TBGravar!dbl_ValorUnitario = TBAbrir!dbl_ValorUnitario
         TBGravar!int_NotaFiscal = NovoNumNFiscal
-        TBGravar!ID_nota = txtId
+        TBGravar!ID_nota = txtid
         TBGravar!dbl_ValorTotal = TBAbrir!dbl_ValorTotal
         TBGravar!retorno = TBAbrir!retorno
         TBGravar!Remessa = TBAbrir!Remessa
@@ -14366,7 +14306,7 @@ If TBAbrir.EOF = False Then
         TBGravar!ID_CFOP = TBAbrir!ID_CFOP
         TBGravar!CST_PIS = TBAbrir!CST_PIS
         TBGravar!CST_Cofins = TBAbrir!CST_Cofins
-        TBGravar!ID_nota = txtId
+        TBGravar!ID_nota = txtid
         TBGravar!Txt_descricao = TBAbrir!Txt_descricao
         TBGravar!N_referencia = TBAbrir!N_referencia
         TBGravar!Familia = TBAbrir!Familia
@@ -14428,7 +14368,7 @@ If TBAbrir.EOF = False Then
     TBGravar.Open "Select * from tbl_Totais_Nota", Conexao, adOpenKeyset, adLockOptimistic
     TBGravar.AddNew
     TBGravar!int_NotaFiscal = NovoNumNFiscal
-    TBGravar!ID_nota = txtId
+    TBGravar!ID_nota = txtid
     TBGravar!dbl_Valor_Total_Produtos = TBAbrir!dbl_Valor_Total_Produtos
     TBGravar!dbl_Valor_Total_Nota_Serv = TBAbrir!dbl_Valor_Total_Nota_Serv
     TBGravar!dbl_Valor_Frete = TBAbrir!dbl_Valor_Frete
@@ -14499,7 +14439,7 @@ If TBAbrir.EOF = False Then
     Set TBGravar = CreateObject("adodb.recordset")
     TBGravar.Open "Select * from tbl_Dados_Transp", Conexao, adOpenKeyset, adLockOptimistic
     TBGravar.AddNew
-    TBGravar!ID_nota = txtId
+    TBGravar!ID_nota = txtid
     TBGravar!Tipo_transp = TBAbrir!Tipo_transp
     TBGravar!IdIntTransp = TBAbrir!IdIntTransp
     TBGravar!int_NotaFiscal = NovoNumNFiscal
@@ -14543,7 +14483,7 @@ If TBAbrir.EOF = False Then
     TBGravar.Open "Select * from tbl_DadosAdicionais", Conexao, adOpenKeyset, adLockOptimistic
     TBGravar.AddNew
     TBGravar!IDNotaFiscal = NovoNumNFiscal
-    TBGravar!ID_nota = txtId
+    TBGravar!ID_nota = txtid
     TBGravar!mem_corpo = TBAbrir!mem_corpo
     TBGravar!mem_DadosAdicionais = TBAbrir!mem_DadosAdicionais
     TBGravar!RE = TBAbrir!RE
@@ -14586,21 +14526,21 @@ If Excluir = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " você não tem acesso a este recurso."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtId, IIf(txtNFiscal = "", "ordem de faturamento", "nota fiscal"), "dados adicionais", "excluir estes", False, True) = False Then Exit Sub
+If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtid, IIf(txtNFiscal = "", "ordem de faturamento", "nota fiscal"), "dados adicionais", "excluir estes", False, True) = False Then Exit Sub
 
-FunVerifAlteracaoNF txtId, False, OptServico
+FunVerifAlteracaoNF txtid, False, optServico
 If Permitido1 = False Or Permitido = False Then
     USMsgBox ("Não é permitido excluir, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
 If USMsgBox("Deseja realmente excluir os dados adicionais desta nota?", vbYesNo, "CAPRIND v5.0") = vbYes Then
-    Conexao.Execute "DELETE FROM tbl_DadosAdicionais WHERE id_nota = " & txtId.Text
+    Conexao.Execute "DELETE FROM tbl_DadosAdicionais WHERE id_nota = " & txtid.Text
     '==================================
     Modulo = Formulario
     Evento = "Excluir dados adicionais"
-    ID_documento = txtId
+    ID_documento = txtid
     ProcVerificaTipoNF False
-    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
     Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
     Documento1 = ""
     ProcGravaEvento
@@ -14690,24 +14630,24 @@ End Sub
 Private Sub ProcProximo()
 On Error GoTo tratar_erro
 
-If txtId = "" Then Exit Sub
+If txtid = "" Then Exit Sub
 Set TBLISTA = CreateObject("adodb.recordset")
 If Faturamento_NF_Saida = True Then TextoFiltro = "Aplicacao = 'P'" Else TextoFiltro = "Aplicacao = 'T'"
-TBLISTA.Open "Select * from tbl_Dados_Nota_Fiscal where " & TextoFiltro & " and ID_empresa = " & IDEmpresa & " order by dt_DataEmissao, id", Conexao, adOpenKeyset, adLockOptimistic
+TBLISTA.Open "Select * from tbl_Dados_Nota_Fiscal where " & TextoFiltro & " and ID_empresa = " & IDempresa & " order by dt_DataEmissao, id", Conexao, adOpenKeyset, adLockOptimistic
 If TBLISTA.BOF = False Then
-    TBLISTA.Find ("ID = " & txtId)
+    TBLISTA.Find ("ID = " & txtid)
     TBLISTA.MoveNext
     If TBLISTA.EOF = False Then
-        txtId = TBLISTA!ID
-        ProcCarregaDadosNota IIf(txtId = "", 0, txtId)
+        txtid = TBLISTA!ID
+        ProcCarregaDadosNota IIf(txtid = "", 0, txtid)
         txtCod_Produto.Text = ""
         ProcLimpaCamposProd
-        ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+        ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
         ProcCarregaLista
         txtcodServ.Text = ""
         ProcLimpaCamposServicos
         ProcCarregaListaServicos
-        ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+        ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
         Txt_ID_duplicata = 0
         'ProcLimpaCamposDuplicata
         ProcCarregaDuplicatas
@@ -14730,7 +14670,7 @@ Sub ProcCarregaDadosTransporte()
 On Error GoTo tratar_erro
 
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "Select * from tbl_dados_transp where id_nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir.Open "Select * from tbl_dados_transp where id_nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.EOF = False Then
     Select Case TBAbrir!Tipo_transp
         Case "C": Cmb_tipo_transp = "Cliente"
@@ -14829,14 +14769,14 @@ If Excluir = False Then
     Exit Sub
 End If
 
-If OptServico.Value = True Then
+If optServico.Value = True Then
     ProcExcluirDuplicatas1
     Exit Sub
 End If
 
-If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtId, IIf(txtNFiscal = "", "ordem de faturamento", "nota fiscal"), "duplicata(s)", "excluir esta(s)", False, True) = False Then Exit Sub
+If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtid, IIf(txtNFiscal = "", "ordem de faturamento", "nota fiscal"), "duplicata(s)", "excluir esta(s)", False, True) = False Then Exit Sub
 
-FunVerifAlteracaoNF txtId, True, OptServico
+FunVerifAlteracaoNF txtid, True, optServico
 If Permitido1 = False Then
     If Permitido = True Then
         USMsgBox ("Não é permitido excluir, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
@@ -14868,28 +14808,28 @@ If lst_Duplicata.ListItems.Count = 0 Then
     'usMsgbox ("Não existe nenhuma duplicata nesta " & NomeCampo & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-If lst_Duplicata.ListItems.Count <> 0 Then If VerificaContaBaixada(txtId, "excluir", True) = True Then Exit Sub
+If lst_Duplicata.ListItems.Count <> 0 Then If VerificaContaBaixada(txtid, "excluir", True) = True Then Exit Sub
 If USMsgBox("Deseja realmente excluir a(s) duplicata(s) desta nota?", vbYesNo, "CAPRIND v5.0") = vbYes Then
-    ProcExcluirArquivosRemessa txtId
-    Conexao.Execute "DELETE FROM tbl_Detalhes_Recebimento WHERE id_nota = " & txtId.Text
-    Conexao.Execute "DELETE FROM tbl_Detalhes_Recebimento_Nboletos WHERE id_nota = " & txtId.Text
-    ProcExcluirContas txtId, opt_Saida, txttipocliente
-    Conexao.Execute "Update tbl_Totais_Nota Set Valor_total_receber_pagar = 0 where ID_nota = " & txtId
-    Conexao.Execute "DELETE FROM CC_realizado where id_duplicata = " & txtId.Text
+    ProcExcluirArquivosRemessa txtid
+    Conexao.Execute "DELETE FROM tbl_Detalhes_Recebimento WHERE id_nota = " & txtid.Text
+    Conexao.Execute "DELETE FROM tbl_Detalhes_Recebimento_Nboletos WHERE id_nota = " & txtid.Text
+    ProcExcluirContas txtid, opt_Saida, txttipocliente
+    Conexao.Execute "Update tbl_Totais_Nota Set Valor_total_receber_pagar = 0 where ID_nota = " & txtid
+    Conexao.Execute "DELETE FROM CC_realizado where id_duplicata = " & txtid.Text
     If opt_Saida.Value = True Then ProcExcluirImpostoPagar
     USMsgBox ("Duplicata(s) excluída(s) com sucesso."), vbInformation, "CAPRIND v5.0"
     '==================================
     Modulo = Formulario
     Evento = "Excluir duplicata(s)"
-    ID_documento = txtId
+    ID_documento = txtid
     ProcVerificaTipoNF False
-    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
     Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
     Documento1 = ""
     ProcGravaEvento
     '==================================
     'ProcLimpaCamposDuplicata
-    ProcCarregaListaDuplicatas IIf(txtId = "", 0, txtId)
+    ProcCarregaListaDuplicatas IIf(txtid = "", 0, txtid)
     Sit_REG = 0
     Novo_Nota3 = False
     
@@ -14987,7 +14927,7 @@ If Excluir = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " voce não tem acesso a este recurso.")
     Exit Sub
 End If
-FunVerifAlteracaoNF txtId, True, OptServico
+FunVerifAlteracaoNF txtid, True, optServico
 If Permitido1 = False Or Permitido = False Then
     USMsgBox ("Não é permitido excluir, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
@@ -15008,7 +14948,7 @@ With ListaServicos
                 Evento = "Excluir serviço"
                 ID_documento = .ListItems(InitFor)
                 ProcVerificaTipoNF False
-                If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+                If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
                 Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
                 Documento1 = "Cód. interno: " & TBFI!int_Cod_Produto
                 ProcGravaEvento
@@ -15043,9 +14983,9 @@ Else
     txtcodServ.Text = ""
     ProcLimpaCamposServicos
     ProcCarregaListaServicos
-    If NF_alterada = True Then ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+    If NF_alterada = True Then ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
     ProcGravarTotaisNota
-    ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+    ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
     ProcCarregaListaNota (IIf(ReturnNumbersOnly(Left(lblPaginas(1).Caption, Len(lblPaginas(1).Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas(1).Caption, Len(lblPaginas(1).Caption) - 5))))
     Novo_Nota2 = False
     Frame1(12).Enabled = False
@@ -15066,7 +15006,7 @@ If Excluir = False Then
     Exit Sub
 End If
 If txtNFiscal = "" Then Familiatext = "a ordem de faturamento" Else Familiatext = "a nota fiscal"
-If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtId, "ordem de faturamento", "transportadora", "excluir esta", False, True) = False Then Exit Sub
+If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtid, "ordem de faturamento", "transportadora", "excluir esta", False, True) = False Then Exit Sub
 
 Permitido1 = True
 If NF_cancelada = True Then
@@ -15095,14 +15035,14 @@ Prosseguir:
             ProcVerificaAcao
             Exit Sub
         End If
-        Conexao.Execute "DELETE FROM tbl_Dados_Transp WHERE id_nota =" & txtId.Text
+        Conexao.Execute "DELETE FROM tbl_Dados_Transp WHERE id_nota =" & txtid.Text
         USMsgBox ("Transportadora excluída com sucesso."), vbInformation, "CAPRIND v5.0"
         '==================================
         Modulo = Formulario
         Evento = "Excluir transportadora"
         ID_documento = txtidinttransp
         ProcVerificaTipoNF False
-        If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+        If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
         Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
         Documento1 = ""
         ProcGravaEvento
@@ -15166,7 +15106,7 @@ Dim ParTot As String 'Total de parcelas
 '========================================
 ' Se não tiver nota selecionada não gera
 '========================================
-  ID_nota = txtId.Text
+  ID_nota = txtid.Text
 
   If ID_nota = 0 Then
   Exit Sub
@@ -15174,7 +15114,7 @@ Dim ParTot As String 'Total de parcelas
 '==================================================
 ' Verifica se teve alteração na nota
 '==================================================
-  FunVerifAlteracaoNF ID_nota, True, OptServico
+  FunVerifAlteracaoNF ID_nota, True, optServico
   
 '  If Permitido1 = False Then
 '  USMsgBox ("Não é permitido gerar duplicatas, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
@@ -15185,7 +15125,7 @@ Dim ParTot As String 'Total de parcelas
 '==============================================
   If opt_Saida.Value = True Then
       Set TBAbrir = CreateObject("adodb.recordset")
-      TBAbrir.Open "Select CFOP.IDCountCfop from tbl_Detalhes_Nota NFP INNER JOIN tbl_NaturezaOperacao CFOP ON CFOP.IDCountCfop = NFP.ID_CFOP where NFP.ID_nota = " & txtId & " and (CFOP.Vendas = 'True' or CFOP.MaoObra = 'True' or CFOP.Devolucao = 'True' or CFOP.Remessa = 'True')", Conexao, adOpenKeyset, adLockOptimistic
+      TBAbrir.Open "Select CFOP.IDCountCfop from tbl_Detalhes_Nota NFP INNER JOIN tbl_NaturezaOperacao CFOP ON CFOP.IDCountCfop = NFP.ID_CFOP where NFP.ID_nota = " & txtid & " and (CFOP.Vendas = 'True' or CFOP.MaoObra = 'True' or CFOP.Devolucao = 'True' or CFOP.Remessa = 'True')", Conexao, adOpenKeyset, adLockOptimistic
       If TBAbrir.EOF = True Then
           USMsgBox ("Não é permitido gerar duplicatas, pois a CFOP não permite."), vbExclamation, "CAPRIND v5.0"
           TBAbrir.Close
@@ -15371,7 +15311,7 @@ ValorDuplicata = Format(ValorFatura / Parcelas, "###,##0.00")
 ' Verifica se vai enviar duplicatas para o financeiro
 '=====================================================
   If txtNFiscal <> "" And txtDtValidacao <> "" Then
-   If USMsgBox("Deseja enviar a(s) duplicata(s) para o financeiro agora?", vbYesNo, "CAPRIND v5.0") = vbYes Then ProcEnviarDupFinanceiro IIf(txtId = "", 0, txtId), True
+   If USMsgBox("Deseja enviar a(s) duplicata(s) para o financeiro agora?", vbYesNo, "CAPRIND v5.0") = vbYes Then ProcEnviarDupFinanceiro IIf(txtid = "", 0, txtid), True
   End If
 '=====================================================
 ' Se já existir duplicatas
@@ -15475,31 +15415,31 @@ On Error GoTo tratar_erro
 
 DestacaImpostos = "NÃO"
 Set TBFI = CreateObject("adodb.recordset")
-TBFI.Open "Select CFOP.* from tbl_Detalhes_Nota NFP INNER JOIN tbl_NaturezaOperacao CFOP ON CFOP.IDCountCfop = NFP.ID_CFOP where NFP.ID_nota = " & txtId & " and CFOP.Retem = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+TBFI.Open "Select CFOP.* from tbl_Detalhes_Nota NFP INNER JOIN tbl_NaturezaOperacao CFOP ON CFOP.IDCountCfop = NFP.ID_CFOP where NFP.ID_nota = " & txtid & " and CFOP.Retem = 'True'", Conexao, adOpenKeyset, adLockOptimistic
 If TBFI.EOF = False Then
     DestacaImpostos = "SIM"
 End If
 
 Set TBFI = CreateObject("adodb.recordset")
-TBFI.Open "Select * from Empresa where Codigo = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+TBFI.Open "Select * from Empresa where Codigo = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
 If TBFI.EOF = False Then
     If TBFI!Simples = True Then Regime = 1
     If TBFI!Presumido = True Then Regime = 2
     If TBFI!Real = True Then Regime = 3
     If TBFI!Simples1 = True Then Regime = 4
     Set TBAbrir = CreateObject("adodb.recordset")
-    TBAbrir.Open "Select * from Impostos where Regime = " & Regime & " and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+    TBAbrir.Open "Select * from Impostos where Regime = " & Regime & " and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir.EOF = False Then
         If valor > TBAbrir!Acima And TBAbrir!Acima > 0 And DestacaImpostos = "SIM" Then
             Set TBTotaisnota = CreateObject("adodb.recordset")
-            TBTotaisnota.Open "Select * from tbl_totais_nota where id_Nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+            TBTotaisnota.Open "Select * from tbl_totais_nota where id_Nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
             If TBTotaisnota.EOF = False Then
                 ValorTotal = Format(valor - (IIf(IsNull(TBTotaisnota!Total_PIS_serv) = False, TBTotaisnota!Total_PIS_serv, 0) + IIf(IsNull(TBTotaisnota!Total_Cofins_serv) = False, TBTotaisnota!Total_Cofins_serv, 0) + IIf(IsNull(TBTotaisnota!Total_CSLL_serv) = False, TBTotaisnota!Total_CSLL_serv, 0) + IIf(IsNull(TBTotaisnota!Total_INSS_serv) = False, TBTotaisnota!Total_INSS_serv, 0) + IIf(IsNull(TBTotaisnota!Total_IRRF_serv) = False, TBTotaisnota!Total_IRRF_serv, 0)), "###,##0.00")
             End If
             TBTotaisnota.Close
         ElseIf valor >= 667 And valor <= 5000 And DestacaImpostos = "SIM" Then
                 Set TBTotaisnota = CreateObject("adodb.recordset")
-                TBTotaisnota.Open "Select * from tbl_totais_nota where id_Nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+                TBTotaisnota.Open "Select * from tbl_totais_nota where id_Nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
                 If TBTotaisnota.EOF = False Then
                     ValorTotal = valor - IIf(IsNull(TBTotaisnota!Total_IRRF_serv), 0, TBTotaisnota!Total_IRRF_serv)
                 End If
@@ -15546,7 +15486,7 @@ On Error GoTo tratar_erro
 ' Busca dados adicionais da CFOP e coloca na caixa de texto
 '======================================================================================
  Set TBAliquota = CreateObject("adodb.recordset")
- StrSql = "Select NOP.txt_dados_adicionais from tbl_NaturezaOperacao NOP Inner Join tbl_Detalhes_Nota DN on  NOP.IDCountCfop = DN.ID_CFOP Where DN.ID_Nota = '" & txtId.Text & "'"
+ StrSql = "Select NOP.txt_dados_adicionais from tbl_NaturezaOperacao NOP Inner Join tbl_Detalhes_Nota DN on  NOP.IDCountCfop = DN.ID_CFOP Where DN.ID_Nota = '" & txtid.Text & "'"
  TBAliquota.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
  
  If TBAliquota.EOF = False Then
@@ -15654,7 +15594,7 @@ TextoDados = Replace(txtDados_DadosAdicionais, Left("@NfAliqICMSSN", 13), txtICM
 ' Valor aproximado dos tributos
 '=================================================================================================
 Set TBAbrir = CreateObject("adodb.recordset")
-   TBAbrir.Open "Select * from tbl_Totais_Nota where ID_nota = " & txtId & "", Conexao, adOpenKeyset, adLockOptimistic
+   TBAbrir.Open "Select * from tbl_Totais_Nota where ID_nota = " & txtid & "", Conexao, adOpenKeyset, adLockOptimistic
    If TBAbrir.EOF = False Then
    valorDAS = TBAbrir!Total_DAS
    Else
@@ -15676,7 +15616,7 @@ Else
 'Lucro presumido e lucro real
 
 Set TBAbrir = CreateObject("adodb.recordset")
-   TBAbrir.Open "Select * from tbl_Totais_Nota where ID_nota = " & txtId & "", Conexao, adOpenKeyset, adLockOptimistic
+   TBAbrir.Open "Select * from tbl_Totais_Nota where ID_nota = " & txtid & "", Conexao, adOpenKeyset, adLockOptimistic
    If TBAbrir.EOF = False And TBAbrir!dbl_Valor_ICMS <> 0 Then
 
    AliquotaICMS = (TBAbrir!dbl_Valor_ICMS / TBAbrir!dbl_Base_ICMS) * 100
@@ -15720,7 +15660,7 @@ If Alterar = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " você não tem acesso a este recurso."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-FunVerifAlteracaoNF txtId, False, OptServico
+FunVerifAlteracaoNF txtid, False, optServico
 If Permitido1 = False Or Permitido = False Then
     USMsgBox ("Não é permitido salvar, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
@@ -15729,16 +15669,16 @@ End If
 If txtDados_DadosAdicionais <> "" Then
 
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "Select * from tbl_dadosadicionais where id_nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir.Open "Select * from tbl_dadosadicionais where id_nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.EOF = True Then
     TBAbrir.AddNew
    ' USMsgBox ("Novos dados adicionais cadastrados com sucesso."), vbInformation, "CAPRIND v5.0"
     '==================================
     Modulo = Formulario
     Evento = "Novo dados adicionais"
-    ID_documento = txtId
+    ID_documento = txtid
     ProcVerificaTipoNF False
-    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
     Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
     Documento1 = ""
     ProcGravaEvento
@@ -15751,9 +15691,9 @@ Else
     '==================================
     Modulo = Formulario
     Evento = "Alterar dados adicionais"
-    ID_documento = txtId
+    ID_documento = txtid
     ProcVerificaTipoNF False
-    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
     Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
     Documento1 = ""
     ProcGravaEvento
@@ -15761,7 +15701,7 @@ Else
 End If
 
 TBAbrir!IDNotaFiscal = IIf(txtNFiscal = "", Null, txtNFiscal)
-TBAbrir!ID_nota = txtId.Text
+TBAbrir!ID_nota = txtid.Text
 TBAbrir!mem_corpo = Trim(txtDados_Corpo)
 TBAbrir!mem_DadosAdicionais = Trim(txtDados_DadosAdicionais.Text)
 txtDados_DadosAdicionais.MaxLength = 0
@@ -15780,7 +15720,7 @@ Sub ProcEnviarDupFinanceiro(ID_nota As Long, MostrarMsg As Boolean)
 On Error GoTo tratar_erro
 
 If IsNumeric(txtIDEmpresa.Text) Then
-IDEmpresa = txtIDEmpresa
+IDempresa = txtIDEmpresa
 End If
 
 If Alterar = False Then
@@ -15891,7 +15831,7 @@ Else
         Documento1 = ""
         ProcGravaEvento
         '==================================
-        ProcCarregaListaDuplicatas IIf(txtId = "", 0, txtId)
+        ProcCarregaListaDuplicatas IIf(txtid = "", 0, txtid)
         
         'If usMsgbox("Essa(s) conta(s) já foi(ram) vinculada(s) com as contas criadas através do(s) pedido(s). Deseja criar novas contas?", vbyesno, "CAPRIND v5.0") = vbNo Then
             'Novo_Nota3 = False
@@ -15995,7 +15935,7 @@ CriarCR:
                         
                         'Insere dados na tabela contas a receber
                         Set TBReceber = CreateObject("adodb.recordset")
-                        TBReceber.Open "Select * from tbl_contas_receber where id_nota = " & ID_nota & " and parcela = '" & lst_Duplicata.ListItems(InitFor).ListSubItems(2) & "' and ID_empresa = " & IDEmpresa & " and status = 'TÍTULO EM ABERTO' order by vencimento", Conexao, adOpenKeyset, adLockOptimistic
+                        TBReceber.Open "Select * from tbl_contas_receber where id_nota = " & ID_nota & " and parcela = '" & lst_Duplicata.ListItems(InitFor).ListSubItems(2) & "' and ID_empresa = " & IDempresa & " and status = 'TÍTULO EM ABERTO' order by vencimento", Conexao, adOpenKeyset, adLockOptimistic
                         If TBReceber.EOF = True Then
                             TBReceber.AddNew
                             TBReceber!Parcial = False
@@ -16036,7 +15976,7 @@ CriarCR:
                         TBReceber!ValorExtenso = FunValorExtenso(TBReceber!valor)
                         TBReceber!Vencimento = lst_Duplicata.ListItems(InitFor)
                         TBReceber!Parcela = lst_Duplicata.ListItems(InitFor).ListSubItems(2)
-                        TBReceber!ID_empresa = IDEmpresa
+                        TBReceber!ID_empresa = IDempresa
                         TBReceber!Tipo = "CL"
                         
                         'Grava número do documento conf. boleto e salva campo obs
@@ -16065,7 +16005,7 @@ CriarCR:
                         TBFluxo!status = "N"
                         TBFluxo!int_NotaFiscal = TBReceber!NFiscal
                         TBFluxo!Instituicao = TBReceber!Banco
-                        TBFluxo!ID_empresa = IDEmpresa
+                        TBFluxo!ID_empresa = IDempresa
                         TBFluxo!Bloqueado = False
                         TBFluxo.Update
                         Conexao.Execute "Update tbl_contas_receber Set IDFluxo = " & TBFluxo!IDFluxo & " where IdIntConta = " & TBReceber!IDintconta
@@ -16076,7 +16016,7 @@ CriarCR:
                         valor = IIf(txt_vlrtotalprod <> "", txt_vlrtotalprod.Text, 0)
                         
                         Set TBLISTA = CreateObject("adodb.recordset")
-                        TBLISTA.Open "SELECT P.ID_CC, SUM(ISNULL(NFP.dbl_ValorTotal, 0)) as ValorTotal from (tbl_Detalhes_Nota NFP INNER JOIN tbl_NaturezaOperacao NP ON NP.IDCountCfop = NFP.ID_CFOP) INNER JOIN Projproduto P ON P.Desenho = NFP.int_Cod_Produto where NFP.ID_nota = " & txtId & " and NP.CreditaCentroCusto = 'True' and P.ID_CC IS NOT NULL and P.ID_CC <> 0 group by P.ID_CC HAVING SUM(ISNULL(NFP.dbl_ValorTotal, 0)) > 0", Conexao, adOpenKeyset, adLockOptimistic
+                        TBLISTA.Open "SELECT P.ID_CC, SUM(ISNULL(NFP.dbl_ValorTotal, 0)) as ValorTotal from (tbl_Detalhes_Nota NFP INNER JOIN tbl_NaturezaOperacao NP ON NP.IDCountCfop = NFP.ID_CFOP) INNER JOIN Projproduto P ON P.Desenho = NFP.int_Cod_Produto where NFP.ID_nota = " & txtid & " and NP.CreditaCentroCusto = 'True' and P.ID_CC IS NOT NULL and P.ID_CC <> 0 group by P.ID_CC HAVING SUM(ISNULL(NFP.dbl_ValorTotal, 0)) > 0", Conexao, adOpenKeyset, adLockOptimistic
                         If TBLISTA.EOF = False Then
                             Do While TBLISTA.EOF = False
                                 qt = (TBLISTA!ValorTotal / valor) * 100
@@ -16166,7 +16106,7 @@ CriarCP:
                         
                         'Insere dados na tabela contas a pagar
                         Set TBReceber = CreateObject("adodb.recordset")
-                        TBReceber.Open "Select * from tbl_contaspagar where id_nota = " & ID_nota & " and txt_parcela = '" & lst_Duplicata.ListItems(InitFor).ListSubItems(2) & "' and ID_empresa = " & IDEmpresa & " and status = 'TÍTULO EM ABERTO' and Despesas_NF = 'False' order by dt_pagamento", Conexao, adOpenKeyset, adLockOptimistic
+                        TBReceber.Open "Select * from tbl_contaspagar where id_nota = " & ID_nota & " and txt_parcela = '" & lst_Duplicata.ListItems(InitFor).ListSubItems(2) & "' and ID_empresa = " & IDempresa & " and status = 'TÍTULO EM ABERTO' and Despesas_NF = 'False' order by dt_pagamento", Conexao, adOpenKeyset, adLockOptimistic
                         If TBReceber.EOF = True Then
                             TBReceber.AddNew
                             TBReceber!Parcial = False
@@ -16205,7 +16145,7 @@ CriarCP:
                         
                         TBReceber!txt_Parcela = lst_Duplicata.ListItems(InitFor).ListSubItems(2)
                         TBReceber!Txt_fornecedor = txt_Razao
-                        TBReceber!ID_empresa = IDEmpresa
+                        TBReceber!ID_empresa = IDempresa
                         TBReceber!Tipo = "FO"
                         
                         'Salva Obs
@@ -16221,7 +16161,7 @@ CriarCP:
                         
                         'Fluxo de Caixa
                         Set TBFluxo = CreateObject("adodb.recordset")
-                        TBFluxo.Open "Select * from tbl_Fluxo_de_caixa where IDFluxo = " & IIf(IsNull(TBReceber!IDFluxo), 0, TBReceber!IDFluxo) & " and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+                        TBFluxo.Open "Select * from tbl_Fluxo_de_caixa where IDFluxo = " & IIf(IsNull(TBReceber!IDFluxo), 0, TBReceber!IDFluxo) & " and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
                         If TBFluxo.EOF = True Then TBFluxo.AddNew
                         TBFluxo!IDintconta = TBReceber!IDintconta
                         TBFluxo!Operacao = "À Debitar"
@@ -16231,7 +16171,7 @@ CriarCP:
                         TBFluxo!status = "N"
                         TBFluxo!int_NotaFiscal = TBReceber!txt_ndocumento
                         TBFluxo!Instituicao = TBReceber!Banco
-                        TBFluxo!ID_empresa = IDEmpresa
+                        TBFluxo!ID_empresa = IDempresa
                         TBFluxo!Bloqueado = False
                         TBFluxo.Update
                         Conexao.Execute "Update tbl_contaspagar Set IDFluxo = " & TBFluxo!IDFluxo & " where IdIntConta = " & TBReceber!IDintconta
@@ -16260,7 +16200,7 @@ ProcGravaEvento
 '==================================
 Novo_Nota3 = False
 If NFDevolucao = "Sim" Then USMsgBox ("Essa é uma nota de devolução, não se esqueça de revisar a(s) conta(s) contábil(eis)."), vbInformation, "CAPRIND v5.0"
-ProcCarregaListaDuplicatas IIf(txtId = "", 0, txtId)
+ProcCarregaListaDuplicatas IIf(txtid = "", 0, txtid)
 
 Exit Sub
 tratar_erro:
@@ -16296,7 +16236,7 @@ QuantsolicitadoN2 = 0
 ValorICMS = 0
 
 Set TBTotaisnota = CreateObject("adodb.recordset")
-TBTotaisnota.Open "Select * from tbl_Totais_Nota where id_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBTotaisnota.Open "Select * from tbl_Totais_Nota where id_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
 If TBTotaisnota.EOF = False Then
     Valor_Retencao_PIS = IIf(IsNull(TBTotaisnota!Total_retencao_PIS), 0, TBTotaisnota!Total_retencao_PIS)
     Valor_Retencao_Cofins = IIf(IsNull(TBTotaisnota!Total_retencao_Cofins), 0, TBTotaisnota!Total_retencao_Cofins)
@@ -16307,7 +16247,7 @@ ProcSomaRetencaoServicos
 'Verifica produtos de remessa
 qt = 0
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select Sum(dbl_ValorTotal) as qt from tbl_Detalhes_Nota where id_nota = " & txtId.Text & " and Tipo = 'P' and Remessa = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select Sum(dbl_ValorTotal) as qt from tbl_Detalhes_Nota where id_nota = " & txtid.Text & " and Tipo = 'P' and Remessa = 'True'", Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     qt = IIf(IsNull(TBProduto!qt), 0, TBProduto!qt)
 End If
@@ -16315,7 +16255,7 @@ End If
 'Verifica produtos de retorno que somam o valor no total da nota
 VlrTotalRetorno = 0
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select Sum(dbl_ValorTotal) as VlrTotalRetorno from tbl_Detalhes_Nota where id_nota = " & txtId.Text & " and Tipo = 'P' and Retorno = 'True' and Soma_retorno_totalnf = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select Sum(dbl_ValorTotal) as VlrTotalRetorno from tbl_Detalhes_Nota where id_nota = " & txtid.Text & " and Tipo = 'P' and Retorno = 'True' and Soma_retorno_totalnf = 'True'", Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     VlrTotalRetorno = IIf(IsNull(TBProduto!VlrTotalRetorno), 0, TBProduto!VlrTotalRetorno)
 End If
@@ -16339,7 +16279,7 @@ End If
 ValorTotal = Format(ValorTotal - VlrTotalRetorno - qt, "###,##0.00")
 
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "select NFP.*, P.Compras, P.Vendas from tbl_Detalhes_Nota NFP INNER JOIN projproduto P ON NFP.int_Cod_Produto = P.Desenho where NFP.ID_Nota = " & txtId & " and NFP.Retorno = 'False' and NFP.Remessa = 'False'", Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "select NFP.*, P.Compras, P.Vendas from tbl_Detalhes_Nota NFP INNER JOIN projproduto P ON NFP.int_Cod_Produto = P.Desenho where NFP.ID_Nota = " & txtid & " and NFP.Retorno = 'False' and NFP.Remessa = 'False'", Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     Do While TBProduto.EOF = False
         If TBProduto!Tipo = "P" Then
@@ -16407,7 +16347,7 @@ If TBProduto.EOF = False Then
             If TBFamilia!ID_PC <> "" Then
                 'Verifica a porcentagem representada pelo valor da duplicata
                 Permitido = False
-                StrSql = "Select CFOP.* from tbl_Detalhes_Nota NFP INNER JOIN tbl_NaturezaOperacao CFOP ON CFOP.IDCountCfop = NFP.ID_CFOP where NFP.ID_nota = " & txtId & " and CFOP.Devolucao = 'True'"
+                StrSql = "Select CFOP.* from tbl_Detalhes_Nota NFP INNER JOIN tbl_NaturezaOperacao CFOP ON CFOP.IDCountCfop = NFP.ID_CFOP where NFP.ID_nota = " & txtid & " and CFOP.Devolucao = 'True'"
                 'Debug.print StrSql
                 
                 Set TBAbrir = CreateObject("adodb.recordset")
@@ -16443,7 +16383,7 @@ If TBProduto.EOF = False Then
                 If TBCiclo.EOF = True Then TBCiclo.AddNew
                 TBCiclo!ID_PC = TBFamilia!ID_PC
                 TBCiclo!IDConta = TBReceber!IDintconta
-                TBCiclo!IDNota = txtId
+                TBCiclo!IDnota = txtid
                 
                 If TBProduto!Tipo = "P" Then
                     Qtde = (TBProduto!dbl_ValorTotal + IIf(IsNull(TBProduto!dbl_valoripi), 0, TBProduto!dbl_valoripi) + Frete + Seguro + Acessorias + ValorICMS) - (IIf(IsNull(TBProduto!Valor_Retencao_PIS), 0, TBProduto!Valor_Retencao_PIS) + IIf(IsNull(TBProduto!Valor_Retencao_Cofins), 0, TBProduto!Valor_Retencao_Cofins) + QuantsolicitadoN2)
@@ -16491,7 +16431,7 @@ If Alterar = False Then
     Exit Sub
 End If
 If txtNFiscal = "" Then Familiatext = "ordem de faturamento" Else Familiatext = "nota fiscal"
-If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtId, Familiatext, "a transportadora", "alterar", False, True) = False Then Exit Sub
+If FunVerificaRegistroValidado("tbl_Dados_Nota_Fiscal", "ID = " & txtid, Familiatext, "a transportadora", "alterar", False, True) = False Then Exit Sub
 
 Permitido1 = True
 If NF_cancelada = True Then
@@ -16592,7 +16532,7 @@ Prosseguir:
     End If
     
     Set TBProduto = CreateObject("adodb.recordset")
-    TBProduto.Open "Select * from tbl_dados_transp Where id_nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBProduto.Open "Select * from tbl_dados_transp Where id_nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
     If TBProduto.EOF = True Then
         TBProduto.AddNew
         USMsgBox ("Novos dados de transporte cadastrados com sucesso."), vbInformation, "CAPRIND v5.0"
@@ -16604,7 +16544,7 @@ Prosseguir:
         USMsgBox ("Alteração efetuada com sucesso."), vbInformation, "CAPRIND v5.0"
         Evento = "Alterar dados de transporte"
     End If
-    TBProduto!ID_nota = txtId.Text
+    TBProduto!ID_nota = txtid.Text
     If Cmb_tipo_transp <> "" Then
     Select Case Cmb_tipo_transp
         Case "Cliente": TipoTransp = "C"
@@ -16650,7 +16590,7 @@ Prosseguir:
     Modulo = Formulario
     ID_documento = TBProduto!ID
     ProcVerificaTipoNF False
-    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+    If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
     Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
     If TxtTransp_nome <> "" Then Documento1 = "Transportadora: " & TxtTransp_nome Else Documento1 = ""
     ProcGravaEvento
@@ -16743,7 +16683,7 @@ Select Case SSFaturamento.Tab
     Case 6:
         Select Case KeyCode
             Case vbKeyInsert: ProcGerarDuplicatas
-            Case vbKeyF3: ProcEnviarDupFinanceiro IIf(txtId = "", 0, txtId), True
+            Case vbKeyF3: ProcEnviarDupFinanceiro IIf(txtid = "", 0, txtid), True
             Case vbKeyF4: ProcExcluirDuplicatas
             Case vbKeyF5: ProcImprimirDuplicatas
             Case vbKeyF7: ProcPlanoContas
@@ -16764,7 +16704,7 @@ Private Sub ProcAlterar()
 On Error GoTo tratar_erro
 
 If FunVerifValidacaoRegistro("salvar", txtDtValidacao, IIf(txtNFiscal = "", "ordem de faturamento", "nota fiscal"), "alterações dos valores", False) = False Then Exit Sub
-FunVerifAlteracaoNF txtId, True, OptServico
+FunVerifAlteracaoNF txtid, True, optServico
 'If Permitido1 = False Or Permitido = False Then
 '    USMsgBox ("Não é permitido alterar os valores, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
 '    Exit Sub
@@ -16772,11 +16712,11 @@ FunVerifAlteracaoNF txtId, True, OptServico
 If txtNFiscal = "" Then NomeCampo = "ordem de faturamento" Else NomeCampo = "nota fiscal"
 If USMsgBox("Esta é uma " & NomeCampo & " de ajuste, complementar ou importação?", vbYesNo, "CAPRIND v5.0") = vbYes Then
     NF_alterada = True
-    Conexao.Execute "Update tbl_Dados_Nota_Fiscal Set Alterar = 'True' where id = " & txtId
+    Conexao.Execute "Update tbl_Dados_Nota_Fiscal Set Alterar = 'True' where id = " & txtid
     Set TBTotaisnota = CreateObject("adodb.recordset")
-    TBTotaisnota.Open "Select * from tbl_totais_nota where id_Nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBTotaisnota.Open "Select * from tbl_totais_nota where id_Nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
     If TBTotaisnota.EOF = True Then TBTotaisnota.AddNew
-    TBTotaisnota!ID_nota = txtId
+    TBTotaisnota!ID_nota = txtid
     TBTotaisnota!dbl_Base_ICMS = IIf(txt_BaseICMS = "", 0, txt_BaseICMS)
     TBTotaisnota!dbl_Valor_ICMS = IIf(txt_vlrICMS = "", 0, txt_vlrICMS)
     TBTotaisnota!dbl_Base_ICMS_Subst = IIf(txt_baseICMSs = "", 0, txt_baseICMSs)
@@ -16793,13 +16733,13 @@ If USMsgBox("Esta é uma " & NomeCampo & " de ajuste, complementar ou importação?
     TBTotaisnota.Update
     TBTotaisnota.Close
     'ProcCarregaLista
-    ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+    ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
     'ProcCarregaLista 'Obrigatório para recarregar a lista depois de calculado
 Else
     NF_alterada = False
     If IIf(txt_VlrFrete = "", 0, txt_VlrFrete) > 0 Then
         If USMsgBox("O valor do frete tem IPI?", vbYesNo, "CAPRIND v5.0") = vbYes Then TextoFiltro = "Tem_IPI_frete = 'True'" Else TextoFiltro = "Tem_IPI_frete = 'False'"
-        Conexao.Execute "UPDATE tbl_Detalhes_Nota Set " & TextoFiltro & " where ID_nota = " & txtId
+        Conexao.Execute "UPDATE tbl_Detalhes_Nota Set " & TextoFiltro & " where ID_nota = " & txtid
     End If
     ValorPago = IIf(txt_VlrFrete = "", 0, txt_VlrFrete) 'Verifica valor do frete
     Seguro1 = IIf(txt_vlrSeguro = "", 0, txt_vlrSeguro) 'Verifica valor de seguro
@@ -16809,7 +16749,7 @@ Else
     'Valor Total de produtos
     VlttTotal = 0
     Set TBProduto = CreateObject("adodb.recordset")
-    TBProduto.Open "select SUM(dbl_ValorTotal) as ValorNF_Frete from tbl_Detalhes_Nota where ID_Nota = " & txtId & " and Retorno = 'False' and Remessa = 'False' and Tipo = 'P'", Conexao, adOpenKeyset, adLockOptimistic
+    TBProduto.Open "select SUM(dbl_ValorTotal) as ValorNF_Frete from tbl_Detalhes_Nota where ID_Nota = " & txtid & " and Retorno = 'False' and Remessa = 'False' and Tipo = 'P'", Conexao, adOpenKeyset, adLockOptimistic
     If TBProduto.EOF = False Then
         VlttTotal = IIf(IsNull(TBProduto!ValorNF_Frete), 0, TBProduto!ValorNF_Frete)
     End If
@@ -16817,7 +16757,7 @@ Else
     'Quantidade de produtos na NF com aliquota de IPI diferente de 0
     ValorTotalPago = 0
     Set TBProduto = CreateObject("adodb.recordset")
-    TBProduto.Open "Select SUM(dbl_ValorTotal) as ValorNF_IPI from tbl_Detalhes_Nota where id_nota = " & txtId.Text & " and int_IPI <> 0 and Retorno = 'False' and Remessa = 'False' and Tipo = 'P'", Conexao, adOpenKeyset, adLockOptimistic
+    TBProduto.Open "Select SUM(dbl_ValorTotal) as ValorNF_IPI from tbl_Detalhes_Nota where id_nota = " & txtid.Text & " and int_IPI <> 0 and Retorno = 'False' and Remessa = 'False' and Tipo = 'P'", Conexao, adOpenKeyset, adLockOptimistic
     If TBProduto.EOF = False Then
         ValorTotalPago = IIf(IsNull(TBProduto!ValorNF_IPI), 0, TBProduto!ValorNF_IPI)
     End If
@@ -16828,7 +16768,7 @@ Else
     Valor2 = 0
     Valor3 = 0
     Set TBProduto = CreateObject("adodb.recordset")
-    TBProduto.Open "Select NFP.*, TN.Total_DAS from tbl_Detalhes_Nota NFP INNER JOIN tbl_Totais_Nota TN ON TN.ID_nota = NFP.ID_nota where NFP.id_nota = " & txtId.Text & " and NFP.Remessa = 'False' and NFP.Retorno = 'False' and NFP.Tipo = 'P' order by NFP.int_codigo", Conexao, adOpenKeyset, adLockOptimistic
+    TBProduto.Open "Select NFP.*, TN.Total_DAS from tbl_Detalhes_Nota NFP INNER JOIN tbl_Totais_Nota TN ON TN.ID_nota = NFP.ID_nota where NFP.id_nota = " & txtid.Text & " and NFP.Remessa = 'False' and NFP.Retorno = 'False' and NFP.Tipo = 'P' order by NFP.int_codigo", Conexao, adOpenKeyset, adLockOptimistic
     If TBProduto.EOF = False Then
         Do While TBProduto.EOF = False
             Frete = 0
@@ -16879,16 +16819,16 @@ Else
     ProcGravarTotaisNota
    End If
    
-    ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+    ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
    
 End If
 USMsgBox ("Alteração dos valores realizada com sucesso."), vbInformation, "CAPRIND v5.0"
 '==================================
 Modulo = Formulario
 Evento = "Alterar valores"
-ID_documento = txtId
+ID_documento = txtid
 ProcVerificaTipoNF False
-If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
 Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
 Documento1 = ""
 ProcGravaEvento
@@ -16904,20 +16844,20 @@ Private Sub ProcCancelar()
 On Error GoTo tratar_erro
 
 If FunVerifValidacaoRegistro("cancelar", txtDtValidacao, IIf(txtNFiscal = "", "ordem de faturamento", "nota fiscal"), "alterações dos valores", False) = False Then Exit Sub
-FunVerifAlteracaoNF txtId, True, OptServico
+FunVerifAlteracaoNF txtid, True, optServico
 If Permitido1 = False Or Permitido = False Then
     USMsgBox ("Não é permitido cancelar a alteração dos valores, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
 
-Conexao.Execute "Update tbl_Dados_Nota_Fiscal Set Alterar = 'False' where id = " & txtId
-Conexao.Execute "Update tbl_Detalhes_Nota Set dbl_ValorIPI = ROUND(dbl_ValorIPI - ((Valor_frete * int_IPI) / 100), 2) where ID_nota = " & txtId & " and Tem_IPI_frete = 'True'"
-Conexao.Execute "Update tbl_Detalhes_Nota Set Valor_frete = 0, Tem_IPI_frete = 'False', Valor_seguro = 0, Valor_acessorias = 0, Valor_desconto = 0 where ID_nota = " & txtId
+Conexao.Execute "Update tbl_Dados_Nota_Fiscal Set Alterar = 'False' where id = " & txtid
+Conexao.Execute "Update tbl_Detalhes_Nota Set dbl_ValorIPI = ROUND(dbl_ValorIPI - ((Valor_frete * int_IPI) / 100), 2) where ID_nota = " & txtid & " and Tem_IPI_frete = 'True'"
+Conexao.Execute "Update tbl_Detalhes_Nota Set Valor_frete = 0, Tem_IPI_frete = 'False', Valor_seguro = 0, Valor_acessorias = 0, Valor_desconto = 0 where ID_nota = " & txtid
 NF_alterada = False
 Cancelar_alt_totais = True
 
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select NFP.*, TN.Total_DAS from tbl_Detalhes_Nota NFP INNER JOIN tbl_Totais_Nota TN ON TN.ID_nota = NFP.ID_nota where NFP.id_nota = " & txtId.Text & " and NFP.Remessa = 'False' and NFP.Retorno = 'False' and NFP.Tipo = 'P' order by NFP.int_codigo", Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select NFP.*, TN.Total_DAS from tbl_Detalhes_Nota NFP INNER JOIN tbl_Totais_Nota TN ON TN.ID_nota = NFP.ID_nota where NFP.id_nota = " & txtid.Text & " and NFP.Remessa = 'False' and NFP.Retorno = 'False' and NFP.Tipo = 'P' order by NFP.int_codigo", Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     Do While TBProduto.EOF = False
         ProcRecalculaImpostos
@@ -16934,14 +16874,14 @@ ProcLimpaCamposTotaisNota
 ProcCarregaLista
 ProcCarregaListaServicos
 ProcGravarTotaisNota
-ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
 USMsgBox ("Cancelamento da alteração dos valores efetuado com sucesso."), vbInformation, "CAPRIND v5.0"
 '==================================
 Modulo = Formulario
 Evento = "Cancelar alteração dos valores"
-ID_documento = txtId
+ID_documento = txtid
 ProcVerificaTipoNF False
-If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
 Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
 Documento1 = ""
 ProcGravaEvento
@@ -16959,7 +16899,7 @@ On Error GoTo tratar_erro
 
 Valor_total = TBProduto!dbl_ValorTotal + IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete) + IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro) + IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)
 
-ProcVerifImpostosEmpresa IDEmpresa, TBProduto!retorno, "", False, 0, False, TabelaSN, Lbl2.Caption
+ProcVerifImpostosEmpresa IDempresa, TBProduto!retorno, "", False, 0, False, TabelaSN, Lbl2.Caption
 
 TBProduto!PIS_Prod = PIS_Prod
 If PIS_Prod <> 0 Then TBProduto!Total_PIS_prod = Format((Valor_total * PIS_Prod) / 100, "###,##0.00") Else TBProduto!Total_PIS_prod = 0
@@ -16972,7 +16912,7 @@ If IRPJ_Prod <> 0 Then TBProduto!Total_IRPJ_prod = Format((Valor_total * IRPJ_Pr
 TBProduto!ICMS_SN = ICMS_SN
 
 Set TBFIltro = CreateObject("adodb.recordset")
-TBFIltro.Open "Select * from tbl_Dados_Nota_Fiscal where ID = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBFIltro.Open "Select * from tbl_Dados_Nota_Fiscal where ID = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
 If TBFIltro.EOF = False Then
     If IsNull(TBProduto!ID_CF) = False Then
         Set TBFI = CreateObject("adodb.recordset")
@@ -17035,16 +16975,16 @@ End Sub
 Private Sub ProcRecalculaICMS()
 On Error GoTo tratar_erro
 
-ProcAtualizaCST IDEmpresa, txtIDcliente, txt_Razao, cbo_UF, IIf(Cmb_consumidor = "", 1, Left(Cmb_consumidor, 1)), IIf(cmbFinalidade_emissao = "", 1, Left(cmbFinalidade_emissao, 1))
+ProcAtualizaCST IDempresa, txtIDcliente, txt_Razao, cbo_UF, IIf(Cmb_consumidor = "", 1, Left(Cmb_consumidor, 1)), IIf(cmbFinalidade_emissao = "", 1, Left(cmbFinalidade_emissao, 1))
 Set TBCFOP = CreateObject("adodb.recordset")
 TBCFOP.Open "Select id_CFOP FROM tbl_NaturezaOperacao WHERE IDCountCfop = " & IIf(IsNull(TBProduto!ID_CFOP), 0, TBProduto!ID_CFOP) & " and (Vendas = 'True' or MaoObra = 'True')", Conexao, adOpenKeyset, adLockOptimistic
 If TBCFOP.EOF = False Then
     PV = IIf(IsNull(TBProduto!dbl_ValorTotal), 0, TBProduto!dbl_ValorTotal)
     PV = (PV - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)) + IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete)
     IntICMS = IIf(IsNull(TBProduto!int_ICMS), 0, TBProduto!int_ICMS)
-    ProcCalculaBC IDEmpresa, TBCFOP!ID_CFOP, 0, PV, IIf(IsNull(TBProduto!dbl_valoripi), 0, TBProduto!dbl_valoripi), SomarIPI, SomarIPIST, TemReducaoBC, IIf(TBProduto!NaoArredondar = True, True, False), IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), Aplicacao, txtIDcliente, txt_Razao
+    ProcCalculaBC IDempresa, TBCFOP!ID_CFOP, 0, PV, IIf(IsNull(TBProduto!dbl_valoripi), 0, TBProduto!dbl_valoripi), SomarIPI, SomarIPIST, TemReducaoBC, IIf(TBProduto!NaoArredondar = True, True, False), IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), Aplicacao, txtIDcliente, txt_Razao
 
-    ProcSubstituicaoTributaria cbo_UF, IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, Format((IIf(IsNull(TBProduto!dbl_ValorTotal), 0, TBProduto!dbl_ValorTotal) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)) / IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), "###,##0.0000000000"), IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), BC, BCST, IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete), IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro), IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias), True, IIf(Left(Cmb_consumidor, 1) = 1, True, False), IDEmpresa
+    ProcSubstituicaoTributaria cbo_UF, IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, Format((IIf(IsNull(TBProduto!dbl_ValorTotal), 0, TBProduto!dbl_ValorTotal) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)) / IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), "###,##0.0000000000"), IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), BC, BCST, IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete), IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro), IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias), True, IIf(Left(Cmb_consumidor, 1) = 1, True, False), IDempresa
 End If
 TBCFOP.Close
 
@@ -17068,7 +17008,7 @@ TBVendas.Open "Select * from " & NomeTabelaFiltro & " where " & TextoFiltro, Con
 If TBVendas.EOF = False Then
     Set TBGravar = CreateObject("adodb.recordset")
     If Pedido_int = True Then TextoFiltro1 = "Proposta = '" & TBVendas!Ncotacao & "' and Revisao = " & TBVendas!Revisao Else TextoFiltro1 = "Proposta = '" & TBVendas!Pedido & "' and Revisao = 0"
-    TBGravar.Open "Select * from tbl_proposta_nota where ID_nota = " & txtId & " and " & TextoFiltro1, Conexao, adOpenKeyset, adLockOptimistic
+    TBGravar.Open "Select * from tbl_proposta_nota where ID_nota = " & txtid & " and " & TextoFiltro1, Conexao, adOpenKeyset, adLockOptimistic
     If TBGravar.EOF = True Then TBGravar.AddNew
     If Pedido_int = True Then
         TBGravar!Proposta = TBVendas!Ncotacao
@@ -17078,7 +17018,7 @@ If TBVendas.EOF = False Then
         TBGravar!Revisao = 0
     End If
     TBGravar!NF = IIf(txtNFiscal = "", Null, txtNFiscal)
-    TBGravar!ID_nota = txtId
+    TBGravar!ID_nota = txtid
     TBGravar.Update
     TBGravar.Close
 End If
@@ -17117,7 +17057,7 @@ If Pedido_int = True Then
                 
             End If
       NovoValor = Replace(valor, ",", ".")
-      TextoFiltro = "where ID_nota = " & txtId & " and int_Cod_Produto = '" & TBLISTA!Desenho & "' and dbl_ValorUnitario = " & NovoValor & " and PCCliente = '" & TBLISTA!PCCliente & "'"
+      TextoFiltro = "where ID_nota = " & txtid & " and int_Cod_Produto = '" & TBLISTA!Desenho & "' and dbl_ValorUnitario = " & NovoValor & " and PCCliente = '" & TBLISTA!PCCliente & "'"
       If IsNull(TBLISTA!N_item) = False And TBLISTA!N_item <> "" Then TextoFiltro = TextoFiltro & " and N_item = '" & TBLISTA!N_item & "'"
       If IsNull(TBLISTA!ID_CF) = False And TBLISTA!ID_CF <> "" Then TextoFiltro = TextoFiltro & " and ID_CF = " & TBLISTA!ID_CF
    Else
@@ -17236,11 +17176,11 @@ If Pedido_int = True Then
         End If
         
         ProcControleImposto IIf(IsNull(TBLISTA!ID_CFOP), 0, TBLISTA!ID_CFOP), IIf(txtIDcliente = "", 0, txtIDcliente)
-        ProcVerifImpostosEmpresa IDEmpresa, IIf(IsNull(TBLISTA!retorno), False, TBLISTA!retorno), "", False, 0, False, TabelaSN, Lbl2.Caption
+        ProcVerifImpostosEmpresa IDempresa, IIf(IsNull(TBLISTA!retorno), False, TBLISTA!retorno), "", False, 0, False, TabelaSN, Lbl2.Caption
         'Novo cálculo simples nacional 2018
         If DAS <> 0 Then
             NovoValor = Replace(DAS, ",", ".")
-            Conexao.Execute "UPDATE tbl_Totais_Nota Set DAS = " & NovoValor & " where ID_nota = " & txtId
+            Conexao.Execute "UPDATE tbl_Totais_Nota Set DAS = " & NovoValor & " where ID_nota = " & txtid
         End If
         If TBProduto!CST_PIS = "01" Or TBProduto!CST_PIS = "03" Or TBProduto!CST_PIS = "49" Or TBProduto!CST_PIS = "98" Or TBProduto!CST_PIS = "99" Then
             TBProduto!PIS_Prod = PIS_Prod
@@ -17307,7 +17247,7 @@ If Pedido_int = True Then
         TBProduto!int_ICMS = TBLISTA!IntICMS
         TBProduto!int_IPI = TBLISTA!int_IPI
         TBProduto!int_NotaFiscal = IIf(txtNFiscal = "", Null, txtNFiscal)
-        TBProduto!ID_nota = txtId.Text
+        TBProduto!ID_nota = txtid.Text
         TBProduto!PCCliente = TBLISTA!PCCliente
         TBProduto!retorno = TBLISTA!retorno
         If Soma_retorno_total_NF = True Then TBProduto!Soma_retorno_totalnf = True Else TBProduto!Soma_retorno_totalnf = False
@@ -17383,7 +17323,7 @@ Else
         TBProduto!int_ICMS = TBLISTA!ICMS
         TBProduto!int_IPI = IIf(IsNull(TBLISTA!IPI), 0, TBLISTA!IPI)
         TBProduto!int_NotaFiscal = IIf(txtNFiscal = "", Null, txtNFiscal)
-        TBProduto!ID_nota = txtId.Text
+        TBProduto!ID_nota = txtid.Text
         TBProduto!Remessa = TBLISTA!Remessa
         TBProduto!Soma_retorno_totalnf = False
                 
@@ -17434,7 +17374,7 @@ TabelaSN = IIf(IsNull(TBControleNF!TabelaSN), 0, TBControleNF!TabelaSN)
 End If
 TBControleNF.Close
 
-    ProcVerifImpostosSN IDEmpresa, TabelaSN, Lbl2.Caption
+    ProcVerifImpostosSN IDempresa, TabelaSN, Lbl2.Caption
     'txtICMSSN = IIf(IsNull(ICMS_SN), 0, Format(ICMS_SN, "###,##0.00"))
 '======================================================================================
     If AliquotaSN = 0 Then
@@ -17511,10 +17451,10 @@ If TBLISTA.EOF = False Then
     TBItem!Servico_cliente = TBLISTA!Servico_cliente
     
     ProcControleImposto TBItem!ID_CFOP, IIf(txtIDcliente = "", 0, txtIDcliente)
-    ProcVerifImpostosEmpresa IDEmpresa, False, TBItem!int_Cod_Produto, TBItem!Servico_cliente, Valor_total, True, TabelaSN, Lbl2.Caption
+    ProcVerifImpostosEmpresa IDempresa, False, TBItem!int_Cod_Produto, TBItem!Servico_cliente, Valor_total, True, TabelaSN, Lbl2.Caption
     If DAS <> 0 Then
         NovoValor = Replace(DAS, ",", ".")
-        Conexao.Execute "UPDATE tbl_Totais_Nota Set DAS = " & NovoValor & " where ID_nota = " & txtId
+        Conexao.Execute "UPDATE tbl_Totais_Nota Set DAS = " & NovoValor & " where ID_nota = " & txtid
     End If
     TBItem!PIS_Serv = PIS_Serv
     If TBItem!PIS_Serv <> 0 Then TBItem!Total_PIS_serv = Format((Valor_total * TBItem!PIS_Serv) / 100, "0.00") Else TBItem!Total_PIS_serv = 0
@@ -17533,7 +17473,7 @@ If TBLISTA.EOF = False Then
     TBItem!IRPJ_Serv = IRPJ_Serv
     If TBItem!IRPJ_Serv <> 0 Then TBItem!Total_IRPJ_serv = Format((Valor_total * TBItem!IRPJ_Serv) / 100, "0.00") Else TBItem!Total_IRPJ_serv = 0
             
-    TBItem!ID_nota = txtId.Text
+    TBItem!ID_nota = txtid.Text
     TBItem!PCCliente = TBLISTA!PCCliente
     
     'Calcula valor aproximado de tributos
@@ -17570,7 +17510,7 @@ On Error GoTo tratar_erro
 
 IDpedido = 0
 IDAntigo = 0
-txtId = ""
+txtid = ""
 'Cmb_modelo = "55 - Nota Fiscal Eletrônica"
 txtNFiscal.Text = ""
 txtSerie = ""
@@ -17693,7 +17633,7 @@ TabelaSN = IIf(IsNull(TBControleNF!TabelaSN), 0, TBControleNF!TabelaSN)
     
     txtNFiscal.Text = IIf(IsNull(TBControleNF!int_NotaFiscal), "", TBControleNF!int_NotaFiscal)
     NF = TBControleNF!int_NotaFiscal
-    txtId.Text = TBControleNF!ID
+    txtid.Text = TBControleNF!ID
     TabelaSN = IIf(IsNull(TBControleNF!TabelaSN), 0, TBControleNF!TabelaSN)
     RegimeEmpresa = IIf(IsNull(TBControleNF!Regime), 0, TBControleNF!Regime)
     
@@ -17716,7 +17656,7 @@ TabelaSN = IIf(IsNull(TBControleNF!TabelaSN), 0, TBControleNF!TabelaSN)
             USToolBar1.ButtonState(11) = 0
             
             Case "SA":
-            OptServico.Value = True
+            optServico.Value = True
             USToolBar1.ButtonState(12) = 0
             USToolBar1.ButtonState(11) = 5
             
@@ -17747,7 +17687,7 @@ TabelaSN = IIf(IsNull(TBControleNF!TabelaSN), 0, TBControleNF!TabelaSN)
     
     'Verifica se tem conta gerada e bloqueia as options de entrada e saída
     Set TBContas = CreateObject("adodb.recordset")
-    TBContas.Open "Select * from tbl_Detalhes_Recebimento where ID_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+    TBContas.Open "Select * from tbl_Detalhes_Recebimento where ID_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
     If TBContas.EOF = False Then
         'Opt_saida.Enabled = False
         'Opt_entrada.Enabled = False
@@ -17769,7 +17709,7 @@ TabelaSN = IIf(IsNull(TBControleNF!TabelaSN), 0, TBControleNF!TabelaSN)
     Else
         opt_Cancelada.Value = True
         NF_cancelada = True
-        StrSql = "Update tbl_Dados_Nota_Fiscal Set int_status = '2' Where ID = '" & txtId.Text & "'"
+        StrSql = "Update tbl_Dados_Nota_Fiscal Set int_status = '2' Where ID = '" & txtid.Text & "'"
         Conexao.Execute StrSql
     End If
     
@@ -17829,7 +17769,7 @@ TabelaSN = IIf(IsNull(TBControleNF!TabelaSN), 0, TBControleNF!TabelaSN)
     'Chave de acesso e NFe liberada
     NFe_liberada = False
     Set TBAbrir = CreateObject("adodb.recordset")
-    TBAbrir.Open "Select * From tbl_Dados_Nota_Fiscal_NFe where ID_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+    TBAbrir.Open "Select * From tbl_Dados_Nota_Fiscal_NFe where ID_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir.EOF = False Then
         If TBControleNF!int_TipoNota = 1 And (TBAbrir!status = 100 Or TBAbrir!status = 101) Then NFe_liberada = True
         
@@ -17879,7 +17819,7 @@ TBControleNF.Close
 Frame1(6).Enabled = True
 'ProcLimparTudo
 
-If NF_alterada = True Then ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+If NF_alterada = True Then ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
 
 Exit Sub
 tratar_erro:
@@ -17895,7 +17835,7 @@ On Error GoTo tratar_erro
 
 'If NotaFiscalPronta = True Then Exit Sub
 
-If txtId = "" Then Exit Sub
+If txtid = "" Then Exit Sub
 ProcLimpaCamposTotaisNota
 Set TBTotaisnota = CreateObject("adodb.recordset")
 TBTotaisnota.Open "Select * from tbl_totais_nota where id_Nota = " & ID_nota, Conexao, adOpenKeyset, adLockOptimistic
@@ -17906,7 +17846,7 @@ If TBTotaisnota.EOF = False Then
     'Verifica se a empresa ou o fornecedor é SN e libera o campo de crédito
     If Faturamento_NF_Saida = True Then
         Set TBFIltro = CreateObject("adodb.recordset")
-        TBFIltro.Open "Select Simples from empresa where codigo = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+        TBFIltro.Open "Select Simples from empresa where codigo = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
     Else
         Set TBFIltro = CreateObject("adodb.recordset")
         TBFIltro.Open "Select Simples from clientes where ID = " & txtIDcliente.Text & " and NomeRazao = '" & txt_Razao.Text & "'", Conexao, adOpenKeyset, adLockOptimistic
@@ -17923,7 +17863,7 @@ If TBTotaisnota.EOF = False Then
             If TBFIltro!Simples = True Then
                 If Faturamento_NF_Saida = True And (opt_Saida.Value = True Or opt_Entrada.Value = True And cbo_UF <> "EX") Then
                     Set TBProduto = CreateObject("adodb.recordset")
-                    TBProduto.Open "Select ICMS_SN from tbl_Detalhes_Nota where ID_nota = " & txtId & " and ICMS_SN IS NOT NULL and ICMS_SN > 0", Conexao, adOpenKeyset, adLockOptimistic
+                    TBProduto.Open "Select ICMS_SN from tbl_Detalhes_Nota where ID_nota = " & txtid & " and ICMS_SN IS NOT NULL and ICMS_SN > 0", Conexao, adOpenKeyset, adLockOptimistic
                     If TBProduto.EOF = False Then
                         '======================================================================================
  '                           If AliquotaSN = 0 Then
@@ -17942,7 +17882,7 @@ If TBTotaisnota.EOF = False Then
                        End If
                        TBControleNF.Close
 
-                        ProcVerifImpostosSN IDEmpresa, TabelaSN, Lbl2.Caption
+                        ProcVerifImpostosSN IDempresa, TabelaSN, Lbl2.Caption
                         .Text = IIf(IsNull(ICMS_SN), 0, Format(ICMS_SN, "###,##0.0000"))
                     End If
                     TBProduto.Close
@@ -18029,7 +17969,7 @@ On Error GoTo tratar_erro
 txtDados_Corpo = ""
 txtDados_DadosAdicionais = ""
 Set TBCodigoDesc = CreateObject("adodb.recordset")
-TBCodigoDesc.Open "Select * from tbl_dadosadicionais where id_nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBCodigoDesc.Open "Select * from tbl_dadosadicionais where id_nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBCodigoDesc.EOF = False And IsNull(TBCodigoDesc!mem_DadosAdicionais) = False Then
     txtDados_Corpo = IIf(IsNull(TBCodigoDesc!mem_corpo) = False, TBCodigoDesc!mem_corpo, "")
     txtDados_DadosAdicionais = IIf(IsNull(TBCodigoDesc!mem_DadosAdicionais) = False, TBCodigoDesc!mem_DadosAdicionais, "")
@@ -18213,7 +18153,7 @@ If cmb_tipopagto.Text = "" And txt_Cond_Recebimento.Text = "" Then condicao_dupl
 ProcCarregaBanco
 
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "Select * From tbl_Detalhes_Recebimento WHERE id_nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir.Open "Select * From tbl_Detalhes_Recebimento WHERE id_nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.EOF = False Then
     NomeCampo = "o banco"
     If IsNull(TBAbrir!txt_Portador_Banco) = False And TBAbrir!txt_Portador_Banco <> "" Then cbo_PortBanco = TBAbrir!txt_Portador_Banco
@@ -18226,7 +18166,7 @@ If TBAbrir.EOF = False Then
 Else
     If opt_Saida.Value = True Then
         Set TBCarteira = CreateObject("adodb.recordset")
-        TBCarteira.Open "Select * from tbl_proposta_nota where id_nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+        TBCarteira.Open "Select * from tbl_proposta_nota where id_nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
         If TBCarteira.EOF = False Then
             Set TBProposta = CreateObject("adodb.recordset")
             TBProposta.Open "Select cotacao from vendas_proposta where ncotacao = '" & TBCarteira!Proposta & "' and revisao = " & TBCarteira!Revisao & " and Status = 'FATURADA' or ncotacao = '" & TBCarteira!Proposta & "' and revisao = " & TBCarteira!Revisao & " and Status = 'FATURADA PARCIAL'", Conexao, adOpenKeyset, adLockOptimistic
@@ -18252,7 +18192,7 @@ Else
         TBCarteira.Close
     Else
         Set TBPedido = CreateObject("adodb.recordset")
-        TBPedido.Open "Select Compras_pedido.idpedido FROM tbl_proposta_nota INNER JOIN Compras_pedido ON Compras_pedido.Pedido = tbl_proposta_nota.proposta where tbl_proposta_nota.id_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+        TBPedido.Open "Select Compras_pedido.idpedido FROM tbl_proposta_nota INNER JOIN Compras_pedido ON Compras_pedido.Pedido = tbl_proposta_nota.proposta where tbl_proposta_nota.id_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
         If TBPedido.EOF = False Then
             Set TBCompras = CreateObject("adodb.recordset")
             TBCompras.Open "Select Condicoes from Compras_comercial where Idpedido = " & TBPedido!IDpedido, Conexao, adOpenKeyset, adLockOptimistic
@@ -18274,7 +18214,7 @@ Else
         
         'Carrega OBS do pedido
         Set TBVendas = CreateObject("adodb.recordset")
-        TBVendas.Open "Select CC.observacoes from (tbl_proposta_nota P INNER JOIN Compras_pedido CP ON P.Proposta = CP.Pedido) INNER JOIN compras_comercial CC ON CC.IDpedido = CP.IDpedido where P.ID_nota = " & txtId & " and CC.Obs_financeiro = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+        TBVendas.Open "Select CC.observacoes from (tbl_proposta_nota P INNER JOIN Compras_pedido CP ON P.Proposta = CP.Pedido) INNER JOIN compras_comercial CC ON CC.IDpedido = CP.IDpedido where P.ID_nota = " & txtid & " and CC.Obs_financeiro = 'True'", Conexao, adOpenKeyset, adLockOptimistic
         If TBVendas.EOF = False Then
             txtObs_Duplicata = IIf(IsNull(TBVendas!Observacoes), "", TBVendas!Observacoes)
         End If
@@ -18305,7 +18245,7 @@ Else
     End If
 End If
 2:
-ProcCarregaListaDuplicatas IIf(txtId = "", 0, txtId)
+ProcCarregaListaDuplicatas IIf(txtid = "", 0, txtid)
 TBAbrir.Close
 
 Exit Sub
@@ -18320,7 +18260,7 @@ End Sub
 Sub ProcCarregaListaServicos()
 On Error GoTo tratar_erro
 
-If txtId = "" Then Exit Sub
+If txtid = "" Then Exit Sub
 qtdeliberada = 0 'Qtde de serviços
 TotalServicos = 0
 
@@ -18344,7 +18284,7 @@ End If
 
 ListaServicos.ListItems.Clear
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select NFS.*, TTN.DAS, CFOP.ID_CFOP, CFOP.Retem from (tbl_Detalhes_Nota NFS LEFT JOIN tbl_NaturezaOperacao CFOP ON CFOP.IDCountCfop = NFS.ID_CFOP) LEFT JOIN tbl_Totais_Nota TTN ON TTN.ID_nota = NFS.id_nota where NFS.id_nota = " & txtId.Text & " and NFS.Tipo = 'S' order by NFS.Int_codigo", Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select NFS.*, TTN.DAS, CFOP.ID_CFOP, CFOP.Retem from (tbl_Detalhes_Nota NFS LEFT JOIN tbl_NaturezaOperacao CFOP ON CFOP.IDCountCfop = NFS.ID_CFOP) LEFT JOIN tbl_Totais_Nota TTN ON TTN.ID_nota = NFS.id_nota where NFS.id_nota = " & txtid.Text & " and NFS.Tipo = 'S' order by NFS.Int_codigo", Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     If Atualizacao = False Then
         TBProduto.MoveLast
@@ -18388,7 +18328,7 @@ If TBProduto.EOF = False Then
     Loop
 Else
     Set TBProduto = CreateObject("adodb.recordset")
-    TBProduto.Open "Select * from tbl_Detalhes_Nota where id_nota = " & txtId.Text & " and Tipo = 'P'", Conexao, adOpenKeyset, adLockOptimistic
+    TBProduto.Open "Select * from tbl_Detalhes_Nota where id_nota = " & txtid.Text & " and Tipo = 'P'", Conexao, adOpenKeyset, adLockOptimistic
     If TBProduto.EOF = True Then
         ProcLimpaCamposTotaisNota
     End If
@@ -18404,7 +18344,7 @@ End Sub
 Sub ProcCarregaLista()
 On Error GoTo tratar_erro
 
-If txtId = "" Then Exit Sub
+If txtid = "" Then Exit Sub
 qtdeliberar = 0 'Qtde de produtos
 TotalServicos = 0
 TotalProduto = 0
@@ -18453,7 +18393,7 @@ ValorPorc = 0 'Vlr MPA
 ListaProdutos.ListItems.Clear
 
 Set TBProduto = CreateObject("adodb.recordset")
-StrSql = "Select NFP.*, TTN.DAS, CST.Valor_BC, CST.Valor_ICMS,CST.Valor_ICMS_desonerado, CST.Valor_ICMS_SN, CST.Valor_BC_ST, CST.Valor_ICMS_ST, CST.Valor_ICMS_FCP, CST.Valor_ICMS_INT_UF_DEST, CST.Valor_ICMS_INT_UF_REM from (tbl_Detalhes_Nota NFP LEFT JOIN tbl_Detalhes_Nota_CST_ICMS CST ON CST.ID_item = NFP.Int_codigo) LEFT JOIN tbl_Totais_Nota TTN ON TTN.ID_nota = NFP.ID_nota where NFP.id_nota = " & txtId & " and NFP.Tipo = 'P' order by NFP.int_codigo"
+StrSql = "Select NFP.*, TTN.DAS, CST.Valor_BC, CST.Valor_ICMS,CST.Valor_ICMS_desonerado, CST.Valor_ICMS_SN, CST.Valor_BC_ST, CST.Valor_ICMS_ST, CST.Valor_ICMS_FCP, CST.Valor_ICMS_INT_UF_DEST, CST.Valor_ICMS_INT_UF_REM from (tbl_Detalhes_Nota NFP LEFT JOIN tbl_Detalhes_Nota_CST_ICMS CST ON CST.ID_item = NFP.Int_codigo) LEFT JOIN tbl_Totais_Nota TTN ON TTN.ID_nota = NFP.ID_nota where NFP.id_nota = " & txtid & " and NFP.Tipo = 'P' order by NFP.int_codigo"
 'Debug.print StrSql
 TBProduto.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
@@ -18590,7 +18530,7 @@ If TBProduto.EOF = False Then
     Loop
 Else
     Set TBProduto = CreateObject("adodb.recordset")
-    TBProduto.Open "Select * from tbl_Detalhes_Nota where id_nota = " & txtId.Text & " and Tipo = 'S'", Conexao, adOpenKeyset, adLockOptimistic
+    TBProduto.Open "Select * from tbl_Detalhes_Nota where id_nota = " & txtid.Text & " and Tipo = 'S'", Conexao, adOpenKeyset, adLockOptimistic
     If TBProduto.EOF = True Then
         ProcLimpaCamposTotaisNota
     End If
@@ -18731,7 +18671,7 @@ tratar_erro:
     USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
 End Sub
 
-Sub ProcAtualizaCST(IDEmpresa As Integer, IDCliente As Long, NomeCliente As String, UF As String, Consumidor As Integer, Finalidade As Integer)
+Sub ProcAtualizaCST(IDempresa As Integer, IDCliente As Long, NomeCliente As String, UF As String, Consumidor As Integer, Finalidade As Integer)
 On Error GoTo tratar_erro
 
 CST_ICMS = False
@@ -18751,7 +18691,7 @@ If IsNull(TBProduto!txt_CST) = False And TBProduto!txt_CST <> "" Then
     
     Set TBCST = CreateObject("adodb.recordset")
     TBCST.Open "select * from tbl_Detalhes_Nota_CST_ICMS where id_item = " & TBProduto!Int_codigo, Conexao, adOpenKeyset, adLockOptimistic
-    ProcEnviadadosAtualizaCST IDEmpresa, IDCliente, NomeCliente, UF, Consumidor, Finalidade
+    ProcEnviadadosAtualizaCST IDempresa, IDCliente, NomeCliente, UF, Consumidor, Finalidade
     TBCST.Close
 End If
 
@@ -18765,7 +18705,7 @@ If IsNull(TBProduto!CST_IPI) = False And TBProduto!CST_IPI <> "" Then
     
     Set TBCST = CreateObject("adodb.recordset")
     TBCST.Open "select * from tbl_Detalhes_Nota_CST_IPI where id_item = " & TBProduto!Int_codigo, Conexao, adOpenKeyset, adLockOptimistic
-    ProcEnviadadosAtualizaCST IDEmpresa, IDCliente, NomeCliente, UF, Consumidor, Finalidade
+    ProcEnviadadosAtualizaCST IDempresa, IDCliente, NomeCliente, UF, Consumidor, Finalidade
     TBCST.Close
 End If
 
@@ -18779,7 +18719,7 @@ If IsNull(TBProduto!CST_PIS) = False And TBProduto!CST_PIS <> "" Then
     
     Set TBCST = CreateObject("adodb.recordset")
     TBCST.Open "select * from tbl_Detalhes_Nota_CST_PIS where id_item = " & TBProduto!Int_codigo, Conexao, adOpenKeyset, adLockOptimistic
-    ProcEnviadadosAtualizaCST IDEmpresa, IDCliente, NomeCliente, UF, Consumidor, Finalidade
+    ProcEnviadadosAtualizaCST IDempresa, IDCliente, NomeCliente, UF, Consumidor, Finalidade
     TBCST.Close
 End If
 
@@ -18793,7 +18733,7 @@ If IsNull(TBProduto!CST_Cofins) = False And TBProduto!CST_Cofins <> "" Then
     
     Set TBCST = CreateObject("adodb.recordset")
     TBCST.Open "select * from tbl_Detalhes_Nota_CST_Cofins where id_item = " & TBProduto!Int_codigo, Conexao, adOpenKeyset, adLockOptimistic
-    ProcEnviadadosAtualizaCST IDEmpresa, IDCliente, NomeCliente, UF, Consumidor, Finalidade
+    ProcEnviadadosAtualizaCST IDempresa, IDCliente, NomeCliente, UF, Consumidor, Finalidade
     TBCST.Close
 End If
 
@@ -18802,7 +18742,7 @@ tratar_erro:
     USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
 End Sub
 
-Private Sub ProcEnviadadosAtualizaCST(IDEmpresa As Integer, IDCliente As Long, NomeCliente As String, UF As String, Consumidor As Integer, Finalidade As Integer)
+Private Sub ProcEnviadadosAtualizaCST(IDempresa As Integer, IDCliente As Long, NomeCliente As String, UF As String, Consumidor As Integer, Finalidade As Integer)
 On Error GoTo tratar_erro
 
 If TBCST.EOF = True Then TBCST.AddNew
@@ -18874,7 +18814,7 @@ If CST_ICMS = True Then
             Retirar = False
             End If
             
-                ProcCalculaBC IDEmpresa, TBCiclo!ID_CFOP, IIf(IsNull(TBProduto!VlrMPA), 0, TBProduto!VlrMPA), PV, TBProduto!dbl_valoripi, TBCiclo!txt_Somar, TBCiclo!Somar_IPI_BC_ICMSST, TBCiclo!TemReducaoBC, IIf(TBProduto!NaoArredondar = True, True, False), FimCST, Aplicacao, IDCliente, NomeCliente
+                ProcCalculaBC IDempresa, TBCiclo!ID_CFOP, IIf(IsNull(TBProduto!VlrMPA), 0, TBProduto!VlrMPA), PV, TBProduto!dbl_valoripi, TBCiclo!txt_Somar, TBCiclo!Somar_IPI_BC_ICMSST, TBCiclo!TemReducaoBC, IIf(TBProduto!NaoArredondar = True, True, False), FimCST, Aplicacao, IDCliente, NomeCliente
                 If TBCiclo!txt_Somar = "SIM" Then
                 TBCST!Valor_BC = Format(BC + IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro), "###,##0.00")
                 Else
@@ -18904,7 +18844,7 @@ If CST_ICMS = True Then
         If Faturamento_NF_Saida = False Then
             'ProcValorImposto txtid, IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IDCliente, NomeCliente, cbo_UF, IDempresa, False, IIf(IsNull(TBProduto!ID_CFOP), 0, TBProduto!ID_CFOP), RegimeEmpresa
         'Else
-            ProcValorImposto txtId, IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IDCliente, NomeCliente, cbo_UF, IDEmpresa, True, IIf(IsNull(TBProduto!ID_CFOP), 0, TBProduto!ID_CFOP), 0
+            ProcValorImposto txtid, IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IDCliente, NomeCliente, cbo_UF, IDempresa, True, IIf(IsNull(TBProduto!ID_CFOP), 0, TBProduto!ID_CFOP), 0
             If txtICMS <> 0 Then
             TBCST!Valor_BC = txtVLTotal.Text
             TBCST!ICMS_SN = txtICMS
@@ -18935,7 +18875,7 @@ If CST_ICMS = True Then
     End If
     'TBCiclo.Close
 '=============================================================================================
-    ProcCalculaFCPeDIFAL IDEmpresa, IDCliente, NomeCliente, UF, Consumidor, Finalidade
+    ProcCalculaFCPeDIFAL IDempresa, IDCliente, NomeCliente, UF, Consumidor, Finalidade
 '=============================================================================================
 '   Valor ICMS desonerado (Desconto Suframa)
 '=============================================================================================
@@ -18947,7 +18887,7 @@ If CST_ICMS = True Then
             Set TBCiclo = CreateObject("adodb.recordset")
             TBCiclo.Open "select * from tbl_NaturezaOperacao where IDCountCfop = " & IIf(IsNull(TBProduto!ID_CFOP), 0, TBProduto!ID_CFOP) & " and txt_ICMS = 'SIM'", Conexao, adOpenKeyset, adLockOptimistic
             If TBCiclo.EOF = False Then
-                ProcCalculaBC IDEmpresa, TBCiclo!ID_CFOP, IIf(IsNull(TBProduto!VlrMPA), 0, TBProduto!VlrMPA), PV, TBProduto!dbl_valoripi, TBCiclo!txt_Somar, TBCiclo!Somar_IPI_BC_ICMSST, TBCiclo!TemReducaoBC, False, FimCST, Aplicacao, IDCliente, NomeCliente
+                ProcCalculaBC IDempresa, TBCiclo!ID_CFOP, IIf(IsNull(TBProduto!VlrMPA), 0, TBProduto!VlrMPA), PV, TBProduto!dbl_valoripi, TBCiclo!txt_Somar, TBCiclo!Somar_IPI_BC_ICMSST, TBCiclo!TemReducaoBC, False, FimCST, Aplicacao, IDCliente, NomeCliente
                 ValorTotal = Format(BC, "###,##0.00")
                 ValoresParcelas = Format((BC * vRegiao(0, 1)) / 100, "###,##0.00")
 
@@ -19025,7 +18965,7 @@ tratar_erro:
     USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
 End Sub
 
-Private Sub ProcCalculaFCPeDIFAL(IDEmpresa As Integer, IDCliente As Long, NomeCliente As String, UF As String, Consumidor As Integer, Finalidade As Integer)
+Private Sub ProcCalculaFCPeDIFAL(IDempresa As Integer, IDCliente As Long, NomeCliente As String, UF As String, Consumidor As Integer, Finalidade As Integer)
 On Error GoTo tratar_erro
 
 '====================Calculo ICMS relativo ao Fundo de Combate à Pobreza (FCP) e diferencial da alíquota====================
@@ -19055,7 +18995,7 @@ End If
 Parcial = False
 TextoFiltroCFOP = " and txt_ICMS = 'SIM'"
 Set TBCorretiva = CreateObject("adodb.recordset")
-TBCorretiva.Open "Select E.UF, I.Regime from Empresa E INNER JOIN Impostos I ON I.ID_empresa = E.Codigo where E.Codigo = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+TBCorretiva.Open "Select E.UF, I.Regime from Empresa E INNER JOIN Impostos I ON I.ID_empresa = E.Codigo where E.Codigo = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
 If TBCorretiva.EOF = False Then
     UFEmp = TBCorretiva!UF
     If TBCorretiva!Regime = 1 Or TBCorretiva!Regime = 4 Then
@@ -19156,16 +19096,16 @@ If Produto_Relacionado = False Then
         USMsgBox ("Atenção usuário " & pubUsuario & " você não tem acesso a este recurso."), vbExclamation, "CAPRIND v5.0"
         Exit Sub
     End If
-    FunVerifAlteracaoNF txtId, True, OptServico
+    FunVerifAlteracaoNF txtid, True, optServico
     If AlterarProduto = False Then
     If Permitido1 = False Or Permitido = False Then
        If MsgTexto = "pois a nota fiscal já foi enviada para o financeiro" Or MsgTexto = "pois existe(m) duplicata(s) gerada(s)" Then
        
-       USMsgBox "Existem duplicatas geradas, antes de alterar o item tem que excluir as duplicatas.", vbInformation, "CAPRIND v5.0"
-       SSFaturamento.Tab = 6
-       Exit Sub
+        USMsgBox "Existem duplicatas geradas, antes de alterar o item tem que excluir as duplicatas.", vbInformation, "CAPRIND v5.0"
+        SSFaturamento.Tab = 6
+        Exit Sub
        Else
-        USMsgBox ("Não é permitido salvar, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
+        'USMsgBox ("Não é permitido salvar, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
 '        Exit Sub
        End If
        
@@ -19192,7 +19132,7 @@ If Produto_Relacionado = False Then
     
     If Faturamento_NF_Saida = True Then
         Set TBAbrir = CreateObject("adodb.recordset")
-        TBAbrir.Open "Select Codigo from Empresa where Codigo = " & IDEmpresa & " and Codigo_ref_DANFE = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select Codigo from Empresa where Codigo = " & IDempresa & " and Codigo_ref_DANFE = 'True'", Conexao, adOpenKeyset, adLockOptimistic
         If TBAbrir.EOF = False Then
             If cmbReferencia = "" Then
                 NomeCampo = "o código de referência"
@@ -19204,7 +19144,7 @@ If Produto_Relacionado = False Then
         TBAbrir.Close
         If chkRetorno.Value = 0 Then
             Set TBAbrir = CreateObject("adodb.recordset")
-            TBAbrir.Open "Select * from tbl_dados_transp where ID_nota = " & txtId & " and Sedex = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+            TBAbrir.Open "Select * from tbl_dados_transp where ID_nota = " & txtid & " and Sedex = 'True'", Conexao, adOpenKeyset, adLockOptimistic
             If TBAbrir.EOF = False Then
                 Set TBProduto = CreateObject("adodb.recordset")
                 TBProduto.Open "Select * from tbl_Detalhes_Nota where Int_codigo = " & txtidproduto, Conexao, adOpenKeyset, adLockOptimistic
@@ -19369,7 +19309,7 @@ If Produto_Relacionado = False Then
     quantidade = 0
     Qtd = 0
     
-    Conexao.Execute "Update tbl_Dados_Nota_Fiscal Set Alterar = 'False' where id = " & txtId.Text
+    Conexao.Execute "Update tbl_Dados_Nota_Fiscal Set Alterar = 'False' where id = " & txtid.Text
     NF_alterada = False
     
     'Se a unidade for diferente verifica se esta cadastrado o peso bruto e UN/KG
@@ -19400,7 +19340,7 @@ If TBProduto.EOF = False Then
             If TBProduto!int_Qtd <> valor Then
                 If txtNFiscal <> "" Then
                     Set TBAbrir = CreateObject("adodb.recordset")
-                    TBAbrir.Open "Select RespValidacaoOF from tbl_Dados_Nota_Fiscal where ID = " & txtId & " and RespValidacaoOF <> '" & pubUsuario & "'", Conexao, adOpenKeyset, adLockOptimistic
+                    TBAbrir.Open "Select RespValidacaoOF from tbl_Dados_Nota_Fiscal where ID = " & txtid & " and RespValidacaoOF <> '" & pubUsuario & "'", Conexao, adOpenKeyset, adLockOptimistic
                     If TBAbrir.EOF = False Then
                         USMsgBox ("Só é permitido alterar a quantidade deste produto pelo usuário " & TBAbrir!RespValidacaoOF & "."), vbExclamation, "CAPRIND v5.0"
                         TBAbrir.Close
@@ -19511,7 +19451,7 @@ Else
     TBProduto!dbl_valoripi = txtValor_IPI
     TBProduto!Codigo_enquadramento_IPI = IIf(Txt_codigo_enq_IPI = "", Null, Txt_codigo_enq_IPI)
     TBProduto!int_NotaFiscal = IIf(txtNFiscal = "", Null, txtNFiscal)
-    TBProduto!ID_nota = txtId.Text
+    TBProduto!ID_nota = txtid.Text
 '============================================================================
     TBProduto!dbl_ValorTotal = TBProduto!dbl_ValorUnitario * TBProduto!int_Qtd ' - (TBProduto!Valor_desconto / TBProduto!int_Qtd) 'txtVLTotal '+ TBProduto!Valor_frete
 '    TBProduto!dbl_ValorTotal = txtVLTotal ' - TBProduto!Valor_frete
@@ -19529,8 +19469,12 @@ Else
     'Impostos
 '=============================================================================================
 '    Valor_total = TBProduto!dbl_ValorTotal + IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete) + IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro) + IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)
-
+If cbo_UF = "EX" Then
+    Valor_total = TBProduto!dbl_ValorTotal + IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)
+Else
     Valor_total = TBProduto!dbl_ValorTotal + IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro) + IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)
+End If
+
 '=============================================================================================
     Valor_IPI = txtValor_IPI
     
@@ -19542,11 +19486,11 @@ End If
 TBControleNF.Close
 
 If opt_Entrada.Value = False Then
-    ProcVerifImpostosEmpresa IDEmpresa, chkRetorno, "", False, 0, False, TabelaSN, Lbl2.Caption
+    ProcVerifImpostosEmpresa IDempresa, chkRetorno, "", False, 0, False, TabelaSN, Lbl2.Caption
     'Novo cálculo simples nacional 2018
     'If DAS <> 0 Then
         NovoValor = Replace(DAS, ",", ".")
-        Conexao.Execute "UPDATE tbl_Totais_Nota Set DAS = " & NovoValor & " where ID_nota = " & txtId
+        Conexao.Execute "UPDATE tbl_Totais_Nota Set DAS = " & NovoValor & " where ID_nota = " & txtid
     'End If
 End If
 
@@ -19634,7 +19578,7 @@ End If
     '=============================================================================================================================================
     
     IntICMS = IIf(IsNull(TBProduto!int_ICMS), 0, TBProduto!int_ICMS)
-    ProcCalculaBC IDEmpresa, IIf(Txt_CFOP_prod = "", "0.000", Txt_CFOP_prod), 0, PV, IIf(IsNull(TBProduto!dbl_valoripi), 0, TBProduto!dbl_valoripi), SomarIPI, SomarIPIST, TemReducaoBC, IIf(TBProduto!NaoArredondar = True, True, False), IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), Aplicacao, txtIDcliente, txt_Razao
+    ProcCalculaBC IDempresa, IIf(Txt_CFOP_prod = "", "0.000", Txt_CFOP_prod), 0, PV, IIf(IsNull(TBProduto!dbl_valoripi), 0, TBProduto!dbl_valoripi), SomarIPI, SomarIPIST, TemReducaoBC, IIf(TBProduto!NaoArredondar = True, True, False), IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), Aplicacao, txtIDcliente, txt_Razao
     
     If TemICMS = "SIM" Or Suframa = True And Desconto_Suframa = True Then
         ICMS = IIf(IsNull(TBProduto!int_ICMS), 0, TBProduto!int_ICMS)
@@ -19643,7 +19587,7 @@ End If
         If MPA = True Then
             Set TBAfericao = CreateObject("adodb.recordset")
             If Aplicacao = "P" Then
-                TBAfericao.Open "Select ICMS_ind from Impostos where ID_empresa = " & IDEmpresa & " and ICMS_ind is not null and ICMS_ind <> N''", Conexao, adOpenKeyset, adLockOptimistic
+                TBAfericao.Open "Select ICMS_ind from Impostos where ID_empresa = " & IDempresa & " and ICMS_ind is not null and ICMS_ind <> N''", Conexao, adOpenKeyset, adLockOptimistic
             Else
                 TBAfericao.Open "Select ICMS_ind from Compras_fornecedores where IDcliente = " & txtIDcliente & " and Nome_Razao = '" & txt_Razao & "' and ICMS_ind is not null and ICMS_ind <> N''", Conexao, adOpenKeyset, adLockOptimistic
             End If
@@ -19660,7 +19604,9 @@ End If
                 
                 'Acrescenta ou não valor acessórias a base de calculo do icms
                 If SomarIPI = "NÃO" And cmbFinalidade_emissao.Text <> "4 - Devolução/Retorno" Then
-                PV1 = PV1 + IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias)
+                    If cbo_UF <> "EX" Then
+                    PV1 = PV1 + IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias)
+                    End If
                 End If
         
                 
@@ -19670,7 +19616,7 @@ End If
             
                 If Faturamento_NF_Saida = True Then
                     Set TBFIltro = CreateObject("adodb.recordset")
-                    TBFIltro.Open "Select * from empresa where codigo = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+                    TBFIltro.Open "Select * from empresa where codigo = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
                 Else
                     Set TBFIltro = CreateObject("adodb.recordset")
                     TBFIltro.Open "Select * from clientes where ID = " & txtIDcliente.Text & " and NomeRazao = '" & txt_Razao.Text & "'", Conexao, adOpenKeyset, adLockOptimistic
@@ -19702,7 +19648,7 @@ End If
 End If
 
 If Suframa = True And Desconto_Suframa = True Then
-    ProcValorImposto txtId, IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, cbo_UF, IDEmpresa, False, IIf(IsNull(TBProduto!ID_CFOP), 0, TBProduto!ID_CFOP), RegimeEmpresa
+    ProcValorImposto txtid, IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, cbo_UF, IDempresa, False, IIf(IsNull(TBProduto!ID_CFOP), 0, TBProduto!ID_CFOP), RegimeEmpresa
     TBProduto!Valor_desconto_SUFRAMA = Format((PV1 * IntICMS) / 100, "###,##0.00")
 Else
     TBProduto!Valor_desconto_SUFRAMA = 0
@@ -19714,12 +19660,12 @@ txtidproduto = TBProduto!Int_codigo
 '==============================================================================================================
 ' verifica as CST do icms ipi pis e cofins
 '==============================================================================================================
-ProcAtualizaCST IDEmpresa, txtIDcliente, txt_Razao, cbo_UF, IIf(Cmb_consumidor = "", 1, Left(Cmb_consumidor, 1)), IIf(cmbFinalidade_emissao = "", 1, Left(cmbFinalidade_emissao, 1))
+ProcAtualizaCST IDempresa, txtIDcliente, txt_Razao, cbo_UF, IIf(Cmb_consumidor = "", 1, Left(Cmb_consumidor, 1)), IIf(cmbFinalidade_emissao = "", 1, Left(cmbFinalidade_emissao, 1))
 '==============================================================================================================
 ' CALCULA SUBSTITUIÇÃO TRIBUTÁRIA
 '==============================================================================================================
 If TBProduto!dbl_ValorTotal > 0 Then
-ProcSubstituicaoTributaria cbo_UF, IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, Format((IIf(IsNull(TBProduto!dbl_ValorTotal), 0, TBProduto!dbl_ValorTotal) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)) / IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), "###,##0.0000000000"), IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), BC, BCST, IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete), IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro), IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias), True, IIf(Left(Cmb_consumidor, 1) = 1, True, False), IDEmpresa
+ProcSubstituicaoTributaria cbo_UF, IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, Format((IIf(IsNull(TBProduto!dbl_ValorTotal), 0, TBProduto!dbl_ValorTotal) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)) / IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), "###,##0.0000000000"), IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), BC, BCST, IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete), IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro), IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias), True, IIf(Left(Cmb_consumidor, 1) = 1, True, False), IDempresa
 End If
 '==============================================================================================================
 
@@ -19745,7 +19691,7 @@ End If
 Modulo = Formulario
 ID_documento = txtidproduto
 ProcVerificaTipoNF False
-If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
 Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
 Documento1 = "Cód. interno: " & txtCod_Produto
 ProcGravaEvento
@@ -19756,11 +19702,11 @@ IDAntigo = txtidproduto 'ListaProdutos.SelectedItem
 End If
 
 If Produto_Relacionado = False Then
-    If NF_alterada = True Then ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+    If NF_alterada = True Then ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
     
     If Chk_CFOP_prod.Value = 1 Then
             If USMsgBox("Deseja salvar essa CFOP em todos os produtos?", vbYesNo, "CAPRIND v5.0") = vbYes Then
-                StrSql = "update tbl_Detalhes_Nota set ID_CFOP = '" & Txt_ID_CFOP_prod.Text & "', txt_CST = '" & txtCST_ICMS & "' , CST_IPI = '" & txtCST_IPI & "' , CST_PIS = '" & txtCST_PIS & "' , CST_COFINS = '" & txtCST_Cofins & "' where ID_Nota = '" & txtId.Text & "'"
+                StrSql = "update tbl_Detalhes_Nota set ID_CFOP = '" & Txt_ID_CFOP_prod.Text & "', txt_CST = '" & txtCST_ICMS & "' , CST_IPI = '" & txtCST_IPI & "' , CST_PIS = '" & txtCST_PIS & "' , CST_COFINS = '" & txtCST_Cofins & "' where ID_Nota = '" & txtid.Text & "'"
                 Conexao.Execute (StrSql)
             End If
 
@@ -19801,7 +19747,7 @@ Conexao.Execute "Update tbl_totais_Nota set Total_IPI_devolv = " & Replace(vTota
     If opt_Saida = True And Formulario <> "Estoque/Ordem de faturamento" Then
     
          Set TBCodigoDesc = CreateObject("adodb.recordset")
-         TBCodigoDesc.Open "Select * from tbl_dadosadicionais where id_nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+         TBCodigoDesc.Open "Select * from tbl_dadosadicionais where id_nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
          If TBCodigoDesc.EOF = False And IsNull(TBCodigoDesc!mem_DadosAdicionais) = False Then
              txtDados_Corpo = IIf(IsNull(TBCodigoDesc!mem_corpo) = False, TBCodigoDesc!mem_corpo, "")
              txtDados_DadosAdicionais = IIf(IsNull(TBCodigoDesc!mem_DadosAdicionais) = False, TBCodigoDesc!mem_DadosAdicionais, "")
@@ -19810,7 +19756,7 @@ Conexao.Execute "Update tbl_totais_Nota set Total_IPI_devolv = " & Replace(vTota
          End If
     End If
     ProcGravarTotaisNota
-    ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+    ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
 End If
 
     ProcCarregaListaNota (IIf(ReturnNumbersOnly(Left(lblPaginas(1).Caption, Len(lblPaginas(1).Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas(1).Caption, Len(lblPaginas(1).Caption) - 5))))
@@ -19880,7 +19826,7 @@ On Error GoTo tratar_erro
 'Verifica qtde. liberada/faturada dos pedidos deste produto/serviço que seja diferente desta NF
 qt = 0
 Set TBCiclo = CreateObject("adodb.recordset")
-TBCiclo.Open "Select Sum(NFPP.Quantidade) as qt from (tbl_dados_nota_fiscal NF INNER JOIN tbl_detalhes_nota NFP ON NFP.ID_nota = NF.ID) INNER JOIN tbl_Detalhes_Nota_pedidos NFPP ON NFPP.ID_prod_NF = NFP.Int_codigo where NF.ID <> " & txtId & " and NF.Pedido_interno = " & IIf(Pedidointerno = True, 1, 0) & " and NF.int_status = 1 and NFPP.ID_carteira = " & TBFerramentas!ID_carteira & " and NFPP.Codinterno = '" & TBFerramentas!Codinterno & "'", Conexao, adOpenKeyset, adLockOptimistic
+TBCiclo.Open "Select Sum(NFPP.Quantidade) as qt from (tbl_dados_nota_fiscal NF INNER JOIN tbl_detalhes_nota NFP ON NFP.ID_nota = NF.ID) INNER JOIN tbl_Detalhes_Nota_pedidos NFPP ON NFPP.ID_prod_NF = NFP.Int_codigo where NF.ID <> " & txtid & " and NF.Pedido_interno = " & IIf(Pedidointerno = True, 1, 0) & " and NF.int_status = 1 and NFPP.ID_carteira = " & TBFerramentas!ID_carteira & " and NFPP.Codinterno = '" & TBFerramentas!Codinterno & "'", Conexao, adOpenKeyset, adLockOptimistic
 If TBCiclo.EOF = False Then
     qt = IIf(IsNull(TBCiclo!qt), 0, TBCiclo!qt)
 End If
@@ -19941,7 +19887,7 @@ If TBFIltro.EOF = False Then
                 TBOrdem.Open "Select CTMaterial from producao where Ordem = " & TBFIltro!Ordem, Conexao, adOpenKeyset, adLockOptimistic
                 If TBOrdem.EOF = False Then
                     Set TBAliquota = CreateObject("adodb.recordset")
-                    TBAliquota.Open "Select Real from Empresa where Codigo = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+                    TBAliquota.Open "Select Real from Empresa where Codigo = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
                     If TBAliquota.EOF = False Then
                         If TBAliquota!Real = True Then
                             TextoFiltro = "Sum(NFP.dbl_ValorTotal - (CST_ICMS.Valor_ICMS + CST_ICMS.Valor_ICMS_ST + CST_ICMS.Valor_ICMS_SN) - (NFP.Total_PIS_prod + NFP.Total_Cofins_prod))"
@@ -20082,7 +20028,7 @@ If Excluir = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " voce não tem acesso a este recurso.")
     Exit Sub
 End If
-FunVerifAlteracaoNF txtId, True, OptServico
+FunVerifAlteracaoNF txtid, True, optServico
 If Permitido1 = False Or Permitido = False Then
     USMsgBox ("Não é permitido excluir, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
@@ -20104,7 +20050,7 @@ With ListaProdutos
                 Evento = "Excluir produto"
                 ID_documento = .ListItems(InitFor)
                 ProcVerificaTipoNF False
-                If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+                If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
                 Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
                 Documento1 = "Cód. interno: " & TBFI!int_Cod_Produto
                 ProcGravaEvento
@@ -20145,9 +20091,9 @@ Else
     txtidproduto = 0
     ProcLimpaCamposProd
     ProcCarregaLista
-    If NF_alterada = True Then ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+    If NF_alterada = True Then ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
     ProcGravarTotaisNota
-    ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+    ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
     ProcCarregaListaNota (IIf(ReturnNumbersOnly(Left(lblPaginas(1).Caption, Len(lblPaginas(1).Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas(1).Caption, Len(lblPaginas(1).Caption) - 5))))
     Frame1(9).Enabled = False
     Novo_Nota1 = False
@@ -20165,9 +20111,9 @@ Set TBCotacao = CreateObject("adodb.recordset")
 TBCotacao.Open "Select VP.* from vendas_carteira VC INNER JOIN vendas_proposta VP ON VP.Cotacao = VC.Cotacao where VC.Codigo = " & ID_carteira & " and VC.Desenho = '" & Codinterno & "'", Conexao, adOpenKeyset, adLockOptimistic
 If TBCotacao.EOF = False Then
     Set TBProposta = CreateObject("adodb.recordset")
-    TBProposta.Open "Select VC.* from vendas_carteira VC INNER JOIN tbl_Detalhes_Nota_pedidos NFPP ON NFPP.ID_carteira = VC.Codigo and NFPP.Codinterno = VC.Desenho where NFPP.ID_nota = " & txtId & " and VC.Cotacao = " & TBCotacao!Cotacao, Conexao, adOpenKeyset, adLockOptimistic
+    TBProposta.Open "Select VC.* from vendas_carteira VC INNER JOIN tbl_Detalhes_Nota_pedidos NFPP ON NFPP.ID_carteira = VC.Codigo and NFPP.Codinterno = VC.Desenho where NFPP.ID_nota = " & txtid & " and VC.Cotacao = " & TBCotacao!Cotacao, Conexao, adOpenKeyset, adLockOptimistic
     If TBProposta.EOF = True Then
-        Conexao.Execute "DELETE from tbl_proposta_nota where ID_nota = " & txtId & " and Proposta = '" & TBCotacao!Ncotacao & "' and Revisao = " & TBCotacao!Revisao
+        Conexao.Execute "DELETE from tbl_proposta_nota where ID_nota = " & txtid & " and Proposta = '" & TBCotacao!Ncotacao & "' and Revisao = " & TBCotacao!Revisao
     End If
     TBProposta.Close
 Else
@@ -20175,9 +20121,9 @@ Else
     TBCotacao.Open "Select P.* from Compras_pedido_lista CPL INNER JOIN Compras_pedido P ON P.IDpedido = CPL.IDPedido where CPL.IDlista = " & ID_carteira & " and CPL.Desenho = '" & Codinterno & "'", Conexao, adOpenKeyset, adLockOptimistic
     If TBCotacao.EOF = False Then
         Set TBProposta = CreateObject("adodb.recordset")
-        TBProposta.Open "Select CPL.* from Compras_pedido_lista CPL INNER JOIN tbl_Detalhes_Nota_pedidos NFPP ON NFPP.ID_carteira = CPL.IDLista and NFPP.Codinterno = CPL.Desenho where NFPP.ID_nota = " & txtId & " and CPL.IDpedido = " & TBCotacao!IDpedido, Conexao, adOpenKeyset, adLockOptimistic
+        TBProposta.Open "Select CPL.* from Compras_pedido_lista CPL INNER JOIN tbl_Detalhes_Nota_pedidos NFPP ON NFPP.ID_carteira = CPL.IDLista and NFPP.Codinterno = CPL.Desenho where NFPP.ID_nota = " & txtid & " and CPL.IDpedido = " & TBCotacao!IDpedido, Conexao, adOpenKeyset, adLockOptimistic
         If TBProposta.EOF = True Then
-            Conexao.Execute "DELETE from tbl_proposta_nota where ID_nota = " & txtId & " and Proposta = '" & TBCotacao!Pedido & "' and Revisao = 0"
+            Conexao.Execute "DELETE from tbl_proposta_nota where ID_nota = " & txtid & " and Proposta = '" & TBCotacao!Pedido & "' and Revisao = 0"
         End If
         TBProposta.Close
     End If
@@ -20355,8 +20301,8 @@ If Faturamento_NF_Saida = True Then
         .Locked = True
         .TabStop = False
     End With
-    lbldtEntSaid(44).Caption = "Data Saída"
-    lblhrEntsaid(21).Caption = "Hora Saída"
+    lbldtEntSaid(44).Caption = "Dt Saída"
+    lblhrEntsaid(21).Caption = "Hr Saída"
 Else
     With opt_Saida
         .Value = False
@@ -20379,8 +20325,8 @@ Else
         .Locked = False
         .TabStop = Tue
     End With
-    lbldtEntSaid(44).Caption = "Data Entrada"
-    lblhrEntsaid(21).Caption = "Hora Entrada"
+    lbldtEntSaid(44).Caption = "Dt Entrada"
+    lblhrEntsaid(21).Caption = "Hr Entrada"
 End If
 
 With Cmb_opcao_lista
@@ -20520,13 +20466,6 @@ ProcCarregaComboUnidade txtunserv, False
 ProcCarregaComboUnidade Cmb_un_com_serv, False
 ProcImportarXMLCarregacamposCombo
 Formulario_nota = Formulario
-If Formulario = "Estoque/Ordem de faturamento" Then
-'    If Faturamento_Vendas_PI = True Then
-'        ProcCorrigeColunasForm Lista_carteira, "Estoque/Ordem de faturamento - Carteira de fat. - PI", 30, False, 300, 0, 0, 1000, 500, 1000, 2200, 750, 900, 800, 850, 1000, 850, 525, 1100, 530, 550, 2800, 550, 650, 650, 1200, 2200, 1000, 1000, 1100, 900, 900, 900, 3000, 0
-'    Else
-'        ProcCorrigeColunasForm Lista_carteira, "Estoque/Ordem de faturamento - Carteira de fat. - PC", 30, False, 300, 0, 0, 1000, 0, 1000, 2200, 750, 0, 0, 850, 1000, 1000, 0, 0, 0, 550, 2800, 550, 0, 0, 1200, 2200, 1000, 0, 1100, 900, 0, 0, 3000, 0
-'    End If
-End If
 
 Exit Sub
 tratar_erro:
@@ -20536,9 +20475,9 @@ End Sub
 Private Sub ProcImprimir()
 On Error GoTo tratar_erro
 
-If Formulario = "Estoque/Ordem de faturamento" Or txtId <> "" And txtNFiscal = "" Then
+If Formulario = "Estoque/Ordem de faturamento" Or txtid <> "" And txtNFiscal = "" Then
     Acao = "abrir o menu para impressão"
-    If txtId = "" Then
+    If txtid = "" Then
         NomeCampo = "a ordem de faturamento"
         ProcVerificaAcao
         Exit Sub
@@ -20787,8 +20726,8 @@ If USMsgBox("Deseja realmente executar essa(s) atualização(ões)?", vbYesNo, "CAP
                             End If
                             TBProduto.Update
                             
-                            ProcSubstituicaoTributaria cbo_UF, IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), TBVendas!Id_Int_Cliente, TBVendas!txt_Razao_Nome, IIf(IsNull(TBProduto!dbl_ValorUnitario), 0, TBProduto!dbl_ValorUnitario), IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), BC, BCST, IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete), IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro), IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias), True, IIf(Left(Cmb_consumidor, 1) = 1, True, False), IDEmpresa
-                            ProcAtualizaCST IDEmpresa, txtIDcliente, txt_Razao, cbo_UF, IIf(Cmb_consumidor = "", 1, Left(Cmb_consumidor, 1)), IIf(cmbFinalidade_emissao = "", 1, Left(cmbFinalidade_emissao, 1))
+                            ProcSubstituicaoTributaria cbo_UF, IIf(IsNull(TBProduto!txt_CST), "", TBProduto!txt_CST), IIf(IsNull(TBProduto!ID_CF), 0, TBProduto!ID_CF), TBVendas!Id_Int_Cliente, TBVendas!txt_Razao_Nome, IIf(IsNull(TBProduto!dbl_ValorUnitario), 0, TBProduto!dbl_ValorUnitario), IIf(IsNull(TBProduto!int_Qtd), 0, TBProduto!int_Qtd), BC, BCST, IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete), IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro), IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias), True, IIf(Left(Cmb_consumidor, 1) = 1, True, False), IDempresa
+                            ProcAtualizaCST IDempresa, txtIDcliente, txt_Razao, cbo_UF, IIf(Cmb_consumidor = "", 1, Left(Cmb_consumidor, 1)), IIf(cmbFinalidade_emissao = "", 1, Left(cmbFinalidade_emissao, 1))
                             
                             TBProduto.MoveNext
                         Loop
@@ -20854,9 +20793,9 @@ If USMsgBox("Deseja realmente executar essa(s) atualização(ões)?", vbYesNo, "CAP
                 Contador1 = 0
                 TBExecucao.MoveFirst
                 Do While TBExecucao.EOF = False
-                    txtId = TBExecucao!ID
-                    ProcCarregaDadosNota IIf(txtId = "", 0, txtId)
-                    ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+                    txtid = TBExecucao!ID
+                    ProcCarregaDadosNota IIf(txtid = "", 0, txtid)
+                    ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
                     ProcCarregaLista
                     ProcCarregaListaServicos
                     ProcGravarTotaisNota
@@ -21542,7 +21481,7 @@ If Incluir = False Then
 End If
 If FunVerifRegimeEmpresa(txtIDEmpresa.Text) = 1 Then
     Set TBAbrir = CreateObject("adodb.recordset")
-    TBAbrir.Open "Select Tabela FROM Impostos_TabelaDAS where ID_empresa = " & IDEmpresa & " and Ativado = 1 group by Tabela", Conexao, adOpenKeyset, adLockOptimistic
+    TBAbrir.Open "Select Tabela FROM Impostos_TabelaDAS where ID_empresa = " & IDempresa & " and Ativado = 1 group by Tabela", Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir.EOF = True Then
         USMsgBox ("Não é permitido criar nota fiscal, pois não existe nenhuma tabela do simples nacional ativa."), vbExclamation, "CAPRIND v5.0"
         TBAbrir.Close
@@ -21703,7 +21642,7 @@ If Incluir = False Then
     Exit Sub
 End If
 If FunVerifValidacaoRegistro("criar novo", txtDtValidacao, IIf(txtNFiscal = "", "ordem de faturamento", "nota fiscal"), "produto", False) = False Then Exit Sub
-FunVerifAlteracaoNF txtId, True, OptServico
+FunVerifAlteracaoNF txtid, True, optServico
 If Permitido1 = False Or Permitido = False Then
     USMsgBox ("Não é permitido criar novo, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
@@ -21753,7 +21692,7 @@ If Incluir = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " você não tem acesso a este recurso."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-FunVerifAlteracaoNF txtId, True, OptServico
+FunVerifAlteracaoNF txtid, True, optServico
 If Permitido1 = False Or Permitido = False Then
     USMsgBox ("Não é permitido criar novo, " & MsgTexto & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
@@ -21806,7 +21745,7 @@ If Novo_Nota2 = True Then
 End If
 If txtNFiscal <> "" And txtDtValidacao <> "" And Novo_Nota3 = True Then
     If USMsgBox("A duplicata ainda não foi enviada para o financeiro, deseja enviar antes de fechar o módulo?", vbYesNo) = vbYes Then
-        ProcEnviarDupFinanceiro IIf(txtId = "", 0, txtId), True
+        ProcEnviarDupFinanceiro IIf(txtid = "", 0, txtid), True
         If Novo_Nota3 = True Then
             Exit Sub
         Else
@@ -21842,7 +21781,7 @@ If Frame1(6).Enabled = False Then
     Exit Sub
 End If
 
-If NF_enviada = True And OptServico = True And opt_Ativa.Value = True Then
+If NF_enviada = True And optServico = True And opt_Ativa.Value = True Then
 ProcGravarTotaisNota
     USMsgBox ("Não é possivel salvar, pois a nota já foi enviada."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
@@ -21850,7 +21789,7 @@ End If
 
 If opt_Ativa.Value = False And NF_cancelada = True Then
     USMsgBox ("Não é permitido salvar, pois a nota já foi cancelada."), vbExclamation, "CAPRIND v5.0"
-    ProcCarregaDadosNota IIf(txtId = "", 0, txtId)
+    ProcCarregaDadosNota IIf(txtid = "", 0, txtid)
     Exit Sub
 End If
 
@@ -21882,7 +21821,7 @@ On Error GoTo tratar_erro
 
 Permitido2 = False
 Set TBproducao = CreateObject("adodb.recordset")
-TBproducao.Open "Select * from tbl_dados_nota_fiscal where id = " & IIf(txtId = "", 0, txtId), Conexao, adOpenKeyset, adLockOptimistic
+TBproducao.Open "Select * from tbl_dados_nota_fiscal where id = " & IIf(txtid = "", 0, txtid), Conexao, adOpenKeyset, adLockOptimistic
 If TBproducao.EOF = True Then
     TBproducao.AddNew
     TBproducao!Imprimir = False
@@ -21914,10 +21853,10 @@ Else
     
     'Verifica se a NF é complementar e já possui relacionamento, se sim, não deixa alterar a finalidade
     Set TBGravar_NFe = CreateObject("adodb.recordset")
-    TBGravar_NFe.Open "Select ID from tbl_Dados_Nota_Fiscal_NFe where ID_nota = " & txtId & " and Finalidade_emissao = 2", Conexao, adOpenKeyset, adLockOptimistic
+    TBGravar_NFe.Open "Select ID from tbl_Dados_Nota_Fiscal_NFe where ID_nota = " & txtid & " and Finalidade_emissao = 2", Conexao, adOpenKeyset, adLockOptimistic
     If TBGravar_NFe.EOF = False And Left(cmbFinalidade_emissao, 1) <> 2 Then
         Set TBGravar_NFe = CreateObject("adodb.recordset")
-        TBGravar_NFe.Open "Select ID from Faturamento_Relacionamento where ID_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+        TBGravar_NFe.Open "Select ID from Faturamento_Relacionamento where ID_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
         If TBGravar_NFe.EOF = False Then
             USMsgBox ("Não é permitido alterar a finalidade de emissão desta " & IIf(txtNFiscal = "", "ordem de faturamento", "nota fiscal") & ", pois a mesma já possui relacionamento."), vbExclamation, "CAPRIND v5.0"
             TBGravar_NFe.Close
@@ -21937,9 +21876,9 @@ Else
         
     If Formulario <> "Estoque/Ordem de faturamento" And TBproducao!int_NotaFiscal <> txtNFiscal Or TBproducao!int_NotaFiscal = txtNFiscal And TBproducao!dt_DataEmissao <> txt_DtEmissao Then
         If Faturamento_NF_Saida = False Then
-            Conexao.Execute "Update ECR set ECR.Nota_fiscal = '" & txtNFiscal & "', ECR.Data_emissao = '" & txt_DtEmissao & "' from (Estoque_controle_recebimento ECR INNER JOIN Compras_pedido CP ON CP.IDpedido = ECR.IDPedido) INNER JOIN tbl_proposta_nota PN ON PN.proposta = CP.Pedido and PN.ID_nota = " & txtId & " where ECR.Nota_fiscal = '" & TBproducao!int_NotaFiscal & "'"
-            Conexao.Execute "Update EC set EC.nf = '" & txtNFiscal & "' from (((Estoque_controle EC INNER JOIN Estoque_movimentacao EM ON EM.IDestoque = EC.IDestoque) INNER JOIN Estoque_controle_recebimento ECR ON ECR.ID = EM.IDEstoque_recebimento) INNER JOIN Compras_pedido CP ON CP.IDpedido = ECR.IDPedido) INNER JOIN tbl_proposta_nota PN ON PN.proposta = CP.Pedido and PN.ID_nota = " & txtId & " where EC.nf = '" & TBproducao!int_NotaFiscal & "'"
-            Conexao.Execute "Update EM set EM.Documento = '" & txtNFiscal & "', EM.Dtemissao = '" & txt_DtEmissao & "' from ((Estoque_movimentacao EM INNER JOIN Estoque_controle_recebimento ECR ON ECR.ID = EM.IDEstoque_recebimento) INNER JOIN Compras_pedido CP ON CP.IDpedido = ECR.IDPedido) INNER JOIN tbl_proposta_nota PN ON PN.proposta = CP.Pedido and PN.ID_nota = " & txtId & " where EM.Documento = '" & TBproducao!int_NotaFiscal & "'"
+            Conexao.Execute "Update ECR set ECR.Nota_fiscal = '" & txtNFiscal & "', ECR.Data_emissao = '" & txt_DtEmissao & "' from (Estoque_controle_recebimento ECR INNER JOIN Compras_pedido CP ON CP.IDpedido = ECR.IDPedido) INNER JOIN tbl_proposta_nota PN ON PN.proposta = CP.Pedido and PN.ID_nota = " & txtid & " where ECR.Nota_fiscal = '" & TBproducao!int_NotaFiscal & "'"
+            Conexao.Execute "Update EC set EC.nf = '" & txtNFiscal & "' from (((Estoque_controle EC INNER JOIN Estoque_movimentacao EM ON EM.IDestoque = EC.IDestoque) INNER JOIN Estoque_controle_recebimento ECR ON ECR.ID = EM.IDEstoque_recebimento) INNER JOIN Compras_pedido CP ON CP.IDpedido = ECR.IDPedido) INNER JOIN tbl_proposta_nota PN ON PN.proposta = CP.Pedido and PN.ID_nota = " & txtid & " where EC.nf = '" & TBproducao!int_NotaFiscal & "'"
+            Conexao.Execute "Update EM set EM.Documento = '" & txtNFiscal & "', EM.Dtemissao = '" & txt_DtEmissao & "' from ((Estoque_movimentacao EM INNER JOIN Estoque_controle_recebimento ECR ON ECR.ID = EM.IDEstoque_recebimento) INNER JOIN Compras_pedido CP ON CP.IDpedido = ECR.IDPedido) INNER JOIN tbl_proposta_nota PN ON PN.proposta = CP.Pedido and PN.ID_nota = " & txtid & " where EM.Documento = '" & TBproducao!int_NotaFiscal & "'"
         End If
         Conexao.Execute "Update tbl_contas_receber Set NFiscal = '" & txtNFiscal & "' where NFiscal = '" & TBproducao!int_NotaFiscal & "'"
         Conexao.Execute "Update tbl_Dados_Transp Set int_NotaFiscal = '" & txtNFiscal & "' where int_NotaFiscal = '" & TBproducao!int_NotaFiscal & "'"
@@ -21959,7 +21898,7 @@ Else
 End If
 
 
-ProcVerifDupEnviadaFinanceiro IIf(txtId = "", 0, txtId)
+ProcVerifDupEnviadaFinanceiro IIf(txtid = "", 0, txtid)
 If NF_enviada = False And Permitido = True Then
     If txtIDcliente <> "" Then
         TBproducao!Id_Int_Cliente = txtIDcliente
@@ -22054,17 +21993,17 @@ Else
 End If
 TBproducao!txt_Fone_Fax = txt_FoneFAX.Text
 TBproducao.Update
-txtId = TBproducao!ID
-ProcAtualizaDadosPedido txtId, False
+txtid = TBproducao!ID
+ProcAtualizaDadosPedido txtid, False
 
 '============================================================
 ' Grava os dados de envio da NFe
 '============================================================
 Set TBGravar = CreateObject("adodb.recordset")
-TBGravar.Open "Select * From tbl_Dados_Nota_Fiscal_NFe where ID_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBGravar.Open "Select * From tbl_Dados_Nota_Fiscal_NFe where ID_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
 If TBGravar.EOF = True Then
     TBGravar.AddNew
-    TBGravar!ID_nota = txtId
+    TBGravar!ID_nota = txtid
     TBGravar!status = Null
 End If
 If Faturamento_NF_Saida = False Then TBGravar!Chave_acesso = Txt_chave_acesso
@@ -22084,12 +22023,12 @@ TBGravar.Update
 ' Grava os totais da ordem de faturamento
 '============================================================
 Set TBGravar = CreateObject("adodb.recordset")
-TBGravar.Open "Select * from tbl_Totais_Nota where ID_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBGravar.Open "Select * from tbl_Totais_Nota where ID_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
 If TBGravar.EOF = True Then
     TBGravar.AddNew
-    TBGravar!ID_nota = txtId
+    TBGravar!ID_nota = txtid
     TBGravar!int_NotaFiscal = IIf(txtNFiscal = "", Null, txtNFiscal)
-    ProcVerifImpostosEmpresa IDEmpresa, False, "", False, 0, False, TabelaSN, Lbl2.Caption
+    ProcVerifImpostosEmpresa IDempresa, False, "", False, 0, False, TabelaSN, Lbl2.Caption
     TBGravar!DAS = DAS
     TBGravar.Update
 End If
@@ -22097,7 +22036,7 @@ TBGravar.Close
 
 If txtNFiscal = "" Then
     NomeCampo = "ordem de faturamento"
-    NomeCampo1 = "N° ordem: " & txtId
+    NomeCampo1 = "N° ordem: " & txtid
 Else
     NomeCampo = "nota fiscal"
     NomeCampo1 = "N° nota: " & txtNFiscal
@@ -22124,17 +22063,17 @@ If Novo_Nota = True Then
         OrdenarFiltro = "order by NNF desc"
     End If
     CamposFiltro = "NF.ID, NF.dt_DataEmissao, NF.dt_Saida_Entrada, NF.int_NotaFiscal, NF.TipoNF, NF.Serie, TN.dbl_Valor_Total_Nota, NF.txt_Razao_Nome, NF.Int_status, NF.Imprimir, NF.ID_empresa, NF.Aplicacao, NF.DtValidacaoOF, NF.DtValidacao, NF.RPS"
-    Strsql_Faturamento = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtId
-    Strsql_FaturamentoTotal = "Select Sum(TN.dbl_Valor_Total_Nota) as Valor1, Sum(TN.Valor_Total_Receber_Pagar) as Valor2 from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtId & " and NF.Int_status = 1"
-    Strsql_FaturamentoTotalCanc = "Select Sum(TN.dbl_Valor_Total_Nota) as Valor3 from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtId & " and NF.Int_status = 2"
-    Strsql_FaturamentoNFe = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.TipoNF <> 'SA' AND NF.ID = " & txtId
-    Strsql_FaturamentoNFSe = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.TipoNF = 'SA' AND NF.ID = " & txtId
+    Strsql_Faturamento = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtid
+    Strsql_FaturamentoTotal = "Select Sum(TN.dbl_Valor_Total_Nota) as Valor1, Sum(TN.Valor_Total_Receber_Pagar) as Valor2 from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtid & " and NF.Int_status = 1"
+    Strsql_FaturamentoTotalCanc = "Select Sum(TN.dbl_Valor_Total_Nota) as Valor3 from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.ID = " & txtid & " and NF.Int_status = 2"
+    Strsql_FaturamentoNFe = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.TipoNF <> 'SA' AND NF.ID = " & txtid
+    Strsql_FaturamentoNFSe = "Select " & CamposFiltro & " from tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota where NF.TipoNF = 'SA' AND NF.ID = " & txtid
     ProcCarregaListaNota (1)
 Else
 
 If NotaFiscalPronta = False Then
     Set TBProduto = CreateObject("adodb.recordset")
-    TBProduto.Open "Select NFP.Int_codigo, NFP.Tem_IPI_frete, NFP.ID_CF, NFP.ID_CFOP, NFP.dbl_ValorTotal, NFP.Valor_desconto, NFP.Valor_frete, NFP.int_ICMS, NFP.ICMS_SN, NFP.dbl_ValorIPI, NFP.NaoArredondar, NFP.txt_CST, NFP.CST_IPI, NFP.CST_PIS, NFP.CST_Cofins, NFP.dbl_ValorUnitario, NFP.int_Qtd, NFP.Valor_seguro, NFP.Valor_acessorias, NFP.VlrMPA, TN.Total_DAS from tbl_Detalhes_Nota NFP INNER JOIN tbl_Totais_Nota TN ON TN.ID_nota = NFP.ID_nota where NFP.id_nota = " & txtId.Text & " and NFP.Remessa = 'False' and NFP.Retorno = 'False' and NFP.Tipo = 'P' order by NFP.int_codigo", Conexao, adOpenKeyset, adLockOptimistic
+    TBProduto.Open "Select NFP.Int_codigo, NFP.Tem_IPI_frete, NFP.ID_CF, NFP.ID_CFOP, NFP.dbl_ValorTotal, NFP.Valor_desconto, NFP.Valor_frete, NFP.int_ICMS, NFP.ICMS_SN, NFP.dbl_ValorIPI, NFP.NaoArredondar, NFP.txt_CST, NFP.CST_IPI, NFP.CST_PIS, NFP.CST_Cofins, NFP.dbl_ValorUnitario, NFP.int_Qtd, NFP.Valor_seguro, NFP.Valor_acessorias, NFP.VlrMPA, TN.Total_DAS from tbl_Detalhes_Nota NFP INNER JOIN tbl_Totais_Nota TN ON TN.ID_nota = NFP.ID_nota where NFP.id_nota = " & txtid.Text & " and NFP.Remessa = 'False' and NFP.Retorno = 'False' and NFP.Tipo = 'P' order by NFP.int_codigo", Conexao, adOpenKeyset, adLockOptimistic
     If TBProduto.EOF = False Then
         Do While TBProduto.EOF = False
             ProcRecalculaICMS
@@ -22156,7 +22095,7 @@ End If
 1:
     '==================================
     Modulo = Formulario
-    ID_documento = txtId
+    ID_documento = txtid
     ProcVerificaTipoNF False
     Documento = NomeCampo1 & " - Tipo: " & TipoNF & " - Série: " & txtSerie
     Documento1 = ""
@@ -22164,7 +22103,7 @@ End If
     '==================================
     NF = txtNFiscal
     Novo_Nota = False
-    ProcCarregaDadosNota IIf(txtId = "", 0, txtId)
+    ProcCarregaDadosNota IIf(txtid = "", 0, txtid)
     ProcCarregaLista
 
 Exit Sub
@@ -22176,13 +22115,13 @@ End Sub
 Sub ProcGravarTotaisNota()
 On Error GoTo tratar_erro
 
-If txtId = "" Then Exit Sub
+If txtid = "" Then Exit Sub
 
 '==========================================================================================
 'Se não for nota importada do recebimento do pedido de compras
 '==========================================================================================
 If NF_Recebimento = False Then
-  FunVerifAlteracaoNF txtId, True, OptServico
+  FunVerifAlteracaoNF txtid, True, optServico
    If Permitido1 = False And Permitido = False And NF_alterada = True Or Atualizacao = False And NF_alterada = True Or AtualizaImpSN = False And NF_alterada = True Then
     Exit Sub
    End If
@@ -22191,12 +22130,18 @@ End If
 ' Busca Total de produtos
 '=========================================================
     Set TBAbrir_NFe = CreateObject("adodb.recordset")
-    StrSql = "Select Sum(dbl_Valortotal) as TotalProduto from tbl_Detalhes_Nota where Tipo = 'P' and id_Nota = " & txtId.Text
+    StrSql = "Select Sum(dbl_Valortotal) as TotalProduto from tbl_Detalhes_Nota where Tipo = 'P' and id_Nota = " & txtid.Text
+    'Debug.print StrSql
+'=========================================================
+' Busca Total Imposto importacao
+'=========================================================
+    Set TBAbrir_NFe = CreateObject("adodb.recordset")
+    StrSql = "Select Sum(Valor_imposto_importacao) as TotalII from tbl_Detalhes_Nota_Nfe where id_Nota = " & txtid.Text
     'Debug.print StrSql
     
-    TBAbrir_NFe.Open "Select Sum(dbl_ValorTotal) as TotalProduto from tbl_Detalhes_Nota where Tipo = 'P' and id_Nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBAbrir_NFe.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir_NFe.EOF = False Then
-    txt_vlrtotalprod = IIf(IsNull(TBAbrir_NFe!TotalProduto), 0, TBAbrir_NFe!TotalProduto)
+    TotalII = IIf(IsNull(TBAbrir_NFe!TotalII), 0, TBAbrir_NFe!TotalII)
     'Debug.print txt_vlrtotalprod
     End If
     TBAbrir_NFe.Close
@@ -22204,7 +22149,7 @@ End If
 ' Busca Total de serviços
 '=========================================================
     Set TBAbrir_NFe = CreateObject("adodb.recordset")
-    TBAbrir_NFe.Open "Select Sum(dbl_ValorTotal) as TotalServico from tbl_Detalhes_Nota where Tipo = 'S' and id_Nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBAbrir_NFe.Open "Select Sum(dbl_ValorTotal) as TotalServico from tbl_Detalhes_Nota where Tipo = 'S' and id_Nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir_NFe.EOF = False Then
     txttotalservicos = IIf(IsNull(TBAbrir_NFe!Totalservico), 0, TBAbrir_NFe!Totalservico)
     End If
@@ -22214,14 +22159,14 @@ End If
     TotalProduto = IIf(txt_vlrtotalprod = "", 0, txt_vlrtotalprod)
     TotalServicos = IIf(txttotalservicos = "", 0, txttotalservicos)
     Set TBTotaisnota = CreateObject("adodb.recordset")
-    TBTotaisnota.Open "Select * from tbl_totais_nota where id_Nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBTotaisnota.Open "Select * from tbl_totais_nota where id_Nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
     
     If TBTotaisnota.EOF = True Then
     TBTotaisnota.AddNew
     End If
     
     TBTotaisnota!int_NotaFiscal = IIf(txtNFiscal = "", Null, txtNFiscal)
-    If txtId.Text <> "" Then TBTotaisnota!ID_nota = txtId.Text
+    If txtid.Text <> "" Then TBTotaisnota!ID_nota = txtid.Text
     TBTotaisnota!dbl_Valor_Total_Produtos = IIf(txt_vlrtotalprod = "", 0, Format(txt_vlrtotalprod, "###,##0.00"))
     TBTotaisnota!dbl_Valor_Total_Nota_Serv = IIf(txttotalservicos = "", 0, Format(txttotalservicos, "###,##0.00"))
     TBTotaisnota!Qtde_total_serv = qtdeliberada 'Qtde. serviços
@@ -22229,6 +22174,7 @@ End If
     TBTotaisnota!VlrMPA = IIf(txtVLRMPA = "", 0, Format(txtVLRMPA, "###,##0.00"))
     
     TBTotaisnota!Valor_total_desconto_SUFRAMA = Format(VlrICMS_suframa, "###,##0.00")
+    TBTotaisnota!Valor_total_II = Format(TotalII, "###,##0.00")
     
     If NF_alterada = False And ListaProdutos.ListItems.Count <> 0 Then
         ProcCalculaTotaisProduto
@@ -22282,7 +22228,12 @@ End If
     txtTotalIPIdevolv = Format(TotalIPIdevolv, "###,##0.00")
     
 '=========================================================================================================
+If cbo_UF <> "EX" Then
     txt_ValorNota.Text = Format(((TotalProduto + IIf(txt_vlrSeguro = "", 0, txt_vlrSeguro) + IIf(txt_OutrasDisp = "", 0, txt_OutrasDisp) + TotalIPI + TotalIPIdevolv + TotalICMSCST + TotalServicos) + IIf(txt_VlrFrete.Text = "", 0, txt_VlrFrete.Text)) - IIf(Txt_valor_total_desc = "", 0, Txt_valor_total_desc) - VlrICMS_suframa, "###,##0.00")
+Else
+    Valor_ICMS = txt_vlrICMS
+    txt_ValorNota.Text = Format(((TotalProduto + Valor_ICMS + TotalII + Valor_PIS_Prod + Valor_Cofins_Prod + IIf(txt_vlrSeguro = "", 0, txt_vlrSeguro) + IIf(txt_OutrasDisp = "", 0, txt_OutrasDisp) + TotalIPI + TotalIPIdevolv + TotalICMSCST + TotalServicos) + IIf(txt_VlrFrete.Text = "", 0, txt_VlrFrete.Text)) - IIf(Txt_valor_total_desc = "", 0, Txt_valor_total_desc) - VlrICMS_suframa, "###,##0.00")
+End If
 '=========================================================================================================
     'Impostos faturamento
     TBTotaisnota!Total_DAS = Format(Valor_DAS + Valor_DAS_Serv, "###,##0.00")
@@ -22545,17 +22496,23 @@ Private Sub ListaNota_ItemClick(ByVal Item As MSComctlLib.ListItem)
 On Error GoTo tratar_erro
 If ListaNota.ListItems.Count = 0 Then Exit Sub
 ProcLimpaCamposNota
-txtId.Text = ListaNota.SelectedItem
-FunChecaNota (txtId.Text)
-ProcCarregaDadosNota IIf(txtId = "", 0, txtId)
+txtid.Text = ListaNota.SelectedItem
+
+
+
+ProcCarregaDadosNota IIf(txtid = "", 0, txtid)
+
+
+FunChecaNota (txtid.Text)
+
 
 If opt_Cancelada.Value = True Then
-StrSql = "Update tbl_Dados_Nota_Fiscal Set int_status = '2' Where ID = '" & txtId.Text & "'"
+StrSql = "Update tbl_Dados_Nota_Fiscal Set int_status = '2' Where ID = '" & txtid.Text & "'"
 Conexao.Execute StrSql
 End If
 
 CodigoLista = ListaNota.SelectedItem.index
-ID_empresa = IDEmpresa
+ID_empresa = IDempresa
 ID_nota = ListaNota.SelectedItem
 
 Exit Sub
@@ -22630,7 +22587,7 @@ If Faturamento_NF_Saida = False And txt_EntSai = "__/__/____" Then
     End If
 End If
 If Faturamento_NF_Saida = True Then
-    If OptServico.Value = True Then
+    If optServico.Value = True Then
         DataTexto = "data de competência"
     Else
         DataTexto = "data de saída"
@@ -22645,7 +22602,7 @@ If txt_EntSai <> "__/__/____" Then
         FunChecaCampos = False
         Exit Function
     Else
-        If OptServico.Value = False Then
+        If optServico.Value = False Then
             Dataini = txt_DtEmissao
             DataFim = txt_EntSai
             If DataFim < Dataini Then
@@ -22730,7 +22687,7 @@ If Faturamento_NF_Saida = False Then
             Txt_chave_acesso.SetFocus
             Exit Function
         Else
-            If txtId <> "" Then TextoFiltro = " and ID_nota <> " & txtId Else TextoFiltro = ""
+            If txtid <> "" Then TextoFiltro = " and ID_nota <> " & txtid Else TextoFiltro = ""
             Set TBFI = CreateObject("adodb.recordset")
             TBFI.Open "Select ID from tbl_Dados_Nota_Fiscal_NFe where Chave_acesso = '" & Txt_chave_acesso & "'" & TextoFiltro, Conexao, adOpenKeyset, adLockOptimistic
             If TBFI.EOF = False Then
@@ -22757,7 +22714,7 @@ Else
         Exit Function
     End If
 End If
-If OptServico.Value = True And txt_FoneFAX = "" Then
+If optServico.Value = True And txt_FoneFAX = "" Then
     NomeCampo = "o numero de telefone"
     ProcVerificaAcao
     FunChecaCampos = False
@@ -22771,11 +22728,11 @@ tratar_erro:
     Exit Function
 End Function
 
-Public Function FunChecaNota(IDNota As Long)
+Public Function FunChecaNota(IDnota As Long)
 On Error GoTo tratar_erro
 
 Set TBAbrir_NFe = CreateObject("adodb.recordset")
-TBAbrir_NFe.Open "Select DtValidacao from tbl_Dados_Nota_Fiscal where ID = " & IDNota, Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir_NFe.Open "Select DtValidacao from tbl_Dados_Nota_Fiscal where ID = " & IDnota, Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir_NFe.EOF = False Then
 If IsNull(TBAbrir_NFe!DtValidacao) = False Then
 NotaFiscalPronta = True
@@ -22800,7 +22757,7 @@ If ColumnHeader = "" Then
             If .ListItems.Item(InitFor).Checked = True Then
                 .ListItems.Item(InitFor).Checked = False
             Else
-                If FunVerificaRegistroValidadoSemMsg("tbl_Dados_Nota_Fiscal", "ID = " & txtId, True) = False Then
+                If FunVerificaRegistroValidadoSemMsg("tbl_Dados_Nota_Fiscal", "ID = " & txtid, True) = False Then
                     .ListItems.Item(InitFor).Checked = False
                     GoTo Proximo
                 End If
@@ -22944,7 +22901,7 @@ If ColumnHeader = "" Then
                 .ListItems.Item(InitFor).Checked = False
             Else
                 If Cmb_opcao_lista_Produtos = "Excluir" Then
-                    If FunVerificaRegistroValidadoSemMsg("tbl_Dados_Nota_Fiscal", "ID = " & txtId, True) = False Then
+                    If FunVerificaRegistroValidadoSemMsg("tbl_Dados_Nota_Fiscal", "ID = " & txtid, True) = False Then
                         .ListItems.Item(InitFor).Checked = False
                         GoTo Proximo
                     End If
@@ -22986,7 +22943,7 @@ If ColumnHeader = "" Then
                         End If
                         TBCarteira.Close
                             
-                        EstoqueAtual = FunVerificaQtdeEstoque(.ListItems(InitFor).ListSubItems(1), IDEmpresa, "")
+                        EstoqueAtual = FunVerificaQtdeEstoque(.ListItems(InitFor).ListSubItems(1), IDempresa, "")
                         'Verifica empenho de vendas
                         Valor1 = 0
                         Set TBFI = CreateObject("adodb.recordset")
@@ -23680,7 +23637,7 @@ Lbl2.Caption = Format(FunVerifVlrTotalFat12UltMesesSomado(txtIDEmpresa.Text), "#
 
 ProcVerificaRegime
 ProcVerificaTPNFe
-txtIDEmpresa.Text = IDEmpresa
+txtIDEmpresa.Text = IDempresa
 txtSerie.Text = NF_Serie
 
 Exit Sub
@@ -23699,7 +23656,7 @@ End If
 
 Lbl2.Caption = Format(FunVerifVlrTotalFat12UltMesesSomado(txtIDEmpresa.Text), "###,##0.00")
 
-txtIDEmpresa.Text = IDEmpresa
+txtIDEmpresa.Text = IDempresa
 ProcVerificaTPNFe
 ProcVerificaRegime
 
@@ -23711,7 +23668,7 @@ TabelaSN = IIf(IsNull(TBControleNF!TabelaSN), 0, TBControleNF!TabelaSN)
 End If
 TBControleNF.Close
 
-ProcVerifImpostosSN IDEmpresa, TabelaSN, Lbl2.Caption
+ProcVerifImpostosSN IDempresa, TabelaSN, Lbl2.Caption
 lblSN.Caption = "% SN: " & IIf(IsNull(ICMS_SN), 0, Format(ICMS_SN, "###,##0.0000"))
 lblSN.Visible = True
 Else
@@ -23793,7 +23750,7 @@ Else
     Valor6 = 0
     Set TBItem = CreateObject("adodb.recordset")
 
-    TBItem.Open "Select Sum(NFP.dbl_ValorTotal - ISNULL(NFP.Valor_desconto, 0)) as Valor1, Sum(ISNULL(NFP.Valor_frete, 0)) as Valor3, Sum(ISNULL(NFP.Valor_seguro, 0)) as Valor4, Sum(ISNULL(NFP.Valor_acessorias, 0)) as Valor5, Sum(ISNULL(CST.Valor_ICMS_ST, 0)) as Valor6 from tbl_Detalhes_Nota NFP INNER JOIN tbl_Detalhes_Nota_CST_ICMS CST ON CST.ID_item = NFP.Int_codigo where NFP.ID_nota = " & IIf(txtId = "", 0, txtId) & " and (txt_CST = '0101' or txt_CST = '0201')", Conexao, adOpenKeyset, adLockOptimistic
+    TBItem.Open "Select Sum(NFP.dbl_ValorTotal - ISNULL(NFP.Valor_desconto, 0)) as Valor1, Sum(ISNULL(NFP.Valor_frete, 0)) as Valor3, Sum(ISNULL(NFP.Valor_seguro, 0)) as Valor4, Sum(ISNULL(NFP.Valor_acessorias, 0)) as Valor5, Sum(ISNULL(CST.Valor_ICMS_ST, 0)) as Valor6 from tbl_Detalhes_Nota NFP INNER JOIN tbl_Detalhes_Nota_CST_ICMS CST ON CST.ID_item = NFP.Int_codigo where NFP.ID_nota = " & IIf(txtid = "", 0, txtid) & " and (txt_CST = '0101' or txt_CST = '0201')", Conexao, adOpenKeyset, adLockOptimistic
     If TBItem.EOF = False Then
         Valor1 = IIf(IsNull(TBItem!Valor1), 0, TBItem!Valor1)
         Valor3 = IIf(IsNull(TBItem!Valor3), 0, TBItem!Valor3)
@@ -24322,11 +24279,11 @@ With Cmb_cobranca
         TBFI.Close
         
         Permitido = True
-        If txtId <> "" Then
+        If txtid <> "" Then
             Set TBFI = CreateObject("adodb.recordset")
             If Tipo = "C" Then
                 TextoID = ""
-                TBFI.Open "Select VC.* from (vendas_comercial VC INNER JOIN vendas_proposta VP ON VP.Cotacao = VC.Cotacao) INNER JOIN tbl_proposta_nota PN ON PN.proposta = VP.Ncotacao and PN.Revisao = VP.Revisao where PN.ID_nota = " & txtId & " and VC.ID_Cobranca IS NOT NULL and VC.ID_Cobranca <> 0 order by VC.ID_Cobranca", Conexao, adOpenKeyset, adLockReadOnly
+                TBFI.Open "Select VC.* from (vendas_comercial VC INNER JOIN vendas_proposta VP ON VP.Cotacao = VC.Cotacao) INNER JOIN tbl_proposta_nota PN ON PN.proposta = VP.Ncotacao and PN.Revisao = VP.Revisao where PN.ID_nota = " & txtid & " and VC.ID_Cobranca IS NOT NULL and VC.ID_Cobranca <> 0 order by VC.ID_Cobranca", Conexao, adOpenKeyset, adLockReadOnly
                 If TBFI.EOF = False Then
                     Permitido = False
                     Do While TBFI.EOF = False
@@ -24340,7 +24297,7 @@ With Cmb_cobranca
                 End If
                 TBFI.Close
             Else
-                TBFI.Open "Select CC.* from (Compras_comercial CC INNER JOIN Compras_pedido CP ON CP.IDpedido = CC.IDpedido) INNER JOIN tbl_proposta_nota PN ON PN.proposta = CP.Pedido and PN.Revisao = 0 where PN.ID_nota = " & txtId & " and CC.ID_Cobranca IS NOT NULL and CC.ID_Cobranca <> 0 and CC.localCobranca IS NOT NULL", Conexao, adOpenKeyset, adLockReadOnly
+                TBFI.Open "Select CC.* from (Compras_comercial CC INNER JOIN Compras_pedido CP ON CP.IDpedido = CC.IDpedido) INNER JOIN tbl_proposta_nota PN ON PN.proposta = CP.Pedido and PN.Revisao = 0 where PN.ID_nota = " & txtid & " and CC.ID_Cobranca IS NOT NULL and CC.ID_Cobranca <> 0 and CC.localCobranca IS NOT NULL", Conexao, adOpenKeyset, adLockReadOnly
                 If TBFI.EOF = False Then
                     Permitido = False
                     .AddItem TBFI!localCobranca
@@ -24377,9 +24334,9 @@ With Cmb_cobranca
         End If
         
         idCobranca = 0
-        If txtId <> "" Then
+        If txtid <> "" Then
             Set TBAcessos = CreateObject("adodb.recordset")
-            TBAcessos.Open "Select ID_Cobranca from tbl_Dados_Nota_Fiscal_NFe NFE INNER JOIN tbl_Dados_Nota_Fiscal NF ON NF.id = NFE.ID_nota where NF.id = " & txtId & " and NF.ID_int_cliente = " & txtIDcliente & " and NF.txt_razao_nome = '" & txt_Razao & "' and NFE.ID_Cobranca IS NOT NULL", Conexao, adOpenKeyset, adLockReadOnly
+            TBAcessos.Open "Select ID_Cobranca from tbl_Dados_Nota_Fiscal_NFe NFE INNER JOIN tbl_Dados_Nota_Fiscal NF ON NF.id = NFE.ID_nota where NF.id = " & txtid & " and NF.ID_int_cliente = " & txtIDcliente & " and NF.txt_razao_nome = '" & txt_Razao & "' and NFE.ID_Cobranca IS NOT NULL", Conexao, adOpenKeyset, adLockReadOnly
             If TBAcessos.EOF = False Then
                 Set TBFI = CreateObject("adodb.recordset")
                 TBFI.Open "Select * from clientes_Cobranca where idCobranca = " & TBAcessos!ID_Cobranca, Conexao, adOpenKeyset, adLockReadOnly
@@ -24422,7 +24379,7 @@ Private Sub txtidempresa_Change()
 On Error GoTo tratar_erro
 
 If IsNumeric(txtIDEmpresa.Text) Then
-IDEmpresa = txtIDEmpresa
+IDempresa = txtIDEmpresa
 
 ProcVerificaTPNFe
 ProcVerificaRegime
@@ -24430,7 +24387,7 @@ txtEmpresa = NomeEmpresa
 
 If Regime = 1 Then
 Lbl2.Caption = Format(FunVerifVlrTotalFat12UltMesesSomado(txtIDEmpresa.Text), "###,##0.00")
-ProcVerifImpostosSN IDEmpresa, TabelaSN, Lbl2.Caption
+ProcVerifImpostosSN IDempresa, TabelaSN, Lbl2.Caption
 lblSN.Caption = "% SN: " & IIf(IsNull(ICMS_SN), 0, Format(ICMS_SN, "###,##0.0000"))
 lblSN.Visible = True
 Else
@@ -24449,14 +24406,14 @@ Private Sub txtidempresa_Click()
 On Error GoTo tratar_erro
 
 If IsNumeric(txtIDEmpresa.Text) Then
-IDEmpresa = txtIDEmpresa
+IDempresa = txtIDEmpresa
 
 ProcVerificaTPNFe
 ProcVerificaRegime
 
 If Regime = 1 Then
 Lbl2.Caption = Format(FunVerifVlrTotalFat12UltMesesSomado(txtIDEmpresa.Text), "###,##0.00")
-ProcVerifImpostosSN IDEmpresa, TabelaSN, Lbl2.Caption
+ProcVerifImpostosSN IDempresa, TabelaSN, Lbl2.Caption
 lblSN.Caption = "% SN: " & IIf(IsNull(ICMS_SN), 0, Format(ICMS_SN, "###,##0.0000"))
 lblSN.Visible = True
 Else
@@ -24545,12 +24502,12 @@ valor = txtQTD
 If txtUN <> "" And Cmb_un_com <> "" Then valor = valor / FunVerificaTabelaConversaoUnidade(txtUN, Cmb_un_com)
 NovoValor = Replace(valor, ",", ".")
 Set TBEstoque = CreateObject("adodb.recordset")
-TBEstoque.Open "Select EC.IDestoque from Estoque_Controle_Empenho_Vendas EE INNER JOIN estoque_controle EC ON EE.ID_estoque = EC.IDEstoque where EC.ID_empresa = " & IDEmpresa & " and EC.Desenho = '" & txtCod_Produto & "' and EC.Lote = '" & txtof & "' and EE.Qtde_empenhada - EE.Qtde_saida > 0", Conexao, adOpenKeyset, adLockReadOnly
+TBEstoque.Open "Select EC.IDestoque from Estoque_Controle_Empenho_Vendas EE INNER JOIN estoque_controle EC ON EE.ID_estoque = EC.IDEstoque where EC.ID_empresa = " & IDempresa & " and EC.Desenho = '" & txtCod_Produto & "' and EC.Lote = '" & txtof & "' and EE.Qtde_empenhada - EE.Qtde_saida > 0", Conexao, adOpenKeyset, adLockReadOnly
 If TBEstoque.EOF = False Then
     Txt_IDestoque = TBEstoque!IDEstoque
 Else
     Set TBEstoque = CreateObject("adodb.recordset")
-    TBEstoque.Open "Select Idestoque from Estoque_controle where ID_empresa = " & IDEmpresa & " and Desenho = '" & txtCod_Produto & "' and Lote = '" & txtof & "' and Estoque_real >= " & NovoValor, Conexao, adOpenKeyset, adLockOptimistic
+    TBEstoque.Open "Select Idestoque from Estoque_controle where ID_empresa = " & IDempresa & " and Desenho = '" & txtCod_Produto & "' and Lote = '" & txtof & "' and Estoque_real >= " & NovoValor, Conexao, adOpenKeyset, adLockOptimistic
     If TBEstoque.EOF = False Then Txt_IDestoque = TBEstoque!IDEstoque
 End If
 TBEstoque.Close
@@ -24611,7 +24568,7 @@ With SSFaturamento
             
             If Right(Formulario, 20) = "Ordem de faturamento" Then
                 Set TBFerramentas = CreateObject("adodb.recordset")
-                TBFerramentas.Open "Select * from empresa where codigo = " & IDEmpresa & " and Esconder_ValorOF = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+                TBFerramentas.Open "Select * from empresa where codigo = " & IDempresa & " and Esconder_ValorOF = 'True'", Conexao, adOpenKeyset, adLockOptimistic
                 If TBFerramentas.EOF = False Then
                     .TabsPerRow = 5
                 Else
@@ -24625,7 +24582,7 @@ With SSFaturamento
             End If
         End If
         TipoNF = "M1"
-    ElseIf OptServico.Value = True Then
+    ElseIf optServico.Value = True Then
             If CorrigeTab = True Then
                 .TabVisible(2) = False
                 .TabVisible(3) = True
@@ -24634,7 +24591,7 @@ With SSFaturamento
                 
                 If Right(Formulario, 20) = "Ordem de faturamento" Then
                     Set TBFerramentas = CreateObject("adodb.recordset")
-                    TBFerramentas.Open "Select * from empresa where codigo = " & IDEmpresa & " and Esconder_ValorOF = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+                    TBFerramentas.Open "Select * from empresa where codigo = " & IDempresa & " and Esconder_ValorOF = 'True'", Conexao, adOpenKeyset, adLockOptimistic
                     If TBFerramentas.EOF = False Then
                         .TabsPerRow = 5
                     Else
@@ -24654,7 +24611,7 @@ With SSFaturamento
                 .TabVisible(3) = True
                 If Right(Formulario, 20) = "Ordem de faturamento" Then
                     Set TBFerramentas = CreateObject("adodb.recordset")
-                    TBFerramentas.Open "Select * from empresa where codigo = " & IDEmpresa & " and Esconder_ValorOF = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+                    TBFerramentas.Open "Select * from empresa where codigo = " & IDempresa & " and Esconder_ValorOF = 'True'", Conexao, adOpenKeyset, adLockOptimistic
                     If TBFerramentas.EOF = False Then
                         .TabsPerRow = 6
                     Else
@@ -24879,7 +24836,7 @@ Private Sub ProcTranspEmpresa()
 On Error GoTo tratar_erro
 
 Set TBEmpresa = CreateObject("adodb.recordset")
-TBEmpresa.Open "Select * FROM  Empresa  WHERE  Codigo = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+TBEmpresa.Open "Select * FROM  Empresa  WHERE  Codigo = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
 If TBEmpresa.EOF = False Then
         txtidinttransp.Text = TBEmpresa!CODIGO
         TxtTransp_nome = IIf(IsNull(TBEmpresa!Empresa), "", TBEmpresa!Empresa)
@@ -25114,7 +25071,7 @@ On Error GoTo tratar_erro
 Valido = False
 If Txt_ID_CF <> "" And cbo_UF <> "" Then
     Set TBAbrir = CreateObject("adodb.recordset")
-    TBAbrir.Open "Select * from Empresa where Codigo = " & IDEmpresa & " and Carregar_CFOP_ST = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+    TBAbrir.Open "Select * from Empresa where Codigo = " & IDempresa & " and Carregar_CFOP_ST = 'True'", Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir.EOF = False Then
         ProcVerifCFOPST Txt_ID_CF, cbo_UF
         If Valido = True Then
@@ -25157,11 +25114,11 @@ End Sub
 
 Private Sub opt_Cancelada_Click()
 On Error GoTo tratar_erro
-IDNota = txtId.Text
+IDnota = txtid.Text
 
 If opt_Cancelada.Value = True Then
 Status_nota = 2
-Conexao.Execute "Update tbl_dados_nota_fiscal Set int_status = '" & Status_nota & "' where id = " & IDNota
+Conexao.Execute "Update tbl_dados_nota_fiscal Set int_status = '" & Status_nota & "' where id = " & IDnota
 End If
 
 Exit Sub
@@ -25173,9 +25130,9 @@ Private Sub SSFaturamento_Click(PreviousTab As Integer)
 On Error GoTo tratar_erro
 
 Set TBFIltro = CreateObject("adodb.recordset")
-TBFIltro.Open "Select ID, int_NotaFiscal from tbl_Dados_Nota_Fiscal where ID = " & IIf(txtId = "", 0, txtId), Conexao, adOpenKeyset, adLockOptimistic
+TBFIltro.Open "Select ID, int_NotaFiscal from tbl_Dados_Nota_Fiscal where ID = " & IIf(txtid = "", 0, txtid), Conexao, adOpenKeyset, adLockOptimistic
 If TBFIltro.EOF = False Then
-    txtId = TBFIltro!ID
+    txtid = TBFIltro!ID
     txtNFiscal = IIf(IsNull(TBFIltro!int_NotaFiscal), "", TBFIltro!int_NotaFiscal)
 End If
 TBFIltro.Close
@@ -25230,7 +25187,7 @@ Select Case SSFaturamento.Tab
         ProcVerificaProsseguir
         If Permitido = False Then Exit Sub
         ProcCarregaLista
-        ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+        ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
         
 '=====================================================
 ' Se for nota de terceiro e não for devolução não habilita relacionamento
@@ -25275,7 +25232,7 @@ Select Case SSFaturamento.Tab
         ProcVerificaProsseguir
         If Permitido = False Then Exit Sub
         ProcCarregaListaServicos
-        ProcCarregaTotaisNota IIf(txtId = "", 0, txtId)
+        ProcCarregaTotaisNota IIf(txtid = "", 0, txtid)
         txt_ValorNota.Text = 0
     Case 4: 'Dados de Transportadora
     
@@ -25319,14 +25276,14 @@ Select Case SSFaturamento.Tab
  If opt_Entrada = False Then
         'Carrega dados comerciais do pedido interno
         Set TBVendas = CreateObject("adodb.recordset")
-        TBVendas.Open "Select VC.condicoes from (vendas_comercial VC INNER JOIN vendas_proposta VP ON VP.Cotacao = VC.Cotacao) INNER JOIN tbl_proposta_nota PN ON PN.Proposta = VP.NCotacao and PN.Revisao = VP.Revisao where PN.ID_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+        TBVendas.Open "Select VC.condicoes from (vendas_comercial VC INNER JOIN vendas_proposta VP ON VP.Cotacao = VC.Cotacao) INNER JOIN tbl_proposta_nota PN ON PN.Proposta = VP.NCotacao and PN.Revisao = VP.Revisao where PN.ID_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
         If TBVendas.EOF = False Then
             txt_Cond_Recebimento.Text = IIf(IsNull(TBVendas!condicoes) = False, TBVendas!condicoes, "")
         Else
             'Carrega dados comerciais do cliente
             If Len(txttipocliente) = 2 Then
                 Set TBVendas = CreateObject("adodb.recordset")
-                TBVendas.Open "Select * from Clientes_DadosComerciais where IDCliente = " & txtIDcliente & " and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+                TBVendas.Open "Select * from Clientes_DadosComerciais where IDCliente = " & txtIDcliente & " and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
                 If TBVendas.EOF = False Then
                     txt_Cond_Recebimento.Text = IIf(IsNull(TBVendas!condicoes) = False, TBVendas!condicoes, 0)
                 End If
@@ -25360,7 +25317,7 @@ With frmFaturamento_Prod_Serv
 ' Verifica os totais da nota e de retenções
 '=========================================================================
 Set TBTotaisnota = CreateObject("adodb.recordset")
-TBTotaisnota.Open "Select * from tbl_Totais_Nota where id_nota = " & .txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBTotaisnota.Open "Select * from tbl_Totais_Nota where id_nota = " & .txtid, Conexao, adOpenKeyset, adLockOptimistic
 If TBTotaisnota.EOF = False Then
   Valor_Retencao_PIS = IIf(IsNull(TBTotaisnota!Total_retencao_PIS), 0, TBTotaisnota!Total_retencao_PIS)
   Valor_Retencao_Cofins = IIf(IsNull(TBTotaisnota!Total_retencao_Cofins), 0, TBTotaisnota!Total_retencao_Cofins)
@@ -25372,7 +25329,7 @@ TBTotaisnota.Close
 '=========================================================================
 vlrTotalRemessa = 0
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select Sum(dbl_ValorTotal) as vlrTotalRemessa from tbl_Detalhes_Nota where id_nota = " & .txtId.Text & " and Remessa = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select Sum(dbl_ValorTotal) as vlrTotalRemessa from tbl_Detalhes_Nota where id_nota = " & .txtid.Text & " and Remessa = 'True'", Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
   vlrTotalRemessa = IIf(IsNull(TBProduto!vlrTotalRemessa), 0, TBProduto!vlrTotalRemessa)
 End If
@@ -25381,7 +25338,7 @@ End If
 '=================================================================
 VlrTotalRetorno = 0
 Set TBProduto = CreateObject("adodb.recordset")
-StrSql = "Select Sum(dbl_ValorTotal) as VlrTotalRetorno from tbl_Detalhes_Nota where id_nota = " & .txtId.Text & " and Retorno = 'True'"
+StrSql = "Select Sum(dbl_ValorTotal) as VlrTotalRetorno from tbl_Detalhes_Nota where id_nota = " & .txtid.Text & " and Retorno = 'True'"
 'Debug.print StrSql
 TBProduto.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
@@ -25419,7 +25376,7 @@ Private Sub ProcVerificaProsseguir()
 On Error GoTo tratar_erro
 
 Permitido = True
-If txtId = "" Or txtId = "0" Then
+If txtid = "" Or txtid = "0" Then
     SSFaturamento.Tab = 1
     Permitido = False
     Exit Sub
@@ -25445,7 +25402,7 @@ If Formulario <> "Estoque/Ordem de faturamento" Then
 End If
 If Faturamento_NF_Saida = True And txtDtValidacao = "" Then
     Set TBFIltro = CreateObject("adodb.recordset")
-    TBFIltro.Open "Select Finalidade_emissao, Consumidor_final from tbl_Dados_Nota_Fiscal_NFe where ID_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+    TBFIltro.Open "Select Finalidade_emissao, Consumidor_final from tbl_Dados_Nota_Fiscal_NFe where ID_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
     If TBFIltro.EOF = False Then
         If IsNull(TBFIltro!Finalidade_emissao) = True Or TBFIltro!Finalidade_emissao = "" Then
             USMsgBox ("Informe a finalidade de emissão antes de prosseguir."), vbExclamation, "CAPRIND v5.0"
@@ -25499,7 +25456,7 @@ quantidade = 0
 PesoBruto = 0
 PesoLiquido = 0
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select P.PBruto, P.PLiquido, P.Qtde_embalagem, P.Desenho, P.Unidade, NFP.int_Qtd, NFP.txt_Unid, NFP.Unidade_com, NFP.Remessa FROM projproduto P INNER JOIN tbl_Detalhes_Nota NFP ON P.desenho = NFP.int_Cod_Produto where NFP.id_nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select P.PBruto, P.PLiquido, P.Qtde_embalagem, P.Desenho, P.Unidade, NFP.int_Qtd, NFP.txt_Unid, NFP.Unidade_com, NFP.Remessa FROM projproduto P INNER JOIN tbl_Detalhes_Nota NFP ON P.desenho = NFP.int_Cod_Produto where NFP.id_nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     Do While TBProduto.EOF = False
         If IsNull(TBProduto!Qtde_embalagem) = False And TBProduto!Qtde_embalagem <> "" And TBProduto!Qtde_embalagem <> "0" Then
@@ -25800,13 +25757,13 @@ If Txt_ID_CF <> "" Then
                 End If
                 TBFIltro.Close
             End If
-            ProcValorImposto txtId, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, UFCF, IDEmpresa, False, IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), RegimeEmpresa
+            ProcValorImposto txtid, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, UFCF, IDempresa, False, IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), RegimeEmpresa
         Else
-            ProcValorImposto txtId, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, cbo_UF, IDEmpresa, True, IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), 0
+            ProcValorImposto txtid, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txt_Razao, cbo_UF, IDempresa, True, IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), 0
         End If
     Else
         Set TBFIltro = CreateObject("adodb.recordset")
-        TBFIltro.Open "Select * from tbl_Dados_Nota_Fiscal where ID = " & txtId & " and Aplicacao = 'P'", Conexao, adOpenKeyset, adLockReadOnly
+        TBFIltro.Open "Select * from tbl_Dados_Nota_Fiscal where ID = " & txtid & " and Aplicacao = 'P'", Conexao, adOpenKeyset, adLockReadOnly
         If TBFIltro.EOF = False Then
             USMsgBox ("Não é permitido utilizar esta classificação fiscal."), vbExclamation, "CAPRIND v5.0"
             Txt_ID_CF = ""
@@ -25882,7 +25839,7 @@ On Error GoTo tratar_erro
 
 If optProduto.Value = True Then
     TipoNF = "M1"
-ElseIf OptServico.Value = True Then
+ElseIf optServico.Value = True Then
         TipoNF = "SA"
     Else
         TipoNF = "M1SA"
@@ -25890,7 +25847,7 @@ End If
 FunVerificaNumeroNF = True
 If Faturamento_NF_Saida = True Then
     Set TBFIltro = CreateObject("adodb.recordset")
-    TBFIltro.Open "Select * from tbl_Dados_Nota_Fiscal where int_NotaFiscal = '" & txtNFiscal.Text & "' and TipoNF = '" & TipoNF & "' and modelo = '" & Left(Cmb_modelo.Text, 2) & "' and serie = '" & txtSerie & "' and Aplicacao = 'P' and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+    TBFIltro.Open "Select * from tbl_Dados_Nota_Fiscal where int_NotaFiscal = '" & txtNFiscal.Text & "' and TipoNF = '" & TipoNF & "' and modelo = '" & Left(Cmb_modelo.Text, 2) & "' and serie = '" & txtSerie & "' and Aplicacao = 'P' and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
 Else
     Set TBFIltro = CreateObject("adodb.recordset")
     If txttipocliente = "E" Then
@@ -25900,7 +25857,7 @@ Else
         Else
             TextoFiltro = "(txt_tipocliente = 'J' or txt_tipocliente = 'F')"
     End If
-    TBFIltro.Open "Select * from tbl_Dados_Nota_Fiscal where int_NotaFiscal = '" & txtNFiscal.Text & "' and TipoNF = '" & TipoNF & "' and serie = '" & txtSerie & "' and Aplicacao = 'T' and Id_Int_Cliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and ID_empresa = " & IDEmpresa & " and " & TextoFiltro, Conexao, adOpenKeyset, adLockOptimistic
+    TBFIltro.Open "Select * from tbl_Dados_Nota_Fiscal where int_NotaFiscal = '" & txtNFiscal.Text & "' and TipoNF = '" & TipoNF & "' and serie = '" & txtSerie & "' and Aplicacao = 'T' and Id_Int_Cliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and ID_empresa = " & IDempresa & " and " & TextoFiltro, Conexao, adOpenKeyset, adLockOptimistic
 End If
 If TBFIltro.EOF = False Then
     USMsgBox ("Não é permitido utilizar este número de nota fiscal, pois o mesmo está sendo utilizado."), vbExclamation, "CAPRIND v5.0"
@@ -25918,18 +25875,18 @@ End Function
 
 Function FunVerificaNumeroNFAlterar() As Boolean
 On Error GoTo tratar_erro
-IDEmpresa = txtIDEmpresa
+IDempresa = txtIDEmpresa
 
 ProcVerificaTipoNF False
 FunVerificaNumeroNFAlterar = True
 Set TBFIltro = CreateObject("adodb.recordset")
-TBFIltro.Open "Select * from tbl_Dados_Nota_Fiscal where id = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBFIltro.Open "Select * from tbl_Dados_Nota_Fiscal where id = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBFIltro.EOF = False Then
     Set TBAbrir = CreateObject("adodb.recordset")
     If Faturamento_NF_Saida = True Then
-        TBAbrir.Open "Select * from tbl_Dados_Nota_Fiscal where int_NotaFiscal = '" & txtNFiscal.Text & "' and TipoNF = '" & TipoNF & "' and serie = '" & txtSerie & "' and Modelo = '" & Left(Cmb_modelo.Text, 2) & "' and Aplicacao = 'P' and ID <> " & txtId & " and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select * from tbl_Dados_Nota_Fiscal where int_NotaFiscal = '" & txtNFiscal.Text & "' and TipoNF = '" & TipoNF & "' and serie = '" & txtSerie & "' and Modelo = '" & Left(Cmb_modelo.Text, 2) & "' and Aplicacao = 'P' and ID <> " & txtid & " and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
     Else
-        TBAbrir.Open "Select * from tbl_Dados_Nota_Fiscal where int_NotaFiscal = '" & txtNFiscal.Text & "' and TipoNF = '" & TipoNF & "' and serie = '" & txtSerie & "' and Modelo = '" & Left(Cmb_modelo.Text, 2) & "' and Aplicacao = 'T'  and Id_Int_Cliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and txt_tipocliente = '" & txttipocliente & "' and ID <> " & txtId & " and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select * from tbl_Dados_Nota_Fiscal where int_NotaFiscal = '" & txtNFiscal.Text & "' and TipoNF = '" & TipoNF & "' and serie = '" & txtSerie & "' and Modelo = '" & Left(Cmb_modelo.Text, 2) & "' and Aplicacao = 'T'  and Id_Int_Cliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and txt_tipocliente = '" & txttipocliente & "' and ID <> " & txtid & " and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
     End If
     If TBAbrir.EOF = False Then
         USMsgBox ("Não é permitido utilizar este número de nota fiscal, pois o mesmo está sendo utilizado."), vbExclamation, "CAPRIND v5.0"
@@ -25940,16 +25897,16 @@ If TBFIltro.EOF = False Then
     TBAbrir.Close
     If TBFIltro!int_NotaFiscal <> txtNFiscal Then
         'Altera número da nota fiscal nos pedidos
-        Conexao.Execute "Update tbl_proposta_nota Set NF = '" & txtNFiscal.Text & "' where id_nota = " & txtId.Text
+        Conexao.Execute "Update tbl_proposta_nota Set NF = '" & txtNFiscal.Text & "' where id_nota = " & txtid.Text
         'Altera número da nota fiscal no produto
-        Conexao.Execute "Update tbl_Detalhes_Nota Set Int_NotaFiscal = '" & txtNFiscal.Text & "' where id_nota = " & txtId.Text
+        Conexao.Execute "Update tbl_Detalhes_Nota Set Int_NotaFiscal = '" & txtNFiscal.Text & "' where id_nota = " & txtid.Text
         'Altera número da nota fiscal nas contas
-        Conexao.Execute "Update tbl_Detalhes_Recebimento Set int_NotaFiscal = '" & txtNFiscal.Text & "' where id_nota = " & txtId.Text
+        Conexao.Execute "Update tbl_Detalhes_Recebimento Set int_NotaFiscal = '" & txtNFiscal.Text & "' where id_nota = " & txtid.Text
         
         Set TBContas = CreateObject("adodb.recordset")
         If opt_Saida.Value = True Then
-            Conexao.Execute "Update tbl_contas_receber Set NFiscal = '" & txtNFiscal.Text & "' where id_nota = " & txtId.Text
-            TBContas.Open "Select * from tbl_contas_receber where ID_Nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+            Conexao.Execute "Update tbl_contas_receber Set NFiscal = '" & txtNFiscal.Text & "' where id_nota = " & txtid.Text
+            TBContas.Open "Select * from tbl_contas_receber where ID_Nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
             If TBContas.EOF = False Then
                 Do While TBContas.EOF = False
                     
@@ -25961,8 +25918,8 @@ If TBFIltro.EOF = False Then
             End If
             TBContas.Close
         Else
-            Conexao.Execute "Update tbl_ContasPagar Set txt_NDocumento = '" & txtNFiscal & "' where id_nota = " & txtId.Text
-            TBContas.Open "Select * from tbl_ContasPagar where ID_Nota = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+            Conexao.Execute "Update tbl_ContasPagar Set txt_NDocumento = '" & txtNFiscal & "' where id_nota = " & txtid.Text
+            TBContas.Open "Select * from tbl_ContasPagar where ID_Nota = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
             If TBContas.EOF = False Then
                 Do While TBContas.EOF = False
                     
@@ -25975,9 +25932,9 @@ If TBFIltro.EOF = False Then
             TBContas.Close
         End If
         'Altera número da nota fiscal na transportadora
-        Conexao.Execute "Update tbl_Dados_Transp Set Int_NotaFiscal = '" & txtNFiscal.Text & "' where id_nota = " & txtId.Text
+        Conexao.Execute "Update tbl_Dados_Transp Set Int_NotaFiscal = '" & txtNFiscal.Text & "' where id_nota = " & txtid.Text
         'Altera número da nota fiscal nos dados adicionais e corpo da nota
-        Conexao.Execute "Update tbl_DadosAdicionais Set IDNotaFiscal = '" & txtNFiscal.Text & "' where id_nota = " & txtId.Text
+        Conexao.Execute "Update tbl_DadosAdicionais Set IDNotaFiscal = '" & txtNFiscal.Text & "' where id_nota = " & txtid.Text
     End If
 End If
 TBFIltro.Close
@@ -26029,9 +25986,24 @@ End Sub
 
 Sub ProcCalculaValores()
 On Error GoTo tratar_erro
+
+II = 0
+
+If cbo_UF = "EX" Then
+    Set TBFIltro = CreateObject("adodb.recordset")
+    StrSql = "select DN.dbl_ValorIPI IPI, DN.Total_PIS_prod PIS,DN.Total_cofins_prod Cofins, DNFE.Valor_imposto_importacao II from tbl_Detalhes_Nota DN inner join tbl_Detalhes_Nota_NFe DNFE on DNFE.ID_item = DN.Int_codigo where DN.Int_codigo =" & ListaProdutos.SelectedItem
+    TBFIltro.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
+    If TBFIltro.EOF = False Then
+        II = TBFIltro!II
+    End If
+    TBFIltro.Close
+    SumTotProdutos = (IIf(txtVLUnit = "", 0, txtVLUnit) * IIf(txtQTD = "", 0, txtQTD))
+    Else
+    SumTotProdutos = (IIf(txtVLUnit = "", 0, txtVLUnit) * IIf(txtQTD = "", 0, txtQTD)) + IIf(txt_OutrasDisp_prod = "", 0, txt_OutrasDisp_prod)
+End If
   
 'If chkDevolucao.Value = 0 Then
-SumTotProdutos = (IIf(txtVLUnit = "", 0, txtVLUnit) * IIf(txtQTD = "", 0, txtQTD)) + IIf(txt_OutrasDisp_prod = "", 0, txt_OutrasDisp_prod)
+
 'Else
 'SumTotProdutos = (IIf(txtVLUnit = "", 0, txtVLUnit) * IIf(txtQTD = "", 0, txtQTD))
 'End If
@@ -26041,15 +26013,20 @@ If Chk_tem_IPI_frete_prod.Value = 1 Then SumTotProdutos = SumTotProdutos
 
 'Se tem IPI
 VlrIPI = 0
+
 If TemIPI = "SIM" Then
     txtIPI.Text = IntIPI
     Set TBFIltro = CreateObject("adodb.recordset")
     TBFIltro.Open "Select * from Clientes_Impostos where IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and ID_CF = " & IIf(Txt_ID_CF = "", 0, Txt_ID_CF), Conexao, adOpenKeyset, adLockOptimistic
     If TBFIltro.EOF = False Then
-        If TBFIltro!PorcentagemIPI <> 0 Then VlrIPI = IIf(txtVLUnit = "", 0, txtVLUnit) / TBFIltro!PorcentagemIPI
+    
+        If TBFIltro!PorcentagemIPI <> 0 Then
+        VlrIPI = IIf(txtVLUnit = "", 0, txtVLUnit) / TBFIltro!PorcentagemIPI
+        End If
+        
         VlrIPI = (VlrIPI - IIf(txtVLUnit = "", 0, txtVLUnit)) * IIf(txtQTD = "", 0, txtQTD)
     Else
-        VlrIPI = (SumTotProdutos * IntIPI) / 100
+        VlrIPI = ((SumTotProdutos + II) * IntIPI) / 100
     End If
     TBFIltro.Close
     txtValor_IPI = Format(VlrIPI, "###,##0.00")
@@ -26057,6 +26034,9 @@ Else
     txtIPI = 0
     txtValor_IPI = "0,00"
 End If
+
+
+
 
 'Se tem icms
 If TemICMS = "SIM" Then txtICMS.Text = IntICMS Else txtICMS.Text = 0
@@ -26661,26 +26641,26 @@ End Sub
 Sub ProcStatusnota()
 On Error GoTo tratar_erro
 
-If txtId <> "" Then
+If txtid <> "" Then
     If Status_nota = 2 Then
-        ProcExcluirArquivosRemessa txtId
-        ProcExcluirContas txtId, opt_Saida, txttipocliente
+        ProcExcluirArquivosRemessa txtid
+        ProcExcluirContas txtid, opt_Saida, txttipocliente
 
-        Conexao.Execute "DELETE from ECEV from Estoque_Controle_Empenho_Vendas ECEV INNER JOIN tbl_Detalhes_Nota NFP ON NFP.Int_codigo = ECEV.ID_faturamento where NFP.ID_nota = " & txtId
+        Conexao.Execute "DELETE from ECEV from Estoque_Controle_Empenho_Vendas ECEV INNER JOIN tbl_Detalhes_Nota NFP ON NFP.Int_codigo = ECEV.ID_faturamento where NFP.ID_nota = " & txtid
         
-        If OptServico.Value = False Then
+        If optServico.Value = False Then
             Set TBCST = CreateObject("adodb.recordset")
-            TBCST.Open "Select * from tbl_dados_nota_fiscal_nfe where id_nota = " & txtId & " and (Status = 0 or Status = 100)", Conexao, adOpenKeyset, adLockOptimistic
+            TBCST.Open "Select * from tbl_dados_nota_fiscal_nfe where id_nota = " & txtid & " and (Status = 0 or Status = 100)", Conexao, adOpenKeyset, adLockOptimistic
             If TBCST.EOF = False Then
                 TBCST!status = "-1"
                 TBCST.Update
             End If
         End If
     Else
-        If txtNFiscal <> "" And txtSerie <> "" And OptServico.Value = False Then
+        If txtNFiscal <> "" And txtSerie <> "" And optServico.Value = False Then
             'NFe
             Set TBAbrir = CreateObject("adodb.recordset")
-            TBAbrir.Open "Select * from Empresa where codigo = " & IDEmpresa & " and GNFe = 'True'", Conexao, adOpenKeyset, adLockOptimistic
+            TBAbrir.Open "Select * from Empresa where codigo = " & IDempresa & " and GNFe = 'True'", Conexao, adOpenKeyset, adLockOptimistic
             If TBAbrir.EOF = False Then
                 OF = txtNFiscal
                 Serie = txtSerie
@@ -26733,13 +26713,13 @@ With txtSerie
     .TabStop = True
     Set TBAbrir = CreateObject("adodb.recordset")
     If Faturamento_NF_Saida = True Then
-        TBAbrir.Open "Select * from tbl_Dados_Nota_Fiscal where tipoNF = '" & TipoNF & "' and Aplicacao = 'P' and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select * from tbl_Dados_Nota_Fiscal where tipoNF = '" & TipoNF & "' and Aplicacao = 'P' and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
     Else
-        TBAbrir.Open "Select * from tbl_Dados_Nota_Fiscal where tipoNF = '" & TipoNF & "' and Aplicacao = 'T' and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select * from tbl_Dados_Nota_Fiscal where tipoNF = '" & TipoNF & "' and Aplicacao = 'T' and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
     End If
     If TBAbrir.EOF = False Then
         TBAbrir.MoveLast
-        If Faturamento_NF_Saida = True And TBAbrir!ID <> txtId And .Text <> "" Then
+        If Faturamento_NF_Saida = True And TBAbrir!ID <> txtid And .Text <> "" Then
             .Locked = True
             .TabStop = False
         End If
@@ -26761,7 +26741,7 @@ If TBAbrir.EOF = False Then
     Set TBGravar = CreateObject("adodb.recordset")
     TBGravar.Open "Select * from tbl_Dados_Nota_Fiscal_NFe", Conexao, adOpenKeyset, adLockOptimistic
     TBGravar.AddNew
-    TBGravar!ID_nota = txtId
+    TBGravar!ID_nota = txtid
     TBGravar!Forma_pagamento = TBAbrir!Forma_pagamento
     TBGravar!Finalidade_emissao = TBAbrir!Finalidade_emissao
     TBGravar!ID_entrega = TBAbrir!ID_entrega
@@ -26805,7 +26785,7 @@ If TBProduto.EOF = False Then
     Set TBplano = CreateObject("adodb.recordset")
     TBplano.Open "Select * from tbl_Detalhes_Nota_NFe", Conexao, adOpenKeyset, adLockOptimistic
     TBplano.AddNew
-    TBplano!ID_nota = txtId
+    TBplano!ID_nota = txtid
     TBplano!Id_Item = TBGravar!Int_codigo
     TBplano!Documento_importacao = TBProduto!Documento_importacao
     TBplano!Data_registro = TBProduto!Data_registro
@@ -27104,7 +27084,7 @@ End Sub
 
 Private Sub USToolBar1_ButtonClick(ByVal ButtonIndex As Integer, ByVal key As String, ByVal Left As Integer, ByVal Top As Integer, ByVal Width As Integer, ByVal Height As Integer, ByVal Visible As Boolean)
 On Error GoTo tratar_erro
-ID_nota = IIf(txtId.Text <> "", txtId.Text, 0)
+ID_nota = IIf(txtid.Text <> "", txtid.Text, 0)
 
 Select Case ButtonIndex
     Case 1: ProcNovo
@@ -27123,7 +27103,7 @@ ProcVerifiFormulario
 '=============================================================
    If txt_Cond_Recebimento <> "" And Formulario = "Faturamento/Nota fiscal/Própria" And cmbFinalidade_emissao.Text = "1 - Normal" Then
    Set TBLISTA = CreateObject("adodb.recordset")
-      TBLISTA.Open "Select ID_Nota from tbl_Detalhes_Recebimento where ID_Nota = " & txtId.Text & " order by dt_Vencimento, txt_parcela", Conexao, adOpenKeyset, adLockOptimistic
+      TBLISTA.Open "Select ID_Nota from tbl_Detalhes_Recebimento where ID_Nota = " & txtid.Text & " order by dt_Vencimento, txt_parcela", Conexao, adOpenKeyset, adLockOptimistic
       If TBLISTA.EOF = True Then
        USMsgBox "Duplicatas não geradas, favor verificar antes de validar!", vbCritical, "CAPRIND v5.0"
        Exit Sub
@@ -27138,7 +27118,7 @@ Validar = True 'Permite validar
 
 If opt_Entrada.Value = False Then
     If VerificaFaturarSemSaldo(txtIDEmpresa.Text) = True Then
-        ProcVeficaSaldoEstoqueListaNF (txtId.Text)
+        ProcVeficaSaldoEstoqueListaNF (txtid.Text)
     End If
 End If
 
@@ -27252,7 +27232,7 @@ On Error GoTo tratar_erro
 
 Select Case ButtonIndex
     Case 1: ProcGerarDuplicatas
-    Case 2: ProcEnviarDupFinanceiro IIf(txtId = "", 0, txtId), True
+    Case 2: ProcEnviarDupFinanceiro IIf(txtid = "", 0, txtid), True
     Case 3: ProcExcluirDuplicatas
     Case 4: ProcImprimirDuplicatas
     Case 5: ProcAnterior
@@ -27339,7 +27319,7 @@ Valor_retencao_serv_INSS = 0
 Valor_retencao_serv_ISSQN = 0
 Valor_retencao_serv_IRRF = 0
 Set TBTotaisnota = CreateObject("adodb.recordset")
-TBTotaisnota.Open "Select * from tbl_Detalhes_Nota where id_nota = " & txtId & " and Tipo = 'S' and (Retencao_PIS = 'True' or Retencao_Cofins = 'True' or Retencao_CSLL = 'True' or Retencao_INSS = 'True' or Retencao_IRRF = 'True' or Retencao_ISSQN = 'True')", Conexao, adOpenKeyset, adLockOptimistic
+TBTotaisnota.Open "Select * from tbl_Detalhes_Nota where id_nota = " & txtid & " and Tipo = 'S' and (Retencao_PIS = 'True' or Retencao_Cofins = 'True' or Retencao_CSLL = 'True' or Retencao_INSS = 'True' or Retencao_IRRF = 'True' or Retencao_ISSQN = 'True')", Conexao, adOpenKeyset, adLockOptimistic
 Do While TBTotaisnota.EOF = False
     If TBTotaisnota!Retencao_PIS = True Then Valor_retencao_serv_PIS = Valor_retencao_serv_PIS + IIf(IsNull(TBTotaisnota!Total_PIS_serv), 0, TBTotaisnota!Total_PIS_serv)
     If TBTotaisnota!Retencao_Cofins = True Then Valor_retencao_serv_Cofins = Valor_retencao_serv_Cofins + IIf(IsNull(TBTotaisnota!Total_Cofins_serv), 0, TBTotaisnota!Total_Cofins_serv)
@@ -27352,14 +27332,14 @@ Loop
 TBTotaisnota.Close
 
 Set TBFIltro = CreateObject("adodb.recordset")
-TBFIltro.Open "Select * from Empresa where Codigo = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+TBFIltro.Open "Select * from Empresa where Codigo = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
 If TBFIltro.EOF = False Then
     If TBFIltro!Simples = True Then Regime = 1
     If TBFIltro!Presumido = True Then Regime = 2
     If TBFIltro!Real = True Then Regime = 3
     If TBFIltro!Simples1 = True Then Regime = 4
     Set TBAfericao = CreateObject("adodb.recordset")
-    TBAfericao.Open "Select * from Impostos where Regime = " & Regime & " and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+    TBAfericao.Open "Select * from Impostos where Regime = " & Regime & " and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
     If TBAfericao.EOF = False Then
         If Valor_retencao_serv_PIS <> 0 And IsNull(TBAfericao!IDForn_PIS) = False Then procEnviarImpostoPagar TBAfericao!IDForn_PIS, TBAfericao!Dia_PIS, Valor_retencao_serv_PIS, TBAfericao!ID_PC_PIS
         If Valor_retencao_serv_Cofins <> 0 And IsNull(TBAfericao!IDForn_Cofins) = False Then procEnviarImpostoPagar TBAfericao!IDForn_Cofins, TBAfericao!Dia_Cofins, Valor_retencao_serv_Cofins, TBAfericao!ID_PC_Cofins
@@ -27397,7 +27377,7 @@ TBReceber!Responsavel = pubUsuario
 'If cmb_tipopagto <> "" Then TBReceber!FormaBaixa = cmb_tipopagto
 'If cmbtipo_conta <> "" Then TBReceber!Class_conta = cmbtipo_conta
 TBReceber!txt_ndocumento = IIf(txtNFiscal = "", Null, txtNFiscal)
-TBReceber!ID_nota = txtId
+TBReceber!ID_nota = txtid
 TBReceber!Data_transacao = Date
 TBReceber!Dt_emissao = txt_DtEmissao.Text
 TBReceber!Competencia = IIf(Month(txt_DtEmissao.Text) < 10, "0" & Month(txt_DtEmissao.Text), Month(txt_DtEmissao.Text)) & "/" & Year(txt_DtEmissao.Text)
@@ -27416,13 +27396,13 @@ Set TBFornecedor = CreateObject("adodb.recordset")
 TBFornecedor.Open "Select * from compras_fornecedores where idcliente = " & IDforn_servico_imposto, Conexao, adOpenKeyset, adLockOptimistic
 If TBFornecedor.EOF = False Then TBReceber!Txt_fornecedor = IIf(IsNull(TBFornecedor!Nome_Razao), "", TBFornecedor!Nome_Razao)
 TBFornecedor.Close
-TBReceber!ID_empresa = IDEmpresa
+TBReceber!ID_empresa = IDempresa
 TBReceber!Tipo = "FO"
 TBReceber.Update
 
 'Fluxo de Caixa
 Set TBFluxo = CreateObject("adodb.recordset")
-TBFluxo.Open "Select * from tbl_Fluxo_de_caixa where IDFluxo = " & IIf(IsNull(TBReceber!IDFluxo), 0, TBReceber!IDFluxo) & " and ID_empresa = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+TBFluxo.Open "Select * from tbl_Fluxo_de_caixa where IDFluxo = " & IIf(IsNull(TBReceber!IDFluxo), 0, TBReceber!IDFluxo) & " and ID_empresa = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
 If TBFluxo.EOF = True Then TBFluxo.AddNew
 TBFluxo!IDintconta = TBReceber!IDintconta
 TBFluxo!Operacao = "À Debitar"
@@ -27432,7 +27412,7 @@ TBFluxo!Descricao = TBReceber!Txt_fornecedor
 TBFluxo!status = "N"
 TBFluxo!int_NotaFiscal = TBReceber!txt_ndocumento
 TBFluxo!Instituicao = Null
-TBFluxo!ID_empresa = IDEmpresa
+TBFluxo!ID_empresa = IDempresa
 TBFluxo!Bloqueado = False
 TBFluxo.Update
 Conexao.Execute "Update tbl_contaspagar Set IDFluxo = " & TBFluxo!IDFluxo & " where IdIntConta = " & TBReceber!IDintconta
@@ -27444,7 +27424,7 @@ TBCiclo.Open "select * from familia_financeiro", Conexao, adOpenKeyset, adLockOp
 TBCiclo.AddNew
 TBCiclo!ID_PC = IDPC_servico_imposto
 TBCiclo!IDConta = TBReceber!IDintconta
-TBCiclo!IDNota = txtId
+TBCiclo!IDnota = txtid
 TBCiclo!valor = Valor_servico_imposto
 TBCiclo!TipoConta = "P"
 TBCiclo.Update
@@ -27462,7 +27442,7 @@ On Error GoTo tratar_erro
 
 Permitido2 = False
 Set TBTotaisnota = CreateObject("adodb.recordset")
-TBTotaisnota.Open "Select * from tbl_Detalhes_Nota where id_nota = " & txtId & " and Tipo = 'S' and (Retencao_PIS = 'True' or Retencao_Cofins = 'True' or Retencao_CSLL = 'True' or Retencao_INSS = 'True' or Retencao_IRRF = 'True' or Retencao_ISSQN = 'True')", Conexao, adOpenKeyset, adLockOptimistic
+TBTotaisnota.Open "Select * from tbl_Detalhes_Nota where id_nota = " & txtid & " and Tipo = 'S' and (Retencao_PIS = 'True' or Retencao_Cofins = 'True' or Retencao_CSLL = 'True' or Retencao_INSS = 'True' or Retencao_IRRF = 'True' or Retencao_ISSQN = 'True')", Conexao, adOpenKeyset, adLockOptimistic
 If TBTotaisnota.EOF = False Then
     Permitido2 = True
 End If
@@ -27471,7 +27451,7 @@ TBTotaisnota.Close
 If Permitido2 = False Then Exit Sub
 Set TBContas = CreateObject("adodb.recordset")
 If opt_Saida.Value = True Then
-    TBContas.Open "Select * from tbl_ContasPagar where id_nota = " & txtId & " and LogSit = 'N' and Bloqueado = 'False'", Conexao, adOpenKeyset, adLockOptimistic
+    TBContas.Open "Select * from tbl_ContasPagar where id_nota = " & txtid & " and LogSit = 'N' and Bloqueado = 'False'", Conexao, adOpenKeyset, adLockOptimistic
     If TBContas.EOF = False Then
         Do While TBContas.EOF = False
             
@@ -27684,11 +27664,11 @@ Set TBPedido = CreateObject("adodb.recordset")
 TBPedido.Open "Select * From vendas_comercial where cotacao = " & Var, Conexao, adOpenKeyset, adLockOptimistic
 If TBPedido.EOF = False Then
 Set TBTransporte = CreateObject("adodb.recordset")
-TBTransporte.Open "Select * From tbl_Dados_transp where ID_Nota = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBTransporte.Open "Select * From tbl_Dados_transp where ID_Nota = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBTransporte.EOF = True Then
 TBTransporte.AddNew
 End If
-TBTransporte!ID_nota = txtId.Text
+TBTransporte!ID_nota = txtid.Text
 '========================================
 ' Se a transportadora 1 for cliente
 '========================================
@@ -27778,7 +27758,7 @@ End If
 
 If FunVerifRegimeEmpresa(txtIDEmpresa.Text) = 1 Then
     Set TBAbrir = CreateObject("adodb.recordset")
-    TBAbrir.Open "Select Tabela FROM Impostos_TabelaDAS where ID_empresa = " & IDEmpresa & " and Ativado = 1 group by Tabela", Conexao, adOpenKeyset, adLockOptimistic
+    TBAbrir.Open "Select Tabela FROM Impostos_TabelaDAS where ID_empresa = " & IDempresa & " and Ativado = 1 group by Tabela", Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir.EOF = True Then
         USMsgBox ("Não é permitido criar nota fiscal, pois não existe nenhuma tabela do simples nacional ativa."), vbExclamation, "CAPRIND v5.0"
         TBAbrir.Close
@@ -28218,7 +28198,7 @@ With ListaProdutos
                 '==================================
                 Modulo = Formulario
                 ID_documento = .ListItems(InitFor)
-                If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtId Else NomeCampo = "N° nota: " & txtNFiscal
+                If txtNFiscal = "" Then NomeCampo = "N° ordem: " & txtid Else NomeCampo = "N° nota: " & txtNFiscal
                 Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & txtSerie
                 Documento1 = "Cód. interno: " & .ListItems.Item(InitFor).ListSubItems(1)
                 ProcGravaEvento
@@ -28307,7 +28287,7 @@ End Sub
 Public Sub ProcCheckList()
 On Error GoTo tratar_erro
 
-If txtId = "" Then
+If txtid = "" Then
     USMsgBox "Informe a nota fiscal antes de visualizar check-list de importação.", vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
@@ -28322,12 +28302,12 @@ tratar_erro:
     USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
 End Sub
 
-Sub ProcCorrigeValorImpostosSN(IDNota As Long)
+Sub ProcCorrigeValorImpostosSN(IDnota As Long)
 On Error GoTo tratar_erro
 
 AtualizaImpSN = True
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select NF.ID_empresa, NF.Id_Int_Cliente, NF.txt_Razao_Nome, NF.TabelaSN, NF.txt_UF, NFE.Consumidor_final, NFE.Finalidade_emissao, NFP.* from ((tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Detalhes_Nota NFP ON NFP.ID_nota = NF.ID) INNER JOIN tbl_Dados_Nota_Fiscal_NFe NFE ON NFE.ID_nota = NF.ID) INNER JOIN Impostos I ON I.ID_empresa = NF.ID_empresa where NF.ID = " & IDNota & " and NF.Alterar = 'False' and I.Regime = 1", Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select NF.ID_empresa, NF.Id_Int_Cliente, NF.txt_Razao_Nome, NF.TabelaSN, NF.txt_UF, NFE.Consumidor_final, NFE.Finalidade_emissao, NFP.* from ((tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Detalhes_Nota NFP ON NFP.ID_nota = NF.ID) INNER JOIN tbl_Dados_Nota_Fiscal_NFe NFE ON NFE.ID_nota = NF.ID) INNER JOIN Impostos I ON I.ID_empresa = NF.ID_empresa where NF.ID = " & IDnota & " and NF.Alterar = 'False' and I.Regime = 1", Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     Do While TBProduto.EOF = False
         Valor_total = IIf(IsNull(TBProduto!dbl_ValorTotal), 0, TBProduto!dbl_ValorTotal) + IIf(IsNull(TBProduto!Valor_frete), 0, TBProduto!Valor_frete) + IIf(IsNull(TBProduto!Valor_seguro), 0, TBProduto!Valor_seguro) + IIf(IsNull(TBProduto!Valor_acessorias), 0, TBProduto!Valor_acessorias) - IIf(IsNull(TBProduto!Valor_desconto), 0, TBProduto!Valor_desconto)
@@ -28337,7 +28317,7 @@ If TBProduto.EOF = False Then
             'Novo cálculo simples nacional 2018
             If DAS <> 0 Then
                 NovoValor = Replace(DAS, ",", ".")
-                Conexao.Execute "UPDATE tbl_Totais_Nota Set DAS = " & NovoValor & " where ID_nota = " & IDNota
+                Conexao.Execute "UPDATE tbl_Totais_Nota Set DAS = " & NovoValor & " where ID_nota = " & IDnota
             End If
             If TBProduto!CST_PIS = "01" Or TBProduto!CST_PIS = "03" Or TBProduto!CST_PIS = "49" Or TBProduto!CST_PIS = "98" Or TBProduto!CST_PIS = "99" Then
                 TBProduto!PIS_Prod = PIS_Prod
@@ -28392,7 +28372,7 @@ ProcCarregaLista
 ProcCarregaListaServicos
 
 If NF_alterada = True And opt_Entrada.Value = True Then
-ProcCarregaTotaisNota IDNota
+ProcCarregaTotaisNota IDnota
 Else
 ProcGravarTotaisNota
 AtualizaImpSN = False
@@ -28437,7 +28417,7 @@ Set TBCFOP = CreateObject("adodb.recordset")
 TBCFOP.Open "SELECT IDCountCfop FROM tbl_NaturezaOperacao WHERE IDCountCfop = " & IDCFOP_Aprox & " AND (Vendas = 'True' OR MaoObra = 'True')", Conexao, adOpenKeyset, adLockReadOnly
 If TBCFOP.EOF = False Then
     Set TBHistProc = CreateObject("adodb.recordset")
-    TBHistProc.Open "SELECT E.Simples, TN.DAS FROM (Empresa E INNER JOIN tbl_Dados_Nota_Fiscal N ON E.Codigo = N.ID_empresa) LEFT JOIN tbl_Totais_Nota TN ON N.id = TN.ID_Nota WHERE N.ID = " & txtId, Conexao, adOpenKeyset, adLockReadOnly
+    TBHistProc.Open "SELECT E.Simples, TN.DAS FROM (Empresa E INNER JOIN tbl_Dados_Nota_Fiscal N ON E.Codigo = N.ID_empresa) LEFT JOIN tbl_Totais_Nota TN ON N.id = TN.ID_Nota WHERE N.ID = " & txtid, Conexao, adOpenKeyset, adLockReadOnly
     If TBHistProc.EOF = False Then
         If TBHistProc!Simples = True Then
             FunCalcularAproxTrib = IIf(IsNull(TBHistProc!DAS), 0, TBHistProc!DAS)
@@ -28471,11 +28451,11 @@ With cmbEntrega
         TBFI.Close
         
         Permitido = True
-        If txtId <> "" Then
+        If txtid <> "" Then
             Set TBFI = CreateObject("adodb.recordset")
             If Tipo = "C" Then
                 TextoID = ""
-                TBFI.Open "Select VC.* from (vendas_comercial VC INNER JOIN vendas_proposta VP ON VP.Cotacao = VC.Cotacao) INNER JOIN tbl_proposta_nota PN ON PN.proposta = VP.Ncotacao and PN.Revisao = VP.Revisao where PN.ID_nota = " & txtId & " and VC.ID_entrega IS NOT NULL and VC.ID_entrega <> 0 order by VC.ID_entrega", Conexao, adOpenKeyset, adLockReadOnly
+                TBFI.Open "Select VC.* from (vendas_comercial VC INNER JOIN vendas_proposta VP ON VP.Cotacao = VC.Cotacao) INNER JOIN tbl_proposta_nota PN ON PN.proposta = VP.Ncotacao and PN.Revisao = VP.Revisao where PN.ID_nota = " & txtid & " and VC.ID_entrega IS NOT NULL and VC.ID_entrega <> 0 order by VC.ID_entrega", Conexao, adOpenKeyset, adLockReadOnly
                 If TBFI.EOF = False Then
                     Permitido = False
                     Do While TBFI.EOF = False
@@ -28489,7 +28469,7 @@ With cmbEntrega
                 End If
                 TBFI.Close
             Else
-                TBFI.Open "Select CC.* from (Compras_comercial CC INNER JOIN Compras_pedido CP ON CP.IDpedido = CC.IDpedido) INNER JOIN tbl_proposta_nota PN ON PN.proposta = CP.Pedido and PN.Revisao = 0 where PN.ID_nota = " & txtId & " and CC.ID_entrega IS NOT NULL and CC.ID_entrega <> 0 and CC.localentrega IS NOT NULL", Conexao, adOpenKeyset, adLockReadOnly
+                TBFI.Open "Select CC.* from (Compras_comercial CC INNER JOIN Compras_pedido CP ON CP.IDpedido = CC.IDpedido) INNER JOIN tbl_proposta_nota PN ON PN.proposta = CP.Pedido and PN.Revisao = 0 where PN.ID_nota = " & txtid & " and CC.ID_entrega IS NOT NULL and CC.ID_entrega <> 0 and CC.localentrega IS NOT NULL", Conexao, adOpenKeyset, adLockReadOnly
                 If TBFI.EOF = False Then
                     Permitido = False
                     .AddItem TBFI!localentrega
@@ -28526,9 +28506,9 @@ With cmbEntrega
         End If
         
         identrega = 0
-        If txtId <> "" Then
+        If txtid <> "" Then
             Set TBAcessos = CreateObject("adodb.recordset")
-            TBAcessos.Open "Select ID_entrega from tbl_Dados_Nota_Fiscal_NFe NFE INNER JOIN tbl_Dados_Nota_Fiscal NF ON NF.id = NFE.ID_nota where NF.id = " & txtId & " and NF.ID_int_cliente = " & txtIDcliente & " and NF.txt_razao_nome = '" & txt_Razao & "' and NFE.ID_entrega IS NOT NULL", Conexao, adOpenKeyset, adLockReadOnly
+            TBAcessos.Open "Select ID_entrega from tbl_Dados_Nota_Fiscal_NFe NFE INNER JOIN tbl_Dados_Nota_Fiscal NF ON NF.id = NFE.ID_nota where NF.id = " & txtid & " and NF.ID_int_cliente = " & txtIDcliente & " and NF.txt_razao_nome = '" & txt_Razao & "' and NFE.ID_entrega IS NOT NULL", Conexao, adOpenKeyset, adLockReadOnly
             If TBAcessos.EOF = False Then
                 Set TBFI = CreateObject("adodb.recordset")
                 TBFI.Open "Select * from clientes_entrega where identrega = " & TBAcessos!ID_entrega, Conexao, adOpenKeyset, adLockReadOnly

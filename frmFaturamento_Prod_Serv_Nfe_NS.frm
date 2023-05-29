@@ -3622,7 +3622,7 @@ objDom.loadXML (Texto_Envio)
 '===============================================================
 objDom.Save (DiretorioEnvio & NomeArquivo & ".xml")
 
-TxtRetorno.Text = objDom.XML
+txtRetorno.Text = objDom.XML
 
 'Usmsgbox "XML assinado com sucesso", vbInformation, "CAPRIND v5.0"
 File1.Refresh
@@ -3648,7 +3648,7 @@ Email_Enviado = False
 Screen.MousePointer = vbHourglass
 
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "Select * from empresa where codigo = '" & IDEmpresa & "'", Conexao, adOpenKeyset, adLockReadOnly
+TBAbrir.Open "Select * from empresa where codigo = '" & IDempresa & "'", Conexao, adOpenKeyset, adLockReadOnly
 If TBAbrir.EOF = False Then
 CnpjNF = ReturnNumbersOnly(TBAbrir!CNPJ)
 End If
@@ -3669,7 +3669,7 @@ resposta = emitirNFeSincrono(Texto_Envio, "xml", CnpjNF, "P", tpAmb, DiretorioDa
     Mensagem = Mensagem & " Status da consulta:" & motivo & vbCrLf
     Mensagem = Mensagem & " Motivo:" & xMotivo & vbCrLf
     
-    TxtRetorno.Text = Mensagem
+    txtRetorno.Text = Mensagem
 
     'Agora que você já leu os dados, é aconselhável que faça o salvamento de todos
     'eles no seu banco de dados antes de prosseguir para o teste abaixo
@@ -3704,7 +3704,7 @@ resposta = emitirNFeSincrono(Texto_Envio, "xml", CnpjNF, "P", tpAmb, DiretorioDa
                  End If
                  
                  If ID_empresa = 0 Then
-                 ID_empresa = IDEmpresa
+                 ID_empresa = IDempresa
                  End If
                  
                  Set TBCodigoDesc = CreateObject("adodb.recordset")
@@ -3720,7 +3720,7 @@ resposta = emitirNFeSincrono(Texto_Envio, "xml", CnpjNF, "P", tpAmb, DiretorioDa
                    txtchNFe.Text = chNFe
                    txtnsNrec.Text = nsNRec
                    txt_nProt.Text = nProt
-                   TxtRetorno.Text = TxtRetorno & vbCrLf & motivo
+                   txtRetorno.Text = txtRetorno & vbCrLf & motivo
                    
                    If NFCe = False Then
                     Baixar = downloadNFeAndSave(txtchNFe.Text, tpAmb, "X", DiretorioXML, False)
@@ -3768,13 +3768,13 @@ resposta = emitirNFeSincrono(Texto_Envio, "xml", CnpjNF, "P", tpAmb, DiretorioDa
             Else
                 'Aqui você pode mostrar alguma solução para o parceiro ou exibir opção de editar a nota
               USMsgBox (motivo), vbInformation, "CAPRIND v5.0"
-              TxtRetorno.Text = TxtRetorno & vbCrLf & motivo
+              txtRetorno.Text = txtRetorno & vbCrLf & motivo
             End If
         'Caso tenha dado erro na consulta
         Else
             'Aqui você pode mostrar uma mensagem ao usuário
           USMsgBox (motivo + Chr(13) + erros), vbInformation, "CAPRIND v5.0"
-          TxtRetorno.Text = TxtRetorno & vbCrLf & motivo
+          txtRetorno.Text = txtRetorno & vbCrLf & motivo
         End If
     Else
         'Aqui você pode exibir para o usuário o erro que ocorreu no envio
@@ -3791,13 +3791,13 @@ End Sub
 Sub ProcCarregaListaProdutos()
 On Error GoTo tratar_erro
 
-listaProdutos.ListItems.Clear
+ListaProdutos.ListItems.Clear
 Set TBProduto = CreateObject("adodb.recordset")
 TBProduto.Open "Select NFP.*, CF.IDIntClasse from tbl_Detalhes_Nota NFP LEFT JOIN tbl_ClassificacaoFiscal CF ON CF.Idclass = NFP.ID_CF where NFP.id_nota = " & txtID_nota.Text & " order by NFP.int_codigo", Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     Contador = 0
     Do While TBProduto.EOF = False
-        With listaProdutos.ListItems
+        With ListaProdutos.ListItems
             .Add , , TBProduto!Int_codigo
             .Item(.Count).SubItems(1) = IIf(IsNull(TBProduto!int_Cod_Produto), "", TBProduto!int_Cod_Produto)
             .Item(.Count).SubItems(2) = IIf(IsNull(TBProduto!Txt_descricao), "", TBProduto!Txt_descricao)
@@ -3957,7 +3957,7 @@ If TBAbrir.EOF = False Then
 CnpjNF = ReturnNumbersOnly(TBAbrir!CNPJ)
 End If
 TBAbrir.Close
-objDom.loadXML (TxtRetorno.Text)
+objDom.loadXML (txtRetorno.Text)
 Texto_Envio = objDom.XML
 
 'Debug.print Texto_Envio
@@ -4014,7 +4014,7 @@ retorno = emitirNFeSincrono(Texto_Envio, "xml", CnpjNF, "XP", tpAmb, DiretorioXM
                    txtchNFe.Text = chNFe
                    txtnsNrec.Text = nsNRec
                    txt_nProt.Text = nProt
-                   TxtRetorno.Text = motivo
+                   txtRetorno.Text = motivo
 
                    With frmFaturamento_Prod_Serv
                    '.txt_nsNRec = nsNRec
@@ -4046,20 +4046,20 @@ retorno = emitirNFeSincrono(Texto_Envio, "xml", CnpjNF, "XP", tpAmb, DiretorioXM
             Else
                 'Aqui você pode mostrar alguma solução para o parceiro ou exibir opção de editar a nota
               USMsgBox (motivo), vbInformation, "CAPRIND v5.0"
-              TxtRetorno.Text = motivo
+              txtRetorno.Text = motivo
             End If
         'Caso tenha dado erro na consulta
         Else
             'Aqui você pode mostrar uma mensagem ao usuário
           USMsgBox (motivo + Chr(13) + erros), vbInformation, "CAPRIND v5.0"
-          TxtRetorno.Text = motivo
+          txtRetorno.Text = motivo
         End If
     Else
         'Aqui você pode exibir para o usuário o erro que ocorreu no envio
       USMsgBox (motivo + Chr(13) + erros), vbCritical, "CAPRIND v5.0"
-      TxtRetorno.Text = motivo
+      txtRetorno.Text = motivo
     End If
-    TxtRetorno.Text = TextoRetorno
+    txtRetorno.Text = TextoRetorno
 
 Exit Sub
 tratar_erro:
@@ -4073,19 +4073,19 @@ Dim p As Object
 NomeArquivo = frmFaturamento_Prod_Serv_NFe_NS.txtNota
 nfDocumento = "NREC" & NomeArquivo
 
-TxtRetorno = ""
+txtRetorno = ""
 
 If USMsgBox("Deseja realmente consultar recibo NS dessa nota?", vbYesNo, "CAPRIND v5.0") = vbYes Then
 If txtchNFe <> "" And Len(txtchNFe.Text) = 44 Then
 RespostaNSNrec = listarNSNRecs(txtchNFe)
-TxtRetorno.Text = RespostaNSNrec
-status = LerDadosJSON(TxtRetorno.Text, "status", "", "")
+txtRetorno.Text = RespostaNSNrec
+status = LerDadosJSON(txtRetorno.Text, "status", "", "")
 'Debug.print RespostaNSNrec
    If status = "200" Then
       Set p = JSON.parse(RespostaNSNrec)
       txtnsNrec.Text = p.Item("nsNRecs").Item(1).Item("nsNRec")
    Else
-      USMsgBox TxtRetorno.Text, vbCritical, "CAPRIND v5.0"
+      USMsgBox txtRetorno.Text, vbCritical, "CAPRIND v5.0"
    End If
 
 Else
@@ -4105,9 +4105,9 @@ On Error GoTo tratar_erro
 
      Dim retorno As String
     Dim i As Integer
-    If (txtD2.Text <> "") And (TxtRetorno.Text <> "") Then
+    If (txtD2.Text <> "") And (txtRetorno.Text <> "") Then
         'retorno = previaNFe(txtRetorno.Text, "xml")
-        retorno = previaNFeESalvar(TxtRetorno.Text, "xml", txtD2.Text, True)
+        retorno = previaNFeESalvar(txtRetorno.Text, "xml", txtD2.Text, True)
     Else
         MsgBox ("Todos campos necessarios devem ser preenchidos ['caminho', 'tipo de conteudo', 'conteudo']")
     End If
@@ -4222,12 +4222,12 @@ tratar_erro:
     USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
 End Sub
 
-Private Function ProcBuscaIDDest(IDNota As Double)
+Private Function ProcBuscaIDDest(IDnota As Double)
 On Error GoTo tratar_erro
 
-If IDNota <> 0 Then
+If IDnota <> 0 Then
     Set TBAbrir = CreateObject("adodb.recordset")
-    TBAbrir.Open "Select E.UF, DN.txt_UF from tbl_Dados_Nota_Fiscal DN inner join Empresa E on E.codigo = DN.id_Empresa where DN.ID = " & IDNota, Conexao, adOpenKeyset, adLockReadOnly
+    TBAbrir.Open "Select E.UF, DN.txt_UF from tbl_Dados_Nota_Fiscal DN inner join Empresa E on E.codigo = DN.id_Empresa where DN.ID = " & IDnota, Conexao, adOpenKeyset, adLockReadOnly
     If TBAbrir.EOF = False Then
         UF = TBAbrir!UF
         UF_Destinatario = TBAbrir!txt_UF
@@ -4339,7 +4339,7 @@ Private Sub btnCriarXML_Click()
 On Error GoTo tratar_erro
 Dim Texto As String
 Dim TextoAssinaturaA3 As String
-TxtRetorno.Text = ""
+txtRetorno.Text = ""
 
     Set TBproducao = CreateObject("adodb.recordset")
     StrSql = "Select NF.*, T.*, E.Simples, E.Simples1, E.Cultural, E.CNPJ, E.CNAE, E.Razao, E.Empresa, E.IM, E.ie, E.Tipo_endereco, E.Endereco, E.Numero as numeroEmpresa, E.Complemento, E.Tipo_bairro, E.Bairro, E.Cidade, E.UF, E.CEP, E.Telefone, E.Email, NFE.Consumidor_final, NFE.Presenca_comprador, NFE.Forma_emissao, NFE.Finalidade_emissao, NFE.Enviar_Email, NFE.Forma_pagamento, NFE.FormaPagto, NFE.DA_entrega, NFE.DA_cobranca, NFE.ID_entrega, NFE.ID_Cobranca, NFE.xPag from (tbl_Dados_Nota_Fiscal NF INNER JOIN tbl_Totais_Nota T ON NF.ID = T.ID_nota) INNER JOIN tbl_Dados_Nota_Fiscal_NFe NFE ON NFE.ID_Nota = NF.ID INNER JOIN Empresa E ON NF.ID_empresa = E.Codigo WHERE NF.ID = " & txtID_nota
@@ -4413,7 +4413,7 @@ If txtchNFe.Text = "" Then
     objDom.Save (DiretorioEnvio & "\" & NomeArquivo & ".xml")
     DocXML = (DiretorioEnvio & NomeArquivo & ".xml")
 '================================================================
-TxtRetorno.Text = objDom.XML
+txtRetorno.Text = objDom.XML
 'USMsgBox "XML criado com sucesso", vbInformation, "CAPRIND v5.0"
 File1.Refresh
 
@@ -4483,7 +4483,7 @@ If Excluir = False Then
     Exit Sub
 End If
 Permitido = False
-With listaProdutos
+With ListaProdutos
     For InitFor = 1 To .ListItems.Count
         If .ListItems.Item(InitFor).Checked = True Then
             If Permitido = False Then
@@ -4576,7 +4576,7 @@ End If
   resposta = consultarSituacao(ReturnNumbersOnly(CnpjNF), txtchNFe.Text, tpAmb, "4.00")
   'resposta = consultarCadastroContribuinte(ReturnNumbersOnly(CnpjNF), "SP", "05272563000152", "CNPJ")
   status = LerDadosJSON(resposta, status, "", "")
-  TxtRetorno.Text = resposta
+  txtRetorno.Text = resposta
  USMsgBox resposta, vbInformation, "CAPRIND v5.0"
 
 Exit Sub
@@ -4773,14 +4773,14 @@ DiretorioLog = App.Path & "\Log\"
 ProcCarregaToolBar1 Me, 15195, 10, True
 ProcCarregaToolBar2 Me, 15195, 6, True
 
-IDEmpresa = frmFaturamento_Prod_Serv.txtIDEmpresa.Text
+IDempresa = frmFaturamento_Prod_Serv.txtIDEmpresa.Text
 
 Chk_DA_cobranca.Value = xtpChecked
 Chk_DA_entrega.Value = xtpChecked
 
 
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "Select * from empresa where codigo = '" & IDEmpresa & "'", Conexao, adOpenKeyset, adLockReadOnly
+TBAbrir.Open "Select * from empresa where codigo = '" & IDempresa & "'", Conexao, adOpenKeyset, adLockReadOnly
 If TBAbrir.EOF = False Then
 CnpjNF = ReturnNumbersOnly(TBAbrir!CNPJ)
 tpAmb = IIf(IsNull(TBAbrir!tpAmb) = True, "2", TBAbrir!tpAmb)
@@ -5189,7 +5189,7 @@ End Sub
 Private Sub ListaProdutos_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)
 On Error GoTo tratar_erro
 
-ProcOrdenaListView listaProdutos, ColumnHeader
+ProcOrdenaListView ListaProdutos, ColumnHeader
 
 Exit Sub
 tratar_erro:
@@ -5199,7 +5199,7 @@ End Sub
 Private Sub listaProdutos_ItemCheck(ByVal Item As MSComctlLib.ListItem)
 On Error GoTo tratar_erro
 
-With listaProdutos
+With ListaProdutos
     For InitFor = 1 To .ListItems.Count
         If .ListItems.Item(InitFor).Checked = True Then
             
@@ -5231,11 +5231,11 @@ End Sub
 Private Sub ListaProdutos_ItemClick(ByVal Item As MSComctlLib.ListItem)
 On Error GoTo tratar_erro
 
-If listaProdutos.ListItems.Count = 0 Then Exit Sub
+If ListaProdutos.ListItems.Count = 0 Then Exit Sub
 ProcLimpacamposProdutos
-CodigoLista1 = listaProdutos.SelectedItem.index
-txtID_item = listaProdutos.SelectedItem
-If Len(listaProdutos.SelectedItem.SubItems(3)) = 4 Then Quant = Right(listaProdutos.SelectedItem.SubItems(3), 3) Else Quant = Right(listaProdutos.SelectedItem.SubItems(3), 2)
+CodigoLista1 = ListaProdutos.SelectedItem.index
+txtID_item = ListaProdutos.SelectedItem
+If Len(ListaProdutos.SelectedItem.SubItems(3)) = 4 Then Quant = Right(ListaProdutos.SelectedItem.SubItems(3), 3) Else Quant = Right(ListaProdutos.SelectedItem.SubItems(3), 2)
 With cmbModalidade_determinacao_ST
     If Quant = "00" Or Quant = "10" Or Quant = "20" Or Quant = "51" Or Quant = "70" Or Quant = "90" Or Quant = "201" Or Quant = "202" Or Quant = "900" Then
         FrameCST.Enabled = True
@@ -5324,7 +5324,7 @@ Select Case SStab_nfe.Tab
     Case 0: 'Dados da nota
         If ListaNota.Visible = True Then ListaNota.SetFocus
     Case 1: 'Lista de produtos
-        listaProdutos.SetFocus
+        ListaProdutos.SetFocus
         ProcLimpacamposProdutos
         ProcCarregaListaProdutos
 End Select
@@ -5423,7 +5423,7 @@ If TBAbrir.EOF = False Then
     
     If IsNull(TBAbrir!CodRef) = True Then
         Set TBAliquota = CreateObject("adodb.recordset")
-        TBAliquota.Open "Select Codigo_ref_DANFE from empresa where codigo = " & IDEmpresa, Conexao, adOpenKeyset, adLockOptimistic
+        TBAliquota.Open "Select Codigo_ref_DANFE from empresa where codigo = " & IDempresa, Conexao, adOpenKeyset, adLockOptimistic
         If TBAliquota.EOF = False Then
             If TBAliquota!Codigo_ref_DANFE = False Or IsNull(TBAliquota!Codigo_ref_DANFE) = True Then chkCodRef.Value = 0 Else chkCodRef.Value = 1
         End If
@@ -5566,9 +5566,9 @@ File4.Path = App.Path & "\Log\"
 File4.Refresh
 
 If txtTPCertificado.Text = "A1" Then
- BtnAssinarXML.Enabled = True
+ btnAssinarXML.Enabled = True
 Else
- BtnAssinarXML.Enabled = True
+ btnAssinarXML.Enabled = True
 End If
 
 End Select
@@ -5629,7 +5629,7 @@ If txtID_item = 0 Then
 End If
 
 If FrameCST.Enabled = True Then
-    If Len(listaProdutos.SelectedItem.SubItems(3)) = 4 Then Quant = Right(listaProdutos.SelectedItem.SubItems(3), 3) Else Quant = Right(listaProdutos.SelectedItem.SubItems(3), 2)
+    If Len(ListaProdutos.SelectedItem.SubItems(3)) = 4 Then Quant = Right(ListaProdutos.SelectedItem.SubItems(3), 3) Else Quant = Right(ListaProdutos.SelectedItem.SubItems(3), 2)
     If cmbModalidade_determinacao <> "" Or cmbModalidade_determinacao_ST <> "" Then
         Set TBCST = CreateObject("adodb.recordset")
         TBCST.Open "Select * from tbl_Detalhes_Nota_CST_ICMS where id_item = " & txtID_item, Conexao, adOpenKeyset, adLockOptimistic
@@ -5691,18 +5691,18 @@ USMsgBox ("Alteração efetuada com sucesso."), vbInformation, "CAPRIND v5.0"
 '==================================
 Modulo = Formulario
 Evento = "Alterar dados do produto da nota fiscal"
-ID_documento = listaProdutos.SelectedItem
+ID_documento = ListaProdutos.SelectedItem
 With frmFaturamento_Prod_Serv
     .ProcVerificaTipoNF False
     If .txtNFiscal = "" Then NomeCampo = "N° ordem: " & .txtId Else NomeCampo = "N° nota: " & .txtNFiscal
     Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & .txtSerie
 End With
-Documento1 = "Cód. interno: " & listaProdutos.SelectedItem.ListSubItems(1)
+Documento1 = "Cód. interno: " & ListaProdutos.SelectedItem.ListSubItems(1)
 ProcGravaEvento
 '==================================
-If CodigoLista1 <> 0 And listaProdutos.ListItems.Count <> 0 Then
-    listaProdutos.SelectedItem = listaProdutos.ListItems(CodigoLista1)
-    listaProdutos.SetFocus
+If CodigoLista1 <> 0 And ListaProdutos.ListItems.Count <> 0 Then
+    ListaProdutos.SelectedItem = ListaProdutos.ListItems(CodigoLista1)
+    ListaProdutos.SetFocus
 End If
 
 Exit Sub
@@ -6102,7 +6102,7 @@ End If
 
 
 If USMsgBox("Deseja realmente consultar o status da NFe N° " & txtNota.Text & " na SEFAZ?", vbYesNo, "CAPRIND 5.0") = vbNo Then Exit Sub
-  TxtRetorno.Text = ""
+  txtRetorno.Text = ""
 
 '===============================================================
 ' Primeiro consulta pelo numero da chave de acesso
@@ -6230,9 +6230,9 @@ End If
  'txtchNFe.Text = chNFe
 End If
  'Debug.print Mensagem
- TxtRetorno.Text = Mensagem
+ txtRetorno.Text = Mensagem
 Else
-TxtRetorno.Text = xMotivo
+txtRetorno.Text = xMotivo
 ProcCarregaListaNota (1)
 frmFaturamento_Prod_Serv.ProcCarregaListaNota (1)
 'Usmsgbox "Não é possivel consultar o status da nota sem o numero de recibo NS.", vbCritical, "CAPRIND v5.0"
@@ -6459,7 +6459,7 @@ objDet.appendChild objProd
     If IsNull(Trim(TBProduto!PCCliente)) = False And Trim(TBProduto!PCCliente) <> "" Then DescricaoProduto = DescricaoProduto & " - Ped. " & Trim(TBProduto!PCCliente)
     If IsNull(Trim(TBProduto!N_item)) = False And Trim(TBProduto!N_item) <> "" Then DescricaoProduto = DescricaoProduto & " - N. item " & Trim(TBProduto!N_item)
     
-   ' DescricaoProduto = RemoverCaracter(DescricaoProduto)
+   'DescricaoProduto = RemoverCaracter(DescricaoProduto)
     DescricaoProduto = RemoveAccents(DescricaoProduto)
     DescricaoProduto = Replace(DescricaoProduto, Chr(10), vbNullString, 1, -1, vbTextCompare)
     DescricaoProduto = Replace(DescricaoProduto, Chr(13), vbNullString, 1, -1, vbTextCompare)
@@ -6470,7 +6470,7 @@ objDet.appendChild objProd
     End If
     
     If Right(DescricaoProduto, 1) = Chr(10) Then
-     'DescricaoProduto = Replace(DescricaoProduto, Chr(10), vbNullString)
+    'DescricaoProduto = Replace(DescricaoProduto, Chr(10), vbNullString)
      DescricaoProduto = Replace(DescricaoProduto, Chr(10), vbNullString, 1, -1, vbTextCompare)
     End If
     
@@ -6544,6 +6544,7 @@ objDet.appendChild objProd
     objProd.getElementsByTagName("vProd").Item(0).Text = Replace(Format(TBProduto!dbl_ValorTotal, "0.#0"), ",", ".")
     
     objProd.appendChild objDom.createElement("cEANTrib") '9
+    
     If TBProduto!GTIN = "" Or IsNull(TBProduto!GTIN) = True Then
         objProd.getElementsByTagName("cEAN").Item(0).Text = "SEM GTIN"
         objProd.getElementsByTagName("cEANTrib").Item(0).Text = "SEM GTIN"
@@ -6568,11 +6569,11 @@ If TBItem.EOF = False Then
     If TBItem!vTrib = "" Or IsNull(TBItem!vTrib) = True Then
         vTrib = TBProduto!dbl_ValorUnitario
     Else
-        vTrib = TBItem!vTrib
+        vTrib = TBItem!vTrib * TBProduto!int_Qtd
     End If
+    
     If IsNull(TBItem!vTrib) = False And TBItem!vTrib <> 0 Then
-        qTrib = TBProduto!dbl_ValorTotal / TBItem!vTrib
-        'qTrib = Format(qTrib, "0.#000")
+        qTrib = TBProduto!dbl_ValorTotal / vTrib
     Else
         qTrib = TBProduto!int_Qtd
     End If
@@ -6580,13 +6581,22 @@ If TBItem.EOF = False Then
 End If
 TBItem.Close
 
+'==================================================================================================================
+'Unidade tributada, valor unitario tributado, e quantidade total tributado
+'==================================================================================================================
+    'Unidade tributada
     objProd.appendChild objDom.createElement("uTrib") '10
     objProd.getElementsByTagName("uTrib").Item(0).Text = uTrib 'RemoveAccents(TBProduto!txt_Unid)
+    
+    'Peso unitário tributado
     objProd.appendChild objDom.createElement("qTrib") '11
-    objProd.getElementsByTagName("qTrib").Item(0).Text = Replace(Format(qTrib, "0.#000"), ",", ".")
+    objProd.getElementsByTagName("qTrib").Item(0).Text = Replace(Format(vTrib, "0.#000"), ",", ".")
+    
+    'Peso total tributado
     Var1 = TBProduto!int_Qtd
     objProd.appendChild objDom.createElement("vUnTrib") '12
-    objProd.getElementsByTagName("vUnTrib").Item(0).Text = Replace(Format(vTrib, "0.#0000000"), ",", ".")
+    objProd.getElementsByTagName("vUnTrib").Item(0).Text = Replace(Format(qTrib, "0.#0000000"), ",", ".")
+    
 '==================================================================================================================
 'Se tiver valor no frete acrescenta tag
 '==================================================================================================================

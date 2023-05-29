@@ -253,10 +253,6 @@ On Error GoTo tratar_erro
         End If
     End If
     
-    'Debug.print PosicaoBase
-    
-
- 
     
 Exit Function
 tratar_erro:
@@ -288,27 +284,32 @@ PosicaoBase = 0
     frmfaturamento_Nova_Nota.lblXML.Caption = "Importação de arquivo XML sendo executado, aguarde..."
     frmfaturamento_Nova_Nota.Refresh
     
-    ' Ler arquivo XML
     n = FreeFile()
     Open strCaminho For Input As #n
     strarquivo = Input(LOF(n), n)
     strarquivo = Replace(strarquivo, "ï»¿", "")
     Close #n
     
-    infNFe = ProcImportarXMLCarregacampo("<infNFe", "/infNFe>", Len("<infNFe"))
-    'Debug.print Left$(infNFe, 4)
-    If Left$(infNFe, 4) = " Id=" Then
-    infNFe = Left$(infNFe, 52)
-    infNFe = Right$(infNFe, 44)
+    infnfe = ProcImportarXMLCarregacampo("<infNFe", "/infNFe>", Len("<infNFe"))
+    
+    If Left$(infnfe, 4) = " Id=" Then
+        infnfe = Left$(infnfe, 52)
+        infnfe = Right$(infnfe, 44)
     Else
-    infNFe = Left$(infNFe, 66)
-    infNFe = Right$(infNFe, 44)
+        infnfe = Left$(infnfe, 66)
+        infnfe = Right$(infnfe, 44)
     End If
 '========================================================
-' Chave de cesso
+' Chave de acesso
 '========================================================
+Debug.Print TPNota
 PosicaoBase = 0
-    chNF = infNFe
+
+    If TPNota = "T" Then
+        chNF = infnfe
+    Else
+        chNF = ""
+    End If
     
 'Dados da nota fiscal
     V1 = "ide"
@@ -323,6 +324,7 @@ PosicaoBase = 0
     nNF = ProcImportarXMLCarregacampo("<nNF>", "</nNF>", Len("<nNF>"))
     nNF = FunTamanhoTextoZeroEsq(ReturnNumbersOnly(nNF), 9)
     dhEmi = ProcImportarXMLCarregacampo("<dhEmi>", "</dhEmi>", Len("<dhEmi>"))
+    hEmi = dhEmi
     dhEmi = Replace(dhEmi, "T", " ")
     dhEmi = Left$(dhEmi, 19)
     dhEmi = Format(dhEmi, "General date")
@@ -478,27 +480,31 @@ PosicaoBase = 0
 'If frmFaturamento_Prod_Serv.opt_Saida = True Then
 'TPNota = "P"
 'Else
-TPNota = "T"
+'TPNota = "T"
 'End If
 
-'   If TPNota = "P" Then
-'    tpNF = "1"
-'    Aplicacao = "P"
-'    TipoNF = "M1"
-'    Set TBAbrir = CreateObject("adodb.recordset")
-'    TBAbrir.Open "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where tipoNF = '" & TipoNF & "' and Aplicacao = 'P' and ID_empresa = '1' and int_NotaFiscal IS NOT NULL order by  NF desc,dt_DataEmissao desc", Conexao, adOpenKeyset, adLockOptimistic
-'    If TBAbrir.EOF = False Then
-   ' TBAbrir.MoveLast
-'        QuantsolicitadoN1 = TBAbrir!NF + 1
-'        FamiliaAntiga = QuantsolicitadoN1
-'        nNF = FunTamanhoTextoZeroEsq(FamiliaAntiga, 9)
-'        Serie = IIf(IsNull(TBAbrir!Serie), 1, TBAbrir!Serie)
-'    End If
+   If TPNota = "P" Then
+   ' tpNF = "1"
+    Aplicacao = "P"
+    TipoNF = "M1"
     
-'   Else
+    Set TBAbrir = CreateObject("adodb.recordset")
+    StrSql = "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where Serie = '1'and Modelo = '55' and tipoNF = 'M1' and Aplicacao = 'P' and ID_empresa = '" & IDempresa & "' and int_NotaFiscal IS NOT NULL order by dt_DataEmissao desc, NF desc"
+    TBAbrir.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
+
+'    TBAbrir.Open "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where tipoNF = '" & TipoNF & "' and Aplicacao = 'P' and ID_empresa = '" & ID_empresa & "' and int_NotaFiscal IS NOT NULL order by  NF desc,dt_DataEmissao desc", Conexao, adOpenKeyset, adLockOptimistic
+    If TBAbrir.EOF = False Then
+   ' TBAbrir.MoveLast
+        QuantsolicitadoN1 = TBAbrir!NF + 1
+        FamiliaAntiga = QuantsolicitadoN1
+        nNF = FunTamanhoTextoZeroEsq(FamiliaAntiga, 9)
+        Serie = IIf(IsNull(TBAbrir!Serie), 1, TBAbrir!Serie)
+    End If
+    
+   Else
     Aplicacao = "T"
-    tpNF = "2"
-'   End If
+    tpNF = "0"
+   End If
 
 Set TBGravar = CreateObject("adodb.recordset")
 StrSql = "Select * from tbl_Dados_Nota_Fiscal where int_NotaFiscal = '" & nNF & "' and txt_CNPJ_CPF = '" & CNPJ & "' and int_TipoNota = '" & tpNF & "' and Serie = '" & Serie & "' and ID_empresa = '" & IDempresa & "' "
@@ -524,27 +530,85 @@ End If
     TBGravar!ID_empresa = IDempresa
     TBGravar!int_NotaFiscal = nNF
     TBGravar!Serie = Serie
-    TBGravar!int_TipoNota = tpNF
+    TBGravar!int_TipoNota = 2 'tpNF
     TBGravar!TipoNF = "M1"
     TBGravar!dt_DataEmissao = dhEmi
     TBGravar!dt_Saida_Entrada = dhEmi  'dhSaiEnt
-    TBGravar!Hora_emissao = Format(dhEmi, "hh:mm")
+    TBGravar!Hora_emissao = Right(hEmi, 5)
+    TBGravar!txt_Hora_Saida = Right(hEmi, 5)
     TBGravar!Modelo = indmod
-    TBGravar!DtValidacao = Date
-    TBGravar!RespValidacao = pubUsuario
-
+'    TBGravar!DtValidacao = Date
+'    TBGravar!RespValidacao = pubUsuario
+    
 '===========================================
 ' Dados do destinatário
 '===========================================
-'  If tpNF = "1" And TBGravar!Aplicacao = "P" Then
-Set TBClientes = CreateObject("adodb.recordset")
-   TBClientes.Open "Select * from Clientes where CPF_CNPJ = '" & CNPJ & "'", Conexao, adOpenKeyset, adLockOptimistic
-     If TBClientes.EOF = False Then
+
+'Set TBClientes = CreateObject("adodb.recordset")
+
+'Se for nota propria com produtos importados
+    If tpNF = "0" And TPNota = "P" Then
+      Set TBClientes = CreateObject("adodb.recordset")
+       ' TBClientes.Open "Select * from Compras_fornecedores where Nome_Razao Like  '%" & dest_xNome.Text & "%'", Conexao, adOpenKeyset, adLockOptimistic
+        TBClientes.Open "Select * from Compras_fornecedores where Nome_Razao =  '" & dest_xNome & "'", Conexao, adOpenKeyset, adLockOptimistic
+        
+        If TBClientes.EOF = False Then
         TBGravar!Id_Int_Cliente = TBClientes!IDCliente
-        NomeRazao = TBClientes!NomeRazao
-        IDCliente = TBClientes!IDCliente
-        TBClientes.Close
-     Else
+        TBGravar!txt_Razao_Nome = TBClientes!Nome_Razao
+            
+            If IsNull(TBClientes!Tipo_endereco) = False And TBClientes!Tipo_endereco <> "" Then
+                Endereco = TBClientes!Tipo_endereco & ": " & IIf(IsNull(TBClientes!Endereco), "", TBClientes!Endereco)
+            Else
+                Endereco = IIf(IsNull(TBClientes!Endereco), "", TBClientes!Endereco)
+            End If
+            TBGravar!txt_Endereco = Endereco
+            TBGravar!Numero = IIf(IsNull(TBClientes!Numero), "", TBClientes!Numero)
+            If IsNull(TBClientes!Tipo_bairro) = False And TBClientes!Tipo_bairro <> "" Then
+                Bairro = TBClientes!Tipo_bairro & ": " & IIf(IsNull(TBClientes!Bairro), "", TBClientes!Bairro)
+            Else
+                Bairro = IIf(IsNull(TBClientes!Bairro), "", TBClientes!Bairro)
+            End If
+            TBGravar!Txt_bairro = Bairro
+            
+            TBGravar!txt_tipocliente = "JP"
+            TBGravar!txt_IE_Cliente = IIf(IsNull(TBClientes!RG_IE), "", TBClientes!RG_IE)
+            TBGravar!txt_UF = IIf(IsNull(TBClientes!Estado), "", TBClientes!Estado)
+            'TBGravar!txt_Fone_Fax = IIf(IsNull(TBClientes!Telefones), "", TBClientes!Telefones)
+            'If TBClientes!chkSuframa = True Then Suframa = True Else Suframa = False
+    '            TBGravar!txt_UF = IIf(IsNull(TBClientes!Estado), "", TBClientes!Estado)
+            TBGravar!txt_Fone_Fax = IIf(IsNull(TBClientes!Telefones), "", TBClientes!Telefones)
+            Suframa = False
+            TBGravar!txt_CNPJ_CPF = IIf(IsNull(TBClientes!CPF_CNPJ), "", TBClientes!CPF_CNPJ)
+            TBGravar!Txt_CEP = IIf(IsNull(TBClientes!CEP), "", TBClientes!CEP)
+            TBGravar!txt_Municipio = IIf(IsNull(TBClientes!Cidade), "", TBClientes!Cidade)
+            TBGravar!Int_status = "1"
+        End If
+     End If
+     
+'Se for nota de cliente com produtos a serem industrializados
+    If tpNF = "1" And TPNota = "T" Then
+        TBClientes.Open "Select * from Clientes where CPF_CNPJ = '" & CNPJ & "'", Conexao, adOpenKeyset, adLockOptimistic
+        If TBClientes.EOF = False Then
+           TBGravar!Id_Int_Cliente = TBClientes!IDCliente
+           NomeRazao = TBClientes!NomeRazao
+           IDCliente = TBClientes!IDCliente
+           TBClientes.Close
+        End If
+            TBGravar!txt_Razao_Nome = IIf(NomeRazao <> "", NomeRazao, xNome)
+            TBGravar!txt_Endereco = IIf(xLgr <> "", xLgr, "Sem endereço")
+            TBGravar!Txt_bairro = xBairro
+            TBGravar!txt_tipocliente = IIf(Len(CNPJ) <> 14, "JP", "FP")
+            TBGravar!txt_UF = UF
+            TBGravar!txt_CNPJ_CPF = CNPJ
+            TBGravar!Txt_CEP = CEP
+            TBGravar!txt_Municipio = xMun
+            TBGravar!txt_Hora_Saida = Format(dhEmi, "hh:mm")
+            TBGravar!Int_status = "1"
+            TBGravar!Numero = nro
+     End If
+     
+'Se for nota de fornecedor com produtos a comprados
+    If tpNF = "0" And TPNota = "T" Then
         Set TBFornecedor = CreateObject("adodb.recordset")
         TBFornecedor.Open "Select * from Compras_fornecedores where CPF_CNPJ = '" & CNPJ & "'", Conexao, adOpenKeyset, adLockOptimistic
         If TBFornecedor.EOF = False Then
@@ -553,19 +617,18 @@ Set TBClientes = CreateObject("adodb.recordset")
             IDCliente = TBFornecedor!IDCliente
            TBFornecedor.Close
         End If
+            TBGravar!txt_Razao_Nome = IIf(NomeRazao <> "", NomeRazao, xNome)
+            TBGravar!txt_Endereco = IIf(xLgr <> "", xLgr, "Sem endereço")
+            TBGravar!Txt_bairro = xBairro
+            TBGravar!txt_tipocliente = IIf(Len(CNPJ) <> 14, "JP", "FP")
+            TBGravar!txt_UF = UF
+            TBGravar!txt_CNPJ_CPF = CNPJ
+            TBGravar!Txt_CEP = CEP
+            TBGravar!txt_Municipio = xMun
+            TBGravar!txt_Hora_Saida = Format(dhEmi, "hh:mm")
+            TBGravar!Int_status = "1"
+            TBGravar!Numero = nro
      End If
-   
-    TBGravar!txt_Razao_Nome = IIf(NomeRazao <> "", NomeRazao, xNome)
-    TBGravar!txt_Endereco = IIf(xLgr <> "", xLgr, "Sem endereço")
-    TBGravar!txt_Bairro = xBairro
-    TBGravar!txt_tipocliente = IIf(Len(CNPJ) <> 14, "JP", "FP")
-    TBGravar!txt_UF = UF
-    TBGravar!txt_CNPJ_CPF = CNPJ
-    TBGravar!Txt_CEP = CEP
-    TBGravar!txt_Municipio = xMun
-    TBGravar!txt_Hora_Saida = Format(dhEmi, "hh:mm")
-    TBGravar!Int_status = "1"
-    TBGravar!Numero = nro
 
     
     TBGravar.Update
@@ -617,7 +680,7 @@ TBGravar.Close
 ''===========================================================================================
 ''Gravar Pedido de compras se for nota de entrada
 ''===========================================================================================
-If tpNF = 2 And strPedido <> "" Then
+If tpNF = 0 And strPedido <> "" Then
 Set TBGravar = CreateObject("adodb.recordset")
 TBGravar.Open "Select * from tbl_proposta_nota where NF = '" & nNF & "'", Conexao, adOpenKeyset, adLockOptimistic
 If TBGravar.EOF = True Then
@@ -807,7 +870,7 @@ On Error GoTo tratar_erro
         modBC = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
 
         Var1 = "vBC"
-        IMCSpi = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+        ICMSvBC = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
 
         Var1 = "pICMS"
         ICMSpICMS = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
@@ -1071,6 +1134,15 @@ On Error GoTo tratar_erro
     vTotTrib = Replace(vTotTrib, ".", ",")
     vTotTrib = Format(vTotTrib, "###,##0.00")
     
+    Var1 = "vII"
+    vImpostoImportacao = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    vImpostoImportacao = Replace(vImpostoImportacao, ".", ",")
+    vImpostoImportacao = Format(vImpostoImportacao, "###,##0.00")
+    
+    Var1 = "vOutro"
+    vOutro = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    vOutro = Replace(vOutro, ".", ",")
+    vOutro = Format(vOutro, "###,##0.00")
     
   '========================================================================================================
 ' Cadastrar totais da nota fiscal
@@ -1082,7 +1154,7 @@ On Error GoTo tratar_erro
     End If
     
     TBTotaisnota!ID_nota = ID_nota
-    TBTotaisnota!int_NotaFiscal = chNF 'Familiatext
+    TBTotaisnota!int_NotaFiscal = chNF
     TBTotaisnota!dbl_Base_ICMS = vBC
     TBTotaisnota!dbl_Valor_ICMS = vICMS
     TBTotaisnota!dbl_Base_ICMS_Subst = vBCST
@@ -1091,10 +1163,12 @@ On Error GoTo tratar_erro
     TBTotaisnota!dbl_Valor_Frete = vFrete
     TBTotaisnota!dbl_Valor_Seguro = vSeg
     TBTotaisnota!Valor_total_desconto = vDesc
-    TBTotaisnota!dbl_Desp_Adicionais = "0.00" 'vOutro.Text
+    TBTotaisnota!dbl_Desp_Adicionais = vOutro
     TBTotaisnota!dbl_Valor_Total_IPI = vIPI
+    TBTotaisnota!Total_PIS_prod = vPIS
+    TBTotaisnota!Total_Cofins_prod = vCOFINS
     TBTotaisnota!dbl_Valor_Total_Nota = vNF
-    'TBTotaisnota!Valor_total_II = IIf(vImpostoImportacao.Text <> "", vImpostoImportacao.Text, "0")
+    TBTotaisnota!Valor_total_II = vImpostoImportacao
     TBTotaisnota.Update
     'End If
     TBTotaisnota.Close
@@ -1210,6 +1284,9 @@ Inicio:
     vUnCom = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
     Var1 = "vProd"
     vProd = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    Var1 = "vOutro"
+    vOutro = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    
     
 '    V1 = "vFrete"
 '   PosicaoBase = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
@@ -1307,6 +1384,7 @@ PosicaoAntiga = PosicaoBase
      Case "90": ProcCST90
     End Select
  End If
+ 
 '==============================================================
 ' CST IPI
 '==============================================================
@@ -1316,46 +1394,83 @@ PosicaoAntiga = PosicaoBase
 
 If PosicaoBase = 0 Then
 PosicaoBase = PosicaoAntiga
+lngPosicaoFinal = PosicaoAntiga
 End If
 
 'Debug.print PosicaoBase
 PosicaoAntiga = PosicaoBase
-Var1 = "IPI"
- V1 = "/imposto"
+
+ V1 = "</IPI>"
  PosicaoLimite = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
+ Var1 = "IPI"
  
  V1 = "IPI"
  PosicaoBase = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
 
-If PosicaoBase <> 0 And PosicaoBase < PosicaoLimite Then
+
 Var1 = "CST"
 CSTIPI = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-If CSTIPI = "49" Or CSTIPI = "50" Or CSTIPI = "99" Then
+
+If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
+PosicaoBase = PosicaoAntiga
+Else
+PosicaoAntiga = PosicaoBase
+End If
+
+Var1 = "vBC"
+vBCIPI = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+
+If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
+PosicaoBase = PosicaoAntiga
+vBCIPI = 0
+End If
 
 Var1 = "pIPI"
 IPIpIPI = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
 
 If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
 PosicaoBase = PosicaoAntiga
+IPIpIPI = 0
 End If
 
 Var1 = "vIPI"
 IPIvIPI = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-Else
-IPIpIPI = 0
-IPIvIPI = 0
+
+If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
+    PosicaoBase = PosicaoAntiga
+    lngPosicaoFinal = PosicaoAntiga
+    IPIvIPI = 0
 End If
-End If
+
 
 If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
 PosicaoBase = PosicaoAntiga
 End If
+    
+'Imposto de importacao
+    V1 = "</IPI>"
+    PosicaoBase = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
+    
+    Var1 = "vBC"
+    vBCII = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
 
+    Var1 = "vDespAdu"
+    DespAduaneira = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+
+    Var1 = "vII"
+    vII = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+
+    Var1 = "vIOF"
+    vIOF = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+
+    
 '==============================================================
 ' CST PIS
 '==============================================================
 PosicaoAntiga = PosicaoBase
-
+V1 = "PIS"
+PosicaoBase = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
+    
 If PosicaoBase <> 0 Then
 Var1 = "CST"
 CSTPIS = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
@@ -1364,10 +1479,29 @@ End If
 If PosicaoBase = 0 Then
 PosicaoBase = PosicaoAntiga
 End If
+
+If PosicaoBase <> 0 Then
+Var1 = "vBC"
+vbcPIS = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+End If
+
+If PosicaoBase <> 0 Then
+Var1 = "pPIS"
+PISpPIS = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+End If
+
+
+If PosicaoBase <> 0 Then
+Var1 = "vPIS"
+PISvPIS = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+End If
+
 '===================================================================================================
 'CST Cofins
 '===================================================================================================
-PosicaoAntiga = PosicaoBase
+
+V1 = "COFINS"
+PosicaoBase = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
 
 If PosicaoBase <> 0 Then
 Var1 = "CST"
@@ -1377,7 +1511,22 @@ End If
 If PosicaoBase = 0 Then
 PosicaoBase = PosicaoAntiga
 End If
-'=====================================================================================================
+
+If PosicaoBase <> 0 Then
+Var1 = "vBC"
+vBCCofins = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+End If
+
+If PosicaoBase <> 0 Then
+Var1 = "pCOFINS"
+COFINSpCofins = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+End If
+
+
+If PosicaoBase <> 0 Then
+Var1 = "vCOFINS"
+COFINSvCOFINS = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+End If
 ' Fim dos impostos
 '=====================================================================================================
    
@@ -1496,85 +1645,57 @@ TBAbrir!ID_nota = ID_nota
 TBAbrir!int_Qtd = Replace(qCom, ".", ",")
 TBAbrir!Saldo = Replace(qCom, ".", ",")
 TBAbrir!Txt_descricao = IIf(cDesc <> "", cDesc, xProd)
-
+TBAbrir!Valor_acessorias = Replace(vOutro, ".", ",")
 '============================================================================================================
 'Carrega dados da DI
 '============================================================================================================
-'    V1 = "DI"
-'    PosicaoBase = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
+    V1 = "<DI>"
+    PosicaoBase = InStr(10, strarquivo, V1, 1)
 'Debug.print PosicaoBase
-'If PosicaoBase > 0 Then
-'
-'    Var1 = "nDI"
-'    nDI = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'
-'    Var1 = "dDI"
-'    DDI = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'
-'    Var1 = "xLocDesemb"
-'    xlocDesemb = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'
-'    Var1 = "UFDesemb"
-'    UFDesemb = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'
-'    Var1 = "dDesemb"
-'    dDesemb = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'
-'    Var1 = "tpViaTransp"
-'    tpViaTransp = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'
-'    Var1 = "tpIntermedio"
-'    TPIntermedio = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'
-'    Var1 = "cExportador"
-'    cExportador = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'
-'End If
-'
-''============================================================================================================
-''Carrega dados das adicoes da DI
-''============================================================================================================
-'    V1 = "adi"
-'    PosicaoBase = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
-'Debug.print PosicaoBase
-'If PosicaoBase > 0 Then
-'    Var1 = "nAdicao"
-'    nAdicao = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'
-'    Var1 = "nSeqAdic"
-'    nSeqAdic = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'
-'    Var1 = "cFabricante"
-'    cFabricante = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-'End If
-'
-'Set TBAliquota = CreateObject("adodb.recordset")
-'TBAliquota.Open "Select * from tbl_Detalhes_Nota_NFe where ID_item = '" & TBAbrir!Int_codigo & "'", Conexao, adOpenKeyset, adLockOptimistic
-'If TBAliquota.EOF = True Then
-'TBAliquota.AddNew
-'End If
-'TBAliquota!ID_nota = ID_nota
-'TBAliquota!Id_Item = TBAbrir!Int_codigo
-'
-'TBAliquota!Documento_importacao = nDI 'Lista.ListItems.Item(contador).ListSubItems(33).Text
-'TBAliquota!Data_registro = DDI 'Lista.ListItems.Item(contador).ListSubItems(34).Text
-'TBAliquota!Local_desembaraco = xlocDesemb 'Lista.ListItems.Item(contador).ListSubItems(35).Text
-'TBAliquota!UF_desembaraco = UFDesemb 'Lista.ListItems.Item(contador).ListSubItems(36).Text
-'TBAliquota!Data_desembaraco = dDesemb 'Lista.ListItems.Item(contador).ListSubItems(37).Text
-'TBAliquota!Via_transp = tpViaTransp 'Lista.ListItems.Item(contador).ListSubItems(39).Text
-'TBAliquota!Codigo_exportador = cExportador 'Lista.ListItems.Item(contador).ListSubItems(40).Text
-'TBAliquota!Numero_adicao = nAdicao 'Lista.ListItems.Item(contador).ListSubItems(42).Text
-'TBAliquota!Numero_sequencial = nSeqAdic 'contador
-'TBAliquota!Codigo_fabricante = cFabricante 'Lista.ListItems.Item(contador).ListSubItems(43).Text
-'
-''TBAliquota!Valor_BC_importacao = Lista.ListItems.Item(contador).ListSubItems(28).Text
-''TBAliquota!Valor_imposto_importacao = Lista.ListItems.Item(contador).ListSubItems(30).Text
-''TBAliquota!Valor_despesas = Lista.ListItems.Item(contador).ListSubItems(29).Text
-''TBAliquota!Valor_imposto_OperacoesFinanceiras = Lista.ListItems.Item(contador).ListSubItems(31).Text
-''TBAliquota!NCM = Lista.ListItems.Item(contador).ListSubItems(3).Text
-'TBAliquota.Update
-'TBAliquota.Close
+If PosicaoBase > 0 Then
 
+    Var1 = "nDI"
+    nDI = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    
+    Var1 = "dDI"
+    DDI = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    
+    Var1 = "xLocDesemb"
+    xlocDesemb = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+            
+    Var1 = "UFDesemb"
+    UFDesemb = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    
+    Var1 = "dDesemb"
+    dDesemb = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    
+    Var1 = "tpViaTransp"
+    tpViaTransp = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    
+    Var1 = "tpIntermedio"
+    TPIntermedio = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    
+    Var1 = "cExportador"
+    cExportador = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+
+End If
+
+'============================================================================================================
+'Carrega dados das adicoes da DI
+'============================================================================================================
+    V1 = "adi"
+    PosicaoBase = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
+'Debug.print PosicaoBase
+If PosicaoBase > 0 Then
+    Var1 = "nAdicao"
+    nAdicao = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    
+    Var1 = "nSeqAdic"
+    nSeqAdic = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    
+    Var1 = "cFabricante"
+    cFabricante = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+End If
 
 '=======================================================================================
 ' Busca dados da CFOP
@@ -1622,20 +1743,38 @@ TBAbrir!Unidade_com = uCom
 'TBAbrir!Familia = IIf(IsNull(TBItem!Classe), "", TBItem!Classe)
 TBAbrir!dbl_ValorUnitario = vUnCom
 TBAbrir!dbl_ValorTotal = Format(vUnCom * TBAbrir!int_Qtd, "###,##0.00")
+'=======================================================================================
+'Impostos
+'=======================================================================================
+'Icms
+'=======================================================================================
 TBAbrir!int_ICMS = IIf(ICMSpICMS <> "", Replace(ICMSpICMS, ".", ","), "0")
 TBAbrir!ICMS_SN = IIf(ICMSpICMS <> "", Replace(ICMSpICMS, ".", ","), "0")
+'=======================================================================================
+'IPI
+'=======================================================================================
 TBAbrir!int_IPI = IIf(IPIpIPI <> "", Replace(IPIpIPI, ".", ","), "0")
 TBAbrir!dbl_valoripi = IIf(IPIvIPI <> "", Replace(IPIvIPI, ".", ","), 0)
-TBAbrir!txt_CST = vICMSCST
-TBAbrir!CST_IPI = CSTIPI
-TBAbrir!CST_PIS = CSTPIS
+TBAbrir!txt_CST = IIf(vICMSCST <> "", Replace(vICMSCST, ".", ","), 0)
+TBAbrir!CST_IPI = IIf(CSTIPI <> "", Replace(CSTIPI, ".", ","), 0)
+'=======================================================================================
+'PIS
+'=======================================================================================
+TBAbrir!CST_PIS = IIf(CSTPIS <> "", Replace(CSTPIS, ".", ","), 0)
+TBAbrir!PIS_Prod = IIf(PISpPIS <> "", Replace(PISpPIS, ".", ","), 0)
+TBAbrir!Total_PIS_prod = IIf(PISvPIS <> "", Replace(PISvPIS, ".", ","), 0)
+'=======================================================================================
+'Cofins
+'=======================================================================================
 TBAbrir!CST_Cofins = CSTCOFINS
+TBAbrir!Cofins_Prod = IIf(COFINSpCofins <> "", Replace(COFINSpCofins, ".", ","), 0)
+TBAbrir!Total_Cofins_prod = IIf(COFINSvCOFINS <> "", Replace(COFINSvCOFINS, ".", ","), 0)
+'=======================================================================================
 TBAbrir!Valor_frete = IIf(vFrete <> "", Replace(vFrete, ".", ","), 0)
 TBAbrir!Valor_desconto = IIf(vDesc <> "", Replace(vDesc, ".", ","), 0)
-
 TBAbrir.Update
 '================================================================
-'Gravar dados da NFe
+'Gravar dados de importação do item da NFe
 '================================================================
 Set TBAliquota = CreateObject("adodb.recordset")
 TBAliquota.Open "Select * from tbl_Detalhes_Nota_NFe where ID_item = '" & TBAbrir!Int_codigo & "'", Conexao, adOpenKeyset, adLockOptimistic
@@ -1644,9 +1783,23 @@ TBAliquota.AddNew
 End If
 TBAliquota!ID_nota = ID_nota
 TBAliquota!Id_Item = TBAbrir!Int_codigo
+TBAliquota!Documento_importacao = nDI
+TBAliquota!Data_registro = DDI
+TBAliquota!Local_desembaraco = xlocDesemb
+TBAliquota!UF_desembaraco = UFDesemb
+TBAliquota!Data_desembaraco = dDesemb
+TBAliquota!Via_transp = tpViaTransp
+TBAliquota!Codigo_exportador = cExportador
+TBAliquota!Numero_adicao = nAdicao
+TBAliquota!Numero_sequencial = nSeqAdic
+TBAliquota!Codigo_fabricante = cFabricante
+TBAliquota!Valor_BC_importacao = IIf(vBCII <> "", Replace(vBCII, ".", ","), 0)
+TBAliquota!Valor_imposto_importacao = IIf(vII <> "", Replace(vII, ".", ","), 0)
+TBAliquota!Valor_despesas = IIf(DespAduaneira <> "", Replace(DespAduaneira, ".", ","), 0)
+TBAliquota!Valor_imposto_OperacoesFinanceiras = IIf(vIOF <> "", Replace(vIOF, ".", ","), 0)
+TBAliquota!NCM = NCM
 TBAliquota.Update
 TBAliquota.Close
-
 '================================================================
 'Gravar dados do icms
 '================================================================
@@ -1984,7 +2137,7 @@ If ImportarXML = True Then
         NFentrada = True
     End If
     
-    If ID_nota <> 0 And ID_empresa <> 0 Then
+    If ID_nota <> 0 And ID_empresa <> 0 And TPNota = "T" Then
         If LocalArmazenamento = "" Then
             frmEstoque_Local.Show 1
         End If
@@ -1995,10 +2148,11 @@ End If
 
 strPedido = ""
 strCaminho = ""
+
 If ImportarXML = True Then
     USMsgBox "XML importado com sucesso!", vbInformation, "CAPRIND v5.0"
     With frmFaturamento_Prod_Serv
-        .Strsql_Faturamento = "Select NF.Int_TipoNota, NF.ID, NF.dt_DataEmissao, NF.dt_Saida_Entrada, NF.int_NotaFiscal, NF.TipoNF, NF.Serie, TN.dbl_Valor_Total_Nota, NF.txt_Razao_Nome, NF.txt_CNPJ_CPF, NF.Int_status, NF.Imprimir, NF.ID_empresa, NF.Aplicacao, NF.DtValidacaoOF, NF.DtValidacao, NF.RPS, NF.Modelo, NF.int_NotaFiscal AS NNF from tbl_Dados_Nota_Fiscal NF LEFT OUTER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota group by NF.Int_TipoNota, NF.ID, NF.dt_DataEmissao, NF.dt_Saida_Entrada, NF.int_NotaFiscal, NF.TipoNF, NF.Serie, TN.dbl_Valor_Total_Nota, NF.txt_Razao_Nome, NF.txt_CNPJ_CPF, NF.Int_status, NF.Imprimir, NF.ID_empresa, NF.Aplicacao, NF.DtValidacaoOF, NF.DtValidacao, NF.RPS, NF.Modelo, NF.int_NotaFiscal HAVING NF.Int_status = 1 and  NF.tiponf = 'M1' and NF.Aplicacao = 'T' and NF.ID = " & ID_nota & " and NF.ID_empresa = 1 order by NF.int_NotaFiscal desc"
+       ' .Strsql_Faturamento = "Select NF.Int_TipoNota, NF.ID, NF.dt_DataEmissao, NF.dt_Saida_Entrada, NF.int_NotaFiscal, NF.TipoNF, NF.Serie, TN.dbl_Valor_Total_Nota, NF.txt_Razao_Nome, NF.txt_CNPJ_CPF, NF.Int_status, NF.Imprimir, NF.ID_empresa, NF.Aplicacao, NF.DtValidacaoOF, NF.DtValidacao, NF.RPS, NF.Modelo, NF.int_NotaFiscal AS NNF from tbl_Dados_Nota_Fiscal NF LEFT OUTER JOIN tbl_Totais_Nota TN ON NF.ID = TN.ID_Nota group by NF.Int_TipoNota, NF.ID, NF.dt_DataEmissao, NF.dt_Saida_Entrada, NF.int_NotaFiscal, NF.TipoNF, NF.Serie, TN.dbl_Valor_Total_Nota, NF.txt_Razao_Nome, NF.txt_CNPJ_CPF, NF.Int_status, NF.Imprimir, NF.ID_empresa, NF.Aplicacao, NF.DtValidacaoOF, NF.DtValidacao, NF.RPS, NF.Modelo, NF.int_NotaFiscal HAVING NF.Int_status = 1 and  NF.tiponf = 'M1' and NF.Aplicacao = 'T' and NF.ID = " & ID_nota & " and NF.ID_empresa = 1 order by NF.int_NotaFiscal desc"
         .ProcCarregaListaNota (1)
     End With
 Else

@@ -762,34 +762,34 @@ Begin VB.Form frmVendas_proposta
       TabCaption(1)   =   "Dados comerciais"
       TabPicture(1)   =   "frmVendas_proposta.frx":00EF
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Txt_ID_entrega"
-      Tab(1).Control(1)=   "Txt_ID_cobranca"
-      Tab(1).Control(2)=   "Frame1(4)"
-      Tab(1).Control(3)=   "USToolBar2"
+      Tab(1).Control(0)=   "USToolBar2"
+      Tab(1).Control(1)=   "Frame1(4)"
+      Tab(1).Control(2)=   "Txt_ID_cobranca"
+      Tab(1).Control(3)=   "Txt_ID_entrega"
       Tab(1).ControlCount=   4
       TabCaption(2)   =   "Lista de produtos"
       TabPicture(2)   =   "frmVendas_proposta.frx":010B
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Listprod"
-      Tab(2).Control(1)=   "Frame1(6)"
+      Tab(2).Control(0)=   "SSTab2"
+      Tab(2).Control(1)=   "USToolBar3"
       Tab(2).Control(2)=   "txtid_produto"
-      Tab(2).Control(3)=   "USToolBar3"
-      Tab(2).Control(4)=   "SSTab2"
+      Tab(2).Control(3)=   "Frame1(6)"
+      Tab(2).Control(4)=   "Listprod"
       Tab(2).ControlCount=   5
       TabCaption(3)   =   "Lista de serviços"
       TabPicture(3)   =   "frmVendas_proposta.frx":0127
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "Chk_obs_faturamento_serv"
-      Tab(3).Control(1)=   "Chk_CFOP_serv"
+      Tab(3).Control(0)=   "USToolBar4"
+      Tab(3).Control(1)=   "Frame1(13)"
       Tab(3).Control(2)=   "Frame1(8)"
-      Tab(3).Control(3)=   "Frame1(13)"
-      Tab(3).Control(4)=   "USToolBar4"
+      Tab(3).Control(3)=   "Chk_CFOP_serv"
+      Tab(3).Control(4)=   "Chk_obs_faturamento_serv"
       Tab(3).ControlCount=   5
       TabCaption(4)   =   "Escopo de fornecimento"
       TabPicture(4)   =   "frmVendas_proposta.frx":0143
       Tab(4).ControlEnabled=   0   'False
-      Tab(4).Control(0)=   "Frame1(9)"
-      Tab(4).Control(1)=   "USToolBar5"
+      Tab(4).Control(0)=   "USToolBar5"
+      Tab(4).Control(1)=   "Frame1(9)"
       Tab(4).ControlCount=   2
       Begin MSComctlLib.ListView Listprod 
          Height          =   4350
@@ -2486,13 +2486,13 @@ Begin VB.Form frmVendas_proposta
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   1710
+            Left            =   1800
             Locked          =   -1  'True
             MaxLength       =   21
             TabIndex        =   408
             ToolTipText     =   "Número do fax."
             Top             =   1560
-            Width           =   1725
+            Width           =   1635
          End
          Begin VB.TextBox txtCNPJ 
             Alignment       =   2  'Center
@@ -2513,7 +2513,7 @@ Begin VB.Form frmVendas_proposta
             TabIndex        =   383
             ToolTipText     =   "Número do fax."
             Top             =   1560
-            Width           =   1515
+            Width           =   1605
          End
          Begin VB.TextBox txtRespValidacao 
             Alignment       =   2  'Center
@@ -2747,14 +2747,14 @@ Begin VB.Form frmVendas_proposta
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   1730
+            Left            =   1815
             Locked          =   -1  'True
             MaxLength       =   100
             TabIndex        =   7
             TabStop         =   0   'False
             ToolTipText     =   "Data da revisão/cancelamento/perda."
             Top             =   960
-            Width           =   1710
+            Width           =   1620
          End
          Begin VB.TextBox txt_observacoes 
             BackColor       =   &H00FFFFFF&
@@ -2817,7 +2817,7 @@ Begin VB.Form frmVendas_proposta
             TabStop         =   0   'False
             ToolTipText     =   "Número da proposta comercial."
             Top             =   955
-            Width           =   1035
+            Width           =   1125
          End
          Begin VB.TextBox txtCidade 
             Alignment       =   2  'Center
@@ -3101,7 +3101,7 @@ Begin VB.Form frmVendas_proposta
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   1225
+            Left            =   1320
             Locked          =   -1  'True
             TabIndex        =   6
             TabStop         =   0   'False
@@ -3221,7 +3221,7 @@ Begin VB.Form frmVendas_proposta
             CalendarTitleBackColor=   8421504
             CalendarTitleForeColor=   16777215
             CalendarTrailingForeColor=   255
-            Format          =   197853187
+            Format          =   177471491
             CurrentDate     =   39057
          End
          Begin MSComCtl2.DTPicker txt_dataelaborado 
@@ -3248,7 +3248,7 @@ Begin VB.Form frmVendas_proposta
             CalendarTitleBackColor=   8421504
             CalendarTitleForeColor=   16777215
             CalendarTrailingForeColor=   255
-            Format          =   197853187
+            Format          =   177471491
             CurrentDate     =   39057
          End
          Begin DrawSuite2022.USButton cmdstatus 
@@ -3576,7 +3576,7 @@ Begin VB.Form frmVendas_proposta
             ForeColor       =   &H00000000&
             Height          =   195
             Index           =   72
-            Left            =   720
+            Left            =   765
             TabIndex        =   281
             Top             =   1350
             Width           =   435
@@ -3810,7 +3810,7 @@ Begin VB.Form frmVendas_proposta
             ForeColor       =   &H00000000&
             Height          =   195
             Index           =   55
-            Left            =   1280
+            Left            =   1365
             TabIndex        =   264
             Top             =   750
             Width           =   375
@@ -3897,7 +3897,7 @@ Begin VB.Form frmVendas_proposta
             ForeColor       =   &H00000000&
             Height          =   195
             Index           =   15
-            Left            =   315
+            Left            =   360
             TabIndex        =   203
             Top             =   750
             Width           =   765
@@ -7627,8 +7627,8 @@ Begin VB.Form frmVendas_proposta
          TabCaption(0)   =   "Dados principais"
          TabPicture(0)   =   "frmVendas_proposta.frx":1EDE78
          Tab(0).ControlEnabled=   0   'False
-         Tab(0).Control(0)=   "Frame1(10)"
-         Tab(0).Control(1)=   "Chk_CFOP_prod"
+         Tab(0).Control(0)=   "Chk_CFOP_prod"
+         Tab(0).Control(1)=   "Frame1(10)"
          Tab(0).ControlCount=   2
          TabCaption(1)   =   "Dados adicionais"
          TabPicture(1)   =   "frmVendas_proposta.frx":1EDE94
@@ -9925,7 +9925,7 @@ Dim LimiteCreditoSaldo                As Double
 Private Sub ProcLocalizaVendedorInterno()
 On Error GoTo tratar_erro
 
-If txtIDcliente = "" Then Exit Sub
+If txtidcliente = "" Then Exit Sub
 
 Set TBAcessos = CreateObject("adodb.recordset")
 TBAcessos.Open "Select * from empresa where Empresa = '" & Cmb_empresa.Text & "'", Conexao, adOpenKeyset, adLockReadOnly
@@ -9944,7 +9944,7 @@ Inicio:
 ' Verifica se esse cliente pertence ao vendedor
 '===============================================================
 Set TBClientes = CreateObject("adodb.recordset")
-TBClientes.Open "Select * from Vendas_Vendedores_Clientes where IDCliente = " & txtIDcliente & "", Conexao, adOpenKeyset, adLockOptimistic
+TBClientes.Open "Select * from Vendas_Vendedores_Clientes where IDCliente = " & txtidcliente & "", Conexao, adOpenKeyset, adLockOptimistic
 '===============================================================
 ' Se pertencer ao vendedor
 '===============================================================
@@ -10006,12 +10006,12 @@ Public Sub ProcEnviaEmail()
 On Error GoTo tratar_erro
 
 Acao = "enviar o e-mail"
-If txtId = 0 Then
+If TxtID = 0 Then
     NomeCampo = "a proposta"
     ProcVerificaAcao
     Exit Sub
 End If
-If txtStatus <> "ABERTA EM ANALISE" Then
+If txtstatus <> "ABERTA EM ANALISE" Then
     USMsgBox ("Não é permitido enviar o e-mail, pois a proposta comercial ainda não foi aprovada."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
@@ -10028,7 +10028,7 @@ Custos_justificativa = False
        USMsgBox ("Atenção usuário " & pubUsuario & ", não foi encontrado um servidor de email valido no seu cadastro!"), vbCritical, "CAPRIND v5.0"
        Exit Sub
       End If
-     FrmEnviarEmail.txtDe.Text = TBFIltro!Email
+     FrmEnviarEmail.txtde.Text = TBFIltro!Email
      End If
     TBFIltro.Close
 
@@ -10039,7 +10039,7 @@ If TBAbrir.EOF = False Then
     NomeRel = "Vendas_proposta.rpt"
     If Len(TBAbrir!caminho) = 3 Then caminho = TBAbrir!caminho Else caminho = TBAbrir!caminho & "\"
     Nome_anexo = Replace(txtCotacao.Text, "/", "-") & ".pdf"
-    ProcGerarPDF caminho & Nome_anexo, "{vendas_proposta.Cotacao} = " & txtId, ""
+    ProcGerarPDF caminho & Nome_anexo, "{vendas_proposta.Cotacao} = " & TxtID, ""
     
     FrmEnviarEmail.Txt_anexo = caminho & Nome_anexo
     FrmEnviarEmail.lblanexo.Caption = "Proposta comercial n° " & Nome_anexo
@@ -10092,17 +10092,17 @@ On Error GoTo tratar_erro
 
 If USMsgBox("Atenção!" & vbCrLf & "Deseja realmente modificar o valor do frete nos itens da lista?", vbYesNo, "CAPRIND v5.0") = vbYes Then
 
-If TxtTotalFrete.Text <> "" Then
+If txtTotalfrete.Text <> "" Then
 
 Set TBLISTA = CreateObject("adodb.recordset")
-TBLISTA.Open "Select * from vendas_carteira where cotacao = " & txtId.Text & " and TIPO = 'P'", Conexao, adOpenKeyset, adLockOptimistic
+TBLISTA.Open "Select * from vendas_carteira where cotacao = " & TxtID.Text & " and TIPO = 'P'", Conexao, adOpenKeyset, adLockOptimistic
 If TBLISTA.EOF = False Then
 TBLISTA.MoveLast
 Contador = TBLISTA.RecordCount
 TBLISTA.MoveFirst
-vFrete = TxtTotalFrete / Contador
+vFrete = txtTotalfrete / Contador
 Do While TBLISTA.EOF = False
-TBLISTA!vFrete = TxtTotalFrete / Contador
+TBLISTA!vFrete = txtTotalfrete / Contador
 TBLISTA!dbl_Valor_ICMS = ((TBLISTA!preco_lote + vFrete) * TBLISTA!IntICMS) / 100
 TBLISTA!BC_ICMS = (TBLISTA!preco_unitario * TBLISTA!quantidade) + vFrete
 TBLISTA.Update
@@ -10113,7 +10113,7 @@ TBLISTA.Close
 End If
 ProcAtualizalistaProdutos 1
 
-ProcGravarTotais IIf(txtId = "", 0, txtId)
+ProcGravarTotais IIf(TxtID = "", 0, TxtID)
 ProcPuxaTotais
 
 ProcLimparProdutos True
@@ -10144,7 +10144,7 @@ End Sub
 Private Sub Chk_desc_Click()
 On Error GoTo tratar_erro
 
-With txtDesconto
+With txtdesconto
     If Chk_desc.Value = 1 Then
         .Locked = False
         .TabStop = True
@@ -10209,8 +10209,8 @@ With txtvalordesconto
         .TabStop = True
         .SetFocus
         Chk_desc.Value = 0
-        txtDesconto.Locked = True
-        txtDesconto.TabStop = False
+        txtdesconto.Locked = True
+        txtdesconto.TabStop = False
     Else
         .Locked = True
         .TabStop = False
@@ -10368,8 +10368,8 @@ txtidTransportadora.Text = Cmb_empresa.ItemData(Cmb_empresa.ListIndex)
 End If
 
 If Cmb_tipo_transp.Text = "Cliente" Then
-txtTransportadora.Text = txtCliente.Text
-txtidTransportadora.Text = txtIDcliente
+txtTransportadora.Text = txtcliente.Text
+txtidTransportadora.Text = txtidcliente
 End If
 
 
@@ -10397,7 +10397,7 @@ txtRedespacho.Text = Cmb_empresa.Text
 End If
 
 If Cmb_tipo_transp2.Text = "Cliente" Then
-txtRedespacho.Text = txtCliente.Text
+txtRedespacho.Text = txtcliente.Text
 End If
 
 If Cmb_tipo_transp2.Text = "Fornecedor" Then
@@ -10442,8 +10442,8 @@ End Sub
 Private Sub cmbFamilia_Click()
 On Error GoTo tratar_erro
 
-txtdesctecnica = FunBuscaDescPadraoFamilia(cmbfamilia, txtNomenclatura, txtdesctecnica)
-Txt_ID_CF = FunBuscaIDCFPadraoFamilia(cmbfamilia, txtNomenclatura, IIf(Txt_ID_CF = "", 0, Txt_ID_CF))
+txtdesctecnica = FunBuscaDescPadraoFamilia(cmbFamilia, txtNomenclatura, txtdesctecnica)
+Txt_ID_CF = FunBuscaIDCFPadraoFamilia(cmbFamilia, txtNomenclatura, IIf(Txt_ID_CF = "", 0, Txt_ID_CF))
 
 Exit Sub
 tratar_erro:
@@ -10822,8 +10822,8 @@ Private Sub cmdFiltrar_Click()
 On Error GoTo tratar_erro
 
 'Verifica se o produto pertence ao cliente
-IDCliente = txtIDcliente
-Cliente = txtCliente
+IDCliente = txtidcliente
+Cliente = txtcliente
 Set TBCompras_Pedido = CreateObject("adodb.recordset")
 TBCompras_Pedido.Open "Select * from projproduto where desenho = '" & txtNomenclatura.Text & "' and Vendas = 'True' and Tipo = 'P' and Bloqueado = 'False' and DtValidacao IS NOT NULL", Conexao, adOpenKeyset, adLockOptimistic
 If TBCompras_Pedido.EOF = False Then
@@ -10870,7 +10870,7 @@ TBAbrir.Open "Select * from Empresa where Simples = 'False'", Conexao, adOpenKey
 If TBAbrir.EOF = False Then Permitido = True Else Permitido = False
 
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "Select * from Clientes where IDCliente = " & txtIDcliente & " and Simples = 'False'", Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir.Open "Select * from Clientes where IDCliente = " & txtidcliente & " and Simples = 'False'", Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.EOF = False Then Permitido = True Else Permitido = False
 TBAbrir.Close
 
@@ -10890,14 +10890,14 @@ If txtNomenclatura.Text <> "" Then
         txtNomenclatura = TBCompras_Pedido!Desenho
         txtEspecificacoes.Text = IIf(IsNull(TBCompras_Pedido!descricaotecnica), "", TBCompras_Pedido!descricaotecnica)
         Txt_observacoes_prod = IIf(IsNull(TBCompras_Pedido!Observacoes), "", TBCompras_Pedido!Observacoes)
-        txtespessura = IIf(IsNull(TBCompras_Pedido!Espessura), "", TBCompras_Pedido!Espessura)
+        txtEspessura = IIf(IsNull(TBCompras_Pedido!Espessura), "", TBCompras_Pedido!Espessura)
         txtLargura = IIf(IsNull(TBCompras_Pedido!Largura), "", TBCompras_Pedido!Largura)
         txtComprimento = IIf(IsNull(TBCompras_Pedido!Comprimento), "", TBCompras_Pedido!Comprimento)
         txtDureza = IIf(IsNull(TBCompras_Pedido!Dureza), "", TBCompras_Pedido!Dureza)
         txtdesctecnica.Text = IIf(IsNull(TBCompras_Pedido!Descricao), "", TBCompras_Pedido!Descricao)
         txtRev_cod = IIf(IsNull(TBCompras_Pedido!RevDesenho), "", TBCompras_Pedido!RevDesenho)
-        txtinspecao = IIf(IsNull(TBCompras_Pedido!Inspecao), "", TBCompras_Pedido!Inspecao)
-        txtembalagem = IIf(IsNull(TBCompras_Pedido!Embalagem), "", TBCompras_Pedido!Embalagem)
+        txtInspecao = IIf(IsNull(TBCompras_Pedido!Inspecao), "", TBCompras_Pedido!Inspecao)
+        txtEmbalagem = IIf(IsNull(TBCompras_Pedido!Embalagem), "", TBCompras_Pedido!Embalagem)
         txtGravacao = IIf(IsNull(TBCompras_Pedido!Gravacao), "", TBCompras_Pedido!Gravacao)
         
         cmbun.ListIndex = -1
@@ -10906,9 +10906,9 @@ If txtNomenclatura.Text <> "" Then
         Cmb_un_com.ListIndex = -1
         NomeCampo = "a unidade comercial"
         If IsNull(TBCompras_Pedido!Unidade_com) = False And TBCompras_Pedido!Unidade_com <> "" <> "" Then Cmb_un_com = TBCompras_Pedido!Unidade_com
-        cmbfamilia.ListIndex = -1
+        cmbFamilia.ListIndex = -1
         NomeCampo = "a família"
-        If IsNull(TBCompras_Pedido!Classe) = False And TBCompras_Pedido!Classe <> "" Then cmbfamilia = TBCompras_Pedido!Classe
+        If IsNull(TBCompras_Pedido!Classe) = False And TBCompras_Pedido!Classe <> "" Then cmbFamilia = TBCompras_Pedido!Classe
         Txt_ID_CF = ""
         Txt_CF = ""
         
@@ -10918,7 +10918,7 @@ If txtNomenclatura.Text <> "" Then
 ' Busca valor unitário por cliente
 '=================================================================
  Set TBAbrir = CreateObject("adodb.recordset")
- StrSql = "Select * from Projproduto_clientes where Codproduto = " & TBCompras_Pedido!Codproduto & " and idcliente = " & txtIDcliente
+ StrSql = "Select * from Projproduto_clientes where Codproduto = " & TBCompras_Pedido!Codproduto & " and idcliente = " & txtidcliente
  'Debug.print StrSql
  TBAbrir.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
 '==============================================================
@@ -10962,16 +10962,16 @@ TBAbrir.Close
         ProcCarregaDadosCFOPProdServ IIf(IsNull(TBCompras_Pedido!ID_CFOP1), 0, TBCompras_Pedido!ID_CFOP1), True
         
         If Txt_ID_CF <> "" Then
-            ProcValorImposto txtCotacao, Txt_ID_CF, IIf(txtIDcliente = "", 0, txtIDcliente), txtCliente, txtuf, Cmb_empresa.ItemData(Cmb_empresa.ListIndex), False, IIf(IsNull(TBCompras_Pedido!ID_CFOP1), 0, TBCompras_Pedido!ID_CFOP1), RegimeEmpresa_Proposta
-            ProcControleImposto IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), IIf(txtIDcliente = "", 0, txtIDcliente)
+            ProcValorImposto txtCotacao, Txt_ID_CF, IIf(txtidcliente = "", 0, txtidcliente), txtcliente, txtUF, Cmb_empresa.ItemData(Cmb_empresa.ListIndex), False, IIf(IsNull(TBCompras_Pedido!ID_CFOP1), 0, TBCompras_Pedido!ID_CFOP1), RegimeEmpresa_Proposta
+            ProcControleImposto IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), IIf(txtidcliente = "", 0, txtidcliente)
             If TemIPI = "SIM" Then txtInt_ipi = IntIPI Else txtInt_ipi.Text = 0
             If TemICMS = "SIM" Then txtint_icms = IntICMS Else txtint_icms.Text = 0
             
-            If txtuf <> "" Then
+            If txtUF <> "" Then
                 Set TBAbrir = CreateObject("adodb.recordset")
                 TBAbrir.Open "Select * from Empresa where Codigo = " & Cmb_empresa.ItemData(Cmb_empresa.ListIndex) & " and Carregar_CFOP_ST = 'True'", Conexao, adOpenKeyset, adLockOptimistic
                 If TBAbrir.EOF = False Then
-                    ProcVerifCFOPST Txt_ID_CF, txtuf
+                    ProcVerifCFOPST Txt_ID_CF, txtUF
                     If Valido = True Then
                         Txt_ID_CFOP_prod = IDAntigo
                         Txt_CFOP_prod = FamiliaAntiga
@@ -10982,7 +10982,7 @@ TBAbrir.Close
             End If
         End If
         
-        ProcCarregaComboCodRef cmbReferencia, "P.codproduto = " & TBCompras_Pedido!Codproduto, txtIDcliente, "C", True, True
+        ProcCarregaComboCodRef cmbReferencia, "P.codproduto = " & TBCompras_Pedido!Codproduto, txtidcliente, "C", True, True
         
         'Carrega comissão
         Set TBExecucao = CreateObject("adodb.recordset")
@@ -10993,9 +10993,9 @@ TBAbrir.Close
                     txtComissao = TBExecucao!Comissao
                 Else
                     Set TBCFOP = CreateObject("adodb.recordset")
-                    If TBExecucao!tipocomissao = "C" Then TBCFOP.Open "select * from Vendas_Vendedores_Clientes where IDVendedor = " & TBExecucao!ID & " and IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente), Conexao, adOpenKeyset, adLockOptimistic
+                    If TBExecucao!tipocomissao = "C" Then TBCFOP.Open "select * from Vendas_Vendedores_Clientes where IDVendedor = " & TBExecucao!ID & " and IDCliente = " & IIf(txtidcliente = "", 0, txtidcliente), Conexao, adOpenKeyset, adLockOptimistic
                     If TBExecucao!tipocomissao = "P" Then TBCFOP.Open "select * from Vendas_Vendedores_Produto where IDVendedor = " & TBExecucao!ID & " and IDProduto = " & TBCompras_Pedido!Codproduto, Conexao, adOpenKeyset, adLockOptimistic
-                    If TBExecucao!tipocomissao = "CP" Then TBCFOP.Open "select Vendas_Vendedores_Produto.comissao from Vendas_Vendedores_Produto INNER JOIN Vendas_Vendedores_Clientes on Vendas_Vendedores_Produto.idcliente = Vendas_Vendedores_Clientes.Id where Vendas_Vendedores_Produto.IDVendedor = " & TBExecucao!ID & " and Vendas_Vendedores_Produto.IDProduto = " & TBCompras_Pedido!Codproduto & " and Vendas_Vendedores_clientes.IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente), Conexao, adOpenKeyset, adLockOptimistic
+                    If TBExecucao!tipocomissao = "CP" Then TBCFOP.Open "select Vendas_Vendedores_Produto.comissao from Vendas_Vendedores_Produto INNER JOIN Vendas_Vendedores_Clientes on Vendas_Vendedores_Produto.idcliente = Vendas_Vendedores_Clientes.Id where Vendas_Vendedores_Produto.IDVendedor = " & TBExecucao!ID & " and Vendas_Vendedores_Produto.IDProduto = " & TBCompras_Pedido!Codproduto & " and Vendas_Vendedores_clientes.IDCliente = " & IIf(txtidcliente = "", 0, txtidcliente), Conexao, adOpenKeyset, adLockOptimistic
                     If TBCFOP.EOF = False Then txtComissao = TBCFOP!Comissao
                     TBCFOP.Close
                 End If
@@ -11048,14 +11048,14 @@ txtEspecificacoes.TabStop = False
 Txt_observacoes_prod.TabStop = False
 Cmb_prioridade.TabStop = False
 Txt_observacoes_fat_prod.TabStop = False
-txtespessura.TabStop = False
+txtEspessura.TabStop = False
 txtLargura.TabStop = False
 txtComprimento.TabStop = False
 txtDureza.TabStop = False
-cmdCF.TabStop = False
+CmdCF.TabStop = False
 cmbun.TabStop = False
 If cmbun <> "KG" And cmbun <> "MM" And cmbun <> "MT" And cmbun <> "PC" And cmbun <> "PÇ" Then Cmb_un_com.TabStop = False
-cmbfamilia.TabStop = False
+cmbFamilia.TabStop = False
 
 Exit Sub
 tratar_erro:
@@ -11075,14 +11075,14 @@ txtEspecificacoes.TabStop = True
 Txt_observacoes_prod.TabStop = True
 Cmb_prioridade.TabStop = True
 Txt_observacoes_fat_prod.TabStop = True
-txtespessura.TabStop = True
+txtEspessura.TabStop = True
 txtLargura.TabStop = True
 txtComprimento.TabStop = True
 txtDureza.TabStop = True
-cmdCF.TabStop = True
+CmdCF.TabStop = True
 cmbun.TabStop = True
 Cmb_un_com.TabStop = True
-cmbfamilia.TabStop = True
+cmbFamilia.TabStop = True
 
 Exit Sub
 tratar_erro:
@@ -11094,8 +11094,8 @@ Private Sub cmdfiltrar_serv_Click()
 On Error GoTo tratar_erro
 
 'Verifica se o serviço pertence ao cliente
-IDCliente = txtIDcliente
-Cliente = txtCliente
+IDCliente = txtidcliente
+Cliente = txtcliente
 Set TBCompras_Pedido = CreateObject("adodb.recordset")
 TBCompras_Pedido.Open "Select * from projproduto where desenho = '" & txtcodservico.Text & "' and Vendas = 'True' and Tipo = 'S' and Bloqueado = 'False' and DtValidacao IS NOT NULL", Conexao, adOpenKeyset, adLockOptimistic
 If TBCompras_Pedido.EOF = False Then
@@ -11161,7 +11161,7 @@ If txtcodservico.Text <> "" Then
 1:
         valor = IIf(Txt_valor_moeda = "", 1, Txt_valor_moeda)
         Set TBFI = CreateObject("adodb.recordset")
-        TBFI.Open "Select * from Projproduto_clientes where Codproduto = " & TBCompras_Pedido!Codproduto & " and idcliente = " & txtIDcliente, Conexao, adOpenKeyset, adLockOptimistic
+        TBFI.Open "Select * from Projproduto_clientes where Codproduto = " & TBCompras_Pedido!Codproduto & " and idcliente = " & txtidcliente, Conexao, adOpenKeyset, adLockOptimistic
         If TBFI.EOF = False Then
             If txttipocliente <> "JR" And txttipocliente <> "FR" Then
                 txtvlrunitservico = IIf(IsNull(TBFI!PConsumo), "", Format((TBFI!PConsumo / FunVerificaTabelaConversaoUnidade(txtunservico, Cmb_un_com_serv)) / valor, "###,##0.0000000000"))
@@ -11179,7 +11179,7 @@ If txtcodservico.Text <> "" Then
         
         ProcCarregaDadosCFOPProdServ IIf(IsNull(TBCompras_Pedido!ID_CFOP1), 0, TBCompras_Pedido!ID_CFOP1), False
         
-        ProcCarregaComboCodRef cmbreferencia_serv, "P.codproduto = " & TBCompras_Pedido!Codproduto, txtIDcliente, "C", True, True
+        ProcCarregaComboCodRef cmbreferencia_serv, "P.codproduto = " & TBCompras_Pedido!Codproduto, txtidcliente, "C", True, True
         
         'Carrega comissão
         Set TBExecucao = CreateObject("adodb.recordset")
@@ -11190,9 +11190,9 @@ If txtcodservico.Text <> "" Then
                     txtComissaoServ = TBExecucao!Comissao
                 Else
                     Set TBCFOP = CreateObject("adodb.recordset")
-                    If TBExecucao!tipocomissao = "C" Then TBCFOP.Open "select * from Vendas_Vendedores_Clientes where IDVendedor = " & TBExecucao!ID & " and IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente), Conexao, adOpenKeyset, adLockOptimistic
+                    If TBExecucao!tipocomissao = "C" Then TBCFOP.Open "select * from Vendas_Vendedores_Clientes where IDVendedor = " & TBExecucao!ID & " and IDCliente = " & IIf(txtidcliente = "", 0, txtidcliente), Conexao, adOpenKeyset, adLockOptimistic
                     If TBExecucao!tipocomissao = "P" Then TBCFOP.Open "select * from Vendas_Vendedores_Produto where IDVendedor = " & TBExecucao!ID & " and IDProduto = " & TBCompras_Pedido!Codproduto, Conexao, adOpenKeyset, adLockOptimistic
-                    If TBExecucao!tipocomissao = "CP" Then TBCFOP.Open "select Vendas_Vendedores_Produto.comissao from Vendas_Vendedores_Produto INNER JOIN Vendas_Vendedores_Clientes on Vendas_Vendedores_Produto.idcliente = Vendas_Vendedores_Clientes.Id where Vendas_Vendedores_Produto.IDVendedor = " & TBExecucao!ID & " and Vendas_Vendedores_Produto.IDProduto = " & TBCompras_Pedido!Codproduto & " and Vendas_Vendedores_clientes.IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente), Conexao, adOpenKeyset, adLockOptimistic
+                    If TBExecucao!tipocomissao = "CP" Then TBCFOP.Open "select Vendas_Vendedores_Produto.comissao from Vendas_Vendedores_Produto INNER JOIN Vendas_Vendedores_Clientes on Vendas_Vendedores_Produto.idcliente = Vendas_Vendedores_Clientes.Id where Vendas_Vendedores_Produto.IDVendedor = " & TBExecucao!ID & " and Vendas_Vendedores_Produto.IDProduto = " & TBCompras_Pedido!Codproduto & " and Vendas_Vendedores_clientes.IDCliente = " & IIf(txtidcliente = "", 0, txtidcliente), Conexao, adOpenKeyset, adLockOptimistic
                     If TBCFOP.EOF = False Then txtComissaoServ = TBCFOP!Comissao
                     TBCFOP.Close
                 End If
@@ -11316,13 +11316,13 @@ If Alterar = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " você não tem acesso a este recurso."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-If txtStatus <> "ABERTA EM ANALISE" And txtStatus <> "VENDIDA" And txtStatus <> "VENDIDA PARCIAL" And txtStatus <> "FATURADA PARCIAL" Then
+If txtstatus <> "ABERTA EM ANALISE" And txtstatus <> "VENDIDA" And txtstatus <> "VENDIDA PARCIAL" And txtstatus <> "FATURADA PARCIAL" Then
     USMsgBox ("Só é permitido alterar o escopo de fornecimento de proposta/pedido com o status aberta em análise, vendida, vendida parcial e faturada parcial."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
 If FunVerifValidacaoRegistro("alterar", txtDtValidacao, IIf(Vendas_Proposta = True, "proposta", "pedido interno"), "o escopo de fornecimento", IIf(Vendas_Proposta = True, False, True)) = False Then Exit Sub
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select * FROM vendas_comercial WHERE cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select * FROM vendas_comercial WHERE cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     If Novo_Proposta3 = True Then
         Evento = "Novo escopo de fornecimento"
@@ -11336,14 +11336,14 @@ Else
     USMsgBox ("Novo escopo de fornecimento cadastrado com sucesso."), vbInformation, "CAPRIND v5.0"
     Evento = "Novo escopo de fornecimento"
 End If
-TBProduto!Cotacao = txtId
+TBProduto!Cotacao = TxtID
 TBProduto!Escopo_fornecimento = txtEscopo
 TBProduto.Update
 TBProduto.Close
 
 '==================================
 Modulo = Formulario
-ID_documento = txtId
+ID_documento = TxtID
 Documento = IIf(Vendas_PI = True, "Nº pedido: ", "Nº proposta: ") & txtCotacao & " - Rev.: " & txtrevisao
 Documento1 = ""
 ProcGravaEvento
@@ -11700,7 +11700,7 @@ Private Sub cmdtransportadora_Click()
 On Error GoTo tratar_erro
 
 Set TBClientes = CreateObject("adodb.recordset")
-TBClientes.Open "Select * from clientes where IDCLIENTE = " & txtIDcliente.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBClientes.Open "Select * from clientes where IDCLIENTE = " & txtidcliente.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBClientes.EOF = False Then
     If IsNull(TBClientes!txt_transportadora) = False And TBClientes!txt_transportadora <> "" Then
         cmbtransportadora.Clear
@@ -11727,7 +11727,7 @@ With txtlocal_entrega
     .Clear
     .AddItem ""
     Set TBClientes = CreateObject("adodb.recordset")
-    TBClientes.Open "Select * from clientes_entrega where idcliente = " & txtIDcliente.Text & " and Tipo = 'C'", Conexao, adOpenKeyset, adLockOptimistic
+    TBClientes.Open "Select * from clientes_entrega where idcliente = " & txtidcliente.Text & " and Tipo = 'C'", Conexao, adOpenKeyset, adLockOptimistic
     If TBClientes.EOF = False Then
         Do While TBClientes.EOF = False
             If IsNull(TBClientes!Tipo_endereco) = False And TBClientes!Tipo_endereco <> "" Then
@@ -11766,7 +11766,7 @@ With txtlocal_cobranca
     .Clear
     .AddItem ""
     Set TBClientes = CreateObject("adodb.recordset")
-    TBClientes.Open "Select * from clientes_cobranca where idcliente = " & txtIDcliente.Text & " and Tipo = 'C'", Conexao, adOpenKeyset, adLockOptimistic
+    TBClientes.Open "Select * from clientes_cobranca where idcliente = " & txtidcliente.Text & " and Tipo = 'C'", Conexao, adOpenKeyset, adLockOptimistic
     If TBClientes.EOF = False Then
         Do While TBClientes.EOF = False
             If IsNull(TBClientes!Tipo_endereco) = False And TBClientes!Tipo_endereco <> "" Then
@@ -11834,7 +11834,7 @@ If USMsgBox("Deseja realmente cancelar o pedido interno do produto " & txtNomenc
         TBVendas!PrazoFinal = Null
         TBVendas!Prazo_original = Null
         TBVendas!PCCliente = Null
-        txtDatavendas.Text = ""
+        txtdatavendas.Text = ""
         TBVendas.Update
         
         ProcExcluirEmpenhos Cmb_empresa.ItemData(Cmb_empresa.ListIndex), TBVendas!CODIGO, True
@@ -11842,7 +11842,7 @@ If USMsgBox("Deseja realmente cancelar o pedido interno do produto " & txtNomenc
     TBVendas.Close
     
     Set TBVendas = CreateObject("adodb.recordset")
-    TBVendas.Open "Select * from vendas_PROPOSTA where cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBVendas.Open "Select * from vendas_PROPOSTA where cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
     If TBVendas.EOF = False Then
         Set TBAbrir = CreateObject("adodb.recordset")
         TBAbrir.Open "Select * from vendas_carteira where cotacao = " & TBVendas!Cotacao & " order by datavendas", Conexao, adOpenKeyset, adLockOptimistic
@@ -11877,13 +11877,13 @@ If USMsgBox("Deseja realmente cancelar o pedido interno do produto " & txtNomenc
         Listprod.SetFocus
     End If
     If Vendas_PI = True Then
-        If FunAtualizaStatusPropPI(txtId) = True Then
-            SSTab1.Tab = 0
+        If FunAtualizaStatusPropPI(TxtID) = True Then
+            SStab1.Tab = 0
             SSTab1_Click (0)
             ProcLimpar
         End If
     Else
-        FunAtualizaStatusPropPI txtId
+        FunAtualizaStatusPropPI TxtID
     End If
     ProcCarregaLista (IIf(ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5))))
 End If
@@ -11931,7 +11931,7 @@ If USMsgBox("Deseja realmente cancelar o pedido interno do serviço " & txtcodser
         TBVendas!PrazoFinal = Null
         TBVendas!Prazo_original = Null
         TBVendas!PCCliente = Null
-        txtDatavendas.Text = ""
+        txtdatavendas.Text = ""
         TBVendas.Update
         
         ProcExcluirEmpenhos Cmb_empresa.ItemData(Cmb_empresa.ListIndex), TBVendas!CODIGO, True
@@ -11939,7 +11939,7 @@ If USMsgBox("Deseja realmente cancelar o pedido interno do serviço " & txtcodser
     TBVendas.Close
     
     Set TBVendas = CreateObject("adodb.recordset")
-    TBVendas.Open "Select * from vendas_PROPOSTA where cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBVendas.Open "Select * from vendas_PROPOSTA where cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
     If TBVendas.EOF = False Then
         Set TBAbrir = CreateObject("adodb.recordset")
         TBAbrir.Open "Select * from vendas_carteira where cotacao = " & TBVendas!Cotacao & " order by datavendas", Conexao, adOpenKeyset, adLockOptimistic
@@ -11974,13 +11974,13 @@ If USMsgBox("Deseja realmente cancelar o pedido interno do serviço " & txtcodser
         ListaServicos.SetFocus
     End If
     If Vendas_PI = True Then
-        If FunAtualizaStatusPropPI(txtId) = True Then
-            SSTab1.Tab = 0
+        If FunAtualizaStatusPropPI(TxtID) = True Then
+            SStab1.Tab = 0
             SSTab1_Click (0)
             ProcLimpar
         End If
     Else
-        FunAtualizaStatusPropPI txtId
+        FunAtualizaStatusPropPI TxtID
     End If
     ProcCarregaLista (IIf(ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5))))
 End If
@@ -12005,9 +12005,9 @@ If txtid_produto.Text = 0 Then
 End If
 If USMsgBox("Deseja realmente emitir pedido interno deste produto?", vbYesNo) = vbYes Then
     If FunVerifValidarAutomPropPI(Cmb_empresa.ItemData(Cmb_empresa.ListIndex)) = False Then
-        If FunVerificaRegistroValidado("Vendas_proposta", "Cotacao = " & txtId, "mesma", "dessa proposta", "emitir PI", False, False) = False Then Exit Sub
+        If FunVerificaRegistroValidado("Vendas_proposta", "Cotacao = " & TxtID, "mesma", "dessa proposta", "emitir PI", False, False) = False Then Exit Sub
     End If
-    If txtIDcliente = "" Or txtIDcliente = "0" Then
+    If txtidcliente = "" Or txtidcliente = "0" Then
         USMsgBox ("Só é permitido emitir pedido interno de proposta com o cliente cadastrado."), vbExclamation, "CAPRIND v5.0"
         Exit Sub
     End If
@@ -12033,7 +12033,7 @@ If USMsgBox("Deseja realmente emitir pedido interno deste produto?", vbYesNo) = 
         TextoFiltroUpdate = ""
         Permitido = False
         If FunVerifValidarAutomPropPI(Cmb_empresa.ItemData(Cmb_empresa.ListIndex)) = True Then
-            Conexao.Execute "UPDATE vendas_proposta Set DtValidacao = '" & Now & "', RespValidacao = '" & pubUsuario & "', DtValidacaoPI = '" & Now & "', RespValidacaoPI = '" & pubUsuario & "' where Cotacao = " & txtId & " and DtValidacao IS NULL"
+            Conexao.Execute "UPDATE vendas_proposta Set DtValidacao = '" & Now & "', RespValidacao = '" & pubUsuario & "', DtValidacaoPI = '" & Now & "', RespValidacaoPI = '" & pubUsuario & "' where Cotacao = " & TxtID & " and DtValidacao IS NULL"
             Permitido = True
         End If
         
@@ -12045,7 +12045,7 @@ If USMsgBox("Deseja realmente emitir pedido interno deste produto?", vbYesNo) = 
         TBVendas.Update
         
         'Muda o tipo da proposta para PRPE
-        Conexao.Execute "UPDATE vendas_proposta Set Tipo = 'PRPE', Datavendas = '" & Date & "' where Cotacao = " & txtId
+        Conexao.Execute "UPDATE vendas_proposta Set Tipo = 'PRPE', Datavendas = '" & Date & "' where Cotacao = " & TxtID
         
         If Permitido = True Then
             QuantSolicitado = TBVendas!Qtde_produzir
@@ -12069,7 +12069,7 @@ If USMsgBox("Deseja realmente emitir pedido interno deste produto?", vbYesNo) = 
 1:
         Listprod.SetFocus
     End If
-    FunAtualizaStatusPropPI txtId
+    FunAtualizaStatusPropPI TxtID
     ProcCarregaLista (IIf(ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5))))
 End If
 
@@ -12093,9 +12093,9 @@ If txtid_servico.Text = 0 Then
 End If
 If USMsgBox("Deseja realmente emitir pedido interno deste serviço?", vbYesNo, "CAPRIND v5.0") = vbYes Then
     If FunVerifValidarAutomPropPI(Cmb_empresa.ItemData(Cmb_empresa.ListIndex)) = False Then
-        If FunVerificaRegistroValidado("Vendas_proposta", "Cotacao = " & txtId, "mesma", "dessa proposta", "emitir PI", False, False) = False Then Exit Sub
+        If FunVerificaRegistroValidado("Vendas_proposta", "Cotacao = " & TxtID, "mesma", "dessa proposta", "emitir PI", False, False) = False Then Exit Sub
     End If
-    If txtIDcliente = "" Or txtIDcliente = "0" Then
+    If txtidcliente = "" Or txtidcliente = "0" Then
         USMsgBox ("Só é permitido emitir pedido interno de proposta com o cliente cadastrado."), vbExclamation, "CAPRIND v5.0"
         Exit Sub
     End If
@@ -12121,7 +12121,7 @@ If USMsgBox("Deseja realmente emitir pedido interno deste serviço?", vbYesNo, "C
         TextoFiltroUpdate = ""
         Permitido = False
         If FunVerifValidarAutomPropPI(Cmb_empresa.ItemData(Cmb_empresa.ListIndex)) = True Then
-            Conexao.Execute "UPDATE vendas_proposta Set DtValidacao = '" & Now & "', RespValidacao = '" & pubUsuario & "', DtValidacaoPI = '" & Now & "', RespValidacaoPI = '" & pubUsuario & "' where Cotacao = " & txtId & " and DtValidacao IS NULL"
+            Conexao.Execute "UPDATE vendas_proposta Set DtValidacao = '" & Now & "', RespValidacao = '" & pubUsuario & "', DtValidacaoPI = '" & Now & "', RespValidacaoPI = '" & pubUsuario & "' where Cotacao = " & TxtID & " and DtValidacao IS NULL"
             Permitido = True
         End If
         
@@ -12133,7 +12133,7 @@ If USMsgBox("Deseja realmente emitir pedido interno deste serviço?", vbYesNo, "C
         TBVendas.Update
         
         'Muda o tipo da proposta para PRPE
-        Conexao.Execute "UPDATE vendas_proposta Set Tipo = 'PRPE', Datavendas = '" & Date & "' where Cotacao = " & txtId
+        Conexao.Execute "UPDATE vendas_proposta Set Tipo = 'PRPE', Datavendas = '" & Date & "' where Cotacao = " & TxtID
         
         If Permitido = True Then
             QuantSolicitado = TBVendas!Qtde_produzir
@@ -12157,7 +12157,7 @@ If USMsgBox("Deseja realmente emitir pedido interno deste serviço?", vbYesNo, "C
 1:
         ListaServicos.SetFocus
     End If
-    FunAtualizaStatusPropPI txtId
+    FunAtualizaStatusPropPI TxtID
     ProcCarregaLista (IIf(ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5))))
 End If
 
@@ -12173,7 +12173,7 @@ On Error GoTo tratar_erro
 
 If Vendas_Proposta = True Then
     If txtCotacao = "" Then Exit Sub
-    Select Case txtStatus.Text
+    Select Case txtstatus.Text
         Case "VENDIDA": Exit Sub
         Case "VENDIDA PARCIAL": Exit Sub
         Case "REVISADA": Exit Sub
@@ -12207,7 +12207,7 @@ If Alterar = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " você não tem acesso a este recurso."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-If txtStatus <> "ABERTA EM ANALISE" And txtStatus <> "VENDIDA" And txtStatus <> "VENDIDA PARCIAL" And txtStatus <> "FATURADA PARCIAL" Then
+If txtstatus <> "ABERTA EM ANALISE" And txtstatus <> "VENDIDA" And txtstatus <> "VENDIDA PARCIAL" And txtstatus <> "FATURADA PARCIAL" Then
     USMsgBox ("Só é permitido alterar os dados comerciais de " & IIf(Vendas_PI = True, "pedido interno", "proposta") & " com o status aberta em análise, vendida, vendida parcial e faturada parcial."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
@@ -12235,7 +12235,7 @@ End If
 'End If
 
 Set TBProduto = CreateObject("adodb.recordset")
-TBProduto.Open "Select * FROM vendas_comercial WHERE cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBProduto.Open "Select * FROM vendas_comercial WHERE cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBProduto.EOF = False Then
     USMsgBox ("Alteração efetuada com sucesso."), vbInformation, "CAPRIND v5.0"
     Evento = "Alterar dados comerciais"
@@ -12250,7 +12250,7 @@ TBProduto.Update
 TBProduto.Close
 '==================================
 Modulo = Formulario
-ID_documento = txtId
+ID_documento = TxtID
 Documento = IIf(Vendas_PI = True, "Nº pedido: ", "Nº proposta: ") & txtCotacao & " - Rev.: " & txtrevisao
 Documento1 = ""
 ProcGravaEvento
@@ -12271,9 +12271,9 @@ TBProduto!analize = IIf(txtAnalize = "", Null, txtAnalize)
 TBProduto!calculos = txtcalculos.Text
 TBProduto!impostos = txtimpostos.Text
 TBProduto!condicoes = txtCondicoes.Text
-TBProduto!Cotacao = txtId.Text
+TBProduto!Cotacao = TxtID.Text
 TBProduto!garantia = txtgarantia.Text
-TBProduto!Observacoes = txtObservacoes.Text
+TBProduto!Observacoes = txtobservacoes.Text
 TBProduto!reajuste = txtReajuste.Text
 TBProduto!transporte = txttransporte.Text
 TBProduto!validade = IIf(txtValidade = "", Null, txtValidade)
@@ -12332,7 +12332,7 @@ TBProduto!Valor_moeda = IIf(Txt_valor_moeda = "", Null, Txt_valor_moeda)
 'Atualiza valor dos produtos/serviços de acordo com valor da moeda
 If IsNull(TBProduto!Valor_moeda) = False Then
     Set TBLISTA = CreateObject("adodb.recordset")
-    TBLISTA.Open "Select * FROM vendas_carteira where cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBLISTA.Open "Select * FROM vendas_carteira where cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
     If TBLISTA.EOF = False Then
         Do While TBLISTA.EOF = False
             TBLISTA!preco_unitario = TBLISTA!preco_unitario / TBProduto!Valor_moeda
@@ -12356,9 +12356,9 @@ End Sub
 Private Sub ProcSalvarPrevisaoPgto(ValorTotalProposta As Double)
 On Error GoTo tratar_erro
 
-Conexao.Execute "DELETE from vendas_proposta_previsaopgto where cotacao = " & txtId
+Conexao.Execute "DELETE from vendas_proposta_previsaopgto where cotacao = " & TxtID
 Set TBCotacao = CreateObject("adodb.recordset")
-TBCotacao.Open "Select condicoes from vendas_comercial where cotacao = " & txtId & " and condicoes IS NOT NULL and condicoes <> N''", Conexao, adOpenKeyset, adLockOptimistic
+TBCotacao.Open "Select condicoes from vendas_comercial where cotacao = " & TxtID & " and condicoes IS NOT NULL and condicoes <> N''", Conexao, adOpenKeyset, adLockOptimistic
 If TBCotacao.EOF = False Then
     If TBCotacao!condicoes <> " " And IsNumeric(Left(TBCotacao!condicoes, 1)) = True Then
         QtdeSaida = 0
@@ -12430,7 +12430,7 @@ If TBCotacao.EOF = False Then
             Set TBGravar = CreateObject("adodb.recordset")
             TBGravar.Open "Select * from vendas_proposta_previsaopgto", Conexao, adOpenKeyset, adLockOptimistic
             TBGravar.AddNew
-            TBGravar!Cotacao = txtId
+            TBGravar!Cotacao = TxtID
             TBGravar!Data = DataFim
             TBGravar!valor = valor
             TBGravar!Parcela = Parcela
@@ -12666,7 +12666,7 @@ If Incluir = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " você não tem acesso a este recurso."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-If txtStatus <> "ABERTA EM ANALISE" And txtStatus <> "VENDIDA" And txtStatus <> "VENDIDA PARCIAL" And txtStatus <> "FATURADA PARCIAL" Then
+If txtstatus <> "ABERTA EM ANALISE" And txtstatus <> "VENDIDA" And txtstatus <> "VENDIDA PARCIAL" And txtstatus <> "FATURADA PARCIAL" Then
     USMsgBox ("Só é permitido criar novo serviço em proposta com o status aberta em análise, vendida parcial ou faturada parcial."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
@@ -12686,7 +12686,7 @@ End Sub
 Private Sub ProcAnterior()
 On Error GoTo tratar_erro
 
-If txtId.Text = 0 Then Exit Sub
+If TxtID.Text = 0 Then Exit Sub
 Set TBLISTA = CreateObject("adodb.recordset")
 If Vendas_Proposta = True Then
     TBLISTA.Open "Select * from vendas_proposta order by ordenarproposta, cotacao", Conexao, adOpenKeyset, adLockOptimistic
@@ -12694,12 +12694,12 @@ Else
     TBLISTA.Open "Select * from vendas_proposta WHERE Tipo = 'PE' or tipo = 'PRPE' order by ordenarproposta, cotacao", Conexao, adOpenKeyset, adLockOptimistic
 End If
 If TBLISTA.BOF = False Then
-    TBLISTA.Find ("cotacao = " & txtId)
+    TBLISTA.Find ("cotacao = " & TxtID)
     TBLISTA.MovePrevious
     If TBLISTA.BOF = False Then
-        txtId.Text = TBLISTA!Cotacao
+        TxtID.Text = TBLISTA!Cotacao
         Set TBAbrir = CreateObject("adodb.recordset")
-        TBAbrir.Open "Select * from vendas_proposta where cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select * from vendas_proposta where cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
         ProcPuxaDados
         ProcLimparTudo
         ProcPuxaDadosComercial
@@ -12724,7 +12724,7 @@ End Sub
 Private Sub ProcProximo()
 On Error GoTo tratar_erro
 
-If txtId.Text = 0 Then Exit Sub
+If TxtID.Text = 0 Then Exit Sub
 Set TBLISTA = CreateObject("adodb.recordset")
 If Vendas_Proposta = True Then
     TBLISTA.Open "Select * from vendas_proposta order by ordenarproposta, cotacao", Conexao, adOpenKeyset, adLockOptimistic
@@ -12732,12 +12732,12 @@ Else
     TBLISTA.Open "Select * from vendas_proposta WHERE tipo = 'PE' or tipo = 'PRPE' order by ordenarproposta, cotacao", Conexao, adOpenKeyset, adLockOptimistic
 End If
 If TBLISTA.BOF = False Then
-    TBLISTA.Find ("cotacao = " & txtId)
+    TBLISTA.Find ("cotacao = " & TxtID)
     TBLISTA.MoveNext
     If TBLISTA.EOF = False Then
-        txtId.Text = TBLISTA!Cotacao
+        TxtID.Text = TBLISTA!Cotacao
         Set TBAbrir = CreateObject("adodb.recordset")
-        TBAbrir.Open "Select * from vendas_proposta where cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select * from vendas_proposta where cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
         ProcPuxaDados
         ProcLimparTudo
         ProcPuxaDadosComercial
@@ -12775,7 +12775,7 @@ On Error GoTo tratar_erro
 
 USMsgBox "Escolha seu contato com o cliente", vbInformation, "CAPRIND v5.0"
 
-If txtIDcliente.Text <> "" And txtIDcliente.Text <> "0" Then
+If txtidcliente.Text <> "" And txtidcliente.Text <> "0" Then
     Analise_critica = False
     Telemarketing = False
     Qualidade_PPAP_PSW = False
@@ -12821,14 +12821,14 @@ With ListaServicos
             
             'Excluir cliente do serviço
             Set TBOrdem = CreateObject("adodb.recordset")
-            TBOrdem.Open "Select vendas_proposta.* from (vendas_carteira INNER JOIN vendas_proposta on Vendas_carteira.cotacao = Vendas_proposta.cotacao) INNER JOIN projproduto on vendas_carteira.desenho = projproduto.desenho where Vendas_carteira.desenho = '" & .ListItems(InitFor).SubItems(1) & "' and Vendas_proposta.IDcliente = " & txtIDcliente, Conexao, adOpenKeyset, adLockOptimistic
+            TBOrdem.Open "Select vendas_proposta.* from (vendas_carteira INNER JOIN vendas_proposta on Vendas_carteira.cotacao = Vendas_proposta.cotacao) INNER JOIN projproduto on vendas_carteira.desenho = projproduto.desenho where Vendas_carteira.desenho = '" & .ListItems(InitFor).SubItems(1) & "' and Vendas_proposta.IDcliente = " & txtidcliente, Conexao, adOpenKeyset, adLockOptimistic
             If TBOrdem.EOF = True Then
                 Set TBItem = CreateObject("adodb.recordset")
                 TBItem.Open "Select * from projproduto where desenho = '" & .ListItems(InitFor).SubItems(1) & "'", Conexao, adOpenKeyset, adLockOptimistic
                 If TBItem.EOF = False Then
                     Set TBFI = CreateObject("adodb.recordset")
-                    TBFI.Open "Select tbl_dados_nota_fiscal.*, tbl_detalhes_nota.codproduto  from tbl_detalhes_nota INNER JOIN tbl_dados_nota_fiscal on tbl_detalhes_nota.id_nota = tbl_dados_nota_fiscal.ID where tbl_detalhes_nota.int_Cod_Produto = '" & .ListItems(InitFor).SubItems(1) & "' and tbl_dados_nota_fiscal.Id_Int_Cliente = " & txtIDcliente, Conexao, adOpenKeyset, adLockOptimistic
-                    If TBFI.EOF = True Then Conexao.Execute "DELETE from Projproduto_clientes WHERE codproduto = " & TBItem!Codproduto & " and IDcliente = " & txtIDcliente
+                    TBFI.Open "Select tbl_dados_nota_fiscal.*, tbl_detalhes_nota.codproduto  from tbl_detalhes_nota INNER JOIN tbl_dados_nota_fiscal on tbl_detalhes_nota.id_nota = tbl_dados_nota_fiscal.ID where tbl_detalhes_nota.int_Cod_Produto = '" & .ListItems(InitFor).SubItems(1) & "' and tbl_dados_nota_fiscal.Id_Int_Cliente = " & txtidcliente, Conexao, adOpenKeyset, adLockOptimistic
+                    If TBFI.EOF = True Then Conexao.Execute "DELETE from Projproduto_clientes WHERE codproduto = " & TBItem!Codproduto & " and IDcliente = " & txtidcliente
                     TBFI.Close
                 End If
                 TBItem.Close
@@ -12850,13 +12850,13 @@ Else
     Novo_Proposta2 = False
     
     If Vendas_PI = True Then
-        If FunAtualizaStatusPropPI(txtId) = True Then
-            SSTab1.Tab = 0
+        If FunAtualizaStatusPropPI(TxtID) = True Then
+            SStab1.Tab = 0
             SSTab1_Click (0)
             ProcLimpar
         End If
     Else
-        FunAtualizaStatusPropPI txtId
+        FunAtualizaStatusPropPI TxtID
     End If
     ProcCarregaLista (IIf(ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5))))
 End If
@@ -12995,11 +12995,11 @@ If Chk_valor_desc2.Value = 1 Then
         Exit Sub
     End If
 End If
-valor = IIf(txtiss = "", 0, txtiss)
+valor = IIf(txtISS = "", 0, txtISS)
 If valor < 0 Then
     NomeCampo = "a porcentagem do ISS"
     ProcVerificaAcao
-    txtiss.SetFocus
+    txtISS.SetFocus
     Exit Sub
 End If
 
@@ -13015,14 +13015,14 @@ If optnovoservico.Value = 0 And OPTnovoservicoman.Value = 0 And Vendas_PI = True
     TBProduto.Close
 End If
 
-If Txt_ID_CFOP_serv <> "" And Txt_ID_CFOP_serv <> "0" And txtuf <> "" And txtuf <> "EX" Then
-    If FunVerificaCFOPUF(Txt_ID_CFOP_serv, txtuf) = False Then Exit Sub
+If Txt_ID_CFOP_serv <> "" And Txt_ID_CFOP_serv <> "0" And txtUF <> "" And txtUF <> "EX" Then
+    If FunVerificaCFOPUF(Txt_ID_CFOP_serv, txtUF) = False Then Exit Sub
 End If
 
 'Verifica se ja existe o mesmo serviço na proposta
 If Novo_Proposta2 = True And txtcodservico <> "" And optnovoservico.Value = 0 And OPTnovoservicoman.Value = 0 Then
     Set TBCotacao = CreateObject("adodb.recordset")
-    TBCotacao.Open "Select * from vendas_carteira where cotacao = " & txtId & " and Desenho = '" & txtcodservico & "'", Conexao, adOpenKeyset, adLockOptimistic
+    TBCotacao.Open "Select * from vendas_carteira where cotacao = " & TxtID & " and Desenho = '" & txtcodservico & "'", Conexao, adOpenKeyset, adLockOptimistic
     If TBCotacao.EOF = False Then
         USMsgBox ("Já existe um serviço com o código " & txtcodservico & IIf(Vendas_Proposta = True, " nessa proposta", " nesse pedido") & "."), vbExclamation, "CAPRIND v5.0"
         If USMsgBox("Deseja prosseguir assim mesmo?", vbYesNo, "CAPRIND v5.0") = vbNo Then
@@ -13092,7 +13092,7 @@ Else
     
     'Busca o valor cadastrado de limite de credito no cliente
     Set TBClientes = CreateObject("adodb.recordset")
-    TBClientes.Open "Select txtLimiteCredito from Clientes where idcliente = " & txtIDcliente, Conexao, adOpenKeyset, adLockOptimistic
+    TBClientes.Open "Select txtLimiteCredito from Clientes where idcliente = " & txtidcliente, Conexao, adOpenKeyset, adLockOptimistic
     If TBClientes.EOF = False Then LimiteCredito = IIf(IsNull(TBClientes!txtLimiteCredito), 0, TBClientes!txtLimiteCredito)
     
     TBClientes.Close
@@ -13100,7 +13100,7 @@ Else
     If LimiteCredito <> 0 Then
         'Totaliza o limite utilizado pra contas em aberto
         Set TBContas = CreateObject("adodb.recordset")
-        TBContas.Open "Select Sum(valor) as LimiteCreditoUtilizadoAberto, idCliente from tbl_contas_receber where idCliente = " & txtIDcliente & " AND Status = 'TÍTULO EM ABERTO' GROUP BY idCliente", Conexao, adOpenKeyset, adLockReadOnly
+        TBContas.Open "Select Sum(valor) as LimiteCreditoUtilizadoAberto, idCliente from tbl_contas_receber where idCliente = " & txtidcliente & " AND Status = 'TÍTULO EM ABERTO' GROUP BY idCliente", Conexao, adOpenKeyset, adLockReadOnly
         If TBContas.EOF = False Then
             LimiteCreditoUtilizadoAberto = TBContas!LimiteCreditoUtilizadoAberto
         Else
@@ -13110,7 +13110,7 @@ Else
         
         'Totaliza o limite utilizado pra contas parcial
         Set TBContas = CreateObject("adodb.recordset")
-        TBContas.Open "Select Sum(valorpendente) as LimiteCreditoUtilizadoParcial, idCliente from tbl_contas_receber where idCliente = " & txtIDcliente & " AND Status = 'TÍTULO RECEBIDO PARCIAL' and LogSit = 'N' GROUP BY idCliente", Conexao, adOpenKeyset, adLockReadOnly
+        TBContas.Open "Select Sum(valorpendente) as LimiteCreditoUtilizadoParcial, idCliente from tbl_contas_receber where idCliente = " & txtidcliente & " AND Status = 'TÍTULO RECEBIDO PARCIAL' and LogSit = 'N' GROUP BY idCliente", Conexao, adOpenKeyset, adLockReadOnly
         If TBContas.EOF = False Then
             LimiteCreditoUtilizadoParcial = TBContas!LimiteCreditoUtilizadoParcial
         Else
@@ -13157,7 +13157,7 @@ TBCotacao!Cidade = Cmb_cidade_servico
 TBCotacao!Unidade = txtunservico.Text
 TBCotacao!Unidade_com = Cmb_un_com_serv
 TBCotacao!Tipo = "S"
-TBCotacao!Cotacao = txtId.Text
+TBCotacao!Cotacao = TxtID.Text
 TBCotacao!Desconto = IIf(txtdesconto2.Text = "", 0, txtdesconto2.Text)
 TBCotacao!ValorDesconto = IIf(txtvalordesconto2.Text = "", 0, txtvalordesconto2.Text)
 TBCotacao!preco_unitario = IIf(txtvlrunitservico = "", 0, txtvlrunitservico)
@@ -13203,7 +13203,7 @@ If Chk_utiliza_mat_consignado_serv.Value = 1 Then TBCotacao!Utiliza_mat_cons = T
 Valor_total = txtvalorunitariodesc2 * txtqtservico
 
 'Empresa
-ProcControleImposto IIf(Txt_ID_CFOP_serv = "", 0, Txt_ID_CFOP_serv), IIf(txtIDcliente = "", 0, txtIDcliente)
+ProcControleImposto IIf(Txt_ID_CFOP_serv = "", 0, Txt_ID_CFOP_serv), IIf(txtidcliente = "", 0, txtidcliente)
 ProcVerifImpostosEmpresa Cmb_empresa.ItemData(Cmb_empresa.ListIndex), False, txtcodservico, IIf(Chk_servico_executado_cliente.Value = 1, True, False), Valor_total, True, TabelaSN_Proposta, 0
 'Novo cálculo simples nacional 2018
 TBCotacao!DAS = DAS
@@ -13214,7 +13214,7 @@ TBCotacao!Cofins_Serv = Cofins_Serv
 If Cofins_Serv <> 0 Then TBCotacao!Total_Cofins_serv = Format((Valor_total * Cofins_Serv) / 100, "###,##0.00") Else TBCotacao!Total_Cofins_serv = 0
 TBCotacao!CSLL_Serv = CSLL_Serv
 If CSLL_Serv <> 0 Then TBCotacao!Total_CSLL_serv = Format((Valor_total * CSLL_Serv) / 100, "###,##0.00") Else TBCotacao!Total_CSLL_serv = 0
-TBCotacao!ISS = txtiss.Text
+TBCotacao!ISS = txtISS.Text
 If txtvlrISS <> "" Then TBCotacao!VlrISS = Format(txtvlrISS.Text, "###,##0.00") Else TBCotacao!VlrISS = 0
 TBCotacao!INSS_Serv = INSS_Serv
 If INSS_Serv <> 0 Then TBCotacao!Total_INSS_serv = Format((Valor_total * INSS_Serv) / 100, "###,##0.00") Else TBCotacao!Total_INSS_serv = 0
@@ -13228,10 +13228,10 @@ If CPP_Serv <> 0 Then TBCotacao!Total_CPP = Format((Valor_total * CPP_Serv) / 10
 TBCotacao.Update
 txtid_servico = TBCotacao!CODIGO
 
-If txtCliente <> "0" Then
+If txtcliente <> "0" Then
     Set TBFI = CreateObject("adodb.recordset")
     TBFI.Open "Select codproduto from Projproduto where desenho = '" & txtcodservico & "'", Conexao, adOpenKeyset, adLockOptimistic
-    If TBFI.EOF = False Then ProcAgregarProdutoCli TBFI!Codproduto, txtIDcliente, txttipocliente, txtunservico, Cmb_un_com_serv, IIf(txtvlrunitservico = "", 0, txtvlrunitservico)
+    If TBFI.EOF = False Then ProcAgregarProdutoCli TBFI!Codproduto, txtidcliente, txttipocliente, txtunservico, Cmb_un_com_serv, IIf(txtvlrunitservico = "", 0, txtvlrunitservico)
     TBFI.Close
 End If
 
@@ -13262,7 +13262,7 @@ Documento = IIf(Vendas_PI = True, "Nº pedido: ", "Nº proposta: ") & txtCotacao &
 Documento1 = "Cód. interno: " & txtcodservico
 ProcGravaEvento
 '==================================
-FunAtualizaStatusPropPI txtId
+FunAtualizaStatusPropPI TxtID
 ProcCarregaLista (IIf(ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5))))
 Novo_Proposta2 = False
 
@@ -13276,8 +13276,8 @@ End Sub
 Sub ProcAtualizavalores()
 On Error GoTo tratar_erro
 
-ProcValorImposto txtCotacao, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), IIf(txtIDcliente = "", 0, txtIDcliente), txtCliente, txtuf, Cmb_empresa.ItemData(Cmb_empresa.ListIndex), False, IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), RegimeEmpresa_Proposta
-ProcControleImposto IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), IIf(txtIDcliente = "", 0, txtIDcliente)
+ProcValorImposto txtCotacao, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), IIf(txtidcliente = "", 0, txtidcliente), txtcliente, txtUF, Cmb_empresa.ItemData(Cmb_empresa.ListIndex), False, IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), RegimeEmpresa_Proposta
+ProcControleImposto IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), IIf(txtidcliente = "", 0, txtidcliente)
 If TemICMS = "SIM" Then
     txtint_icms = IntICMS
 Else
@@ -13363,8 +13363,8 @@ If USMsgBox("Deseja realmente executar essa(s) atualização(ões)?", vbYesNo, "CAP
             TBProposta.Open "Select * from vendas_proposta order by cotacao", Conexao, adOpenKeyset, adLockOptimistic
             If TBProposta.EOF = False Then
                 Do While TBProposta.EOF = False
-                    txtIDcliente = IIf(IsNull(TBProposta!IDCliente), "", TBProposta!IDCliente)
-                    txtCliente = IIf(IsNull(TBProposta!Cliente), "", TBProposta!Cliente)
+                    txtidcliente = IIf(IsNull(TBProposta!IDCliente), "", TBProposta!IDCliente)
+                    txtcliente = IIf(IsNull(TBProposta!Cliente), "", TBProposta!Cliente)
                     Set TBCarteira = CreateObject("adodb.recordset")
                     TBCarteira.Open "Select * from vendas_carteira where cotacao = " & TBProposta!Cotacao & " order by Codigo", Conexao, adOpenKeyset, adLockOptimistic
                     If TBCarteira.EOF = False Then
@@ -13498,11 +13498,11 @@ If USMsgBox("Deseja realmente executar essa(s) atualização(ões)?", vbYesNo, "CAP
                     TBCarteira.Close
                     txtCotacao = TBProposta!Ncotacao
                     txtrevisao = TBProposta!Revisao
-                    txtId = TBProposta!Cotacao
+                    TxtID = TBProposta!Cotacao
                     If IsNull(TBProposta!Tipo_cliente) = False And IsNull(TBProposta!UF) = False Then
                         If IsNull(TBProposta!Tipo_cliente) = False And TBProposta!Tipo_cliente <> "" Then txttipocliente = TBProposta!Tipo_cliente
                         If IsNull(TBProposta!UF) = False And TBProposta!UF <> "" Then
-                            With txtuf
+                            With txtUF
                                 .Clear
                                 .AddItem TBProposta!UF
                                 .Text = TBProposta!UF
@@ -14080,7 +14080,7 @@ With Cmb_un_com
     .Locked = False
     .TabStop = True
 End With
-With cmbfamilia
+With cmbFamilia
     .Locked = False
     .TabStop = True
 End With
@@ -14090,7 +14090,7 @@ With txtvalorunitario
 End With
 If OPTnovo.Value = 1 Or OPTnovoman.Value = 1 Then
     cmbReferencia.Visible = False
-    txtreferencia.Visible = True
+    txtReferencia.Visible = True
 End If
 
 Exit Sub
@@ -14120,12 +14120,12 @@ If cmbun <> "KG" And cmbun <> "MM" And cmbun <> "MT" And cmbun <> "PC" And cmbun
         .TabStop = False
     End With
 End If
-With cmbfamilia
+With cmbFamilia
     .Locked = True
     .TabStop = False
 End With
 cmbReferencia.Visible = True
-txtreferencia.Visible = False
+txtReferencia.Visible = False
 
 Exit Sub
 tratar_erro:
@@ -14599,7 +14599,7 @@ On Error GoTo tratar_erro
 If Novo_Proposta = True Then
 VerifCodigo:
     Set TBFI = CreateObject("adodb.recordset")
-    TBFI.Open "Select * from vendas_proposta where ncotacao = '" & txtCotacao & "' and Cotacao <> " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+    TBFI.Open "Select * from vendas_proposta where ncotacao = '" & txtCotacao & "' and Cotacao <> " & TxtID, Conexao, adOpenKeyset, adLockOptimistic
     If TBFI.EOF = False Then
         Cotacao = Left(txtCotacao, Len(txtCotacao) - 3) + 1
         Ano = Right(Year(Date), 2)
@@ -14671,25 +14671,25 @@ Private Sub txtDesconto_Change()
 On Error GoTo tratar_erro
 
 If Chk_desc.Value = 1 Then
-    If txtDesconto.Text <> "" Then
-        VerifNumero = txtDesconto.Text
+    If txtdesconto.Text <> "" Then
+        VerifNumero = txtdesconto.Text
         ProcVerificaNumero
         If VerifNumero = False Then
-            txtDesconto.Text = ""
-            txtDesconto.SetFocus
+            txtdesconto.Text = ""
+            txtdesconto.SetFocus
             Exit Sub
         End If
-        valor = txtDesconto
+        valor = txtdesconto
         If valor > 100 Then
             USMsgBox ("O desconto não pode ser maior que 100."), vbExclamation, "CAPRIND v5.0"
-            txtDesconto = ""
-            txtDesconto.SetFocus
+            txtdesconto = ""
+            txtdesconto.SetFocus
             Exit Sub
         End If
     End If
     ProcCalculaDesconto
 ElseIf Chk_valor_desc.Value = 0 Then
-        txtDesconto = ""
+        txtdesconto = ""
         txtvalordesconto = ""
         txtvalorunitariodesc = txtvalorunitario
 End If
@@ -14704,7 +14704,7 @@ End Sub
 Private Sub txtdesconto_GotFocus()
 On Error GoTo tratar_erro
   
-FunGotFocus txtDesconto
+FunGotFocus txtdesconto
 
 Exit Sub
 tratar_erro:
@@ -14715,7 +14715,7 @@ End Sub
 Private Sub txtdesconto_LostFocus()
 On Error GoTo tratar_erro
 
-If txtDesconto = "" Then txtDesconto = 0
+If txtdesconto = "" Then txtdesconto = 0
 txtvalordesconto = Format(txtvalordesconto, "###,##0.0000000000")
 txtvalorunitariodesc = Format(txtvalorunitariodesc, "###,##0.0000000000")
 
@@ -14817,12 +14817,12 @@ Private Sub txtIDcliente_Change()
 On Error GoTo tratar_erro
 
 ProcLimpaCliente
-If txtIDcliente <> "" Then
-    VerifNumero = txtIDcliente
+If txtidcliente <> "" Then
+    VerifNumero = txtidcliente
     ProcVerificaNumero
     If VerifNumero = False Then
-        txtIDcliente = ""
-        txtIDcliente.SetFocus
+        txtidcliente = ""
+        txtidcliente.SetFocus
         Exit Sub
     End If
     ProcPuxaClientes
@@ -14839,12 +14839,12 @@ End Sub
 Private Sub txtiss_Change()
 On Error GoTo tratar_erro
 
-If txtiss.Text <> "" Then
-    VerifNumero = txtiss.Text
+If txtISS.Text <> "" Then
+    VerifNumero = txtISS.Text
     ProcVerificaNumero
     If VerifNumero = False Then
-        txtiss.Text = ""
-        txtiss.SetFocus
+        txtISS.Text = ""
+        txtISS.SetFocus
         Exit Sub
     End If
 End If
@@ -14859,7 +14859,7 @@ End Sub
 Private Sub txtiss_GotFocus()
 On Error GoTo tratar_erro
   
-FunGotFocus txtiss
+FunGotFocus txtISS
 
 Exit Sub
 tratar_erro:
@@ -14870,7 +14870,7 @@ End Sub
 Private Sub txtiss_LostFocus()
 On Error GoTo tratar_erro
 
-txtiss.Text = Format(txtiss.Text, "###,##0.00")
+txtISS.Text = Format(txtISS.Text, "###,##0.00")
 
 Exit Sub
 tratar_erro:
@@ -15317,7 +15317,7 @@ End Sub
 Private Sub txtTotalFrete_LostFocus()
 On Error GoTo tratar_erro
   
-TxtTotalFrete = Format(TxtTotalFrete, "###,##0.00")
+txtTotalfrete = Format(txtTotalfrete, "###,##0.00")
 
 Exit Sub
 tratar_erro:
@@ -15339,15 +15339,15 @@ End Sub
 Private Sub txtuf_Click()
 On Error GoTo tratar_erro
 
-If txtuf.Text = "EX" Then
+If txtUF.Text = "EX" Then
   '  cmbCidade.Visible = False
-    txtCidade.Visible = True
+    txtcidade.Visible = True
     Cmb_cidade_servico.Clear
 Else
   '  cmbCidade.Visible = True
   '  txtCidade.Visible = False
   '  ProcCarregaComboCidade cmbCidade, "Sigla_UF = '" & txtuf & "'", False
-    ProcCarregaComboCidade Cmb_cidade_servico, "Sigla_UF = '" & txtuf & "'", True
+    ProcCarregaComboCidade Cmb_cidade_servico, "Sigla_UF = '" & txtUF & "'", True
 End If
 
 Exit Sub
@@ -15396,7 +15396,7 @@ If Chk_valor_desc.Value = 1 Then
     ProcCalculaValorDesconto
    End If
 ElseIf Chk_desc.Value = 0 Then
-        txtDesconto = ""
+        txtdesconto = ""
         txtvalordesconto = ""
         txtvalorunitariodesc = txtvalorunitario
 End If
@@ -15651,7 +15651,7 @@ If Incluir = False Then
     USMsgBox ("Atenção usuário " & pubUsuario & " você não tem acesso a este recurso."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-If txtStatus <> "ABERTA EM ANALISE" And txtStatus <> "VENDIDA" And txtStatus <> "VENDIDA PARCIAL" And txtStatus <> "FATURADA PARCIAL" Then
+If txtstatus <> "ABERTA EM ANALISE" And txtstatus <> "VENDIDA" And txtstatus <> "VENDIDA PARCIAL" And txtstatus <> "FATURADA PARCIAL" Then
     USMsgBox ("Só é permitido criar novo produto em " & IIf(Vendas_PI = True, "pedido interno", "proposta") & " com o status aberta em análise, vendida parcial ou faturada parcial."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
@@ -15689,14 +15689,14 @@ If txtCotacao = "" Then
     Exit Sub
 End If
 If USMsgBox("Deseja realmente cancelar o pedido interno " & txtCotacao & "- Rev." & txtrevisao & "?", vbYesNo, "CAPRIND v5.0") = vbYes Then
-    If txtStatus.Text <> "VENDIDA" And txtStatus.Text <> "VENDIDA PARCIAL" Then
+    If txtstatus.Text <> "VENDIDA" And txtstatus.Text <> "VENDIDA PARCIAL" Then
         USMsgBox ("Só é permitido cancelar pedido interno de proposta com o status vendida ou vendida parcial."), vbExclamation, "CAPRIND v5.0"
         Exit Sub
     End If
     If Vendas_PI = True Then
         If FunVerifValidacaoRegistro("cancelar", txtDtValidacao, "mesmo", "o pedido interno", True) = False Then Exit Sub
         Set TBAbrir = CreateObject("adodb.recordset")
-        TBAbrir.Open "Select VC.Codigo from vendas_carteira VC INNER JOIN Producao_pedidos PP ON PP.IDcarteira = VC.Codigo where VC.cotacao = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select VC.Codigo from vendas_carteira VC INNER JOIN Producao_pedidos PP ON PP.IDcarteira = VC.Codigo where VC.cotacao = " & TxtID, Conexao, adOpenKeyset, adLockOptimistic
         If TBAbrir.EOF = False Then
             USMsgBox ("Não é permitido cancelar este pedido interno, pois já foi emitida ordem de produção para o mesmo."), vbExclamation, "CAPRIND v5.0"
             TBAbrir.Close
@@ -15706,7 +15706,7 @@ If USMsgBox("Deseja realmente cancelar o pedido interno " & txtCotacao & "- Rev.
     End If
     
     Set TBVendas = CreateObject("adodb.recordset")
-    TBVendas.Open "Select * from vendas_carteira where cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBVendas.Open "Select * from vendas_carteira where cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
     If TBVendas.EOF = False Then
         Do While TBVendas.EOF = False
             TBVendas!Liberacao = "ABERTA EM ANALISE"
@@ -15720,17 +15720,17 @@ If USMsgBox("Deseja realmente cancelar o pedido interno " & txtCotacao & "- Rev.
             TBVendas.MoveNext
         Loop
     End If
-    Conexao.Execute "UPDATE vendas_proposta Set Status = 'ABERTA EM ANALISE', Datavendas = Null, Tipo = 'PR' where cotacao = " & txtId
+    Conexao.Execute "UPDATE vendas_proposta Set Status = 'ABERTA EM ANALISE', Datavendas = Null, Tipo = 'PR' where cotacao = " & TxtID
     USMsgBox ("Pedido interno " & txtCotacao & "- Rev. " & txtrevisao & " cancelado com sucesso."), vbInformation, "CAPRIND v5.0"
     '==================================
     Modulo = Formulario
     Evento = "Cancelar pedido interno"
-    ID_documento = txtId
+    ID_documento = TxtID
     Documento = "Nº proposta: " & txtCotacao & " - Rev.: " & txtrevisao
     Documento1 = ""
     ProcGravaEvento
     '==================================
-    FunAtualizaStatusPropPI txtId
+    FunAtualizaStatusPropPI TxtID
     ProcCarregaLista (IIf(ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5))))
     If CodigoLista2 <> 0 And Lista.ListItems.Count <> 0 Then
         Lista.SelectedItem = Lista.ListItems(CodigoLista2)
@@ -15777,14 +15777,14 @@ With Listprod
             
             'Excluir cliente do produto
             Set TBOrdem = CreateObject("adodb.recordset")
-            TBOrdem.Open "Select vendas_proposta.* from (vendas_carteira INNER JOIN vendas_proposta on Vendas_carteira.cotacao = Vendas_proposta.cotacao) INNER JOIN projproduto on vendas_carteira.desenho = projproduto.desenho where Vendas_carteira.desenho = '" & .ListItems(InitFor).SubItems(1) & "' and Vendas_proposta.IDcliente = " & txtIDcliente, Conexao, adOpenKeyset, adLockOptimistic
+            TBOrdem.Open "Select vendas_proposta.* from (vendas_carteira INNER JOIN vendas_proposta on Vendas_carteira.cotacao = Vendas_proposta.cotacao) INNER JOIN projproduto on vendas_carteira.desenho = projproduto.desenho where Vendas_carteira.desenho = '" & .ListItems(InitFor).SubItems(1) & "' and Vendas_proposta.IDcliente = " & txtidcliente, Conexao, adOpenKeyset, adLockOptimistic
             If TBOrdem.EOF = True Then
                 Set TBItem = CreateObject("adodb.recordset")
                 TBItem.Open "Select * from projproduto where desenho = '" & .ListItems(InitFor).SubItems(1) & "'", Conexao, adOpenKeyset, adLockOptimistic
                 If TBItem.EOF = False Then
                     Set TBFI = CreateObject("adodb.recordset")
-                    TBFI.Open "Select tbl_dados_nota_fiscal.*, tbl_detalhes_nota.codproduto  from tbl_detalhes_nota INNER JOIN tbl_dados_nota_fiscal on tbl_detalhes_nota.id_nota = tbl_dados_nota_fiscal.ID where tbl_detalhes_nota.int_Cod_Produto = '" & .ListItems(InitFor).SubItems(1) & "' and tbl_dados_nota_fiscal.Id_Int_Cliente = " & txtIDcliente, Conexao, adOpenKeyset, adLockOptimistic
-                    If TBFI.EOF = True Then Conexao.Execute "DELETE from Projproduto_clientes WHERE codproduto = " & TBItem!Codproduto & " and IDcliente = " & txtIDcliente
+                    TBFI.Open "Select tbl_dados_nota_fiscal.*, tbl_detalhes_nota.codproduto  from tbl_detalhes_nota INNER JOIN tbl_dados_nota_fiscal on tbl_detalhes_nota.id_nota = tbl_dados_nota_fiscal.ID where tbl_detalhes_nota.int_Cod_Produto = '" & .ListItems(InitFor).SubItems(1) & "' and tbl_dados_nota_fiscal.Id_Int_Cliente = " & txtidcliente, Conexao, adOpenKeyset, adLockOptimistic
+                    If TBFI.EOF = True Then Conexao.Execute "DELETE from Projproduto_clientes WHERE codproduto = " & TBItem!Codproduto & " and IDcliente = " & txtidcliente
                     TBFI.Close
                 End If
                 TBItem.Close
@@ -15807,13 +15807,13 @@ Else
     Novo_Proposta1 = False
     
     If Vendas_PI = True Then
-        If FunAtualizaStatusPropPI(txtId) = True Then
-            SSTab1.Tab = 0
+        If FunAtualizaStatusPropPI(TxtID) = True Then
+            SStab1.Tab = 0
             SSTab1_Click (0)
             ProcLimpar
         End If
     Else
-        FunAtualizaStatusPropPI txtId
+        FunAtualizaStatusPropPI TxtID
     End If
     ProcCarregaLista (IIf(ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5))))
 End If
@@ -15843,7 +15843,7 @@ VlrIPI = 0
 If TemIPI = "SIM" Then
     txtInt_ipi.Text = IntIPI
     Set TBFIltro = CreateObject("adodb.recordset")
-    TBFIltro.Open "Select * from Clientes_Impostos where IDCliente = " & txtIDcliente & " and ID_CF = " & IIf(Txt_ID_CF = "", 0, Txt_ID_CF), Conexao, adOpenKeyset, adLockOptimistic
+    TBFIltro.Open "Select * from Clientes_Impostos where IDCliente = " & txtidcliente & " and ID_CF = " & IIf(Txt_ID_CF = "", 0, Txt_ID_CF), Conexao, adOpenKeyset, adLockOptimistic
     If TBFIltro.EOF = False Then
         If FunVerifCalcIPISDesc(Cmb_empresa.ItemData(Cmb_empresa.ListIndex)) = True Then
             VlrIPI = txtvalorunitario
@@ -15917,8 +15917,8 @@ End If
 'Atribui valores
 txtvlrtotalservico = Format(txtvalorunitariodesc2.Text * txtqtservico, "###,##0.00")
 VltUnit = txtvalorunitariodesc2.Text
-If txtiss.Text <> "" Then
-    VlISS = txtiss.Text
+If txtISS.Text <> "" Then
+    VlISS = txtISS.Text
     qt = txtqtservico.Text
     TotalServicos = VltUnit * qt
     txtvlrISS.Text = Format((TotalServicos * VlISS) / 100, "###,##0.00")
@@ -15941,9 +15941,9 @@ Sub ProcNovoProduto()
 On Error GoTo tratar_erro
 
 If txttipocliente = "JP" Or txttipocliente = "FP" Then
-    txtNomenclatura = FunCriaNovoProdServ(False, "codmanual = 'False' and (subtipoitem = 0 or subtipoitem = 1 or subtipoitem = 4 or subtipoitem = 5)", txtNomenclatura, txtreferencia, IIf(txtRev_cod = "", 0, txtRev_cod), txtdesctecnica, txtEspecificacoes, cmbfamilia, IIf(txtvalorunitario = "", 0, txtvalorunitario), 0, 0, cmbun, Cmb_un_com, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), False, True, True, False, 1, "P", Txt_observacoes_prod, IIf(txtComprimento = "", 0, txtComprimento), IIf(txtLargura = "", 0, txtLargura), IIf(txtespessura = "", 0, txtespessura), txtDureza, txtIDcliente, txtCliente, "C")
+    txtNomenclatura = FunCriaNovoProdServ(False, "codmanual = 'False' and (subtipoitem = 0 or subtipoitem = 1 or subtipoitem = 4 or subtipoitem = 5)", txtNomenclatura, txtReferencia, IIf(txtRev_cod = "", 0, txtRev_cod), txtdesctecnica, txtEspecificacoes, cmbFamilia, IIf(txtvalorunitario = "", 0, txtvalorunitario), 0, 0, cmbun, Cmb_un_com, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), False, True, True, False, 1, "P", Txt_observacoes_prod, IIf(txtComprimento = "", 0, txtComprimento), IIf(txtLargura = "", 0, txtLargura), IIf(txtEspessura = "", 0, txtEspessura), txtDureza, txtidcliente, txtcliente, "C")
 Else
-    txtNomenclatura = FunCriaNovoProdServ(False, "codmanual = 'False' and (subtipoitem = 0 or subtipoitem = 1 or subtipoitem = 4 or subtipoitem = 5)", txtNomenclatura, txtreferencia, IIf(txtRev_cod = "", 0, txtRev_cod), txtdesctecnica, txtEspecificacoes, cmbfamilia, 0, IIf(txtvalorunitario = "", 0, txtvalorunitario), 0, cmbun, Cmb_un_com, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), False, True, True, False, 1, "P", Txt_observacoes_prod, IIf(txtComprimento = "", 0, txtComprimento), IIf(txtLargura = "", 0, txtLargura), IIf(txtespessura = "", 0, txtespessura), txtDureza, txtIDcliente, txtCliente, "C")
+    txtNomenclatura = FunCriaNovoProdServ(False, "codmanual = 'False' and (subtipoitem = 0 or subtipoitem = 1 or subtipoitem = 4 or subtipoitem = 5)", txtNomenclatura, txtReferencia, IIf(txtRev_cod = "", 0, txtRev_cod), txtdesctecnica, txtEspecificacoes, cmbFamilia, 0, IIf(txtvalorunitario = "", 0, txtvalorunitario), 0, cmbun, Cmb_un_com, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), False, True, True, False, 1, "P", Txt_observacoes_prod, IIf(txtComprimento = "", 0, txtComprimento), IIf(txtLargura = "", 0, txtLargura), IIf(txtEspessura = "", 0, txtEspessura), txtDureza, txtidcliente, txtcliente, "C")
 End If
 
 Exit Sub
@@ -15956,9 +15956,9 @@ Sub Procnovoservico()
 On Error GoTo tratar_erro
 
 If txttipocliente = "JP" Or txttipocliente = "FP" Then
-    txtcodservico = FunCriaNovoProdServ(False, "codmanual = 'False' and (subtipoitem = 0 or subtipoitem = 1 or subtipoitem = 4 or subtipoitem = 5)", txtcodservico, txtReferencia_serv, IIf(txtRev_serv = "", 0, txtRev_serv), txtdescservico, txtdesccomservico, cmbfamiliaservico, IIf(txtvlrunitservico = "", 0, txtvlrunitservico), 0, 0, txtunservico, Cmb_un_com_serv, 0, False, True, True, False, 5, "S", txtObs_serv, 0, 0, 0, "", txtIDcliente, txtCliente, "C")
+    txtcodservico = FunCriaNovoProdServ(False, "codmanual = 'False' and (subtipoitem = 0 or subtipoitem = 1 or subtipoitem = 4 or subtipoitem = 5)", txtcodservico, txtReferencia_serv, IIf(txtRev_serv = "", 0, txtRev_serv), txtdescservico, txtdesccomservico, cmbfamiliaservico, IIf(txtvlrunitservico = "", 0, txtvlrunitservico), 0, 0, txtunservico, Cmb_un_com_serv, 0, False, True, True, False, 5, "S", txtObs_serv, 0, 0, 0, "", txtidcliente, txtcliente, "C")
 Else
-    txtcodservico = FunCriaNovoProdServ(False, "codmanual = 'False' and (subtipoitem = 0 or subtipoitem = 1 or subtipoitem = 4 or subtipoitem = 5)", txtcodservico, txtReferencia_serv, IIf(txtRev_serv = "", 0, txtRev_serv), txtdescservico, txtdesccomservico, cmbfamiliaservico, 0, IIf(txtvlrunitservico = "", 0, txtvlrunitservico), 0, txtunservico, Cmb_un_com_serv, 0, False, True, True, False, 5, "S", txtObs_serv, 0, 0, 0, "", txtIDcliente, txtCliente, "C")
+    txtcodservico = FunCriaNovoProdServ(False, "codmanual = 'False' and (subtipoitem = 0 or subtipoitem = 1 or subtipoitem = 4 or subtipoitem = 5)", txtcodservico, txtReferencia_serv, IIf(txtRev_serv = "", 0, txtRev_serv), txtdescservico, txtdesccomservico, cmbfamiliaservico, 0, IIf(txtvlrunitservico = "", 0, txtvlrunitservico), 0, txtunservico, Cmb_un_com_serv, 0, False, True, True, False, 5, "S", txtObs_serv, 0, 0, 0, "", txtidcliente, txtcliente, "C")
 End If
 
 Exit Sub
@@ -15971,9 +15971,9 @@ Sub ProcNovoProdutoMan()
 On Error GoTo tratar_erro
 
 If txttipocliente = "JP" Or txttipocliente = "FP" Then
-    txtNomenclatura = FunCriaNovoProdServ(True, "", txtNomenclatura, txtreferencia, IIf(txtRev_cod = "", 0, txtRev_cod), txtdesctecnica, txtEspecificacoes, cmbfamilia, txtvalorunitario, 0, 0, cmbun, Cmb_un_com, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), False, True, True, False, 1, "P", Txt_observacoes_prod, IIf(txtComprimento = "", 0, txtComprimento), IIf(txtLargura = "", 0, txtLargura), IIf(txtespessura = "", 0, txtespessura), txtDureza, txtIDcliente, txtCliente, "C")
+    txtNomenclatura = FunCriaNovoProdServ(True, "", txtNomenclatura, txtReferencia, IIf(txtRev_cod = "", 0, txtRev_cod), txtdesctecnica, txtEspecificacoes, cmbFamilia, txtvalorunitario, 0, 0, cmbun, Cmb_un_com, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), False, True, True, False, 1, "P", Txt_observacoes_prod, IIf(txtComprimento = "", 0, txtComprimento), IIf(txtLargura = "", 0, txtLargura), IIf(txtEspessura = "", 0, txtEspessura), txtDureza, txtidcliente, txtcliente, "C")
 Else
-    txtNomenclatura = FunCriaNovoProdServ(True, "", txtNomenclatura, txtreferencia, IIf(txtRev_cod = "", 0, txtRev_cod), txtdesctecnica, txtEspecificacoes, cmbfamilia, 0, txtvalorunitario, 0, cmbun, Cmb_un_com, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), False, True, True, False, 1, "P", Txt_observacoes_prod, IIf(txtComprimento = "", 0, txtComprimento), IIf(txtLargura = "", 0, txtLargura), IIf(txtespessura = "", 0, txtespessura), txtDureza, txtIDcliente, txtCliente, "C")
+    txtNomenclatura = FunCriaNovoProdServ(True, "", txtNomenclatura, txtReferencia, IIf(txtRev_cod = "", 0, txtRev_cod), txtdesctecnica, txtEspecificacoes, cmbFamilia, 0, txtvalorunitario, 0, cmbun, Cmb_un_com, IIf(Txt_ID_CF = "", 0, Txt_ID_CF), False, True, True, False, 1, "P", Txt_observacoes_prod, IIf(txtComprimento = "", 0, txtComprimento), IIf(txtLargura = "", 0, txtLargura), IIf(txtEspessura = "", 0, txtEspessura), txtDureza, txtidcliente, txtcliente, "C")
 End If
 
 Exit Sub
@@ -15986,9 +15986,9 @@ Sub ProcNovoServicoMan()
 On Error GoTo tratar_erro
 
 If txttipocliente = "JP" Or txttipocliente = "FP" Then
-    txtcodservico = FunCriaNovoProdServ(True, "", txtcodservico, txtReferencia_serv, IIf(txtRev_serv = "", 0, txtRev_serv), txtdescservico, txtdesccomservico, cmbfamiliaservico, txtvlrunitservico, 0, 0, txtunservico, Cmb_un_com_serv, 0, False, True, True, False, 5, "S", txtObs_serv, 0, 0, 0, "", txtIDcliente, txtCliente, "C")
+    txtcodservico = FunCriaNovoProdServ(True, "", txtcodservico, txtReferencia_serv, IIf(txtRev_serv = "", 0, txtRev_serv), txtdescservico, txtdesccomservico, cmbfamiliaservico, txtvlrunitservico, 0, 0, txtunservico, Cmb_un_com_serv, 0, False, True, True, False, 5, "S", txtObs_serv, 0, 0, 0, "", txtidcliente, txtcliente, "C")
 Else
-    txtcodservico = FunCriaNovoProdServ(True, "", txtcodservico, txtReferencia_serv, IIf(txtRev_serv = "", 0, txtRev_serv), txtdescservico, txtdesccomservico, cmbfamiliaservico, 0, txtvlrunitservico, 0, txtunservico, Cmb_un_com_serv, 0, False, True, True, False, 5, "S", txtObs_serv, 0, 0, 0, "", txtIDcliente, txtCliente, "C")
+    txtcodservico = FunCriaNovoProdServ(True, "", txtcodservico, txtReferencia_serv, IIf(txtRev_serv = "", 0, txtRev_serv), txtdescservico, txtdesccomservico, cmbfamiliaservico, 0, txtvlrunitservico, 0, txtunservico, Cmb_un_com_serv, 0, False, True, True, False, 5, "S", txtObs_serv, 0, 0, 0, "", txtidcliente, txtcliente, "C")
 End If
 
 Exit Sub
@@ -16080,10 +16080,10 @@ If Cmb_un_com.Text = "" Then
     Cmb_un_com.SetFocus
     Exit Sub
 End If
-If cmbfamilia.Text = "" Then
+If cmbFamilia.Text = "" Then
     NomeCampo = "a família"
     ProcVerificaAcao
-    cmbfamilia.SetFocus
+    cmbFamilia.SetFocus
     Exit Sub
 End If
 valor = IIf(txtQuantidade = "", 0, txtQuantidade)
@@ -16101,11 +16101,11 @@ If valor < 0 Then
     Exit Sub
 End If
 If Chk_desc.Value = 1 Then
-    valor = IIf(txtDesconto = "", 0, txtDesconto)
+    valor = IIf(txtdesconto = "", 0, txtdesconto)
     If valor < 0 Or valor > 100 Then
         NomeCampo = "a porcentagem do desconto"
         ProcVerificaAcao
-        txtDesconto.SetFocus
+        txtdesconto.SetFocus
         Exit Sub
     End If
 End If
@@ -16133,14 +16133,14 @@ If Vendas_PI = True Then
     End If
 End If
 
-If Txt_ID_CFOP_prod <> "" And Txt_ID_CFOP_prod <> "0" And txtuf <> "" And txtuf <> "EX" Then
-    If FunVerificaCFOPUF(Txt_ID_CFOP_prod, txtuf) = False Then Exit Sub
+If Txt_ID_CFOP_prod <> "" And Txt_ID_CFOP_prod <> "0" And txtUF <> "" And txtUF <> "EX" Then
+    If FunVerificaCFOPUF(Txt_ID_CFOP_prod, txtUF) = False Then Exit Sub
 End If
 
 'Verifica se ja existe o mesmo produto na proposta
 If Novo_Proposta1 = True And txtNomenclatura <> "" And OPTnovo.Value = 0 And OPTnovoman.Value = 0 Then
     Set TBCotacao = CreateObject("adodb.recordset")
-    TBCotacao.Open "Select * from vendas_carteira where cotacao = " & txtId & " and Desenho = '" & txtNomenclatura & "'", Conexao, adOpenKeyset, adLockOptimistic
+    TBCotacao.Open "Select * from vendas_carteira where cotacao = " & TxtID & " and Desenho = '" & txtNomenclatura & "'", Conexao, adOpenKeyset, adLockOptimistic
     If TBCotacao.EOF = False Then
         USMsgBox ("Já existe um produto com o código " & txtNomenclatura & IIf(Vendas_Proposta = True, " nessa proposta", " nesse pedido") & "."), vbExclamation, "CAPRIND v5.0"
         If USMsgBox("Deseja prosseguir assim mesmo?", vbYesNo, "CAPRIND v5.0") = vbNo Then
@@ -16153,9 +16153,9 @@ End If
 'Se for novo produto
 If OPTnovo.Value = 1 Then
     Call ProcNovoProduto
-    If txtreferencia <> "" Then
-        cmbReferencia.AddItem txtreferencia
-        cmbReferencia = txtreferencia
+    If txtReferencia <> "" Then
+        cmbReferencia.AddItem txtReferencia
+        cmbReferencia = txtReferencia
     End If
     OPTnovo.Value = 0
 End If
@@ -16174,9 +16174,9 @@ If OPTnovoman.Value = 1 Then
     End If
     TBProduto.Close
     Call ProcNovoProdutoMan
-    If txtreferencia <> "" Then
-        cmbReferencia.AddItem txtreferencia
-        cmbReferencia = txtreferencia
+    If txtReferencia <> "" Then
+        cmbReferencia.AddItem txtReferencia
+        cmbReferencia = txtReferencia
     End If
     OPTnovoman.Value = 0
 End If
@@ -16209,7 +16209,7 @@ If TBCotacao.EOF = False Then
 Else
     'Busca o valor cadastrado de limite de credito no cliente
     Set TBClientes = CreateObject("adodb.recordset")
-    TBClientes.Open "Select txtLimiteCredito from Clientes where idcliente = " & txtIDcliente, Conexao, adOpenKeyset, adLockOptimistic
+    TBClientes.Open "Select txtLimiteCredito from Clientes where idcliente = " & txtidcliente, Conexao, adOpenKeyset, adLockOptimistic
     If TBClientes.EOF = False Then LimiteCredito = TBClientes!txtLimiteCredito
     
     TBClientes.Close
@@ -16217,7 +16217,7 @@ Else
     If LimiteCredito <> 0 Then
         'Totaliza o limite utilizado pra contas em aberto
         Set TBContas = CreateObject("adodb.recordset")
-        TBContas.Open "Select Sum(valor) as LimiteCreditoUtilizadoAberto, idCliente from tbl_contas_receber where idCliente = " & txtIDcliente & " AND Status = 'TÍTULO EM ABERTO' GROUP BY idCliente", Conexao, adOpenKeyset, adLockReadOnly
+        TBContas.Open "Select Sum(valor) as LimiteCreditoUtilizadoAberto, idCliente from tbl_contas_receber where idCliente = " & txtidcliente & " AND Status = 'TÍTULO EM ABERTO' GROUP BY idCliente", Conexao, adOpenKeyset, adLockReadOnly
         If TBContas.EOF = False Then
             LimiteCreditoUtilizadoAberto = TBContas!LimiteCreditoUtilizadoAberto
         Else
@@ -16227,7 +16227,7 @@ Else
         
         'Totaliza o limite utilizado pra contas parcial
         Set TBContas = CreateObject("adodb.recordset")
-        TBContas.Open "Select Sum(valorpendente) as LimiteCreditoUtilizadoParcial, idCliente from tbl_contas_receber where idCliente = " & txtIDcliente & " AND Status = 'TÍTULO RECEBIDO PARCIAL' and LogSit = 'N' GROUP BY idCliente", Conexao, adOpenKeyset, adLockReadOnly
+        TBContas.Open "Select Sum(valorpendente) as LimiteCreditoUtilizadoParcial, idCliente from tbl_contas_receber where idCliente = " & txtidcliente & " AND Status = 'TÍTULO RECEBIDO PARCIAL' and LogSit = 'N' GROUP BY idCliente", Conexao, adOpenKeyset, adLockReadOnly
         If TBContas.EOF = False Then
             LimiteCreditoUtilizadoParcial = TBContas!LimiteCreditoUtilizadoParcial
         Else
@@ -16272,28 +16272,28 @@ If chkNovo_projeto.Value = 1 Then TBCotacao!Novo_projeto = True Else TBCotacao!N
 If Chk_utiliza_mat_consignado.Value = 1 Then TBCotacao!Utiliza_mat_cons = True Else TBCotacao!Utiliza_mat_cons = False
 TBCotacao!Comprimento = IIf(txtComprimento = "", Null, txtComprimento)
 TBCotacao!Largura = IIf(txtLargura = "", Null, txtLargura)
-TBCotacao!Espessura = IIf(txtespessura = "", Null, txtespessura)
+TBCotacao!Espessura = IIf(txtEspessura = "", Null, txtEspessura)
 TBCotacao!Dureza = txtDureza
 TBCotacao!descricao_tecnica = txtdesctecnica.Text
 TBCotacao!Unidade = cmbun.Text
 TBCotacao!Unidade_com = Cmb_un_com.Text
-TBCotacao!Familia = cmbfamilia.Text
+TBCotacao!Familia = cmbFamilia.Text
 TBCotacao!ID_CF = IIf(Txt_ID_CF = "", Null, Txt_ID_CF)
 TBCotacao!txt_CST = Cmb_CST_ICMS
-TBCotacao!Cotacao = txtId.Text
+TBCotacao!Cotacao = TxtID.Text
 TBCotacao!Tipo = "P"
 TBCotacao!Prioridade = Cmb_prioridade
 If chkRetorno.Value = 1 Then TBCotacao!retorno = True Else TBCotacao!retorno = False
 TBCotacao!Data_retorno = IIf(Txt_data_retorno = "__/__/____", Null, Txt_data_retorno)
-TBCotacao!Inspecao = IIf(txtinspecao = "", Null, txtinspecao)
-TBCotacao!Embalagem = IIf(txtembalagem = "", Null, txtembalagem)
+TBCotacao!Inspecao = IIf(txtInspecao = "", Null, txtInspecao)
+TBCotacao!Embalagem = IIf(txtEmbalagem = "", Null, txtEmbalagem)
 TBCotacao!Gravacao = IIf(txtGravacao = "", Null, txtGravacao)
 'If txtvFrete.Text <> "" And txtvFrete.Text <> 0 Then
 'TBCotacao!preco_unitario = IIf(txtvalorunitario = "", 0, txtvalorunitario) + (txtvFrete.Text / txtQuantidade)
 'Else
 TBCotacao!preco_unitario = IIf(txtvalorunitario = "", 0, txtvalorunitario)
 'End If
-TBCotacao!Desconto = IIf(txtDesconto = "", 0, txtDesconto)
+TBCotacao!Desconto = IIf(txtdesconto = "", 0, txtdesconto)
 TBCotacao!ValorDesconto = IIf(txtvalordesconto = "", 0, txtvalordesconto)
 TBCotacao!preco_unitario_desconto = txtvalorunitariodesc
 'TBCotacao!vFrete = 0
@@ -16326,8 +16326,8 @@ TBCotacao!BC_ICMS = 0
 TBCotacao!BC_ICMS_ST = 0
 TBCotacao!Valor_ICMS_ST = 0
 If Txt_ID_CF <> "" Then
-    ProcValorImposto txtCotacao, Txt_ID_CF, IIf(txtIDcliente = "", 0, txtIDcliente), txtCliente, txtuf, Cmb_empresa.ItemData(Cmb_empresa.ListIndex), False, IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), RegimeEmpresa_Proposta
-    ProcControleImposto IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), IIf(txtIDcliente = "", 0, txtIDcliente)
+    ProcValorImposto txtCotacao, Txt_ID_CF, IIf(txtidcliente = "", 0, txtidcliente), txtcliente, txtUF, Cmb_empresa.ItemData(Cmb_empresa.ListIndex), False, IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), RegimeEmpresa_Proposta
+    ProcControleImposto IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), IIf(txtidcliente = "", 0, txtidcliente)
 '=================================================================
 valor = IIf(txtvalor_total = "", 0, txtvalor_total.Text)
 Valor1 = IIf(txtvFrete = "", 0, txtvFrete.Text)
@@ -16339,7 +16339,7 @@ Valor1 = 0
 Valor2 = 0
 '==================================================================================
     If Cmb_CST_ICMS <> "" And chkRetorno = 0 Then
-        ProcSubstituicaoTributaria txtuf, Cmb_CST_ICMS, Txt_ID_CF, IIf(txtIDcliente = "", 0, txtIDcliente), txtCliente, txtvalorunitariodesc, txtQuantidade, BC, BCST, 0, 0, 0, False, False, 0
+        ProcSubstituicaoTributaria txtUF, Cmb_CST_ICMS, Txt_ID_CF, IIf(txtidcliente = "", 0, txtidcliente), txtcliente, txtvalorunitariodesc, txtQuantidade, BC, BCST, 0, 0, 0, False, False, 0
         TBCotacao!Valor_ICMS_ST = ICMSCST
         If ICMSCST <> 0 Then TBCotacao!BC_ICMS_ST = BCICMSCST
     End If
@@ -16407,7 +16407,7 @@ If Chk_antecipacao.Value = 1 Then TBCotacao!Antecipacao_fat = True Else TBCotaca
 If Chk_faturamento_parcial.Value = 1 Then TBCotacao!Faturamento_parcial = True Else TBCotacao!Faturamento_parcial = False
 
 'Empresa
-If Txt_ID_CFOP_prod <> "" Then ProcControleImposto IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), IIf(txtIDcliente = "", 0, txtIDcliente)
+If Txt_ID_CFOP_prod <> "" Then ProcControleImposto IIf(Txt_ID_CFOP_prod = "", 0, Txt_ID_CFOP_prod), IIf(txtidcliente = "", 0, txtidcliente)
 ProcVerifImpostosEmpresa Cmb_empresa.ItemData(Cmb_empresa.ListIndex), chkRetorno, "", False, 0, False, TabelaSN_Proposta, 0
 'Novo cálculo simples nacional 2018
 TBCotacao!DAS = DAS
@@ -16427,10 +16427,10 @@ TBCotacao.Update
 txtid_produto = TBCotacao!CODIGO
 TBCotacao.Close
 
-If txtIDcliente <> "0" Then
+If txtidcliente <> "0" Then
     Set TBFI = CreateObject("adodb.recordset")
     TBFI.Open "Select codproduto from Projproduto where desenho = '" & txtNomenclatura & "'", Conexao, adOpenKeyset, adLockOptimistic
-    If TBFI.EOF = False Then ProcAgregarProdutoCli TBFI!Codproduto, txtIDcliente, txttipocliente, cmbun, Cmb_un_com, IIf(txtvalorunitario = "", 0, txtvalorunitario)
+    If TBFI.EOF = False Then ProcAgregarProdutoCli TBFI!Codproduto, txtidcliente, txttipocliente, cmbun, Cmb_un_com, IIf(txtvalorunitario = "", 0, txtvalorunitario)
     TBFI.Close
 End If
 
@@ -16463,7 +16463,7 @@ Documento = IIf(Vendas_PI = True, "Nº pedido: ", "Nº proposta: ") & txtCotacao &
 Documento1 = "Cód. interno: " & txtNomenclatura
 ProcGravaEvento
 '==================================
-FunAtualizaStatusPropPI txtId
+FunAtualizaStatusPropPI TxtID
 ProcCarregaLista (IIf(ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5))))
 Novo_Proposta1 = False
 
@@ -16625,18 +16625,18 @@ End If
 
 If USMsgBox("Deseja realmente emitir pedido interno para esta proposta?", vbYesNo, "CAPRIND v5.0") = vbYes Then
     If FunVerifValidarAutomPropPI(Cmb_empresa.ItemData(Cmb_empresa.ListIndex)) = False Then
-        If FunVerificaRegistroValidado("Vendas_proposta", "Cotacao = " & txtId, "mesma", "dessa proposta", "emitir PI", False, False) = False Then Exit Sub
+        If FunVerificaRegistroValidado("Vendas_proposta", "Cotacao = " & TxtID, "mesma", "dessa proposta", "emitir PI", False, False) = False Then Exit Sub
     End If
-    If txtStatus <> "ABERTA EM ANALISE" Then
+    If txtstatus <> "ABERTA EM ANALISE" Then
         USMsgBox ("Só é permitido emitir pedido interno de proposta com o status aberta em análise."), vbExclamation, "CAPRIND v5.0"
         Exit Sub
     End If
-    If txtIDcliente = "" Or txtIDcliente = "0" Then
+    If txtidcliente = "" Or txtidcliente = "0" Then
         USMsgBox ("Só é permitido emitir pedido interno de proposta com o cliente cadastrado."), vbExclamation, "CAPRIND v5.0"
         Exit Sub
     End If
     Set TBVendas = CreateObject("adodb.recordset")
-    TBVendas.Open "Select * from vendas_carteira where cotacao = " & txtId.Text & " and liberacao <> '" & "FATURADO" & "'", Conexao, adOpenKeyset, adLockOptimistic
+    TBVendas.Open "Select * from vendas_carteira where cotacao = " & TxtID.Text & " and liberacao <> '" & "FATURADO" & "'", Conexao, adOpenKeyset, adLockOptimistic
     If TBVendas.EOF = False Then
         Do While TBVendas.EOF = False
             'Verif. se todos os produtos/serviços estão cadastrados
@@ -16652,7 +16652,7 @@ If USMsgBox("Deseja realmente emitir pedido interno para esta proposta?", vbYesN
         Loop
         
         Set TBClientes = CreateObject("adodb.recordset")
-        TBClientes.Open "Select * FROM Clientes WHERE idcliente = " & txtIDcliente & " and Left(Tipo, 1) = 'J' and idTipoEmpresa = 1", Conexao, adOpenKeyset, adLockOptimistic
+        TBClientes.Open "Select * FROM Clientes WHERE idcliente = " & txtidcliente & " and Left(Tipo, 1) = 'J' and idTipoEmpresa = 1", Conexao, adOpenKeyset, adLockOptimistic
         If TBClientes.EOF = False Then
             If FunVerifRegimeTribCliForn(Cmb_empresa.ItemData(Cmb_empresa.ListIndex), False, True) = False Then Exit Sub
         End If
@@ -16664,7 +16664,7 @@ If USMsgBox("Deseja realmente emitir pedido interno para esta proposta?", vbYesN
         TextoFiltroUpdate = ""
         Permitido = False
         If FunVerifValidarAutomPropPI(Cmb_empresa.ItemData(Cmb_empresa.ListIndex)) = True Then
-            Conexao.Execute "UPDATE vendas_proposta Set DtValidacao = '" & Now & "', RespValidacao = '" & pubUsuario & "', DtValidacaoPI = '" & Now & "', RespValidacaoPI = '" & pubUsuario & "' where Cotacao = " & txtId & " and DtValidacao IS NULL"
+            Conexao.Execute "UPDATE vendas_proposta Set DtValidacao = '" & Now & "', RespValidacao = '" & pubUsuario & "', DtValidacaoPI = '" & Now & "', RespValidacaoPI = '" & pubUsuario & "' where Cotacao = " & TxtID & " and DtValidacao IS NULL"
             Permitido = True
         End If
                 
@@ -16675,7 +16675,7 @@ If USMsgBox("Deseja realmente emitir pedido interno para esta proposta?", vbYesN
             If IsNull(TBVendas!prazofinaldias) = False And TBVendas!prazofinaldias <> "" Then TBVendas!PrazoFinal = FunDefinirPrazoPed(Date + TBVendas!prazofinaldias) Else TBVendas!PrazoFinal = Null
             TBVendas!Prazo_original = TBVendas!PrazoFinal
             TBVendas!PCCliente = Left(PCCliente, 15)
-            txtDatavendas.Text = Format(TBVendas!Datavendas, "dd/mm/yyyy")
+            txtdatavendas.Text = Format(TBVendas!Datavendas, "dd/mm/yyyy")
             TBVendas.Update
             
             If Permitido = True Then
@@ -16686,17 +16686,17 @@ If USMsgBox("Deseja realmente emitir pedido interno para esta proposta?", vbYesN
             TBVendas.MoveNext
         Loop
     End If
-    Conexao.Execute "UPDATE vendas_proposta Set Datavendas = '" & Date & "', Tipo = 'PRPE', Status = 'VENDIDA' where cotacao = " & txtId.Text
+    Conexao.Execute "UPDATE vendas_proposta Set Datavendas = '" & Date & "', Tipo = 'PRPE', Status = 'VENDIDA' where cotacao = " & TxtID.Text
     USMsgBox ("Pedido interno gerado com sucesso."), vbInformation, "CAPRIND v5.0"
     '==================================
     Modulo = Formulario
     Evento = "Emitir pedido interno"
-    ID_documento = txtId
+    ID_documento = TxtID
     Documento = "Nº proposta: " & txtCotacao & " - Rev.: " & txtrevisao
     Documento1 = ""
     ProcGravaEvento
     '==================================
-    FunAtualizaStatusPropPI txtId
+    FunAtualizaStatusPropPI TxtID
     ProcCarregaLista (IIf(ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5)) <= 1, 1, ReturnNumbersOnly(Left(lblPaginas.Caption, Len(lblPaginas.Caption) - 5))))
     If CodigoLista2 <> 0 And Lista.ListItems.Count <> 0 Then
         Lista.SelectedItem = Lista.ListItems(CodigoLista2)
@@ -16704,7 +16704,7 @@ If USMsgBox("Deseja realmente emitir pedido interno para esta proposta?", vbYesN
     End If
     Set TBAbrir = CreateObject("adodb.recordset")
    StrSql = "Select VP.*, CL.CPF_CNPJ as CNPJ_CPF, CL.CEP as CEP, CL.RG_IE from vendas_proposta VP inner join Clientes CL on VP.IDcliente = CL.IDCliente where cotacao ="
-   TBAbrir.Open StrSql & txtId, Conexao, adOpenKeyset, adLockOptimistic
+   TBAbrir.Open StrSql & TxtID, Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir.EOF = False Then
         ProcPuxaDados
         ProcPuxaTotais
@@ -16798,7 +16798,7 @@ End If
     txtqtservico.Text = IIf(IsNull(TBProduto!quantidade), "", (Format(TBProduto!quantidade, "###,##0.0000")))
     txtvlrunitservico.Text = IIf(IsNull(TBProduto!preco_unitario), "", (Format(TBProduto!preco_unitario, "###,##0.0000000000")))
     If TBProduto!Servico_cliente = True Then Chk_servico_executado_cliente.Value = 1 Else Chk_servico_executado_cliente.Value = 0
-    txtiss.Text = IIf(IsNull(TBProduto!ISS), "", (TBProduto!ISS))
+    txtISS.Text = IIf(IsNull(TBProduto!ISS), "", (TBProduto!ISS))
     txtvlrtotalservico.Text = IIf(IsNull(TBProduto!preco_lote), "", (Format(TBProduto!preco_lote, "###,##0.00")))
     
     If TBProduto!Desconto > 0 Then
@@ -16853,7 +16853,7 @@ If IsNull(TBProduto!Unidade_com) = False And TBProduto!Unidade_com <> "" Then Cm
 NomeCampo = "a família"
 If IsNull(TBProduto!Familia) = False And TBProduto!Familia <> "" Then
     VerifDadosPadraoFamilia = False
-    cmbfamilia.Text = TBProduto!Familia
+    cmbFamilia.Text = TBProduto!Familia
     VerifDadosPadraoFamilia = True
 End If
 If IsNull(TBProduto!N_referencia) = False And TBProduto!N_referencia <> "" Then
@@ -16888,15 +16888,15 @@ End If
 '=============================================================================================
     Txt_observacoes_prod = IIf(IsNull(TBProduto!Observacoes), "", TBProduto!Observacoes)
     Txt_observacoes_fat_prod = IIf(IsNull(TBProduto!Obs_faturamento), "", TBProduto!Obs_faturamento)
-    txtinspecao = IIf(IsNull(TBProduto!Inspecao), "", TBProduto!Inspecao)
-    txtembalagem = IIf(IsNull(TBProduto!Embalagem), "", TBProduto!Embalagem)
+    txtInspecao = IIf(IsNull(TBProduto!Inspecao), "", TBProduto!Inspecao)
+    txtEmbalagem = IIf(IsNull(TBProduto!Embalagem), "", TBProduto!Embalagem)
     txtGravacao = IIf(IsNull(TBProduto!Gravacao), "", TBProduto!Gravacao)
     If IsNull(TBProduto!Prioridade) = False And TBProduto!Prioridade <> "" Then Cmb_prioridade = TBProduto!Prioridade
     If TBProduto!Antecipacao_fat = True Then Chk_antecipacao.Value = 1 Else Chk_antecipacao.Value = 0
     If TBProduto!Faturamento_parcial = True Then Chk_faturamento_parcial.Value = 1 Else Chk_faturamento_parcial.Value = 0
     If TBProduto!Novo_projeto = True Then chkNovo_projeto.Value = 1 Else chkNovo_projeto.Value = 0
     If TBProduto!Utiliza_mat_cons = True Then Chk_utiliza_mat_consignado.Value = 1 Else Chk_utiliza_mat_consignado.Value = 0
-    txtespessura = IIf(IsNull(TBProduto!Espessura), "", TBProduto!Espessura)
+    txtEspessura = IIf(IsNull(TBProduto!Espessura), "", TBProduto!Espessura)
     txtLargura = IIf(IsNull(TBProduto!Largura), "", TBProduto!Largura)
     txtComprimento = IIf(IsNull(TBProduto!Comprimento), "", TBProduto!Comprimento)
     txtDureza = IIf(IsNull(TBProduto!Dureza), "", TBProduto!Dureza)
@@ -16925,7 +16925,7 @@ End If
         Chk_desc.Value = 0
         Chk_valor_desc.Value = 0
     End If
-    txtDesconto.Text = IIf(IsNull(TBProduto!Desconto), "", TBProduto!Desconto)
+    txtdesconto.Text = IIf(IsNull(TBProduto!Desconto), "", TBProduto!Desconto)
     txtvalordesconto.Text = IIf(IsNull(TBProduto!ValorDesconto), "", Format(TBProduto!ValorDesconto, "###,##0.0000000000"))
     txtvalorunitariodesc = IIf(IsNull(TBProduto!preco_unitario_desconto), "", Format(TBProduto!preco_unitario_desconto, "###,##0.0000000000"))
    
@@ -16990,11 +16990,11 @@ On Error GoTo tratar_erro
 lblRegistros1.Caption = "Nº de registros: 0"
 lblPaginas1.Caption = "Página: 0 de: 0"
 Listprod.ListItems.Clear
-If Vendas_Proposta = True Then TextoFiltro = "Select * from vendas_carteira where cotacao = " & txtId & " and TIPO = 'P' order by Codigo" Else TextoFiltro = "Select VC.* from vendas_carteira VC INNER JOIN vendas_proposta VP on VP.Cotacao = VC.Cotacao where VP.cotacao = " & txtId & " and VC.Tipo = 'P' and (VP.Tipo = 'PE' or VP.Tipo = 'PRPE') and (VC.liberacao = 'VENDIDA' or VC.liberacao = 'REVISADA' or VC.liberacao = 'FATURAR' or VC.liberacao = 'FATURAR PARCIAL' or VC.liberacao = 'FATURADO' or VC.liberacao = 'FATURADO PARCIAL' or VC.liberacao = 'CANCELADO') order by VC.Codigo"
+If Vendas_Proposta = True Then TextoFiltro = "Select * from vendas_carteira where cotacao = " & TxtID & " and TIPO = 'P' order by Codigo" Else TextoFiltro = "Select VC.* from vendas_carteira VC INNER JOIN vendas_proposta VP on VP.Cotacao = VC.Cotacao where VP.cotacao = " & TxtID & " and VC.Tipo = 'P' and (VP.Tipo = 'PE' or VP.Tipo = 'PRPE') and (VC.liberacao = 'VENDIDA' or VC.liberacao = 'REVISADA' or VC.liberacao = 'FATURAR' or VC.liberacao = 'FATURAR PARCIAL' or VC.liberacao = 'FATURADO' or VC.liberacao = 'FATURADO PARCIAL' or VC.liberacao = 'CANCELADO') order by VC.Codigo"
 Set TBLISTA_Vendas_Proposta1 = CreateObject("adodb.recordset")
 TBLISTA_Vendas_Proposta1.Open TextoFiltro, Conexao, adOpenKeyset, adLockReadOnly
 If TBLISTA_Vendas_Proposta1.EOF = False Then ProcExibePagina1 (Pagina)
-ProcGravarTotais txtId
+ProcGravarTotais TxtID
 ProcPuxaTotais
 
 Exit Sub
@@ -17057,11 +17057,11 @@ On Error GoTo tratar_erro
 lblRegistros2.Caption = "Nº de registros: 0"
 lblPaginas2.Caption = "Página: 0 de: 0"
 ListaServicos.ListItems.Clear
-If Vendas_Proposta = True Then TextoFiltro = "Select * from vendas_carteira where cotacao = " & txtId & " and TIPO = 'S' order by Codigo" Else TextoFiltro = "Select VC.* from vendas_carteira VC INNER JOIN vendas_proposta VP on VP.Cotacao = VC.Cotacao where VP.cotacao = " & txtId & " and VC.Tipo = 'S' and (VP.Tipo = 'PE' or VP.Tipo = 'PRPE') and (VC.liberacao = 'VENDIDA' or VC.liberacao = 'REVISADA' or VC.liberacao = 'FATURAR' or VC.liberacao = 'FATURAR PARCIAL' or VC.liberacao = 'FATURADO' or VC.liberacao = 'FATURADO PARCIAL' or VC.liberacao = 'CANCELADO') order by VC.Codigo"
+If Vendas_Proposta = True Then TextoFiltro = "Select * from vendas_carteira where cotacao = " & TxtID & " and TIPO = 'S' order by Codigo" Else TextoFiltro = "Select VC.* from vendas_carteira VC INNER JOIN vendas_proposta VP on VP.Cotacao = VC.Cotacao where VP.cotacao = " & TxtID & " and VC.Tipo = 'S' and (VP.Tipo = 'PE' or VP.Tipo = 'PRPE') and (VC.liberacao = 'VENDIDA' or VC.liberacao = 'REVISADA' or VC.liberacao = 'FATURAR' or VC.liberacao = 'FATURAR PARCIAL' or VC.liberacao = 'FATURADO' or VC.liberacao = 'FATURADO PARCIAL' or VC.liberacao = 'CANCELADO') order by VC.Codigo"
 Set TBLISTA_Vendas_Proposta2 = CreateObject("adodb.recordset")
 TBLISTA_Vendas_Proposta2.Open TextoFiltro, Conexao, adOpenKeyset, adLockReadOnly
 If TBLISTA_Vendas_Proposta2.EOF = False Then ProcExibePagina2 (Pagina)
-ProcGravarTotais txtId
+ProcGravarTotais TxtID
 ProcPuxaTotais
 
 Exit Sub
@@ -17125,7 +17125,7 @@ txtcalculos.Text = "N/A"
 txtimpostos.Text = "N/A"
 txtCondicoes.Text = "N/A"
 txtgarantia.Text = "N/A"
-txtObservacoes.Text = ""
+txtobservacoes.Text = ""
 txtReajuste.Text = "N/A"
 txttransporte.Text = "N/A"
 txtValidade.Text = "N/A"
@@ -17152,14 +17152,14 @@ On Error GoTo tratar_erro
 
 ProcLimparComercial
 Set TBCotacao = CreateObject("adodb.recordset")
-TBCotacao.Open "Select * FROM vendas_comercial WHERE cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBCotacao.Open "Select * FROM vendas_comercial WHERE cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBCotacao.EOF = False Then
     If TBCotacao!analize = "Sim" Or TBCotacao!analize = "Não" Then txtAnalize.Text = TBCotacao!analize
     txtcalculos = IIf(IsNull(TBCotacao!calculos), "", TBCotacao!calculos)
     txtimpostos = IIf(IsNull(TBCotacao!impostos), "", TBCotacao!impostos)
     txtCondicoes = IIf(IsNull(TBCotacao!condicoes), "", TBCotacao!condicoes)
     txtgarantia = IIf(IsNull(TBCotacao!garantia), "", TBCotacao!garantia)
-    txtObservacoes = IIf(IsNull(TBCotacao!Observacoes), "", TBCotacao!Observacoes)
+    txtobservacoes = IIf(IsNull(TBCotacao!Observacoes), "", TBCotacao!Observacoes)
     txtReajuste = IIf(IsNull(TBCotacao!reajuste), "", TBCotacao!reajuste)
     txttransporte = IIf(IsNull(TBCotacao!transporte), "", TBCotacao!transporte)
     txtValidade = IIf(IsNull(TBCotacao!validade), "", TBCotacao!validade)
@@ -17273,7 +17273,7 @@ If USMsgBox("Deseja realmente copiar " & IIf(Vendas_Proposta = True, "a proposta
     '==================================
     Modulo = Formulario
     Evento = "Novo"
-    ID_documento = txtId
+    ID_documento = TxtID
     Documento = IIf(Vendas_Proposta = True, "Nº proposta: ", "Nº pedido: ") & txtCotacao & " - Rev.: " & txtrevisao
     Documento1 = ""
     ProcGravaEvento
@@ -17291,7 +17291,7 @@ End Sub
 Sub ProcCopiarPI_Proposta()
 On Error GoTo tratar_erro
 
-IDAntigo = txtId.Text
+IDAntigo = TxtID.Text
 Set TBProposta = CreateObject("adodb.recordset")
 TBProposta.Open "Select * from vendas_proposta where cotacao = " & IDAntigo, Conexao, adOpenKeyset, adLockOptimistic
 If TBProposta.EOF = False Then
@@ -17323,8 +17323,8 @@ If TBProposta.EOF = False Then
     ProcCopiarInfGerais
     ProcCopiarTotais
     TBCotacao.Update
-    txtId.Text = TBCotacao!Cotacao
-    Conexao.Execute "Update vendas_proposta Set ordenarproposta = " & txtId & " where cotacao = " & txtId
+    TxtID.Text = TBCotacao!Cotacao
+    Conexao.Execute "Update vendas_proposta Set ordenarproposta = " & TxtID & " where cotacao = " & TxtID
 
     TBCotacao.Close
     
@@ -17337,7 +17337,7 @@ TBProposta.Close
 USMsgBox (IIf(Vendas_Proposta = True, "Proposta copiada", "Pedido interno copiado") & " com sucesso."), vbInformation, "CAPRIND v5.0"
 Set TBAbrir = CreateObject("adodb.recordset")
 StrSql = "Select VP.*, CL.CPF_CNPJ as CNPJ_CPF, CL.CEP as CEP, CL.RG_IE from vendas_proposta VP inner join Clientes CL on VP.IDcliente = CL.IDCliente where cotacao ="
-TBAbrir.Open StrSql & txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir.Open StrSql & TxtID, Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.EOF = False Then ProcPuxaDados
 TBAbrir.Close
 ProcAtualizalistaProdutos (1)
@@ -17409,7 +17409,7 @@ If TBVendas.EOF = False Then
     TBAbrir!calculos = TBVendas!calculos
     TBAbrir!impostos = TBVendas!impostos
     TBAbrir!condicoes = TBVendas!condicoes
-    TBAbrir!Cotacao = txtId.Text
+    TBAbrir!Cotacao = TxtID.Text
     TBAbrir!garantia = TBVendas!garantia
     TBAbrir!Observacoes = TBVendas!Observacoes
     TBAbrir!reajuste = TBVendas!reajuste
@@ -17444,7 +17444,7 @@ If TBVendas.EOF = False Then
         Set TBAbrir = CreateObject("adodb.recordset")
         TBAbrir.Open "Select * from vendas_proposta_previsaopgto", Conexao, adOpenKeyset, adLockOptimistic
         TBAbrir.AddNew
-        TBAbrir!Cotacao = txtId.Text
+        TBAbrir!Cotacao = TxtID.Text
         TBAbrir!Data = TBVendas!Data
         TBAbrir!valor = TBVendas!valor
         TBAbrir!Parcela = TBVendas!Parcela
@@ -17472,7 +17472,7 @@ If TBLISTA.EOF = False Then
     Do While TBLISTA.EOF = False
         TBProduto.AddNew
         TBProduto!Tem_ordem = False
-        TBProduto!Cotacao = txtId.Text
+        TBProduto!Cotacao = TxtID.Text
         If IsNull(TBLISTA!Desenho) = False Then TBProduto!Desenho = TBLISTA!Desenho
         If IsNull(TBLISTA!N_referencia) = False Then TBProduto!N_referencia = TBLISTA!N_referencia
         If IsNull(TBLISTA!ID_CFOP) = False Then TBProduto!ID_CFOP = TBLISTA!ID_CFOP
@@ -17575,7 +17575,7 @@ If TBLISTA.EOF = False Then
     Do While TBLISTA.EOF = False
         TBProduto.AddNew
         TBProduto!Tem_ordem = False
-        TBProduto!Cotacao = txtId.Text
+        TBProduto!Cotacao = TxtID.Text
         If IsNull(TBLISTA!Desenho) = False Then TBProduto!Desenho = TBLISTA!Desenho
         If IsNull(TBLISTA!N_referencia) = False Then TBProduto!N_referencia = TBLISTA!N_referencia
         If IsNull(TBLISTA!ID_CFOP) = False Then TBProduto!ID_CFOP = TBLISTA!ID_CFOP
@@ -17726,16 +17726,16 @@ If txtCotacao = "" Then
     USMsgBox ("Informe a proposta comercial antes de revisar."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
-If FunVerificaRegistroValidado("Vendas_proposta", "Cotacao = " & txtId, "mesma", "a proposta", "revisar", False, False) = False Then Exit Sub
-If txtStatus <> "ABERTA EM ANALISE" Then
+If FunVerificaRegistroValidado("Vendas_proposta", "Cotacao = " & TxtID, "mesma", "a proposta", "revisar", False, False) = False Then Exit Sub
+If txtstatus <> "ABERTA EM ANALISE" Then
     USMsgBox ("Só é permitido revisar proposta com o status aberta em análise."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
 If USMsgBox("Deseja realmente criar uma revisão da proposta " & txtCotacao.Text & "?", vbYesNo, "CAPRIND v5.0") = vbYes Then
     Revisar = True
-    IDAntigo = txtId.Text
+    IDAntigo = TxtID.Text
     Set TBProposta = CreateObject("adodb.recordset")
-    TBProposta.Open "Select * from vendas_proposta where cotacao = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+    TBProposta.Open "Select * from vendas_proposta where cotacao = " & TxtID, Conexao, adOpenKeyset, adLockOptimistic
     If TBProposta.EOF = False Then
         Set TBCotacao = CreateObject("adodb.recordset")
         TBCotacao.Open "Select * from vendas_proposta", Conexao, adOpenKeyset, adLockOptimistic
@@ -17749,7 +17749,7 @@ If USMsgBox("Deseja realmente criar uma revisão da proposta " & txtCotacao.Text 
         ProcCopiarInfGerais
         ProcCopiarTotais
         TBCotacao.Update
-        txtId.Text = TBCotacao!Cotacao
+        TxtID.Text = TBCotacao!Cotacao
         ProcCopiarDetalhes
         ProcCopiarItem
         ProcCopiarServico
@@ -17765,7 +17765,7 @@ If USMsgBox("Deseja realmente criar uma revisão da proposta " & txtCotacao.Text 
     '==================================
     Modulo = Formulario
     Evento = "Revisar"
-    ID_documento = txtId
+    ID_documento = TxtID
     Documento = "Nº proposta: " & txtCotacao & " - Rev.: " & txtrevisao
     Documento1 = ""
     ProcGravaEvento
@@ -17774,7 +17774,7 @@ If USMsgBox("Deseja realmente criar uma revisão da proposta " & txtCotacao.Text 
     
     StrSql = "Select VP.*, CL.CPF_CNPJ as CNPJ_CPF, CL.CEP as CEP, CL.RG_IE from vendas_proposta VP inner join Clientes CL on VP.IDcliente = CL.IDCliente where cotacao ="
     
-    TBAbrir.Open StrSql & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBAbrir.Open StrSql & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir.EOF = False Then ProcPuxaDados
     TBAbrir.Close
     ProcAtualizalistaProdutos (1)
@@ -17839,7 +17839,7 @@ End Sub
 Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
 On Error GoTo tratar_erro
   
-Select Case SSTab1.Tab
+Select Case SStab1.Tab
     Case 0:
         Select Case KeyCode
             Case vbKeyInsert: ProcNovo
@@ -17925,7 +17925,7 @@ ProcCarregaToolBar5 Me, 15195, 10, True
 ProcOrganizaFormPI_Proposta
 ProcCarregaComboEmpresa Cmb_empresa, False
 Direitos
-SSTab1.Tab = 0
+SStab1.Tab = 0
 SSTab2.Tab = 0
 ProcLimpaVariaveisPrincipais
 
@@ -17966,16 +17966,16 @@ End Sub
 Private Sub ProcCarregaCamposCombo()
 On Error GoTo tratar_erro
 
-cmbfamilia.ListIndex = -1
+cmbFamilia.ListIndex = -1
 cmbun.ListIndex = -1
 Cmb_un_com.ListIndex = -1
 cmbfamiliaservico.ListIndex = -1
 Cmb_cidade_servico.ListIndex = -1
 txtunservico.ListIndex = -1
 Cmb_un_com_serv.ListIndex = -1
-If txtId <> 0 Then
+If TxtID <> 0 Then
     Set TBOSC = CreateObject("adodb.recordset")
-    TBOSC.Open "Select Transportadora, Tipo_transp FROM vendas_comercial WHERE cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+    TBOSC.Open "Select Transportadora, Tipo_transp FROM vendas_comercial WHERE cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
     If TBOSC.EOF = False Then
         If IsNull(TBOSC!Transportadora) = False And TBOSC!Transportadora <> "" Then
             Select Case TBOSC!Tipo_transp
@@ -17991,7 +17991,7 @@ If txtid_produto <> 0 Then
     Set TBOSC = CreateObject("adodb.recordset")
     TBOSC.Open "Select Familia, Unidade, Unidade_com from vendas_carteira where Codigo = " & txtid_produto, Conexao, adOpenKeyset, adLockOptimistic
     If TBOSC.EOF = False Then
-        If IsNull(TBOSC!Familia) = False And TBOSC!Familia <> "" Then cmbfamilia.Text = TBOSC!Familia
+        If IsNull(TBOSC!Familia) = False And TBOSC!Familia <> "" Then cmbFamilia.Text = TBOSC!Familia
         If IsNull(TBOSC!Unidade) = False And TBOSC!Unidade <> "" Then cmbun.Text = TBOSC!Unidade
         If IsNull(TBOSC!Unidade_com) = False And TBOSC!Unidade_com <> "" Then Cmb_un_com.Text = TBOSC!Unidade_com
     End If
@@ -18021,22 +18021,22 @@ Sub ProcPuxaDados()
 On Error GoTo tratar_erro
 
 ProcLimpar
-txtId.Text = TBAbrir!Cotacao
+TxtID.Text = TBAbrir!Cotacao
 If IsNull(TBAbrir!ID_empresa) = False And TBAbrir!ID_empresa <> "" Then ProcPuxaDadosComboEmpresa Cmb_empresa, TBAbrir!ID_empresa
-txtStatus.Text = IIf(IsNull(TBAbrir!status), "", TBAbrir!status)
+txtstatus.Text = IIf(IsNull(TBAbrir!status), "", TBAbrir!status)
 Caption = "Vendas - " & IIf(Vendas_Proposta = True, "Proposta comercial - (Proposta : ", "Pedido interno - (Pedido interno : ") & TBAbrir!Ncotacao & " - Rev. : " & TBAbrir!Revisao & ")"
 txtCotacao.Text = IIf(IsNull(TBAbrir!Ncotacao), "", TBAbrir!Ncotacao)
 txtrevisao.Text = IIf(IsNull(TBAbrir!Revisao), "", TBAbrir!Revisao)
 If Vendas_Proposta = True Then
-    txtDatavendas = IIf(IsNull(TBAbrir!Datavendas), "", Format(TBAbrir!Datavendas, "dd/mm/yyyy"))
+    txtdatavendas = IIf(IsNull(TBAbrir!Datavendas), "", Format(TBAbrir!Datavendas, "dd/mm/yyyy"))
 Else
     txtDatavendas_PI = IIf(IsNull(TBAbrir!Datavendas), Date, Format(TBAbrir!Datavendas, "dd/mm/yyyy"))
 End If
 
 RegimeEmpresa_Proposta = IIf(IsNull(TBAbrir!Regime), 0, TBAbrir!Regime)
-txtIDcliente.Text = IIf(IsNull(TBAbrir!IDCliente), "", TBAbrir!IDCliente)
-txtCliente.Text = IIf(IsNull(TBAbrir!Cliente), "", TBAbrir!Cliente)
-txtCidade.Text = IIf(IsNull(TBAbrir!Cidade), "", UCase(TBAbrir!Cidade))
+txtidcliente.Text = IIf(IsNull(TBAbrir!IDCliente), "", TBAbrir!IDCliente)
+txtcliente.Text = IIf(IsNull(TBAbrir!Cliente), "", TBAbrir!Cliente)
+txtcidade.Text = IIf(IsNull(TBAbrir!Cidade), "", UCase(TBAbrir!Cidade))
 
 'NomeCampo = "o estado"
 'If IsNull(TBAbrir!UF) = False And TBAbrir!UF <> "" Then
@@ -18064,12 +18064,12 @@ txtCidade.Text = IIf(IsNull(TBAbrir!Cidade), "", UCase(TBAbrir!Cidade))
 
 1:
     txtRemetente.Text = IIf(IsNull(TBAbrir!Remetente), "", TBAbrir!Remetente)
-    txtFax.Text = IIf(IsNull(TBAbrir!Fax), "", TBAbrir!Fax)
+    txtfax.Text = IIf(IsNull(TBAbrir!Fax), "", TBAbrir!Fax)
     txtEmail.Text = IIf(IsNull(TBAbrir!Email), "", TBAbrir!Email)
     txtRef.Text = IIf(IsNull(TBAbrir!Referente), "", TBAbrir!Referente)
     If IsNull(TBAbrir!Tipo_endereco) = False And TBAbrir!Tipo_endereco <> "" Then cmbTipo_endereco = TBAbrir!Tipo_endereco
     txtendereco.Text = IIf(IsNull(TBAbrir!Endereco), "", TBAbrir!Endereco)
-    txtNumero.Text = IIf(IsNull(TBAbrir!Numero), "", TBAbrir!Numero)
+    txtnumero.Text = IIf(IsNull(TBAbrir!Numero), "", TBAbrir!Numero)
     txtComplemento.Text = IIf(IsNull(TBAbrir!complemento), "", TBAbrir!complemento)
     If IsNull(TBAbrir!Tipo_bairro) = False And TBAbrir!Tipo_bairro <> "" Then cmbTipo_bairro = TBAbrir!Tipo_bairro
     txtBairro.Text = IIf(IsNull(TBAbrir!Bairro), "", TBAbrir!Bairro)
@@ -18082,7 +18082,7 @@ txtCidade.Text = IIf(IsNull(TBAbrir!Cidade), "", UCase(TBAbrir!Cidade))
     txtResponsavel.Text = IIf(IsNull(TBAbrir!Responsavel), "", TBAbrir!Responsavel)
     txtVend_Ext.Text = IIf(IsNull(TBAbrir!Vend_ext), "", TBAbrir!Vend_ext)
     txtvend_Int.Text = IIf(IsNull(TBAbrir!vend_int), "", TBAbrir!vend_int)
-    txt_observacoes.Text = IIf(IsNull(TBAbrir!Obs), "", TBAbrir!Obs)
+    Txt_observacoes.Text = IIf(IsNull(TBAbrir!Obs), "", TBAbrir!Obs)
     txtreferente.Text = IIf(IsNull(TBAbrir!Ref), "", TBAbrir!Ref)
     txt_dataelaborado.Value = IIf(IsNull(TBAbrir!Data), "", Format(TBAbrir!Data, "dd/mm/yyyy"))
     txt_datamodificado.Text = IIf(IsNull(TBAbrir!dataalteracao), "", Format(TBAbrir!dataalteracao, "dd/mm/yy"))
@@ -18138,36 +18138,36 @@ Sub ProcEnviaDados()
 On Error GoTo tratar_erro
 
 TBCotacao!ID_empresa = Cmb_empresa.ItemData(Cmb_empresa.ListIndex)
-If txtStatus = "FATURADA" Or txtStatus = "FATURADA PARCIAL" Then Exit Sub
+If txtstatus = "FATURADA" Or txtstatus = "FATURADA PARCIAL" Then Exit Sub
 
-TBCotacao!status = txtStatus.Text
-If Vendas_Proposta = True Then If txtStatus = "CANCELADA" Or txtStatus = "PERDIDA P/ PRAZO" Or txtStatus = "PERDIDA P/ PREÇO" Then TBCotacao!dataalteracao = Date Else TBCotacao!dataalteracao = Null
+TBCotacao!status = txtstatus.Text
+If Vendas_Proposta = True Then If txtstatus = "CANCELADA" Or txtstatus = "PERDIDA P/ PRAZO" Or txtstatus = "PERDIDA P/ PREÇO" Then TBCotacao!dataalteracao = Date Else TBCotacao!dataalteracao = Null
 TBCotacao!Revisao = txtrevisao.Text
 TBCotacao!VI = txtVI
 TBCotacao!VE = txtVE
 TBCotacao!regiao = txtregiao.Text
 
-TBCotacao!IDCliente = IIf(txtIDcliente = "", 0, txtIDcliente)
+TBCotacao!IDCliente = IIf(txtidcliente = "", 0, txtidcliente)
 
-TBCotacao!Cliente = Replace(txtCliente.Text, "'", " ")
+TBCotacao!Cliente = Replace(txtcliente.Text, "'", " ")
 TBCotacao!Remetente = IIf(txtRemetente = "", Null, txtRemetente)
 TBCotacao!Referente = IIf(txtRef = "", Null, txtRef)
-TBCotacao!Fax = txtFax.Text
+TBCotacao!Fax = txtfax.Text
 TBCotacao!Email = IIf(txtEmail.Text = "", Null, LCase(txtEmail.Text))
 
 TBCotacao!Tipo_endereco = IIf(cmbTipo_endereco = "", Null, cmbTipo_endereco)
 TBCotacao!Endereco = IIf(txtendereco = "", Null, txtendereco)
-TBCotacao!Numero = IIf(txtNumero = "", Null, txtNumero)
+TBCotacao!Numero = IIf(txtnumero = "", Null, txtnumero)
 TBCotacao!complemento = IIf(txtComplemento = "", Null, txtComplemento)
 TBCotacao!Tipo_bairro = IIf(cmbTipo_bairro = "", Null, cmbTipo_bairro)
 TBCotacao!Bairro = IIf(txtBairro = "", Null, txtBairro)
-If txtCidade.Visible = True Then TBCotacao!Cidade = IIf(txtCidade = "", Null, txtCidade) Else TBCotacao!Cidade = IIf(cmbCidade = "", Null, cmbCidade)
+If txtcidade.Visible = True Then TBCotacao!Cidade = IIf(txtcidade = "", Null, txtcidade) Else TBCotacao!Cidade = IIf(cmbCidade = "", Null, cmbCidade)
 TBCotacao!telefone = txttelefone.Text
 TBCotacao!Departamento = txtdepartamento.Text
-TBCotacao!UF = IIf(txtuf = "", Null, txtuf)
+TBCotacao!UF = IIf(txtUF = "", Null, txtUF)
 TBCotacao!Tipo_cliente = txttipocliente.Text
-TBCotacao!Datavendas = IIf(Vendas_PI = True, txtDatavendas_PI, IIf(txtDatavendas = "", Null, txtDatavendas))
-TBCotacao!Obs = IIf(txt_observacoes = "", Null, txt_observacoes)
+TBCotacao!Datavendas = IIf(Vendas_PI = True, txtDatavendas_PI, IIf(txtdatavendas = "", Null, txtdatavendas))
+TBCotacao!Obs = IIf(Txt_observacoes = "", Null, Txt_observacoes)
 TBCotacao!Ref = IIf(txtreferente = "", Null, txtreferente)
 TBCotacao!Vend_ext = txtVend_Ext.Text
 TBCotacao!vend_int = txtvend_Int.Text
@@ -18216,7 +18216,7 @@ Novo_Proposta = True
 continuar = True
 txt_dataelaborado.Value = Date
 txtResponsavel = pubUsuario
-If Vendas_Proposta = True Then txtStatus.Text = "ABERTA EM ANALISE" Else txtStatus.Text = "VENDIDA"
+If Vendas_Proposta = True Then txtstatus.Text = "ABERTA EM ANALISE" Else txtstatus.Text = "VENDIDA"
 txtrevisao = 0
 '============================================
 ' Localizar o cliente
@@ -18263,7 +18263,7 @@ On Error GoTo tratar_erro
 
 Set TBClientes = CreateObject("adodb.recordset")
 'TBClientes.Open "Select * from usuarios where Usuario = '" & pubUsuario & "'", Conexao, adOpenKeyset, adLockOptimistic
-TBClientes.Open "Select * from Vendas_Vendedores_Clientes where IDCliente = " & txtIDcliente & "", Conexao, adOpenKeyset, adLockOptimistic
+TBClientes.Open "Select * from Vendas_Vendedores_Clientes where IDCliente = " & txtidcliente & "", Conexao, adOpenKeyset, adLockOptimistic
 
 If TBClientes.EOF = False Then
 txtComissao.Text = TBClientes!Comissao
@@ -18305,7 +18305,7 @@ End If
 '================================================================
 If ClienteVendedor = False Then
  frmVendas_LocalizarCliente.Show 1
- If txtIDcliente.Text = "" Then
+ If txtidcliente.Text = "" Then
   USMsgBox "É obrigatório escolher um cliente para a proposta comercial", vbCritical, "CAPRIND v5.0"
   continuar = False
   Exit Sub
@@ -18317,7 +18317,7 @@ End If
 '================================================================
 If ClienteVendedor = True Then
  frmVendas_Vendedores_LocalizarCliente.Show 1
- If txtIDcliente.Text = "" Then
+ If txtidcliente.Text = "" Then
   USMsgBox "É obrigatório escolher um cliente para a proposta comercial", vbCritical, "CAPRIND v5.0"
   continuar = False
   Exit Sub
@@ -18338,7 +18338,7 @@ If Alterar = False Then
     Exit Sub
 End If
 If Vendas_Proposta = True Then
-    If txtStatus = "VENDIDA" Then
+    If txtstatus = "VENDIDA" Then
         USMsgBox ("Não é permitida a alteração de proposta vendida."), vbExclamation, "CAPRIND v5.0"
         Exit Sub
     End If
@@ -18346,8 +18346,8 @@ If Vendas_Proposta = True Then
 Else
     TextoPadrao = "o pedido interno esta "
 End If
-If txtStatus.Text = "REVISADA" Or txtStatus.Text = "FATURADA" Or txtStatus = "FATURADA PARCIAL" Then
-    USMsgBox ("Não é permitido alterar, pois " & TextoPadrao & txtStatus & "."), vbExclamation, "CAPRIND v5.0"
+If txtstatus.Text = "REVISADA" Or txtstatus.Text = "FATURADA" Or txtstatus = "FATURADA PARCIAL" Then
+    USMsgBox ("Não é permitido alterar, pois " & TextoPadrao & txtstatus & "."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
 If Frame1(1).Enabled = False Then
@@ -18355,7 +18355,7 @@ If Frame1(1).Enabled = False Then
     Exit Sub
 End If
 Acao = "salvar"
-If txtStatus.Text = "" Then
+If txtstatus.Text = "" Then
     NomeCampo = "o status"
     ProcVerificaAcao
     cmdstatus.SetFocus
@@ -18363,7 +18363,7 @@ If txtStatus.Text = "" Then
 End If
 If Vendas_Proposta = True Then
     'proposta cliente sem cadastro
-    If txtCliente = "" Then
+    If txtcliente = "" Then
         NomeCampo = "o cliente"
         ProcVerificaAcao
         cmdAdicionarCliente_Click
@@ -18371,15 +18371,15 @@ If Vendas_Proposta = True Then
     End If
 Else
     'pedido aceita apenas cliente com cadastro
-    If txtIDcliente = "" Or txtIDcliente = "0" Then
+    If txtidcliente = "" Or txtidcliente = "0" Then
         NomeCampo = "o cliente"
         ProcVerificaAcao
         cmdAdicionarCliente_Click
         Exit Sub
     End If
     
-    If txtCidade <> "" And txtuf <> "" And txtuf <> "EX" Then
-        If FunVerificaCidade(txtCidade, txtuf) = False Then Exit Sub
+    If txtcidade <> "" And txtUF <> "" And txtUF <> "EX" Then
+        If FunVerificaCidade(txtcidade, txtUF) = False Then Exit Sub
     End If
 End If
 If txttipocliente = "" Then
@@ -18408,7 +18408,7 @@ If txtregiao.Text = "" Then
 End If
 
 Set TBClientes = CreateObject("adodb.recordset")
-TBClientes.Open "Select * FROM Clientes WHERE idcliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and Left(Tipo, 1) = 'J' and idTipoEmpresa = 1", Conexao, adOpenKeyset, adLockOptimistic
+TBClientes.Open "Select * FROM Clientes WHERE idcliente = " & IIf(txtidcliente = "", 0, txtidcliente) & " and Left(Tipo, 1) = 'J' and idTipoEmpresa = 1", Conexao, adOpenKeyset, adLockOptimistic
 If TBClientes.EOF = False Then
     If FunVerifRegimeTribCliForn(Cmb_empresa.ItemData(Cmb_empresa.ListIndex), False, True) = False Then Exit Sub
 End If
@@ -18416,7 +18416,7 @@ TBClientes.Close
 
 NumeroCotacao = txtCotacao
 Set TBCotacao = CreateObject("adodb.recordset")
-TBCotacao.Open "Select * FROM vendas_proposta where Cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBCotacao.Open "Select * FROM vendas_proposta where Cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBCotacao.EOF = True Then
     RegimeEmpresa_Proposta = FunVerifRegimeEmpresa(Cmb_empresa.ItemData(Cmb_empresa.ListIndex))
     If RegimeEmpresa_Proposta = 1 Then
@@ -18468,26 +18468,26 @@ Else
     End If
     
     'Verifica se é um pedido revisado e não deixa alterar os dados principais
-    If txtrevisao > 0 And TBCotacao!IDCliente <> 0 And TBCotacao!IDCliente <> txtIDcliente Then
+    If txtrevisao > 0 And TBCotacao!IDCliente <> 0 And TBCotacao!IDCliente <> txtidcliente Then
         USMsgBox ("Não é permitido alterar o cliente " & IIf(Vendas_Proposta = True, "desta proposta, pois a mesma", "deste pedido, pois o mesmo") & " é uma revisão."), vbExclamation, "CAPRIND v5.0"
         Exit Sub
     End If
     
-    If TBCotacao!IDCliente <> txtIDcliente Then
+    If TBCotacao!IDCliente <> txtidcliente Then
         Conexao.Execute "UPDATE Vendas_Comercial set Local_entrega = NULL, Local_cobranca = NULL, ID_entrega = 0, ID_cobranca = 0 WHERE cotacao = " & TBCotacao!Cotacao
         ProcSalvarDadosComerciaisCliente
     End If
 End If
 ProcEnviaDados
-If txtStatus.Text = "PORTAL ELETRONICO" Then
+If txtstatus.Text = "PORTAL ELETRONICO" Then
     ValorBox = InputBox("Informe o valor total " & IIf(Vendas_Proposta = True, "da proposta.", "do pedido."))
     If ValorBox <> "" Then TBCotacao!dbl_Valor_Total_Produtos = ValorBox
 End If
 TBCotacao.Update
-txtId.Text = TBCotacao!Cotacao
+TxtID.Text = TBCotacao!Cotacao
 If Novo_Proposta = True Then
     Conexao.Execute "Update Vendas_proposta set ordenarproposta = " & TBCotacao!Cotacao & " where cotacao = " & TBCotacao!Cotacao
-    If txtIDcliente <> "" Then ProcSalvarDadosComerciaisCliente
+    If txtidcliente <> "" Then ProcSalvarDadosComerciaisCliente
 End If
 
 txtCotacao = NumeroCotacao
@@ -18499,7 +18499,7 @@ ProcgravarItem
 If Novo_Proposta = True Then
     USMsgBox IIf(Vendas_PI = True, "Novo pedido interno cadastrado", "Nova proposta cadastrada") & " com sucesso.", vbInformation, "CAPRIND v5.0"
     Evento = "Novo"
-    StrSql_Proposta_Localizar = "Select * FROM vendas_proposta where Cotacao = " & txtId.Text
+    StrSql_Proposta_Localizar = "Select * FROM vendas_proposta where Cotacao = " & TxtID.Text
     ProcCarregaLista (1)
 Else
     USMsgBox ("Alteração efetuada com sucesso."), vbInformation, "CAPRIND v5.0"
@@ -18513,14 +18513,14 @@ End If
 1:
     '==================================
     Modulo = Formulario
-    ID_documento = txtId
+    ID_documento = TxtID
     Documento = IIf(Vendas_PI = True, "Nº pedido", "Nº proposta") & ": " & txtCotacao & " - Rev.: " & txtrevisao
     Documento1 = ""
     ProcGravaEvento
     '==================================
     Novo_Proposta = False
     Set TBAbrir = CreateObject("adodb.recordset")
-    TBAbrir.Open "Select * from vendas_proposta where cotacao = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+    TBAbrir.Open "Select * from vendas_proposta where cotacao = " & TxtID, Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir.EOF = False Then
         If TBAbrir!dataalteracao <> "" Then txt_datamodificado.Text = TBAbrir!dataalteracao Else txt_datamodificado.Text = ""
         If TBAbrir!status = "CANCELADA" Then Label1(32).Caption = "Cancelada em"
@@ -18540,20 +18540,20 @@ End Sub
 Private Sub ProcSalvarDadosComerciaisCliente()
 On Error GoTo tratar_erro
 
-If txtIDcliente = "" Then Exit Sub
+If txtidcliente = "" Then Exit Sub
 
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "select * from Clientes_DadosComerciais where idcliente = " & txtIDcliente & " and ID_empresa = " & Cmb_empresa.ItemData(Cmb_empresa.ListIndex), Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir.Open "select * from Clientes_DadosComerciais where idcliente = " & txtidcliente & " and ID_empresa = " & Cmb_empresa.ItemData(Cmb_empresa.ListIndex), Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.EOF = False Then
     Set TBGravar = CreateObject("adodb.recordset")
-    TBGravar.Open "select * from vendas_comercial where cotacao = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+    TBGravar.Open "select * from vendas_comercial where cotacao = " & TxtID, Conexao, adOpenKeyset, adLockOptimistic
     If TBGravar.EOF = True Then
         If TBGravar.EOF = True Then TBGravar.AddNew
         ProcEnviaDadosComerciaisPadrao
-        TBGravar!Cotacao = txtId
+        TBGravar!Cotacao = TxtID
         
         Set TBVendas = CreateObject("adodb.recordset")
-        TBVendas.Open "Select Tipo_transp, idTransp, txt_transportadora from clientes where idcliente = " & txtIDcliente & " and txt_transportadora is not null", Conexao, adOpenKeyset, adLockOptimistic
+        TBVendas.Open "Select Tipo_transp, idTransp, txt_transportadora from clientes where idcliente = " & txtidcliente & " and txt_transportadora is not null", Conexao, adOpenKeyset, adLockOptimistic
         If TBVendas.EOF = False Then
             TBGravar!Tipo_transp = IIf(IsNull(TBVendas!Tipo_transp), "", TBVendas!Tipo_transp)
             TBGravar!IdIntTransp = IIf(IsNull(TBVendas!idTransp), 0, TBVendas!idTransp)
@@ -18562,7 +18562,7 @@ If TBAbrir.EOF = False Then
         TBVendas.Close
         
         Set TBCiclo = CreateObject("adodb.recordset")
-        TBCiclo.Open "Select * from clientes_entrega where idcliente = " & txtIDcliente & " and Tipo = 'C' order by identrega", Conexao, adOpenKeyset, adLockOptimistic
+        TBCiclo.Open "Select * from clientes_entrega where idcliente = " & txtidcliente & " and Tipo = 'C' order by identrega", Conexao, adOpenKeyset, adLockOptimistic
         If TBCiclo.EOF = False Then
             TBGravar!ID_entrega = TBCiclo!identrega
             If IsNull(TBCiclo!Tipo_endereco) = False And TBCiclo!Tipo_endereco <> "" Then
@@ -18581,7 +18581,7 @@ If TBAbrir.EOF = False Then
         TBCiclo.Close
         
         Set TBCiclo = CreateObject("adodb.recordset")
-        TBCiclo.Open "Select * from clientes_cobranca where idcliente = " & txtIDcliente & " and Tipo = 'C' order by idcobranca", Conexao, adOpenKeyset, adLockOptimistic
+        TBCiclo.Open "Select * from clientes_cobranca where idcliente = " & txtidcliente & " and Tipo = 'C' order by idcobranca", Conexao, adOpenKeyset, adLockOptimistic
         If TBCiclo.EOF = False Then
             TBGravar!ID_Cobranca = TBCiclo!idCobranca
             If IsNull(TBCiclo!Tipo_endereco) = False And TBCiclo!Tipo_endereco <> "" Then
@@ -18604,10 +18604,10 @@ If TBAbrir.EOF = False Then
     TBGravar.Close
 Else
     Set TBGravar = CreateObject("adodb.recordset")
-    TBGravar.Open "select * from vendas_comercial where cotacao = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+    TBGravar.Open "select * from vendas_comercial where cotacao = " & TxtID, Conexao, adOpenKeyset, adLockOptimistic
     If TBGravar.EOF = True Then
         TBGravar.AddNew
-        TBGravar!Cotacao = txtId
+        TBGravar!Cotacao = TxtID
         TBGravar!Moeda = "REAL"
         TBGravar!Valor_moeda = 1
         TBGravar.Update
@@ -18657,7 +18657,7 @@ If Produtos2 = False Then
     If Novo_Proposta1 = True Then
         If Chk_PC_prod.Value = 1 Then
             Set TBOSC = CreateObject("adodb.recordset")
-            TBOSC.Open "Select PCcliente, Caminho_PCCliente from vendas_carteira where cotacao = " & IIf(txtId = "", 0, txtId) & " and Tipo = 'P' and PCcliente IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
+            TBOSC.Open "Select PCcliente, Caminho_PCCliente from vendas_carteira where cotacao = " & IIf(TxtID = "", 0, TxtID) & " and Tipo = 'P' and PCcliente IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
             If TBOSC.EOF = False Then
                  txtpccliente = TBOSC!PCCliente
                  Caminho_PC_prod_Proposta = IIf(IsNull(TBOSC!Caminho_PCCliente), "", TBOSC!Caminho_PCCliente)
@@ -18666,7 +18666,7 @@ If Produtos2 = False Then
         End If
         If Chk_prazo_prod.Value = 1 Then
             Set TBOSC = CreateObject("adodb.recordset")
-            TBOSC.Open "Select Prazofinaldias, Prazofinal from vendas_carteira where cotacao = " & IIf(txtId = "", 0, txtId) & " and Tipo = 'P' and (Prazofinaldias IS NOT NULL or prazofinal IS NOT NULL) order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
+            TBOSC.Open "Select Prazofinaldias, Prazofinal from vendas_carteira where cotacao = " & IIf(TxtID = "", 0, TxtID) & " and Tipo = 'P' and (Prazofinaldias IS NOT NULL or prazofinal IS NOT NULL) order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
             If TBOSC.EOF = False Then
                  If Vendas_PI = True Then mskprazo = TBOSC!PrazoFinal Else txtPrazo_Produto = TBOSC!prazofinaldias
             End If
@@ -18677,7 +18677,7 @@ End If
 txtvalorunitario.Text = ""
 txtRev_cod = ""
 cmbReferencia.Clear
-txtreferencia = ""
+txtReferencia = ""
 Txt_ID_CFOP_prod = ""
 Txt_CFOP_prod = ""
 Txt_natureza_operacao_prod = ""
@@ -18685,7 +18685,7 @@ Permitido = False
 If Novo_Proposta1 = True Then
     If Chk_CFOP_prod.Value = 1 Then
         Set TBOSC = CreateObject("adodb.recordset")
-        TBOSC.Open "Select ID_CFOP from vendas_carteira where cotacao = " & IIf(txtId = "", 0, txtId) & " and Tipo = 'P' and ID_CFOP IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
+        TBOSC.Open "Select ID_CFOP from vendas_carteira where cotacao = " & IIf(TxtID = "", 0, TxtID) & " and Tipo = 'P' and ID_CFOP IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
         If TBOSC.EOF = False Then
             Txt_ID_CFOP_prod = TBOSC!ID_CFOP
             Permitido = True
@@ -18695,7 +18695,7 @@ If Novo_Proposta1 = True Then
     If Permitido = False Then
         'Verifica CFOP vinculada ao cliente
         Set TBOSC = CreateObject("adodb.recordset")
-        TBOSC.Open "Select IDCFOP FROM Clientes_DadosComerciais where IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and ID_empresa = " & Cmb_empresa.ItemData(Cmb_empresa.ListIndex), Conexao, adOpenKeyset, adLockOptimistic
+        TBOSC.Open "Select IDCFOP FROM Clientes_DadosComerciais where IDCliente = " & IIf(txtidcliente = "", 0, txtidcliente) & " and ID_empresa = " & Cmb_empresa.ItemData(Cmb_empresa.ListIndex), Conexao, adOpenKeyset, adLockOptimistic
         If TBOSC.EOF = False Then
             Txt_ID_CFOP_prod = IIf(IsNull(TBOSC!IDCFOP), "", TBOSC!IDCFOP)
         End If
@@ -18722,7 +18722,7 @@ Txt_data_retorno = "__/__/____"
 N_item = ""
 txtdesctecnica.Text = ""
 txtQuantidade.Text = ""
-txtDesconto.Text = 0
+txtdesconto.Text = 0
 txtvalordesconto.Text = ""
 txtvalorunitariodesc.Text = ""
 txtEspecificacoes.Text = ""
@@ -18732,7 +18732,7 @@ Cmb_prioridade = "Normal"
 Txt_observacoes_fat_prod = ""
 If Novo_Proposta1 = True And Chk_obs_faturamento_prod.Value = 1 Then
     Set TBOSC = CreateObject("adodb.recordset")
-    TBOSC.Open "Select Obs_faturamento from vendas_carteira where cotacao = " & IIf(txtId = "", 0, txtId) & " and Tipo = 'P' and Obs_faturamento IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
+    TBOSC.Open "Select Obs_faturamento from vendas_carteira where cotacao = " & IIf(TxtID = "", 0, TxtID) & " and Tipo = 'P' and Obs_faturamento IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
     If TBOSC.EOF = False Then
         Txt_observacoes_fat_prod = TBOSC!Obs_faturamento
     End If
@@ -18743,20 +18743,20 @@ Chk_antecipacao.Value = 0
 Chk_faturamento_parcial.Value = 0
 chkNovo_projeto.Value = 0
 Chk_utiliza_mat_consignado.Value = 0
-txtespessura = ""
+txtEspessura = ""
 txtLargura = ""
 txtComprimento = ""
 txtDureza = ""
 txtvalor_total.Text = ""
 cmbun.ListIndex = -1
 Cmb_un_com.ListIndex = -1
-cmbfamilia.ListIndex = -1
+cmbFamilia.ListIndex = -1
 txtdbl_valoripi.Text = ""
 txtint_icms.Text = ""
 txtInt_ipi.Text = ""
 txtvalor_icms.Text = ""
-txtinspecao = ""
-txtembalagem = ""
+txtInspecao = ""
+txtEmbalagem = ""
 txtGravacao = ""
 'txtComissao = ""
 CodigoLista = 0
@@ -18774,7 +18774,7 @@ End Sub
 Private Sub ProcCarregaComboProduto()
 On Error GoTo tratar_erro
 
-ProcCarregaComboFamilia cmbfamilia, "familia <> 'Null' and Vendas = 'True'", False
+ProcCarregaComboFamilia cmbFamilia, "familia <> 'Null' and Vendas = 'True'", False
 ProcCarregaComboUnidade cmbun, False
 ProcCarregaComboUnidade Cmb_un_com, False
 
@@ -18822,7 +18822,7 @@ If Servicos2 = False Then
     If Novo_Proposta2 = True Then
         If Chk_PC_serv.Value = 1 Then
             Set TBOSC = CreateObject("adodb.recordset")
-            TBOSC.Open "Select PCcliente, Caminho_PCCliente from vendas_carteira where cotacao = " & IIf(txtId = "", 0, txtId) & " and Tipo = 'S' and PCcliente IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
+            TBOSC.Open "Select PCcliente, Caminho_PCCliente from vendas_carteira where cotacao = " & IIf(TxtID = "", 0, TxtID) & " and Tipo = 'S' and PCcliente IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
             If TBOSC.EOF = False Then
                  txtpcclienteserv = TBOSC!PCCliente
                  Caminho_PC_serv_Proposta = IIf(IsNull(TBOSC!Caminho_PCCliente), "", TBOSC!Caminho_PCCliente)
@@ -18831,7 +18831,7 @@ If Servicos2 = False Then
         End If
         If Chk_prazo_serv.Value = 1 Then
             Set TBOSC = CreateObject("adodb.recordset")
-            TBOSC.Open "Select Prazofinaldias, Prazofinal from vendas_carteira where cotacao = " & IIf(txtId = "", 0, txtId) & " and Tipo = 'S' and (Prazofinaldias IS NOT NULL or prazofinal IS NOT NULL) order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
+            TBOSC.Open "Select Prazofinaldias, Prazofinal from vendas_carteira where cotacao = " & IIf(TxtID = "", 0, TxtID) & " and Tipo = 'S' and (Prazofinaldias IS NOT NULL or prazofinal IS NOT NULL) order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
             If TBOSC.EOF = False Then
                  If Vendas_PI = True Then mskprazoservico = TBOSC!PrazoFinal Else txtPrazo_Servico = TBOSC!prazofinaldias
             End If
@@ -18848,7 +18848,7 @@ Permitido = False
 If Novo_Proposta2 = True Then
     If Chk_CFOP_serv.Value = 1 Then
         Set TBOSC = CreateObject("adodb.recordset")
-        TBOSC.Open "Select ID_CFOP from vendas_carteira where cotacao = " & IIf(txtId = "", 0, txtId) & " and Tipo = 'S' and ID_CFOP IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
+        TBOSC.Open "Select ID_CFOP from vendas_carteira where cotacao = " & IIf(TxtID = "", 0, TxtID) & " and Tipo = 'S' and ID_CFOP IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
         If TBOSC.EOF = False Then
             Txt_ID_CFOP_serv = TBOSC!ID_CFOP
             Permitido = True
@@ -18858,7 +18858,7 @@ If Novo_Proposta2 = True Then
     If Permitido = False Then
         'Verifica CFOP vinculada ao cliente
         Set TBOSC = CreateObject("adodb.recordset")
-        TBOSC.Open "Select IDCFOP FROM Clientes_DadosComerciais where IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and ID_empresa = " & Cmb_empresa.ItemData(Cmb_empresa.ListIndex), Conexao, adOpenKeyset, adLockOptimistic
+        TBOSC.Open "Select IDCFOP FROM Clientes_DadosComerciais where IDCliente = " & IIf(txtidcliente = "", 0, txtidcliente) & " and ID_empresa = " & Cmb_empresa.ItemData(Cmb_empresa.ListIndex), Conexao, adOpenKeyset, adLockOptimistic
         If TBOSC.EOF = False Then
             Txt_ID_CFOP_serv = IIf(IsNull(TBOSC!IDCFOP), "", TBOSC!IDCFOP)
         End If
@@ -18898,7 +18898,7 @@ txtObs_serv = ""
 Txt_observacoes_fat_serv = ""
 If Novo_Proposta2 = True And Chk_obs_faturamento_serv.Value = 1 Then
     Set TBOSC = CreateObject("adodb.recordset")
-    TBOSC.Open "Select Obs_faturamento from vendas_carteira where cotacao = " & IIf(txtId = "", 0, txtId) & " and Tipo = 'S' and Obs_faturamento IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
+    TBOSC.Open "Select Obs_faturamento from vendas_carteira where cotacao = " & IIf(TxtID = "", 0, TxtID) & " and Tipo = 'S' and Obs_faturamento IS NOT NULL order by Codigo desc", Conexao, adOpenKeyset, adLockOptimistic
     If TBOSC.EOF = False Then
         Txt_observacoes_fat_serv = TBOSC!Obs_faturamento
     End If
@@ -18942,7 +18942,7 @@ txtTotaldesconto = "0,00"
 txt_TotalIPI = "0,00"
 txt_ValorNota = "0,00"
 txttotalproposta = "0,00"
-TxtTotalFrete = "0,00"
+txtTotalfrete = "0,00"
 
 Exit Sub
 tratar_erro:
@@ -18953,32 +18953,32 @@ End Sub
 Sub ProcLimpar()
 On Error GoTo tratar_erro
  
-txtId.Text = 0
+TxtID.Text = 0
 txtCotacao.Text = ""
 txtrevisao.Text = ""
 txtDtValidacao = ""
 txtRespValidacao = ""
 txt_datamodificado.Text = ""
-txtStatus.Text = ""
-txtIDcliente.Text = ""
-txtCliente.Text = ""
+txtstatus.Text = ""
+txtidcliente.Text = ""
+txtcliente.Text = ""
 txttipocliente.ListIndex = -1
 txtRemetente.Text = ""
 txtdepartamento.Text = ""
 txttelefone.Text = ""
-txtFax.Text = ""
+txtfax.Text = ""
 txtEmail.Text = ""
 cmbTipo_endereco.ListIndex = -1
 txtendereco = ""
-txtNumero = ""
+txtnumero = ""
 txtComplemento = ""
 cmbTipo_bairro.ListIndex = -1
 txtBairro = ""
-txtCidade.Text = ""
-txtuf = ""
+txtcidade.Text = ""
+txtUF = ""
 txtRef.Text = ""
 txtreferente.Text = ""
-txtDatavendas = ""
+txtdatavendas = ""
 txtDatavendas_PI = Format(Date, "dd/mm/yyyy")
 txtVI.Text = ""
 txtvend_Int.Text = ""
@@ -18987,7 +18987,7 @@ txtVend_Ext.Text = ""
 txtregiao.Text = ""
 txt_dataelaborado.Value = Date
 txtResponsavel.Text = pubUsuario
-txt_observacoes.Text = ""
+Txt_observacoes.Text = ""
 CodigoLista2 = 0
 TabelaSN_Proposta = 0
 RegimeEmpresa_PI = 0
@@ -19004,14 +19004,14 @@ Private Sub SSTab1_Click(PreviousTab As Integer)
 On Error GoTo tratar_erro
 
 If txtCotacao.Text = "" Or Novo_Proposta = True Then
-    SSTab1.Tab = 0
+    SStab1.Tab = 0
     Exit Sub
 End If
 
 ProcCorrigeForm
 'PBLista.Visible = True
 
-Select Case SSTab1.Tab
+Select Case SStab1.Tab
     Case 0:
         If Lista.Visible = True Then Lista.SetFocus
         Frame1(0).Visible = False
@@ -19060,8 +19060,8 @@ Private Sub ProcCorrigeForm()
 On Error GoTo tratar_erro
 
 If Vendas_PI = True Then
-    txtStatus.Width = txtIDcliente.Left - txtStatus.Left
-    Label1(56).Left = txtStatus.Left + (txtStatus.Width / 2) - (Label1(56).Width / 2)
+    txtstatus.Width = txtidcliente.Left - txtstatus.Left
+    Label1(56).Left = txtstatus.Left + (txtstatus.Width / 2) - (Label1(56).Width / 2)
 End If
 
 Exit Sub
@@ -19076,14 +19076,14 @@ On Error GoTo tratar_erro
 Permitido = True
 If Novo_Proposta = True Then
     USMsgBox ("Salve a proposta antes de prosseguir."), vbExclamation, "CAPRIND v5.0"
-    SSTab1.Tab = 0
+    SStab1.Tab = 0
     Permitido = False
     Exit Sub
 End If
-If txtIDcliente = "" Or txtCliente = "" Then
+If txtidcliente = "" Or txtcliente = "" Then
     USMsgBox ("Informe o cliente antes de prosseguir."), vbExclamation, "CAPRIND v5.0"
-    SSTab1.Tab = 0
-    If txtIDcliente = "" Then txtIDcliente.SetFocus Else txtCliente.SetFocus
+    SStab1.Tab = 0
+    If txtidcliente = "" Then txtidcliente.SetFocus Else txtcliente.SetFocus
     Permitido = False
     Exit Sub
 End If
@@ -19099,7 +19099,7 @@ On Error GoTo tratar_erro
 
 txtEscopo = ""
 Set TBCotacao = CreateObject("adodb.recordset")
-TBCotacao.Open "Select * FROM vendas_comercial WHERE cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBCotacao.Open "Select * FROM vendas_comercial WHERE cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBCotacao.EOF = False Then
     txtEscopo = IIf(IsNull(TBCotacao!Escopo_fornecimento), "", TBCotacao!Escopo_fornecimento)
 End If
@@ -19108,7 +19108,7 @@ TBCotacao.Close
 txtObsAnalise = ""
 ObsAnalise = ""
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "Select VAS.* from vendas_carteira VC INNER JOIN Vendas_analise_setores VAS ON VC.idanalise = VAS.IDanalise where VC.cotacao = " & txtId.Text & " and (VAS.Setor = 'ENGENHARIA' or VAS.Setor = 'QUALIDADE') order by VAS.IDanalise, VAS.Codinterno", Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir.Open "Select VAS.* from vendas_carteira VC INNER JOIN Vendas_analise_setores VAS ON VC.idanalise = VAS.IDanalise where VC.cotacao = " & TxtID.Text & " and (VAS.Setor = 'ENGENHARIA' or VAS.Setor = 'QUALIDADE') order by VAS.IDanalise, VAS.Codinterno", Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.EOF = False Then
     Do While TBAbrir.EOF = False
         If ObsAnalise = "" Then
@@ -19131,9 +19131,9 @@ End Sub
 Sub ProcgravarItem()
 On Error GoTo tratar_erro
 
-If txtStatus <> "VENDIDA PARCIAL" And txtStatus <> "REVISADA" And txtStatus <> "FATURADA" And txtStatus <> "FATURADA PARCIAL" Then
+If txtstatus <> "VENDIDA PARCIAL" And txtstatus <> "REVISADA" And txtstatus <> "FATURADA" And txtstatus <> "FATURADA PARCIAL" Then
     DataVendasTexto = ""
-    Select Case txtStatus
+    Select Case txtstatus
         Case "ABERTA EM ANALISE": StatusTexto = "ABERTA EM ANALISE"
         Case "VENDIDA":
             StatusTexto = "VENDIDA"
@@ -19143,7 +19143,7 @@ If txtStatus <> "VENDIDA PARCIAL" And txtStatus <> "REVISADA" And txtStatus <> "
         Case "PERDIDA P/ PREÇO": StatusTexto = "PERDIDO P/ PREÇO"
         Case "PORTAL ELETRONICO": StatusTexto = "PORTAL ELETRONICO"
     End Select
-    Conexao.Execute "UPDATE vendas_carteira Set Liberacao = '" & StatusTexto & "', Datavendas = '" & IIf(DataVendasTexto = "", Null, DataVendasTexto) & "' where cotacao = " & txtId
+    Conexao.Execute "UPDATE vendas_carteira Set Liberacao = '" & StatusTexto & "', Datavendas = '" & IIf(DataVendasTexto = "", Null, DataVendasTexto) & "' where cotacao = " & TxtID
 End If
 
 Exit Sub
@@ -19158,7 +19158,7 @@ On Error GoTo tratar_erro
 If txtvalorunitario.Text <> "" And txtQuantidade <> "" Then
     If IsNumeric(txtvalorunitario.Text) = True Then
         a = Format(txtvalorunitario.Text, "###,##0.0000000000")
-        c = IIf(txtDesconto = "", 0, txtDesconto)
+        c = IIf(txtdesconto = "", 0, txtdesconto)
         D = (a * c) / 100
         E = txtQuantidade.Text
 '=============================================================================
@@ -19207,10 +19207,10 @@ End Sub
 Sub ProcPuxaTotais()
 On Error GoTo tratar_erro
 
-If txtId = 0 Then Exit Sub
+If TxtID = 0 Then Exit Sub
 ProcLimparTotais
 Set TBVendas = CreateObject("adodb.recordset")
-TBVendas.Open "Select * from vendas_proposta where cotacao = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBVendas.Open "Select * from vendas_proposta where cotacao = " & TxtID.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBVendas.EOF = False Then
     txt_BaseICMS.Text = IIf(IsNull(TBVendas!dbl_Base_ICMS), "0,00", Format(TBVendas!dbl_Base_ICMS, "###,##0.00"))
     txt_vlrICMS.Text = IIf(IsNull(TBVendas!dbl_Valor_ICMS), "0,00", Format(TBVendas!dbl_Valor_ICMS, "###,##0.00"))
@@ -19222,7 +19222,7 @@ If TBVendas.EOF = False Then
     txt_ValorNota.Text = IIf(IsNull(TBVendas!SubTotal), "0,00", Format(TBVendas!SubTotal, "###,##0.00"))
     txt_TotalIPI.Text = IIf(IsNull(TBVendas!dbl_Valor_Total_IPI), "0,00", Format(TBVendas!dbl_Valor_Total_IPI, "###,##0.00"))
     txttotalproposta.Text = IIf(IsNull(TBVendas!dbl_valor_total), "0,00", Format(TBVendas!dbl_valor_total, "###,##0.00"))
-    TxtTotalFrete.Text = IIf(IsNull(TBVendas!VTotalfrete), "0,00", Format(TBVendas!VTotalfrete, "###,##0.00"))
+    txtTotalfrete.Text = IIf(IsNull(TBVendas!VTotalfrete), "0,00", Format(TBVendas!VTotalfrete, "###,##0.00"))
 End If
 TBVendas.Close
 
@@ -19237,7 +19237,7 @@ On Error GoTo tratar_erro
 
 If Chk_servico_executado_cliente.Value = 0 Then
     ProcVerifImpostosEmpresa Cmb_empresa.ItemData(Cmb_empresa.ListIndex), False, "", False, 0, True, TabelaSN_Proposta, 0
-    txtiss = ISS_Serv
+    txtISS = ISS_Serv
     With Cmb_cidade_servico
         .ListIndex = -1
         .Locked = False
@@ -19245,9 +19245,9 @@ If Chk_servico_executado_cliente.Value = 0 Then
     End With
 Else
     Set TBFIltro = CreateObject("adodb.recordset")
-    TBFIltro.Open "Select ISSQN from Clientes where IDCliente = " & txtIDcliente, Conexao, adOpenKeyset, adLockOptimistic
+    TBFIltro.Open "Select ISSQN from Clientes where IDCliente = " & txtidcliente, Conexao, adOpenKeyset, adLockOptimistic
     If TBFIltro.EOF = False Then
-        txtiss = IIf(IsNull(TBFIltro!ISSQN), 0, TBFIltro!ISSQN)
+        txtISS = IIf(IsNull(TBFIltro!ISSQN), 0, TBFIltro!ISSQN)
     End If
     TBFIltro.Close
     If cmbCidade <> "" Then
@@ -19289,14 +19289,14 @@ Sub ProcPuxaClientes()
 On Error GoTo tratar_erro
 
 If Vendas_Proposta = True Then
-    txtCliente.Locked = False
+    txtcliente.Locked = False
     cmbTipo_endereco.Locked = False
     txtendereco.Locked = False
-    txtNumero.Locked = False
+    txtnumero.Locked = False
     txtComplemento.Locked = False
     cmbTipo_bairro.Locked = False
     txtBairro.Locked = False
-    txtuf.Locked = False
+    txtUF.Locked = False
   '  cmbCidade.Locked = False
 End If
 INNERJOINTEXTO = "clientes C"
@@ -19306,39 +19306,39 @@ If txtVend_Ext <> "" Then
     TextoFiltro = " and (VV.Bloquear_venda_cliente = 'True' and VVC.IDCliente IS NOT NULL or VV.Bloquear_venda_cliente = 'False')"
 End If
 Set TBFI = CreateObject("adodb.recordset")
-TBFI.Open "Select C.* from " & INNERJOINTEXTO & " where C.IDCliente = " & IIf(txtIDcliente = "", 0, txtIDcliente) & " and C.status <> 'Bloqueado'" & TextoFiltro, Conexao, adOpenKeyset, adLockOptimistic
+TBFI.Open "Select C.* from " & INNERJOINTEXTO & " where C.IDCliente = " & IIf(txtidcliente = "", 0, txtidcliente) & " and C.status <> 'Bloqueado'" & TextoFiltro, Conexao, adOpenKeyset, adLockOptimistic
 If TBFI.EOF = False Then
-    txtIDcliente.Text = TBFI!IDCliente
-    txtCliente.Text = IIf(IsNull(TBFI!NomeRazao), "", TBFI!NomeRazao)
+    txtidcliente.Text = TBFI!IDCliente
+    txtcliente.Text = IIf(IsNull(TBFI!NomeRazao), "", TBFI!NomeRazao)
     txttipocliente = IIf(IsNull(TBFI!Tipo), "", (TBFI!Tipo))
     txtEmail = IIf(IsNull(TBFI!Email), "", TBFI!Email)
     txttelefone = IIf(IsNull(TBFI!Tel01), "", TBFI!Tel01)
-    txtFax = IIf(IsNull(TBFI!Fax), "", TBFI!Fax)
+    txtfax = IIf(IsNull(TBFI!Fax), "", TBFI!Fax)
     txtcnpj.Text = IIf(IsNull(TBFI!CPF_CNPJ), "", TBFI!CPF_CNPJ)
-    txtCEP.Text = IIf(IsNull(TBFI!CEP), "", TBFI!CEP)
+    txtcep.Text = IIf(IsNull(TBFI!CEP), "", TBFI!CEP)
     txtIE.Text = IIf(IsNull(TBFI!RG_IE), "", TBFI!RG_IE)
     
     NomeCampo = "o tipo do endereço"
     If IsNull(TBFI!Tipo_endereco) = False And TBFI!Tipo_endereco <> "" Then cmbTipo_endereco.Text = TBFI!Tipo_endereco
     txtendereco.Text = IIf(IsNull(TBFI!Endereco), "", TBFI!Endereco)
-    txtNumero = IIf(IsNull(TBFI!Numero), "", TBFI!Numero)
+    txtnumero = IIf(IsNull(TBFI!Numero), "", TBFI!Numero)
     txtComplemento.Text = IIf(IsNull(TBFI!complemento), "", TBFI!complemento)
     NomeCampo = "o tipo do bairro"
     If IsNull(TBFI!Tipo_bairro) = False And TBFI!Tipo_bairro <> "" Then cmbTipo_bairro.Text = TBFI!Tipo_bairro
     txtBairro.Text = IIf(IsNull(TBFI!Bairro), "", TBFI!Bairro)
     NomeCampo = "o estado"
-    If IsNull(TBFI!UF) = False And TBFI!UF <> "" And TBFI!UF <> txtuf Then txtuf.Text = TBFI!UF
-    txtCidade.Text = IIf(IsNull(TBFI!Cidade), "", UCase(TBFI!Cidade))
+    If IsNull(TBFI!UF) = False And TBFI!UF <> "" And TBFI!UF <> txtUF Then txtUF.Text = TBFI!UF
+    txtcidade.Text = IIf(IsNull(TBFI!Cidade), "", UCase(TBFI!Cidade))
 1:
-    txt_observacoes = IIf(IsNull(TBFI!txt_observacoes), "", TBFI!txt_observacoes)
-    txtCliente.Locked = True
+    Txt_observacoes = IIf(IsNull(TBFI!Txt_observacoes), "", TBFI!Txt_observacoes)
+    txtcliente.Locked = True
     cmbTipo_endereco.Locked = True
     txtendereco.Locked = True
-    txtNumero.Locked = True
+    txtnumero.Locked = True
     txtComplemento.Locked = True
     cmbTipo_bairro.Locked = True
     txtBairro.Locked = True
-    txtuf.Locked = True
+    txtUF.Locked = True
 End If
 TBFI.Close
                 
@@ -19355,21 +19355,21 @@ End Sub
 Sub ProcLimpaCliente()
 On Error GoTo tratar_erro
 
-txtCliente.Text = ""
+txtcliente.Text = ""
 txttipocliente.ListIndex = -1
 txtRemetente.Text = ""
 txtdepartamento.Text = ""
 txttelefone.Text = ""
-txtFax.Text = ""
+txtfax.Text = ""
 txtEmail.Text = ""
 cmbTipo_endereco.ListIndex = -1
 txtendereco = ""
-txtNumero = ""
+txtnumero = ""
 txtComplemento = ""
 cmbTipo_bairro.ListIndex = -1
 txtBairro = ""
-txtCidade.Text = ""
-txtuf = ""
+txtcidade.Text = ""
+txtUF = ""
                 
 Exit Sub
 tratar_erro:
@@ -19404,7 +19404,7 @@ If txtvalorunitario.Text <> "" And txtQuantidade <> "" Then
         PDesconto = 0
         End If
         
-        txtDesconto.Text = Format(PDesconto, "###,##0.0000000000")
+        txtdesconto.Text = Format(PDesconto, "###,##0.0000000000")
         txtvalorunitariodesc.Text = Format(Valorunitario, "###,##0.0000000000")
     Else
         Exit Sub
@@ -19579,7 +19579,7 @@ End Sub
 Sub ProcFinanceiro()
 On Error GoTo tratar_erro
 
-If txtStatus <> "VENDIDA" And txtStatus <> "VENDIDA PARCIAL" Then
+If txtstatus <> "VENDIDA" And txtstatus <> "VENDIDA PARCIAL" Then
     USMsgBox ("Só é permitido enviar para o financeiro " & IIf(Vendas_PI = True, "pedido interno", "proposta comercial") & " com o status vendida ou vendida parcial."), vbExclamation, "CAPRIND v5.0"
     Exit Sub
 End If
@@ -19699,7 +19699,7 @@ If Vendas_PI = True Then
     Label1(33).Caption = "Prazo"
     Label1(80).Caption = "Total pedido"
     cmdstatus.Visible = False
-    With txtCliente
+    With txtcliente
         .Locked = True
         .TabStop = False
     End With
@@ -19711,7 +19711,7 @@ If Vendas_PI = True Then
         .Locked = True
         .TabStop = False
     End With
-    With txtNumero
+    With txtnumero
         .Locked = True
         .TabStop = False
     End With
@@ -19727,7 +19727,7 @@ If Vendas_PI = True Then
         .Locked = True
         .TabStop = False
     End With
-    With txtuf
+    With txtUF
         .Locked = True
         .TabStop = False
     End With
@@ -19735,11 +19735,11 @@ If Vendas_PI = True Then
         .Locked = True
         .TabStop = False
     End With
-    txtDatavendas.Visible = False
+    txtdatavendas.Visible = False
     txtDatavendas_PI.Visible = True
     txtPrazo_Produto.Visible = False
     mskprazo.Visible = True
-    imgCalendario.Visible = True
+    Imgcalendario.Visible = True
     Chk_PC_prod.Visible = True
     With txtpccliente
         .Locked = False
@@ -19807,14 +19807,14 @@ ProcLibBlocTxt txtRev_cod, Permitido
 ProcLibBlocCmb cmbReferencia, Permitido
 ProcLibBlocTxt txtdesctecnica, Permitido
 ProcLibBlocTxt txtEspecificacoes, Permitido
-ProcLibBlocTxt txtespessura, Permitido
+ProcLibBlocTxt txtEspessura, Permitido
 ProcLibBlocTxt txtLargura, Permitido
 ProcLibBlocTxt txtComprimento, Permitido
 ProcLibBlocTxt txtDureza, Permitido
 ProcLibBlocCmb Cmb_CST_ICMS, Permitido
 ProcLibBlocCmb cmbun, Permitido
 ProcLibBlocCmb Cmb_un_com, Permitido
-ProcLibBlocCmb cmbfamilia, Permitido
+ProcLibBlocCmb cmbFamilia, Permitido
 ProcLibBlocTxt txtQuantidade, Permitido
 ProcLibBlocTxt txtvalorunitario, Permitido
 ProcLibBlocTxt txtComissao, Permitido
@@ -19826,7 +19826,7 @@ If Permitido = True Then
     Frame1(5).Enabled = True
     Chk_desc.Enabled = True
     Chk_valor_desc.Enabled = True
-    cmdCF.Enabled = True
+    CmdCF.Enabled = True
     Cmd_limpar_CF.Enabled = True
     Cmd_analise.Enabled = True
     chkRetorno.Enabled = True
@@ -19838,7 +19838,7 @@ Else
     Frame1(5).Enabled = False
     Chk_desc.Enabled = False
     Chk_valor_desc.Enabled = False
-    cmdCF.Enabled = False
+    CmdCF.Enabled = False
     Cmd_limpar_CF.Enabled = False
     Cmd_analise.Enabled = False
     chkRetorno.Enabled = False
@@ -19868,7 +19868,7 @@ ProcLibBlocTxt txtqtservico, Permitido
 ProcLibBlocTxt txtvlrunitservico, Permitido
 ProcLibBlocTxt txtComissaoServ, Permitido
 ProcLibBlocCmb Cmb_cidade_servico, Permitido
-ProcLibBlocTxt txtiss, Permitido
+ProcLibBlocTxt txtISS, Permitido
 If Permitido = True Then
     cmdfiltrar_serv.Enabled = True
     cmdlistaservicos.Enabled = True
@@ -19906,7 +19906,7 @@ Compras_Pedido = False
 Plano_centro_de_custo = False
 
 Permitido = False
-If SSTab1.Tab = 0 Then
+If SStab1.Tab = 0 Then
     Sit_REG = 1
     TextoPadrao = IIf(Vendas_PI = True, "o(s) pedido(s)", "a(s) proposta(s)")
     With Lista
@@ -19914,7 +19914,7 @@ If SSTab1.Tab = 0 Then
             If .ListItems.Item(InitFor).Checked = True Then Permitido = True
         Next InitFor
     End With
-ElseIf SSTab1.Tab = 2 Then
+ElseIf SStab1.Tab = 2 Then
         Sit_REG = 2
         TextoPadrao = "o(s) produtos(s)"
         With Listprod
@@ -19948,7 +19948,7 @@ Private Sub ProcAlteracoes()
 On Error GoTo tratar_erro
 
 Permitido = True
-If SSTab1.Tab = 2 Then
+If SStab1.Tab = 2 Then
     TextoPadrao = "produtos"
     Sit_REG = 1
     If txtid_produto = 0 Then Permitido = False

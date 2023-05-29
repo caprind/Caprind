@@ -38,7 +38,6 @@ Begin VB.Form frm_XML
       _ExtentY        =   15796
       _Version        =   393216
       Tabs            =   4
-      Tab             =   3
       TabsPerRow      =   4
       TabHeight       =   520
       ShowFocusRect   =   0   'False
@@ -53,12 +52,17 @@ Begin VB.Form frm_XML
       EndProperty
       TabCaption(0)   =   "Nota fiscal eletrônica"
       TabPicture(0)   =   "frm_XML.frx":0000
-      Tab(0).ControlEnabled=   0   'False
+      Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "ActiveResize1"
+      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "Frame8"
+      Tab(0).Control(1).Enabled=   0   'False
       Tab(0).Control(2)=   "Frame2"
+      Tab(0).Control(2).Enabled=   0   'False
       Tab(0).Control(3)=   "Frame5"
+      Tab(0).Control(3).Enabled=   0   'False
       Tab(0).Control(4)=   "Frame3"
+      Tab(0).Control(4).Enabled=   0   'False
       Tab(0).ControlCount=   5
       TabCaption(1)   =   "Lista de produtos"
       TabPicture(1)   =   "frm_XML.frx":001C
@@ -74,11 +78,9 @@ Begin VB.Form frm_XML
       Tab(2).ControlCount=   3
       TabCaption(3)   =   "Fatura (Duplicatas)"
       TabPicture(3)   =   "frm_XML.frx":0054
-      Tab(3).ControlEnabled=   -1  'True
-      Tab(3).Control(0)=   "ListaDuplicatas"
-      Tab(3).Control(0).Enabled=   0   'False
-      Tab(3).Control(1)=   "Frame7"
-      Tab(3).Control(1).Enabled=   0   'False
+      Tab(3).ControlEnabled=   0   'False
+      Tab(3).Control(0)=   "Frame7"
+      Tab(3).Control(1)=   "ListaDuplicatas"
       Tab(3).ControlCount=   2
       Begin VB.Frame Frame7 
          Caption         =   "Dados da cobrança"
@@ -93,7 +95,7 @@ Begin VB.Form frm_XML
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   1095
-         Left            =   60
+         Left            =   -74940
          TabIndex        =   71
          Top             =   420
          Width           =   15180
@@ -732,7 +734,7 @@ Begin VB.Form frm_XML
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   1515
-         Left            =   -74940
+         Left            =   60
          TabIndex        =   28
          Top             =   4905
          Width           =   15240
@@ -1016,7 +1018,7 @@ Begin VB.Form frm_XML
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   2460
-         Left            =   -74910
+         Left            =   90
          TabIndex        =   27
          Top             =   6450
          Width           =   15210
@@ -1641,7 +1643,7 @@ Begin VB.Form frm_XML
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   2205
-         Left            =   -74940
+         Left            =   60
          TabIndex        =   14
          Top             =   2655
          Width           =   15240
@@ -2045,7 +2047,7 @@ Begin VB.Form frm_XML
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   2145
-         Left            =   -74940
+         Left            =   60
          TabIndex        =   3
          Top             =   420
          Width           =   15225
@@ -2783,13 +2785,13 @@ Begin VB.Form frm_XML
          EndProperty
       End
       Begin ActiveResizeCtl.ActiveResize ActiveResize1 
-         Left            =   -74940
+         Left            =   60
          Top             =   390
          _ExtentX        =   847
          _ExtentY        =   847
-         Resolution      =   26
-         ScreenHeight    =   1080
-         ScreenWidth     =   1920
+         Resolution      =   99
+         ScreenHeight    =   768
+         ScreenWidth     =   1366
          ScreenHeightDT  =   1080
          ScreenWidthDT   =   1920
          AutoResizeOnLoad=   0   'False
@@ -2803,7 +2805,7 @@ Begin VB.Form frm_XML
       End
       Begin MSComctlLib.ListView ListaDuplicatas 
          Height          =   7320
-         Left            =   90
+         Left            =   -74910
          TabIndex        =   79
          Top             =   1530
          Width           =   15135

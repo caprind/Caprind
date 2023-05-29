@@ -434,8 +434,8 @@ On Error GoTo tratar_erro
 strCaminho = ""
 
 If USMsgBox("Deseja realmente importar o XML?", vbYesNo, "CAPRIND v5.0") = vbYes Then
-ProcImportarXML
-Unload Me
+    ProcImportarXML
+    Unload Me
 End If
 
 Exit Sub
@@ -482,8 +482,10 @@ On Error GoTo tratar_erro
 With frmFaturamento_Prod_Serv
     If optProduto = True Then TipoNF = "M1" Else TipoNF = "SA"
     Set TBAbrir = CreateObject("adodb.recordset")
-    StrSql = "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where Serie = '" & NF_Serie & "'and Modelo = '" & Left(Cmb_modelo.Text, 2) & "' and tipoNF = '" & TipoNF & "' and Aplicacao = 'P' and ID_empresa = " & Cmb_empresa.ItemData(Cmb_empresa.ListIndex) & " and int_NotaFiscal IS NOT NULL order by dt_DataEmissao desc, NF desc"
-    'Debug.print StrSql
+'    StrSql = "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where Serie = '" & NF_Serie & "'and Modelo = '" & Left(Cmb_modelo.Text, 2) & "' and tipoNF = '" & TipoNF & "' and Aplicacao = 'P' and ID_empresa = " & Cmb_empresa.ItemData(Cmb_empresa.ListIndex) & " and int_NotaFiscal IS NOT NULL order by dt_DataEmissao desc, NF desc"
+    StrSql = "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where Serie = '" & NF_Serie & "'and Modelo = '" & Left(Cmb_modelo.Text, 2) & "' and tipoNF = '" & TipoNF & "' and Aplicacao = 'P' and ID_empresa = " & Cmb_empresa.ItemData(Cmb_empresa.ListIndex) & " and int_NotaFiscal IS NOT NULL order by ID desc"
+    
+    Debug.Print StrSql
     
     TBAbrir.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir.EOF = False Then
@@ -539,8 +541,12 @@ btnImportarxml.Visible = True
 
 If Formulario = "Faturamento/Nota fiscal/Própria" Then
     USForm1.Caption = "Faturamento | Nota fiscal | Própria | Emissão"
-            frmfaturamento_Nova_Nota.Height = 3870
-            btnNovaNota.Top = 2130
+'            frmfaturamento_Nova_Nota.Height = 3870
+'            btnNovaNota.Top = 2130
+        frmfaturamento_Nova_Nota.Height = 5700
+        lblXML.Caption = "Escolha uma opção abaixo."
+        lblXML.Visible = True
+        btnNovaNota.Top = 2670
     
 ElseIf Formulario = "Faturamento/Nota fiscal/Terceiros" Then
         USForm1.Caption = "Faturamento | Nota fiscal | Terceiros | Emissão"
@@ -658,7 +664,7 @@ With frmFaturamento_Prod_Serv
     If optProduto.Value = True Then
     .optProduto.Value = optProduto
     Else
-    .OptServico.Value = OptServico
+    .optServico.Value = optServico
     End If
     
     
@@ -704,7 +710,7 @@ With frmEstoque_Ordem_Faturamento
     If optProduto.Value = True Then
     .optProduto.Value = optProduto
     Else
-    .OptServico.Value = OptServico
+    .optServico.Value = optServico
     End If
     
     
@@ -754,7 +760,7 @@ On Error GoTo tratar_erro
 
 FunVerificaProsseguir = True
 If Formulario = "Estoque/Ordem de faturamento" Then NomeCampo = "ordem de faturamento" Else NomeCampo = "nota fiscal"
-If optProduto.Value = False And OptServico.Value = False Then
+If optProduto.Value = False And optServico.Value = False Then
     USMsgBox ("Informe o tipo da " & NomeCampo & "."), vbExclamation, "CAPRIND v5.0"
     FunVerificaProsseguir = False
     Exit Function

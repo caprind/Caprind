@@ -650,7 +650,7 @@ Begin VB.Form frmcqnc_abrir
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   197459969
+         Format          =   123535361
          CurrentDate     =   39057
       End
       Begin MSComCtl2.DTPicker msk_fltInicio 
@@ -677,7 +677,7 @@ Begin VB.Form frmcqnc_abrir
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   197853185
+         Format          =   123535361
          CurrentDate     =   39057
       End
       Begin VB.Label Label2 
@@ -1149,7 +1149,7 @@ With frmcqnc
     .StrSql_CQ_NC_FIltro = "Select " & CamposFiltro & selectfiltro & " GROUP BY " & CamposFiltro 'Usado para o relatorio da Esplendor
     .FormulaRel_CQ_NC = FiltroRel & TextoFiltroAnalisadaRel & TextoFiltroRetrabalhoRel & DataFiltroRel & FiltroEscopoRel & FiltroConcluidaRel
     .ProcCarregaLista (1)
-    'Debug.print .StrSql_CQ_NC
+    Debug.Print .StrSql_CQ_NC
 End With
 Unload Me
 

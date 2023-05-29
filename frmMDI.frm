@@ -3065,6 +3065,7 @@ Faturamento_NF_Saida = False
 '======================================================
 Faturamento_NF_Terceiro = True
 Faturamento_NF_Propria = False
+TPNota = "T"
 '======================================================
 frmFaturamento_Prod_Serv.Show
 
@@ -3108,6 +3109,7 @@ Faturamento_NF_Saida = True
 '======================================================
 Faturamento_NF_Terceiro = False
 Faturamento_NF_Propria = True
+TPNota = "P"
 '======================================================
 
 frmFaturamento_Prod_Serv.Show

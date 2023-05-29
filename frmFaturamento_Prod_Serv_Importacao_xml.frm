@@ -38,7 +38,7 @@ Begin VB.Form frmFaturamento_Prod_Serv_Importacao_xml
       _ExtentY        =   15796
       _Version        =   393216
       Tabs            =   4
-      Tab             =   2
+      Tab             =   3
       TabsPerRow      =   4
       TabHeight       =   520
       ShowFocusRect   =   0   'False
@@ -54,16 +54,11 @@ Begin VB.Form frmFaturamento_Prod_Serv_Importacao_xml
       TabCaption(0)   =   "Nota fiscal eletrônica"
       TabPicture(0)   =   "frmFaturamento_Prod_Serv_Importacao_xml.frx":0000
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Frame3"
-      Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Frame5"
-      Tab(0).Control(1).Enabled=   0   'False
+      Tab(0).Control(0)=   "ActiveResize1"
+      Tab(0).Control(1)=   "Frame8"
       Tab(0).Control(2)=   "Frame2"
-      Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "Frame8"
-      Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "ActiveResize1"
-      Tab(0).Control(4).Enabled=   0   'False
+      Tab(0).Control(3)=   "Frame5"
+      Tab(0).Control(4)=   "Frame3"
       Tab(0).ControlCount=   5
       TabCaption(1)   =   "Lista de produtos"
       TabPicture(1)   =   "frmFaturamento_Prod_Serv_Importacao_xml.frx":001C
@@ -72,20 +67,17 @@ Begin VB.Form frmFaturamento_Prod_Serv_Importacao_xml
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Dados transporte/Inf. adicionais"
       TabPicture(2)   =   "frmFaturamento_Prod_Serv_Importacao_xml.frx":0038
-      Tab(2).ControlEnabled=   -1  'True
-      Tab(2).Control(0)=   "Frame1"
-      Tab(2).Control(0).Enabled=   0   'False
+      Tab(2).ControlEnabled=   0   'False
+      Tab(2).Control(0)=   "Frame6"
       Tab(2).Control(1)=   "Frame4"
-      Tab(2).Control(1).Enabled=   0   'False
-      Tab(2).Control(2)=   "Frame6"
-      Tab(2).Control(2).Enabled=   0   'False
+      Tab(2).Control(2)=   "Frame1"
       Tab(2).ControlCount=   3
       TabCaption(3)   =   "Fatura (Duplicatas)"
       TabPicture(3)   =   "frmFaturamento_Prod_Serv_Importacao_xml.frx":0054
-      Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "Frame7"
+      Tab(3).ControlEnabled=   -1  'True
+      Tab(3).Control(0)=   "ListaDuplicatas"
       Tab(3).Control(0).Enabled=   0   'False
-      Tab(3).Control(1)=   "ListaDuplicatas"
+      Tab(3).Control(1)=   "Frame7"
       Tab(3).Control(1).Enabled=   0   'False
       Tab(3).ControlCount=   2
       Begin VB.Frame Frame7 
@@ -101,7 +93,7 @@ Begin VB.Form frmFaturamento_Prod_Serv_Importacao_xml
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   1095
-         Left            =   -74940
+         Left            =   60
          TabIndex        =   71
          Top             =   420
          Width           =   15180
@@ -377,7 +369,7 @@ Begin VB.Form frmFaturamento_Prod_Serv_Importacao_xml
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   5535
-         Left            =   90
+         Left            =   -74910
          TabIndex        =   69
          Top             =   3360
          Width           =   15210
@@ -415,7 +407,7 @@ Begin VB.Form frmFaturamento_Prod_Serv_Importacao_xml
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   1095
-         Left            =   60
+         Left            =   -74940
          TabIndex        =   62
          Top             =   2250
          Width           =   15240
@@ -577,7 +569,7 @@ Begin VB.Form frmFaturamento_Prod_Serv_Importacao_xml
          EndProperty
          ForeColor       =   &H00000080&
          Height          =   1755
-         Left            =   60
+         Left            =   -74940
          TabIndex        =   55
          Top             =   450
          Width           =   15240
@@ -2943,7 +2935,7 @@ Begin VB.Form frmFaturamento_Prod_Serv_Importacao_xml
       End
       Begin MSComctlLib.ListView ListaDuplicatas 
          Height          =   7320
-         Left            =   -74910
+         Left            =   90
          TabIndex        =   79
          Top             =   1530
          Width           =   15135
@@ -3191,7 +3183,10 @@ If TBGravar.EOF = True Then
 '==========================================================================================
 TipoNF = "M1"
     Set TBAbrir = CreateObject("adodb.recordset")
-    TBAbrir.Open "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where tipoNF = '" & TipoNF & "' and Aplicacao = 'P' and ID_empresa = '" & ID_empresa & "' and int_NotaFiscal IS NOT NULL order by  NF desc,dt_DataEmissao desc", Conexao, adOpenKeyset, adLockOptimistic
+    StrSql = "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where Serie = '1'and Modelo = '55' and tipoNF = 'M1' and Aplicacao = 'P' and ID_empresa = 1 and int_NotaFiscal IS NOT NULL order by dt_DataEmissao desc, NF desc"
+    TBAbrir.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
+
+'    TBAbrir.Open "Select CAST(int_NotaFiscal AS int) AS NF, Serie FROM tbl_Dados_Nota_Fiscal where tipoNF = '" & TipoNF & "' and Aplicacao = 'P' and ID_empresa = '" & ID_empresa & "' and int_NotaFiscal IS NOT NULL order by  NF desc,dt_DataEmissao desc", Conexao, adOpenKeyset, adLockOptimistic
     If TBAbrir.EOF = False Then
    ' TBAbrir.MoveLast
         QuantsolicitadoN1 = TBAbrir!NF + 1
@@ -3212,7 +3207,9 @@ TipoNF = "M1"
  '   TBGravar!RespValidacao = pubUsuario
 
   Set TBClientes = CreateObject("adodb.recordset")
-    TBClientes.Open "Select * from Compras_fornecedores where Nome_Razao Like  '%" & dest_xNome.Text & "%'", Conexao, adOpenKeyset, adLockOptimistic
+   ' TBClientes.Open "Select * from Compras_fornecedores where Nome_Razao Like  '%" & dest_xNome.Text & "%'", Conexao, adOpenKeyset, adLockOptimistic
+    TBClientes.Open "Select * from Compras_fornecedores where Nome_Razao =  '" & dest_xNome.Text & "'", Conexao, adOpenKeyset, adLockOptimistic
+    
     If TBClientes.EOF = False Then
     TBGravar!Id_Int_Cliente = TBClientes!IDCliente
     TBGravar!txt_Razao_Nome = TBClientes!Nome_Razao
@@ -3528,7 +3525,7 @@ TBItem.Close
 
 Contador = Contador - 1
 Loop
-USMsgBox "Produtos da nota fiscal cadastrados com sucesso!", vbInformation, "CAPRIND v5.0"
+'USMsgBox "Produtos da nota fiscal cadastrados com sucesso!", vbInformation, "CAPRIND v5.0"
 
 '========================================================================================================
 ' Cadastrar totais da nota fiscal
@@ -3597,7 +3594,8 @@ TBTransporte.Close
 
 
 USMsgBox "Nota fiscal criada com sucesso!", vbInformation, "CAPRIND v5.0"
-
+frmFaturamento_Prod_Serv.ProcCarregaListaNota (1)
+Unload Me
 'If USMsgBox("Deseja efetuar a entrada no estoque do(s) produto(s) agora?", vbYesNo, "CAPRIND v5.0") = vbYes Then
 'ProcEntradaProdutoEstoque
 'End If
@@ -4551,6 +4549,14 @@ End Sub
 
 Private Sub btnCriarNota_Click()
 On Error GoTo tratar_erro
+
+    Set TBFornecedor = CreateObject("adodb.recordset")
+    TBFornecedor.Open "Select CPF_CNPJ from Compras_fornecedores where Nome_Razao =  '" & dest_xNome.Text & "'", Conexao, adOpenKeyset, adLockOptimistic
+    If TBFornecedor.EOF = True Then
+        USMsgBox "Atenção!!!" & vbCrLf & "Fornecedor " & dest_xNome.Text & " importado do xml não está cadastrado no sistema. " & vbCrLf & "Por favor cadastre e tente novamente.", vbCritical, "CAPRIND v5.0"
+        Exit Sub
+    End If
+    TBFornecedor.Close
 
 ProcCriarNotaXML
 

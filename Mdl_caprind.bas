@@ -1914,7 +1914,7 @@ With frm_Instituicoes
             .txtAssunto = ""
 
 Set TBBoleto = CreateObject("adodb.recordset")
-    TBBoleto.Open "Select * from tbl_Instituicoes_Instrucoes_Boleto where ID_Instituicao = " & .txtId & "", Conexao, adOpenKeyset, adLockOptimistic
+    TBBoleto.Open "Select * from tbl_Instituicoes_Instrucoes_Boleto where ID_Instituicao = " & .txtid & "", Conexao, adOpenKeyset, adLockOptimistic
         If TBBoleto.EOF = False Then
             .Txtpercentual_juros = TBBoleto!Juros
             .Txtpercentual_desconto = TBBoleto!Desconto
@@ -1941,7 +1941,7 @@ TBFIltro.Open "Select * from Tbl_Instituicoes where txt_descricao = '" & frm_Ins
 If TBFIltro.EOF = False Then
 With frm_Instituicoes
     .txtConta = IIf(IsNull(TBFIltro!txt_Conta) = False, TBFIltro!txt_Conta, "")
-    .txtId = TBFIltro!ID
+    .txtid = TBFIltro!ID
     If DS.FileOrDirExists(Localrel & "\Imagens\Bancos\" & TBFIltro!int_NBanco & ".jpg") = True Then
     .Logo_Banco.Picture = LoadPicture(Localrel & "\Imagens\Bancos\" & TBFIltro!int_NBanco & ".jpg")
     .Logo_Banco.Visible = True
@@ -2978,6 +2978,32 @@ Else
         TBAfericao.Close
     End If
 End If
+
+If frmFaturamento_Prod_Serv.cbo_UF = "EX" Then
+    II = 0
+
+    If frmFaturamento_Prod_Serv.cbo_UF = "EX" Then
+        Set TBFIltro = CreateObject("adodb.recordset")
+        StrSql = "select DN.dbl_ValorIPI IPI, DN.Total_PIS_prod PIS,DN.Total_cofins_prod Cofins, DNFE.Valor_imposto_importacao II, DN.Valor_acessorias Outro, DN.int_ICMS pICMS from tbl_Detalhes_Nota DN inner join tbl_Detalhes_Nota_NFe DNFE on DNFE.ID_item = DN.Int_codigo where DN.Int_codigo =" & frmFaturamento_Prod_Serv.ListaProdutos.SelectedItem
+        TBFIltro.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
+        If TBFIltro.EOF = False Then
+            II = TBFIltro!II
+            IPI = TBFIltro!IPI
+            PIS = TBFIltro!PIS
+            Cofins = TBFIltro!Cofins
+            Outro = TBFIltro!Outro
+            pICMS = TBFIltro!pICMS
+        End If
+        TBFIltro.Close
+
+    End If
+
+    BC = BC + IPI + PIS + Cofins + Outro + II
+    cal = 1 - (pICMS / 100)
+    BC = BC / cal
+    
+End If
+
 
 Exit Sub
 tratar_erro:
@@ -15175,6 +15201,7 @@ Select Case Node
         '======================================================
         Faturamento_NF_Terceiro = True
         Faturamento_NF_Propria = False
+        TPNota = "T"
         '======================================================
         frmFaturamento_Prod_Serv.Show
     Case "AN"
@@ -15189,6 +15216,7 @@ Select Case Node
         '======================================================
         Faturamento_NF_Terceiro = False
         Faturamento_NF_Propria = True
+        TPNota = "P"
         '======================================================
         frmFaturamento_Prod_Serv.Show
     Case "DZ":
