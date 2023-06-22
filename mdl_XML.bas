@@ -290,14 +290,14 @@ PosicaoBase = 0
     strarquivo = Replace(strarquivo, "ï»¿", "")
     Close #n
     
-    infnfe = ProcImportarXMLCarregacampo("<infNFe", "/infNFe>", Len("<infNFe"))
+    infNFe = ProcImportarXMLCarregacampo("<infNFe", "/infNFe>", Len("<infNFe"))
     
-    If Left$(infnfe, 4) = " Id=" Then
-        infnfe = Left$(infnfe, 52)
-        infnfe = Right$(infnfe, 44)
+    If Left$(infNFe, 4) = " Id=" Then
+        infNFe = Left$(infNFe, 52)
+        infNFe = Right$(infNFe, 44)
     Else
-        infnfe = Left$(infnfe, 66)
-        infnfe = Right$(infnfe, 44)
+        infNFe = Left$(infNFe, 66)
+        infNFe = Right$(infNFe, 44)
     End If
 '========================================================
 ' Chave de acesso
@@ -306,7 +306,7 @@ Debug.Print TPNota
 PosicaoBase = 0
 
     If TPNota = "T" Then
-        chNF = infnfe
+        chNF = infNFe
     Else
         chNF = ""
     End If
@@ -568,7 +568,7 @@ End If
             Else
                 Bairro = IIf(IsNull(TBClientes!Bairro), "", TBClientes!Bairro)
             End If
-            TBGravar!Txt_bairro = Bairro
+            TBGravar!txt_Bairro = Bairro
             
             TBGravar!txt_tipocliente = "JP"
             TBGravar!txt_IE_Cliente = IIf(IsNull(TBClientes!RG_IE), "", TBClientes!RG_IE)
@@ -596,7 +596,7 @@ End If
         End If
             TBGravar!txt_Razao_Nome = IIf(NomeRazao <> "", NomeRazao, xNome)
             TBGravar!txt_Endereco = IIf(xLgr <> "", xLgr, "Sem endereço")
-            TBGravar!Txt_bairro = xBairro
+            TBGravar!txt_Bairro = xBairro
             TBGravar!txt_tipocliente = IIf(Len(CNPJ) <> 14, "JP", "FP")
             TBGravar!txt_UF = UF
             TBGravar!txt_CNPJ_CPF = CNPJ
@@ -619,7 +619,7 @@ End If
         End If
             TBGravar!txt_Razao_Nome = IIf(NomeRazao <> "", NomeRazao, xNome)
             TBGravar!txt_Endereco = IIf(xLgr <> "", xLgr, "Sem endereço")
-            TBGravar!Txt_bairro = xBairro
+            TBGravar!txt_Bairro = xBairro
             TBGravar!txt_tipocliente = IIf(Len(CNPJ) <> 14, "JP", "FP")
             TBGravar!txt_UF = UF
             TBGravar!txt_CNPJ_CPF = CNPJ
@@ -1168,7 +1168,7 @@ On Error GoTo tratar_erro
     TBTotaisnota!Total_PIS_prod = vPIS
     TBTotaisnota!Total_Cofins_prod = vCOFINS
     TBTotaisnota!dbl_Valor_Total_Nota = vNF
-    TBTotaisnota!Valor_total_II = vImpostoImportacao
+    TBTotaisnota!Valor_total_II = IIf(vImpostoImportacao = "", 0, vImpostoImportacao)
     TBTotaisnota.Update
     'End If
     TBTotaisnota.Close
@@ -1255,7 +1255,6 @@ On Error GoTo tratar_erro
 Inicio:
     
     If PosicaoBase > 0 Then
-    
 
     
     Var1 = "cProd"
@@ -1284,8 +1283,11 @@ Inicio:
     vUnCom = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
     Var1 = "vProd"
     vProd = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    
+    If UF = "EX" Then
     Var1 = "vOutro"
     vOutro = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    End If
     
     
 '    V1 = "vFrete"
@@ -1320,8 +1322,11 @@ PosicaoAntiga = PosicaoBase
 GoTo 2
 End If
 
+If UF = "EX" Then
     Var1 = "orig"
     orig = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+End If
+
 '3:
 'If PosicaoBase > posicaoantiga + 30 Then
 ' vDesc = "0.00"
@@ -1446,6 +1451,8 @@ End If
 If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
 PosicaoBase = PosicaoAntiga
 End If
+
+If UF = "EX" Then
     
 'Imposto de importacao
     V1 = "</IPI>"
@@ -1462,7 +1469,7 @@ End If
 
     Var1 = "vIOF"
     vIOF = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-
+End If
     
 '==============================================================
 ' CST PIS
@@ -1485,15 +1492,30 @@ Var1 = "vBC"
 vbcPIS = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
 End If
 
+If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
+PosicaoBase = PosicaoAntiga
+vbcPIS = 0
+End If
+
+
 If PosicaoBase <> 0 Then
 Var1 = "pPIS"
 PISpPIS = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
 End If
 
+If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
+PosicaoBase = PosicaoAntiga
+PISpPIS = 0
+End If
 
 If PosicaoBase <> 0 Then
 Var1 = "vPIS"
 PISvPIS = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+End If
+
+If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
+PosicaoBase = PosicaoAntiga
+PISvPIS = 0
 End If
 
 '===================================================================================================
@@ -1517,16 +1539,34 @@ Var1 = "vBC"
 vBCCofins = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
 End If
 
+If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
+PosicaoBase = PosicaoAntiga
+vBCCofins = 0
+End If
+
+
 If PosicaoBase <> 0 Then
 Var1 = "pCOFINS"
 COFINSpCofins = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
 End If
+
+If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
+PosicaoBase = PosicaoAntiga
+COFINSpCofins = 0
+End If
+
 
 
 If PosicaoBase <> 0 Then
 Var1 = "vCOFINS"
 COFINSvCOFINS = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
 End If
+
+If PosicaoBase = 0 Or PosicaoBase > PosicaoLimite Then
+PosicaoBase = PosicaoAntiga
+COFINSvCOFINS = 0
+End If
+
 ' Fim dos impostos
 '=====================================================================================================
    
@@ -1645,7 +1685,12 @@ TBAbrir!ID_nota = ID_nota
 TBAbrir!int_Qtd = Replace(qCom, ".", ",")
 TBAbrir!Saldo = Replace(qCom, ".", ",")
 TBAbrir!Txt_descricao = IIf(cDesc <> "", cDesc, xProd)
+
+If vOutro <> "" Then
 TBAbrir!Valor_acessorias = Replace(vOutro, ".", ",")
+End If
+
+If UF = "EX" Then
 '============================================================================================================
 'Carrega dados da DI
 '============================================================================================================
@@ -1683,18 +1728,20 @@ End If
 '============================================================================================================
 'Carrega dados das adicoes da DI
 '============================================================================================================
-    V1 = "adi"
-    PosicaoBase = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
-'Debug.print PosicaoBase
-If PosicaoBase > 0 Then
-    Var1 = "nAdicao"
-    nAdicao = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-    
-    Var1 = "nSeqAdic"
-    nSeqAdic = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
-    
-    Var1 = "cFabricante"
-    cFabricante = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+ 
+        V1 = "adi"
+        PosicaoBase = InStr(IIf(lngPosicaoFinal > 0, lngPosicaoFinal, 1), strarquivo, V1, 1)
+    'Debug.print PosicaoBase
+    If PosicaoBase > 0 Then
+        Var1 = "nAdicao"
+        nAdicao = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+        
+        Var1 = "nSeqAdic"
+        nSeqAdic = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+        
+        Var1 = "cFabricante"
+        cFabricante = ProcImportarXMLCarregacampo("<" & Var1 & ">", "</" & Var1 & ">", Len("<" & Var1 & ">"))
+    End If
 End If
 
 '=======================================================================================
@@ -1810,7 +1857,7 @@ TBAliquota.AddNew
 End If
 
 TBAliquota!Id_Item = TBAbrir!Int_codigo
-TBAliquota!Origem_mercadoria = orig
+TBAliquota!Origem_mercadoria = IIf(orig = "", 0, orig)
 TBAliquota!Tributacao_ICMS = IIf(CSTICMS <> "", Replace(CSTICMS, ".", ","), 0)
 TBAliquota!Valor_BC = IIf(ICMSvBC <> "", Replace(ICMSvBC, ".", ","), 0)
 TBAliquota!Valor_ICMS = IIf(ICMSvICMS <> "", Replace(ICMSvICMS, ".", ","), 0)

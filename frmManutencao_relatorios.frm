@@ -1,8 +1,8 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.ocx"
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
-Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{8CA2526B-1F1A-4012-A04D-56C1849DD6A6}#1.5#0"; "DrawSuite2022.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmManutencao_relatorios 
    BackColor       =   &H00E0E0E0&
    Caption         =   "Manutenção - Relatórios - Histórico"
@@ -344,19 +344,13 @@ Begin VB.Form frmManutencao_relatorios
       _ExtentX        =   26802
       _ExtentY        =   1720
       ButtonCount     =   6
-      GradientColor1  =   16777215
       GradientColor2  =   14737632
-      GradientColorDown1=   10802943
-      GradientColorDown2=   7979263
-      GradientColorDownRight1=   10802943
-      GradientColorDownRight2=   7979263
-      GradientColorOver1=   14417407
-      GradientColorOver2=   12317439
-      GradientColorOverRight1=   14417407
-      GradientColorOverRight2=   12317439
+      GradientColorOverRight1=   16315633
+      GradientColorOverRight2=   15195350
+      GripperColor    =   15195350
       IsStrech        =   -1  'True
-      RightColor1     =   14737632
-      RightColor2     =   16777215
+      RightColor1     =   0
+      RightColor2     =   0
       ShowEndPanel    =   0   'False
       Theme           =   1
       ButtonCaption1  =   "Filtrar"
@@ -719,7 +713,7 @@ Begin VB.Form frmManutencao_relatorios
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   114229249
+         Format          =   490209281
          CurrentDate     =   39057
       End
       Begin MSComCtl2.DTPicker msk_fltInicio 
@@ -746,7 +740,7 @@ Begin VB.Form frmManutencao_relatorios
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   114098177
+         Format          =   490209281
          CurrentDate     =   39057
       End
       Begin VB.Label Label4 
@@ -897,7 +891,7 @@ If TBLISTA.EOF = False Then
     PBLista.Min = 0
     PBLista.Max = TBLISTA.RecordCount
     PBLista.Value = 1
-    Contador = 0
+    contador = 0
     Do While TBLISTA.EOF = False
         If optDetalhado.Value = True Then
             With Lista.ListItems
@@ -937,8 +931,8 @@ If TBLISTA.EOF = False Then
             End With
         End If
         TBLISTA.MoveNext
-        Contador = Contador + 1
-        PBLista.Value = Contador
+        contador = contador + 1
+        PBLista.Value = contador
     Loop
     If optDetalhado.Value = True Then Else
 End If
@@ -1169,7 +1163,7 @@ If TBCarteira.EOF = False Then
     PBLista.Min = 0
     PBLista.Max = TBCarteira.RecordCount
     PBLista.Value = 1
-    Contador = 0
+    contador = 0
     Do While TBCarteira.EOF = False
         Set TBProdutividade = CreateObject("adodb.recordset")
         If Opt_individual.Value = True And optDetalhado.Value = True Then
@@ -1185,8 +1179,8 @@ If TBCarteira.EOF = False Then
             ProcEnviaDadosResumido
         End If
         TBCarteira.MoveNext
-        Contador = Contador + 1
-        PBLista.Value = Contador
+        contador = contador + 1
+        PBLista.Value = contador
     Loop
 End If
 TBCarteira.Close

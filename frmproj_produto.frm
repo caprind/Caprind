@@ -9190,11 +9190,11 @@ If TBProduto.EOF = False Then
     Documento = "Cód. interno: " & txtdesenhoproduto
     Documento1 = ""
     ProcGravaEvento
-        '==================================================
+    '==================================================
     ' Novos artnel
     '==================================================
         TBProduto!uTrib = IIf(cmbuTrib = "", Null, cmbuTrib)
-        TBProduto!vTrib = txtvuTrib.Text
+        TBProduto!vTrib = IIf(txtvuTrib.Text = "", Null, txtvuTrib.Text)
     '==================================
     If Chk_servico_executado_cliente.Value = 1 Then TBProduto!Servico_cliente = True Else TBProduto!Servico_cliente = False
     If Chk_credito_ICMS.Value = 1 Then TBProduto!Credita_ICMS = False Else TBProduto!Credita_ICMS = True
