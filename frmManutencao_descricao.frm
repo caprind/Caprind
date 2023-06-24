@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{8CA2526B-1F1A-4012-A04D-56C1849DD6A6}#1.5#0"; "DrawSuite2022.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmManutencao_descricao 
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   4  'Fixed ToolWindow
@@ -337,15 +337,15 @@ TBLISTA.Open "Select * from Manutencao_descricao order by Texto", Conexao, adOpe
 If TBLISTA.EOF = False Then
     PBLista.Max = TBLISTA.RecordCount
     PBLista.Value = 1
-    Contador = 0
+    contador = 0
     Do While TBLISTA.EOF = False
         With Lista.ListItems
             .Add , , TBLISTA!ID
             .Item(.Count).SubItems(1) = IIf(IsNull(TBLISTA!Texto), "", TBLISTA!Texto)
         End With
         TBLISTA.MoveNext
-        Contador = Contador + 1
-        PBLista.Value = Contador
+        contador = contador + 1
+        PBLista.Value = contador
     Loop
 End If
 TBLISTA.Close
@@ -364,7 +364,7 @@ With Lista
     For InitFor = 1 To .ListItems.Count
         If .ListItems.Item(InitFor).Checked = True Then
             If Permitido = False Then
-                If USMsgBox("Deseja realmente excluir esta(s) descrição(ões) do check-list?", vbYesNo, "CAPRIND v5.0") = vbNo Then Exit Sub
+                If USMsgBox("Deseja realmente excluir esta(s) descrição(ões) do check-list?", vbQuestion + vbYesNo, "CAPRIND v5.0") = vbNo Then Exit Sub
             End If
             Permitido = True
             Conexao.Execute "DELETE from Manutencao_descricao where id = " & .ListItems(InitFor)
@@ -412,7 +412,7 @@ End Sub
 Private Sub ProcLimpaCampos()
 On Error GoTo tratar_erro
 
-txtId = 0
+txtID = 0
 txtTexto = ""
 CodigoLista = 0
     
@@ -435,11 +435,11 @@ If txtTexto.Text = "" Then
     Exit Sub
 End If
 Set TBGravar = CreateObject("adodb.recordset")
-TBGravar.Open "Select * from Manutencao_descricao where id = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBGravar.Open "Select * from Manutencao_descricao where id = " & txtID, Conexao, adOpenKeyset, adLockOptimistic
 If TBGravar.EOF = True Then TBGravar.AddNew
 TBGravar!Texto = txtTexto.Text
 TBGravar.Update
-txtId = TBGravar!ID
+txtID = TBGravar!ID
 TBGravar.Close
 ProcCarregaLista
 If Novo_descricao_manutencao = True Then
@@ -455,7 +455,7 @@ Else
 End If
 '==================================
 Modulo = "Manutenção/Equipamentos"
-ID_documento = txtId
+ID_documento = txtID
 Documento = "Descrição: " & txtTexto
 Documento1 = ""
 ProcGravaEvento
@@ -502,7 +502,7 @@ Private Sub ProcSair()
 On Error GoTo tratar_erro
 
 If Novo_descricao_manutencao = True Then
-    If USMsgBox("A descrição do check-list ainda não foi salva, deseja salvar antes de fechar o módulo?", vbYesNo) = vbYes Then
+    If USMsgBox("A descrição do check-list ainda não foi salva, deseja salvar antes de fechar o módulo?", vbYesNo + vbQuestion) = vbYes Then
         ProcSalvar
         If Novo_descricao_manutencao = True Then Exit Sub Else Unload Me
     End If
@@ -599,7 +599,7 @@ End Sub
 Private Sub ProcCarregaDados()
 On Error GoTo tratar_erro
 
-txtId = TBLISTA!ID
+txtID = TBLISTA!ID
 txtTexto = IIf(IsNull(TBLISTA!Texto), "", TBLISTA!Texto)
 Novo_descricao_manutencao = False
 

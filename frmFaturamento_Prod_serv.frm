@@ -4,7 +4,7 @@ Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.ocx"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
 Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmFaturamento_Prod_Serv 
    BackColor       =   &H00E0E0E0&
    Caption         =   "Administrativo - Faturamento - Nota fiscal"
@@ -60,7 +60,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
       _ExtentY        =   18071
       _Version        =   393216
       Tabs            =   7
-      Tab             =   1
+      Tab             =   2
       TabsPerRow      =   7
       TabHeight       =   520
       ShowFocusRect   =   0   'False
@@ -86,53 +86,45 @@ Begin VB.Form frmFaturamento_Prod_Serv
       Tab(0).ControlCount=   6
       TabCaption(1)   =   "Gestão de notas fiscais"
       TabPicture(1)   =   "frmFaturamento_Prod_serv.frx":105E
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "Frame1(8)"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1(29)"
-      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "txtID_cobranca"
-      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).Control(3)=   "ListaNota"
-      Tab(1).Control(3).Enabled=   0   'False
       Tab(1).Control(4)=   "Frame1(7)"
-      Tab(1).Control(4).Enabled=   0   'False
       Tab(1).Control(5)=   "TabFiltro"
-      Tab(1).Control(5).Enabled=   0   'False
       Tab(1).Control(6)=   "Frame1(5)"
-      Tab(1).Control(6).Enabled=   0   'False
       Tab(1).Control(7)=   "Frame1(0)"
-      Tab(1).Control(7).Enabled=   0   'False
       Tab(1).Control(8)=   "Frame1(4)"
-      Tab(1).Control(8).Enabled=   0   'False
       Tab(1).Control(9)=   "Frame1(3)"
-      Tab(1).Control(9).Enabled=   0   'False
       Tab(1).Control(10)=   "Frame1(2)"
-      Tab(1).Control(10).Enabled=   0   'False
       Tab(1).Control(11)=   "Frame1(1)"
-      Tab(1).Control(11).Enabled=   0   'False
       Tab(1).Control(12)=   "USToolBar1"
-      Tab(1).Control(12).Enabled=   0   'False
       Tab(1).Control(13)=   "Frame6"
-      Tab(1).Control(13).Enabled=   0   'False
       Tab(1).Control(14)=   "Frame7"
-      Tab(1).Control(14).Enabled=   0   'False
       Tab(1).Control(15)=   "Frame1(6)"
-      Tab(1).Control(15).Enabled=   0   'False
       Tab(1).Control(16)=   "txtid"
       Tab(1).Control(16).Enabled=   0   'False
       Tab(1).ControlCount=   17
       TabCaption(2)   =   "Produtos"
       TabPicture(2)   =   "frmFaturamento_Prod_serv.frx":107A
-      Tab(2).ControlEnabled=   0   'False
+      Tab(2).ControlEnabled=   -1  'True
       Tab(2).Control(0)=   "Txt_IDestoque"
+      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).Control(1)=   "txtidproduto"
+      Tab(2).Control(1).Enabled=   0   'False
       Tab(2).Control(2)=   "Frame1(9)"
+      Tab(2).Control(2).Enabled=   0   'False
       Tab(2).Control(3)=   "Frame1(11)"
+      Tab(2).Control(3).Enabled=   0   'False
       Tab(2).Control(4)=   "Frame1(10)"
+      Tab(2).Control(4).Enabled=   0   'False
       Tab(2).Control(5)=   "Frame2"
+      Tab(2).Control(5).Enabled=   0   'False
       Tab(2).Control(6)=   "ListaProdutos"
+      Tab(2).Control(6).Enabled=   0   'False
       Tab(2).Control(7)=   "USToolBar2"
+      Tab(2).Control(7).Enabled=   0   'False
       Tab(2).ControlCount=   8
       TabCaption(3)   =   "Serviços"
       TabPicture(3)   =   "frmFaturamento_Prod_serv.frx":1096
@@ -174,7 +166,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
          Height          =   495
-         Left            =   14280
+         Left            =   -60720
          Locked          =   -1  'True
          TabIndex        =   389
          TabStop         =   0   'False
@@ -212,7 +204,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H80000007&
          Height          =   975
          Index           =   6
-         Left            =   60
+         Left            =   -74940
          TabIndex        =   119
          Top             =   2010
          Width           =   15345
@@ -834,7 +826,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
       Begin VB.Frame Frame7 
          BackColor       =   &H00E0E0E0&
          Height          =   1335
-         Left            =   13860
+         Left            =   -61140
          TabIndex        =   357
          Top             =   2970
          Width           =   1545
@@ -899,7 +891,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          BackColor       =   &H00E0E0E0&
          Caption         =   "Dados do destinatário"
          Height          =   1335
-         Left            =   60
+         Left            =   -74940
          TabIndex        =   331
          Top             =   2970
          Width           =   13785
@@ -2049,7 +2041,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
       End
       Begin DrawSuite2022.USToolBar USToolBar2 
          Height          =   975
-         Left            =   -74925
+         Left            =   75
          TabIndex        =   110
          Top             =   330
          Width           =   15345
@@ -2442,7 +2434,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
       End
       Begin DrawSuite2022.USToolBar USToolBar1 
          Height          =   945
-         Left            =   75
+         Left            =   -74925
          TabIndex        =   120
          Top             =   330
          Width           =   15315
@@ -2839,7 +2831,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
       End
       Begin MSComctlLib.ListView ListaProdutos 
          Height          =   5160
-         Left            =   -74940
+         Left            =   60
          TabIndex        =   32
          Top             =   3315
          Width           =   15345
@@ -3033,7 +3025,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          BackColor       =   &H00E0E0E0&
          Caption         =   "Operação da lista"
          Height          =   645
-         Left            =   -61140
+         Left            =   13860
          TabIndex        =   286
          Top             =   8520
          Width           =   1545
@@ -3067,7 +3059,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H00000080&
          Height          =   720
          Index           =   1
-         Left            =   60
+         Left            =   -74940
          TabIndex        =   200
          Top             =   1290
          Width           =   5970
@@ -3143,7 +3135,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H00000080&
          Height          =   720
          Index           =   2
-         Left            =   6030
+         Left            =   -68970
          TabIndex        =   201
          Top             =   1290
          Width           =   5130
@@ -3168,7 +3160,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H00000000&
          Height          =   720
          Index           =   3
-         Left            =   11160
+         Left            =   -63840
          TabIndex        =   198
          Top             =   1290
          Width           =   1220
@@ -3216,7 +3208,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Caption         =   "Tipo"
          Height          =   720
          Index           =   4
-         Left            =   12390
+         Left            =   -62610
          TabIndex        =   197
          Top             =   1290
          Width           =   1040
@@ -3263,7 +3255,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H00000000&
          Height          =   720
          Index           =   0
-         Left            =   13440
+         Left            =   -61560
          TabIndex        =   199
          Top             =   1290
          Width           =   1065
@@ -3310,7 +3302,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H00000000&
          Height          =   720
          Index           =   5
-         Left            =   14505
+         Left            =   -60495
          TabIndex        =   196
          Top             =   1290
          Width           =   900
@@ -3353,7 +3345,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
       End
       Begin DrawSuite2022.USTab TabFiltro 
          Height          =   375
-         Left            =   4140
+         Left            =   -70860
          TabIndex        =   195
          Top             =   4410
          Width           =   9045
@@ -3407,7 +3399,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          BackColor       =   &H00E0E0E0&
          Height          =   555
          Index           =   7
-         Left            =   60
+         Left            =   -74940
          TabIndex        =   118
          Top             =   4230
          Width           =   15345
@@ -3449,7 +3441,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
       End
       Begin MSComctlLib.ListView ListaNota 
          Height          =   4230
-         Left            =   60
+         Left            =   -74940
          TabIndex        =   23
          Top             =   4770
          Width           =   15345
@@ -3573,7 +3565,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          BackColor       =   &H00E0E0E0&
          Height          =   645
          Index           =   10
-         Left            =   -74955
+         Left            =   45
          TabIndex        =   134
          Top             =   8520
          Width           =   13815
@@ -3874,7 +3866,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H00000080&
          Height          =   855
          Index           =   11
-         Left            =   -74955
+         Left            =   45
          TabIndex        =   106
          Top             =   9150
          Width           =   15345
@@ -4854,7 +4846,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   2760
+         Left            =   -72240
          TabIndex        =   117
          Text            =   "0"
          Top             =   6540
@@ -4866,7 +4858,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H00000000&
          Height          =   615
          Index           =   29
-         Left            =   60
+         Left            =   -74940
          TabIndex        =   111
          Top             =   8940
          Width           =   14205
@@ -5222,7 +5214,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          ForeColor       =   &H80000005&
          Height          =   2085
          Index           =   9
-         Left            =   -74940
+         Left            =   60
          TabIndex        =   109
          Top             =   1230
          Width           =   15375
@@ -5249,8 +5241,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          End
          Begin VB.TextBox txtCST_Cofins 
             Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
+            BackColor       =   &H00FFFFFF&
             Height          =   315
             Left            =   12840
             Locked          =   -1  'True
@@ -5262,8 +5253,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          End
          Begin VB.TextBox txtCST_PIS 
             Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
+            BackColor       =   &H00FFFFFF&
             Height          =   315
             Left            =   12420
             Locked          =   -1  'True
@@ -5275,8 +5265,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          End
          Begin VB.TextBox txtCST_IPI 
             Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
+            BackColor       =   &H00FFFFFF&
             Height          =   315
             Left            =   12000
             Locked          =   -1  'True
@@ -5288,8 +5277,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          End
          Begin VB.TextBox txtCST_ICMS 
             Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
+            BackColor       =   &H00FFFFFF&
             Height          =   315
             Left            =   11520
             Locked          =   -1  'True
@@ -5323,8 +5311,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          End
          Begin VB.TextBox cmbReferencia 
             Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
+            BackColor       =   &H00FFFFFF&
             Height          =   315
             Left            =   2100
             Locked          =   -1  'True
@@ -5332,7 +5319,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             TabStop         =   0   'False
             ToolTipText     =   "ID da CFOP."
             Top             =   480
-            Width           =   1545
+            Width           =   1290
          End
          Begin VB.TextBox txtvlrICMS 
             Alignment       =   2  'Center
@@ -5495,13 +5482,13 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Appearance      =   0  'Flat
             BackColor       =   &H00E0E0E0&
             Height          =   315
-            Left            =   3690
+            Left            =   3720
             Locked          =   -1  'True
             TabIndex        =   209
             TabStop         =   0   'False
             ToolTipText     =   "ID da NCM."
             Top             =   480
-            Width           =   465
+            Width           =   435
          End
          Begin VB.TextBox Txt_CFOP_prod 
             Alignment       =   2  'Center
@@ -5640,8 +5627,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          End
          Begin VB.TextBox Txt_codigo_enq_IPI 
             Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
+            BackColor       =   &H00FFFFFF&
             Height          =   315
             Left            =   13350
             MaxLength       =   3
@@ -5985,6 +5971,49 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Theme           =   1
             ToolTipTitle    =   "CAPRIND v5.0"
          End
+         Begin DrawSuite2022.USButton cmd_Filtrar_Referencia 
+            Height          =   315
+            Left            =   3390
+            TabIndex        =   390
+            ToolTipText     =   "Consultar código interno"
+            Top             =   480
+            Width           =   315
+            _ExtentX        =   556
+            _ExtentY        =   556
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":BF84B
+            Caption         =   ""
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            BorderColor     =   8421504
+            BorderColorDown =   7907521
+            BorderColorOver =   7907521
+            ForeColor       =   0
+            ForeColorOver   =   0
+            ForeColorDown   =   0
+            GradientColor1  =   16777215
+            GradientColor2  =   14737632
+            GradientColor3  =   12632256
+            GradientColor4  =   12632256
+            GradientColorOver1=   14417407
+            GradientColorOver2=   12317439
+            GradientColorOver3=   4838399
+            GradientColorOver4=   9627391
+            GradientColorDown1=   10802943
+            GradientColorDown2=   7979263
+            GradientColorDown3=   4370174
+            GradientColorDown4=   7395582
+            PicAlign        =   0
+            ShowFocusRect   =   0   'False
+            Theme           =   1
+            ToolTipTitle    =   "CAPRIND v5.0"
+         End
          Begin VB.Label Label1 
             Appearance      =   0  'Flat
             AutoSize        =   -1  'True
@@ -6148,7 +6177,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             ForeColor       =   &H00000080&
             Height          =   195
             Index           =   59
-            Left            =   2190
+            Left            =   2070
             TabIndex        =   254
             Top             =   270
             Width           =   1275
@@ -6471,7 +6500,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
       Begin VB.TextBox txtidproduto 
          Alignment       =   2  'Center
          Height          =   335
-         Left            =   -74130
+         Left            =   870
          TabIndex        =   105
          Text            =   "0"
          ToolTipText     =   "ID do produto na tabela da NF."
@@ -6491,7 +6520,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   -72960
+         Left            =   2040
          TabIndex        =   104
          Text            =   "0"
          Top             =   5790
@@ -6960,9 +6989,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":BF84B
+            ItemData        =   "frmFaturamento_Prod_serv.frx":C69DE
             Left            =   180
-            List            =   "frmFaturamento_Prod_serv.frx":BF858
+            List            =   "frmFaturamento_Prod_serv.frx":C69EB
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   298
@@ -7130,7 +7159,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":BF87A
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":C6A0D
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7339,7 +7368,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   615
             _ExtentX        =   1085
             _ExtentY        =   9022
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":C2ECA
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":CA05D
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7400,7 +7429,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   615
             _ExtentX        =   1085
             _ExtentY        =   4789
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":E0FCF
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":E8162
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7485,9 +7514,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":FF0D4
+            ItemData        =   "frmFaturamento_Prod_serv.frx":106267
             Left            =   2610
-            List            =   "frmFaturamento_Prod_serv.frx":FF0D6
+            List            =   "frmFaturamento_Prod_serv.frx":106269
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   276
@@ -7528,9 +7557,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":FF0D8
+            ItemData        =   "frmFaturamento_Prod_serv.frx":10626B
             Left            =   6570
-            List            =   "frmFaturamento_Prod_serv.frx":FF112
+            List            =   "frmFaturamento_Prod_serv.frx":1062A5
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   278
@@ -7594,9 +7623,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":FF220
+            ItemData        =   "frmFaturamento_Prod_serv.frx":1063B3
             Left            =   5400
-            List            =   "frmFaturamento_Prod_serv.frx":FF222
+            List            =   "frmFaturamento_Prod_serv.frx":1063B5
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   277
@@ -7613,7 +7642,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":FF224
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":1063B7
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7655,7 +7684,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   405
             _ExtentX        =   714
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":11D329
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":1244BC
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7696,7 +7725,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   1215
             _ExtentX        =   2143
             _ExtentY        =   1402
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":11D88A
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":124A1D
             Caption         =   "Gerar"
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7741,7 +7770,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   375
             _ExtentX        =   661
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":1279AD
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":12EB40
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -7785,7 +7814,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   345
             _ExtentX        =   609
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":12EB2D
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":135CC0
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -8239,7 +8268,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   180
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":135CAD
+            Img1            =   "frmFaturamento_Prod_serv.frx":13CE40
             Count           =   1
          End
       End
@@ -8577,7 +8606,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   90
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":13D9F2
+            Img1            =   "frmFaturamento_Prod_serv.frx":144B85
             Count           =   1
          End
       End
@@ -8826,7 +8855,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   210
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":143582
+            Img1            =   "frmFaturamento_Prod_serv.frx":14A715
             Count           =   1
          End
       End
@@ -9077,7 +9106,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   120
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":1490FE
+            Img1            =   "frmFaturamento_Prod_serv.frx":150291
             Count           =   1
          End
       End
@@ -9209,7 +9238,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   0
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":14EEDA
+            Img1            =   "frmFaturamento_Prod_serv.frx":15606D
             Count           =   1
          End
       End
@@ -9482,9 +9511,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":151017
+            ItemData        =   "frmFaturamento_Prod_serv.frx":1581AA
             Left            =   9120
-            List            =   "frmFaturamento_Prod_serv.frx":15107E
+            List            =   "frmFaturamento_Prod_serv.frx":158211
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   53
@@ -9504,9 +9533,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":151104
+            ItemData        =   "frmFaturamento_Prod_serv.frx":158297
             Left            =   9810
-            List            =   "frmFaturamento_Prod_serv.frx":15116B
+            List            =   "frmFaturamento_Prod_serv.frx":1582FE
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   54
@@ -9690,9 +9719,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":1511F1
+            ItemData        =   "frmFaturamento_Prod_serv.frx":158384
             Left            =   12180
-            List            =   "frmFaturamento_Prod_serv.frx":151246
+            List            =   "frmFaturamento_Prod_serv.frx":1583D9
             Locked          =   -1  'True
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
@@ -9769,9 +9798,9 @@ Begin VB.Form frmFaturamento_Prod_Serv
                Strikethrough   =   0   'False
             EndProperty
             Height          =   330
-            ItemData        =   "frmFaturamento_Prod_serv.frx":1512B6
+            ItemData        =   "frmFaturamento_Prod_serv.frx":158449
             Left            =   10545
-            List            =   "frmFaturamento_Prod_serv.frx":15130B
+            List            =   "frmFaturamento_Prod_serv.frx":15849E
             Locked          =   -1  'True
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
@@ -9814,7 +9843,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":15137B
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":15850E
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -9858,7 +9887,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   945
             _ExtentX        =   1667
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":16F480
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":176613
             Caption         =   "CFOP"
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -9902,7 +9931,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":18D585
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":194718
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -9946,7 +9975,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Width           =   315
             _ExtentX        =   556
             _ExtentY        =   556
-            DibPicture      =   "frmFaturamento_Prod_serv.frx":194718
+            DibPicture      =   "frmFaturamento_Prod_serv.frx":19B8AB
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -10223,7 +10252,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Caption         =   "Totalização"
          Height          =   465
          Index           =   8
-         Left            =   60
+         Left            =   -74940
          TabIndex        =   115
          Top             =   9540
          Width           =   15345
@@ -10313,7 +10342,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
          Height          =   335
          Left            =   -72000
          MaxLength       =   50
-         MouseIcon       =   "frmFaturamento_Prod_serv.frx":19B8AB
+         MouseIcon       =   "frmFaturamento_Prod_serv.frx":1A2A3E
          MousePointer    =   1  'Arrow
          TabIndex        =   89
          Text            =   "0"
@@ -10464,7 +10493,7 @@ Begin VB.Form frmFaturamento_Prod_Serv
             Top             =   210
             _ExtentX        =   900
             _ExtentY        =   767
-            Img1            =   "frmFaturamento_Prod_serv.frx":19BBB5
+            Img1            =   "frmFaturamento_Prod_serv.frx":1A2D48
             Count           =   1
          End
       End
@@ -11752,6 +11781,34 @@ On Error GoTo tratar_erro
     Permitido1 = False
     ProcLimpaCamposServicos1
     ProcCarregaDadosServico
+
+Exit Sub
+tratar_erro:
+    USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
+End Sub
+
+Private Sub cmd_Filtrar_Referencia_Click()
+On Error GoTo tratar_erro
+
+    Permitido1 = False
+
+    If cmbReferencia.Text <> "" And txtIDcliente.Text <> "" Then
+    StrSql = "SELECT IA.ID_cliente_forn, PP.Desenho, IA.n_referencia FROM item_aplicacoes IA INNER JOIN projproduto PP ON PP.codproduto = IA.codproduto WHERE IA.n_referencia = '" & cmbReferencia & "'"
+    'StrSql = "select IA.ID_cliente_forn, CL.NomeRazao, PP.Desenho, IA.n_referencia from item_aplicacoes IA inner join projproduto PP on PP.codproduto = IA.codproduto inner join Clientes CL on CL.IDCliente = IA.ID_cliente_forn where IA.ID_cliente_forn = '" & txtIDcliente.Text & "' and IA.n_referencia = '" & cmbReferencia.Text & "'"
+        Debug.Print StrSql
+        
+        Set TBAbrir = CreateObject("adodb.recordset")
+        TBAbrir.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
+        If TBAbrir.EOF = False Then
+        ProcLimpaCamposProd1
+        txtCod_Produto.Text = TBAbrir!Desenho
+        cmbReferencia = TBAbrir!N_referencia
+        End If
+        
+        TBAbrir.Close
+    End If
+    
+    ProcCarregaDadosProduto
 
 Exit Sub
 tratar_erro:
@@ -25989,7 +26046,9 @@ On Error GoTo tratar_erro
 
 II = 0
 
-If cbo_UF = "EX" Then
+
+
+If cbo_UF = "EX" And ListaProdutos.ListItems.Count > 0 Then
     Set TBFIltro = CreateObject("adodb.recordset")
     StrSql = "select DN.dbl_ValorIPI IPI, DN.Total_PIS_prod PIS,DN.Total_cofins_prod Cofins, DNFE.Valor_imposto_importacao II from tbl_Detalhes_Nota DN inner join tbl_Detalhes_Nota_NFe DNFE on DNFE.ID_item = DN.Int_codigo where DN.Int_codigo =" & ListaProdutos.SelectedItem
     TBFIltro.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic

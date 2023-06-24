@@ -6566,7 +6566,7 @@ If TBItem.EOF = False Then
         uTrib = TBItem!uTrib
     End If
     
-    If TBItem!vTrib = "" Or IsNull(TBItem!vTrib) = True Then
+    If TBItem!vTrib = "" Or IsNull(TBItem!vTrib) = True Or TBItem!vTrib = 0 Then
         vTrib = TBProduto!dbl_ValorUnitario
     Else
         vTrib = TBItem!vTrib * TBProduto!int_Qtd
@@ -6590,12 +6590,12 @@ TBItem.Close
     
     'Peso unitário tributado
     objProd.appendChild objDom.createElement("qTrib") '11
-    objProd.getElementsByTagName("qTrib").Item(0).Text = Replace(Format(vTrib, "0.#000"), ",", ".")
+    objProd.getElementsByTagName("qTrib").Item(0).Text = Replace(Format(qTrib, "0.#000"), ",", ".")
     
     'Peso total tributado
     Var1 = TBProduto!int_Qtd
     objProd.appendChild objDom.createElement("vUnTrib") '12
-    objProd.getElementsByTagName("vUnTrib").Item(0).Text = Replace(Format(qTrib, "0.#0000000"), ",", ".")
+    objProd.getElementsByTagName("vUnTrib").Item(0).Text = Replace(Format(vTrib, "0.#0000000"), ",", ".")
     
 '==================================================================================================================
 'Se tiver valor no frete acrescenta tag

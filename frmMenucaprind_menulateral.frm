@@ -20,7 +20,6 @@ Begin VB.Form frmMenucaprind_menulateral
    EndProperty
    Icon            =   "frmMenucaprind_menulateral.frx":0000
    LinkTopic       =   "Form1"
-   LockControls    =   -1  'True
    MDIChild        =   -1  'True
    ScaleHeight     =   10680
    ScaleWidth      =   19080
@@ -50,10 +49,10 @@ Begin VB.Form frmMenucaprind_menulateral
       Top             =   0
       _ExtentX        =   847
       _ExtentY        =   847
-      Resolution      =   99
+      Resolution      =   26
       ResizeFonts     =   0   'False
       ScreenHeight    =   1080
-      ScreenWidth     =   2560
+      ScreenWidth     =   1920
       ScreenHeightDT  =   1080
       ScreenWidthDT   =   1920
       AutoResizeOnLoad=   0   'False

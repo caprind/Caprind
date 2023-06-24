@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
-Object = "{8CA2526B-1F1A-4012-A04D-56C1849DD6A6}#1.5#0"; "DrawSuite2022.ocx"
+Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
 Object = "{50D37AD9-8D3C-43DD-ADD5-7C957C951843}#1.9#0"; "FlexCell.ocx"
 Begin VB.Form frmMan_plano 
    Caption         =   "Plano de manutenção"
@@ -16,6 +16,15 @@ Begin VB.Form frmMan_plano
    Begin VB.Frame Frame1 
       BackColor       =   &H00E0E0E0&
       Caption         =   "Dados plano de manutenção"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   1005
       Left            =   0
       TabIndex        =   2
@@ -31,7 +40,7 @@ Begin VB.Form frmMan_plano
          Width           =   3375
       End
       Begin VB.TextBox txt_Tipo 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          Height          =   315
          Left            =   1470
          TabIndex        =   13
@@ -48,7 +57,7 @@ Begin VB.Form frmMan_plano
          Width           =   1215
       End
       Begin VB.TextBox txt_Descricao 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          Height          =   315
          Left            =   4650
          TabIndex        =   8
@@ -56,7 +65,7 @@ Begin VB.Form frmMan_plano
          Width           =   6255
       End
       Begin VB.TextBox txt_Codigo 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          Height          =   315
          Left            =   3300
          TabIndex        =   6
@@ -64,7 +73,7 @@ Begin VB.Form frmMan_plano
          Width           =   1335
       End
       Begin VB.TextBox txt_CodPlano 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          Height          =   315
          Left            =   210
          TabIndex        =   4
@@ -72,21 +81,39 @@ Begin VB.Form frmMan_plano
          Width           =   1245
       End
       Begin VB.Label Label7 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          AutoSize        =   -1  'True
          BackColor       =   &H00E0E0E0&
          Caption         =   "Tipo"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   195
-         Left            =   2190
+         Left            =   2205
          TabIndex        =   12
          Top             =   270
-         Width           =   345
+         Width           =   315
       End
       Begin VB.Label Label6 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          AutoSize        =   -1  'True
          BackColor       =   &H00E0E0E0&
          Caption         =   "Peridiocidade"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   195
          Left            =   14385
          TabIndex        =   11
@@ -94,10 +121,19 @@ Begin VB.Form frmMan_plano
          Width           =   975
       End
       Begin VB.Label Label5 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          AutoSize        =   -1  'True
          BackColor       =   &H00E0E0E0&
          Caption         =   "Setor"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   195
          Left            =   12315
          TabIndex        =   9
@@ -105,21 +141,39 @@ Begin VB.Form frmMan_plano
          Width           =   405
       End
       Begin VB.Label Label3 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          AutoSize        =   -1  'True
          BackColor       =   &H00E0E0E0&
          Caption         =   "Descrição"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   195
-         Left            =   7410
+         Left            =   7425
          TabIndex        =   7
          Top             =   270
-         Width           =   735
+         Width           =   705
       End
       Begin VB.Label Label2 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          AutoSize        =   -1  'True
          BackColor       =   &H00E0E0E0&
          Caption         =   "Código"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   195
          Left            =   3705
          TabIndex        =   5
@@ -127,10 +181,19 @@ Begin VB.Form frmMan_plano
          Width           =   525
       End
       Begin VB.Label Label1 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          AutoSize        =   -1  'True
          BackColor       =   &H00E0E0E0&
          Caption         =   "Código plano"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   195
          Left            =   390
          TabIndex        =   3
@@ -170,13 +233,19 @@ Begin VB.Form frmMan_plano
       _ExtentX        =   29051
       _ExtentY        =   1773
       ButtonCount     =   9
+      GradientColor1  =   16777215
       GradientColor2  =   14737632
-      GradientColorOverRight1=   16315633
-      GradientColorOverRight2=   15195350
-      GripperColor    =   15195350
+      GradientColorDown1=   10802943
+      GradientColorDown2=   7979263
+      GradientColorDownRight1=   10802943
+      GradientColorDownRight2=   7979263
+      GradientColorOver1=   14417407
+      GradientColorOver2=   12317439
+      GradientColorOverRight1=   14417407
+      GradientColorOverRight2=   12317439
       IsStrech        =   -1  'True
-      RightColor1     =   0
-      RightColor2     =   0
+      RightColor1     =   14737632
+      RightColor2     =   16777215
       ShowEndPanel    =   0   'False
       Theme           =   1
       ButtonCaption1  =   "Novo"
@@ -362,9 +431,9 @@ Begin VB.Form frmMan_plano
          Top             =   0
          _ExtentX        =   847
          _ExtentY        =   847
-         Resolution      =   99
-         ScreenHeight    =   768
-         ScreenWidth     =   1360
+         Resolution      =   26
+         ScreenHeight    =   1080
+         ScreenWidth     =   1920
          ScreenHeightDT  =   1080
          ScreenWidthDT   =   1920
          AutoResizeOnLoad=   0   'False
