@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{8CA2526B-1F1A-4012-A04D-56C1849DD6A6}#1.5#0"; "DrawSuite2022.ocx"
+Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
 Begin VB.Form frmprod_Imprimir 
    Appearance      =   0  'Flat
    BackColor       =   &H00E0E0E0&
@@ -50,8 +50,8 @@ Begin VB.Form frmprod_Imprimir
          Strikethrough   =   0   'False
       EndProperty
       Icon            =   "frmprod_Imprimir.frx":2126
-      ShowMaximize    =   0   'False
-      ShowMinimize    =   0   'False
+      ShowMaximizeButton=   0   'False
+      ShowMinimizeButton=   0   'False
    End
    Begin DrawSuite2022.USStatusBar USStatusBar1 
       Align           =   2  'Align Bottom
@@ -79,10 +79,6 @@ Begin VB.Form frmprod_Imprimir
       Width           =   1695
       _ExtentX        =   2990
       _ExtentY        =   6429
-      BorderColor     =   5263559
-      BorderColorDisabled=   13160660
-      BorderColorDown =   4013465
-      BorderColorOver =   4408288
       Caption         =   "Avançar >>>>"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
@@ -93,9 +89,10 @@ Begin VB.Form frmprod_Imprimir
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   16777215
-      ForeColorDown   =   16777215
-      ForeColorOver   =   16777215
+      BorderColor     =   5263559
+      BorderColorDisabled=   13160660
+      BorderColorDown =   4013465
+      BorderColorOver =   4408288
       GradientColor1  =   5263559
       GradientColor2  =   5263559
       GradientColor3  =   5263559
@@ -104,14 +101,14 @@ Begin VB.Form frmprod_Imprimir
       GradientColorDisabled2=   13160660
       GradientColorDisabled3=   13160660
       GradientColorDisabled4=   13160660
-      GradientColorDown1=   4013465
-      GradientColorDown2=   4013465
-      GradientColorDown3=   4013465
-      GradientColorDown4=   4013465
       GradientColorOver1=   4408288
       GradientColorOver2=   4408288
       GradientColorOver3=   4408288
       GradientColorOver4=   4408288
+      GradientColorDown1=   4013465
+      GradientColorDown2=   4013465
+      GradientColorDown3=   4013465
+      GradientColorDown4=   4013465
       PicSizeH        =   48
       PicSizeW        =   48
       Theme           =   4
@@ -535,13 +532,19 @@ Begin VB.Form frmprod_Imprimir
       _ExtentX        =   11298
       _ExtentY        =   1720
       ButtonCount     =   5
+      GradientColor1  =   16777215
       GradientColor2  =   14737632
-      GradientColorOverRight1=   16315633
-      GradientColorOverRight2=   15195350
-      GripperColor    =   15195350
+      GradientColorDown1=   10802943
+      GradientColorDown2=   7979263
+      GradientColorDownRight1=   10802943
+      GradientColorDownRight2=   7979263
+      GradientColorOver1=   14417407
+      GradientColorOver2=   12317439
+      GradientColorOverRight1=   14417407
+      GradientColorOverRight2=   12317439
       IsStrech        =   -1  'True
-      RightColor1     =   0
-      RightColor2     =   0
+      RightColor1     =   14737632
+      RightColor2     =   16777215
       ShowEndPanel    =   0   'False
       Theme           =   1
       ButtonCaption1  =   "Relatório"

@@ -1,0 +1,4 @@
+27/06/2023 17:03:12 - [LISTA_NSNRECS_DADOS]
+27/06/2023 17:03:12 - {"chNFe":"35230546086864000179550010000630091705547504"}
+27/06/2023 17:03:12 - [LISTA_NSNRECS_RESPOSTA]
+27/06/2023 17:03:12 - {"status":200,"motivo":"Consulta realizada com sucesso","nsNRecs":[{"xmotivoSpecified":true,"xmotivo":"Autorizado o uso da NF-e","cstat":100,"nsNRec":7944937}]}

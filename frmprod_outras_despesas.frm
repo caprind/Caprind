@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmprod_outras_despesas 
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   0  'None
@@ -60,6 +60,8 @@ Begin VB.Form frmprod_outras_despesas
          Strikethrough   =   0   'False
       EndProperty
       Icon            =   "frmprod_outras_despesas.frx":81C2
+      ShowMaximizeButton=   0   'False
+      ShowMinimizeButton=   0   'False
    End
    Begin DrawSuite2022.USTreeView USTreeView1 
       Height          =   5145

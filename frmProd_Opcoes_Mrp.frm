@@ -690,6 +690,8 @@ Begin VB.Form frmProd_Opcoes_Mrp
          Strikethrough   =   0   'False
       EndProperty
       Icon            =   "frmProd_Opcoes_Mrp.frx":000C
+      ShowMaximizeButton=   0   'False
+      ShowMinimizeButton=   0   'False
    End
    Begin DrawSuite2022.USButton cmdGerarmrp 
       Height          =   975

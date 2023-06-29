@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{8CA2526B-1F1A-4012-A04D-56C1849DD6A6}#1.5#0"; "DrawSuite2022.ocx"
+Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
 Begin VB.Form frmProduto_Novo 
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   0  'None
@@ -365,10 +365,6 @@ Begin VB.Form frmProduto_Novo
          _ExtentX        =   2461
          _ExtentY        =   1244
          DibPicture      =   "frmProduto_Novo.frx":0010
-         BorderColor     =   5263559
-         BorderColorDisabled=   13160660
-         BorderColorDown =   4013465
-         BorderColorOver =   4408288
          Caption         =   "Salvar"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Tahoma"
@@ -379,9 +375,10 @@ Begin VB.Form frmProduto_Novo
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   16777215
-         ForeColorDown   =   16777215
-         ForeColorOver   =   16777215
+         BorderColor     =   5263559
+         BorderColorDisabled=   13160660
+         BorderColorDown =   4013465
+         BorderColorOver =   4408288
          GradientColor1  =   5263559
          GradientColor2  =   5263559
          GradientColor3  =   5263559
@@ -390,14 +387,14 @@ Begin VB.Form frmProduto_Novo
          GradientColorDisabled2=   13160660
          GradientColorDisabled3=   13160660
          GradientColorDisabled4=   13160660
-         GradientColorDown1=   4013465
-         GradientColorDown2=   4013465
-         GradientColorDown3=   4013465
-         GradientColorDown4=   4013465
          GradientColorOver1=   4408288
          GradientColorOver2=   4408288
          GradientColorOver3=   4408288
          GradientColorOver4=   4408288
+         GradientColorDown1=   4013465
+         GradientColorDown2=   4013465
+         GradientColorDown3=   4013465
+         GradientColorDown4=   4013465
          PicAlign        =   7
          ShowFocusRect   =   0   'False
          Theme           =   4
@@ -446,10 +443,7 @@ Begin VB.Form frmProduto_Novo
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ShowClose       =   0   'False
       ShowControlBox  =   0   'False
-      ShowMaximize    =   0   'False
-      ShowMinimize    =   0   'False
    End
    Begin DrawSuite2022.USStatusBar USStatusBar1 
       Align           =   2  'Align Bottom
@@ -470,12 +464,17 @@ Attribute VB_Exposed = False
 Private Sub btnok_Click()
 On Error GoTo tratar_erro
 
-    Familia = cmbFamilia.Text
+    Familia = cmbfamilia.Text
     LocalArmazenamento = cmbLocal_armaz.Text
     CodManual = Optmanual.Value
     
     If Familia = "" Or LocalArmazenamento = "" Then
     USMsgBox "Escolha a familia e o local de armazenamento", vbInformation, "CAPRIND V5.0"
+        Exit Sub
+    End If
+    
+    If ID_Tipo = Null Then
+    USMsgBox "Escolha a classificação do item no bloco K", vbInformation, "CAPRIND V5.0"
         Exit Sub
     End If
     
@@ -550,9 +549,9 @@ End Sub
 Private Sub Form_Load()
 On Error GoTo tratar_erro
 
-cmbFamilia.Clear
+cmbfamilia.Clear
 
-ProcCarregaComboFamilia cmbFamilia, "familia <> 'Null' and Compras = 'True'", False
+ProcCarregaComboFamilia cmbfamilia, "familia <> 'Null' and Compras = 'True'", False
 ProcCarregaComboLA cmbLocal_armaz, False, False
 
 With cmbClassificacao_produto

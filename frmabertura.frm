@@ -2090,9 +2090,9 @@ If LocalAntigoCaprind <> "" And LocalNovoCaprind <> "" Then
     Set FU = Fsu.GetFile(LocalNovoCaprind)
     If f.DateLastModified < FU.DateLastModified Then
         USMsgBox ("O sistema Caprind está desatualizado e será atualizado automaticamente."), vbInformation, "CAPRIND v5.0"
- '       NomeCampo = "SincCaprind.exe na pasta " & CaminhoNovo
-  '      Shell CaminhoNovo & "\SincCaprind.exe", vbNormalFocus
-   '     End
+        NomeCampo = "SincCaprind.exe na pasta " & CaminhoNovo
+        Shell CaminhoNovo & "\SincCaprind.exe", vbNormalFocus
+        End
     End If
 End If
 

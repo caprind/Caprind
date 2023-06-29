@@ -5033,9 +5033,9 @@ If CodRef <> "" Then
     TBProduto!N_referencia = CodRef
     TBProduto!Codproduto = TBComponente!Codproduto
     TBProduto!Descricao = Descricao
-    TBProduto!Aplicacao = CliFornCodRef
+    TBProduto!Aplicacao = IIf(CliFornCodRef <> "", CliFornCodRef, 0)
     TBProduto!ID_cliente_forn = IDCliFornCodRef
-    TBProduto!Tipo = TipoCliFornCodRef
+    TBProduto!Tipo = IIf(TipoCliFornCodRef <> "", TipoCliFornCodRef, 0)
     TBProduto.Update
     TBProduto.Close
 End If

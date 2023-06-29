@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
 Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Object = "{A8E5842E-102B-4289-9D57-3B3F5B5E15D3}#19.3#0"; "Codejock.Controls.v19.3.0.ocx"
 Begin VB.Form frmFaturamento_Prod_Serv_NFe_NS 
    BackColor       =   &H00E0E0E0&
@@ -96,11 +96,11 @@ Begin VB.Form frmFaturamento_Prod_Serv_NFe_NS
       TabCaption(1)   =   "Lista de produtos"
       TabPicture(1)   =   "frmFaturamento_Prod_Serv_Nfe_NS.frx":105E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame_comb_lub"
-      Tab(1).Control(1)=   "txtID_item"
+      Tab(1).Control(0)=   "listaProdutos"
+      Tab(1).Control(1)=   "USToolBar2"
       Tab(1).Control(2)=   "FrameCST"
-      Tab(1).Control(3)=   "USToolBar2"
-      Tab(1).Control(4)=   "listaProdutos"
+      Tab(1).Control(3)=   "txtID_item"
+      Tab(1).Control(4)=   "Frame_comb_lub"
       Tab(1).ControlCount=   5
       Begin VB.Frame Frame1 
          BackColor       =   &H00E0E0E0&
@@ -637,17 +637,17 @@ Begin VB.Form frmFaturamento_Prod_Serv_NFe_NS
          TabCaption(1)   =   "Retorno SEFAZ"
          TabPicture(1)   =   "frmFaturamento_Prod_Serv_Nfe_NS.frx":F486
          Tab(1).ControlEnabled=   0   'False
-         Tab(1).Control(0)=   "TxtRetorno"
-         Tab(1).Control(1)=   "BtnValidadorXML"
-         Tab(1).Control(2)=   "Frame15"
-         Tab(1).Control(3)=   "Frame14"
-         Tab(1).Control(4)=   "Frame13"
+         Tab(1).Control(0)=   "Frame8"
+         Tab(1).Control(1)=   "Frame7"
+         Tab(1).Control(2)=   "Frame6"
+         Tab(1).Control(3)=   "Frame5"
+         Tab(1).Control(4)=   "Frame11"
          Tab(1).Control(5)=   "Frame12"
-         Tab(1).Control(6)=   "Frame11"
-         Tab(1).Control(7)=   "Frame5"
-         Tab(1).Control(8)=   "Frame6"
-         Tab(1).Control(9)=   "Frame7"
-         Tab(1).Control(10)=   "Frame8"
+         Tab(1).Control(6)=   "Frame13"
+         Tab(1).Control(7)=   "Frame14"
+         Tab(1).Control(8)=   "Frame15"
+         Tab(1).Control(9)=   "BtnValidadorXML"
+         Tab(1).Control(10)=   "TxtRetorno"
          Tab(1).ControlCount=   11
          Begin VB.TextBox TxtRetorno 
             BorderStyle     =   0  'None
@@ -4577,7 +4577,10 @@ End If
   'resposta = consultarCadastroContribuinte(ReturnNumbersOnly(CnpjNF), "SP", "05272563000152", "CNPJ")
   status = LerDadosJSON(resposta, status, "", "")
   txtRetorno.Text = resposta
- USMsgBox resposta, vbInformation, "CAPRIND v5.0"
+  USMsgBox resposta, vbInformation, "CAPRIND v5.0"
+
+ProcCarregaListaNota (1)
+frmFaturamento_Prod_Serv.ProcCarregaListaNota (1)
 
 Exit Sub
 tratar_erro:
@@ -6239,7 +6242,8 @@ frmFaturamento_Prod_Serv.ProcCarregaListaNota (1)
 Exit Sub
 End If
 
-
+ProcCarregaListaNota (1)
+frmFaturamento_Prod_Serv.ProcCarregaListaNota (1)
 
 Exit Sub
 tratar_erro:
@@ -8549,7 +8553,7 @@ Set objTransp = objDom.createElement("transp")
 objinfNFe.appendChild objTransp
 'Abre transp==================================================================================================
 objTransp.appendChild objDom.createElement("modFrete") '0
-objTransp.getElementsByTagName("modFrete").Item(0).Text = TBTransporte!txt_Frete_Conta 'Frete Novo layout da Sefaz (4.0)
+objTransp.getElementsByTagName("modFrete").Item(0).Text = IIf(IsNull(TBTransporte!txt_Frete_Conta), 0, TBTransporte!txt_Frete_Conta) 'Frete Novo layout da Sefaz (4.0)
 'objTransp.appendChild objDom.createElement("balsa") '1
 'objTransp.appendChild objDom.createElement("vagao") '2
 '==========================================================================================

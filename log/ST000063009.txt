@@ -1,0 +1,16 @@
+27/06/2023 17:03:56 - [CONSULTA_SITUACAO_DADOS]
+27/06/2023 17:03:56 - {"licencaCnpj":"46086864000179","chNFe":"35230546086864000179550010000630091705547504","tpAmb":"1","versao":"4.00"}
+27/06/2023 17:03:56 - [CONSULTA_SITUACAO_RESPOSTA]
+27/06/2023 17:03:56 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2023-06-27T17:03:56-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35230546086864000179550010000630091705547504","dhRecbto":"2023-05-08T08:09:56-03:00","nProt":"135230694911128","digVal":"3Gc745TatseAm/bORWDtwnRXc8I=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}
+27/06/2023 17:04:07 - [CONSULTA_SITUACAO_DADOS]
+27/06/2023 17:04:07 - {"licencaCnpj":"46086864000179","chNFe":"35230546086864000179550010000630091705547504","tpAmb":"1","versao":"4.00"}
+27/06/2023 17:04:07 - [CONSULTA_SITUACAO_RESPOSTA]
+27/06/2023 17:04:07 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2023-06-27T17:04:05-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35230546086864000179550010000630091705547504","dhRecbto":"2023-05-08T08:09:56-03:00","nProt":"135230694911128","digVal":"3Gc745TatseAm/bORWDtwnRXc8I=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}
+27/06/2023 17:05:05 - [CONSULTA_SITUACAO_DADOS]
+27/06/2023 17:05:05 - {"licencaCnpj":"46086864000179","chNFe":"35230546086864000179550010000630091705547504","tpAmb":"1","versao":"4.00"}
+27/06/2023 17:05:05 - [CONSULTA_SITUACAO_RESPOSTA]
+27/06/2023 17:05:05 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2023-06-27T17:05:02-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35230546086864000179550010000630091705547504","dhRecbto":"2023-05-08T08:09:56-03:00","nProt":"135230694911128","digVal":"3Gc745TatseAm/bORWDtwnRXc8I=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}
+27/06/2023 17:05:36 - [CONSULTA_SITUACAO_DADOS]
+27/06/2023 17:05:36 - {"licencaCnpj":"46086864000179","chNFe":"35230546086864000179550010000630091705547504","tpAmb":"1","versao":"4.00"}
+27/06/2023 17:05:36 - [CONSULTA_SITUACAO_RESPOSTA]
+27/06/2023 17:05:36 - {"status":200,"motivo":"Consulta realizada com sucesso","retConsSitNFe":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","cStat":"100","xMotivo":"Autorizado o uso da NF-e","cUF":"35","dhRecbto":"2023-06-27T17:05:35-03:00","protNFe":[{"infProt":{"tpAmb":"1","verAplic":"SP_NFE_PL009_V4","chNFe":"35230546086864000179550010000630091705547504","dhRecbto":"2023-05-08T08:09:56-03:00","nProt":"135230694911128","digVal":"3Gc745TatseAm/bORWDtwnRXc8I=","cStat":"100","xMotivo":"Autorizado o uso da NF-e"},"versao":"4.00"}],"versao":"4.00"}}

@@ -3,7 +3,7 @@ Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.ocx"
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
 Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmEstoque_Recebimento_consignacao 
    BackColor       =   &H00E0E0E0&
    Caption         =   "Estoque - Recebimento - Consignação"
@@ -165,16 +165,16 @@ Begin VB.Form frmEstoque_Recebimento_consignacao
       TabCaption(1)   =   "Lista de produtos à receber/recebidos"
       TabPicture(1)   =   "frmEstoque_Recebimento_consignacao.frx":0DAC
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "PBLista1"
-      Tab(1).Control(1)=   "USToolBar2"
-      Tab(1).Control(2)=   "Lista_movimentacao"
-      Tab(1).Control(3)=   "Frame2"
+      Tab(1).Control(0)=   "Txt_tipodest"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "cmdNota"
+      Tab(1).Control(2)=   "txtId_produto_lista"
+      Tab(1).Control(3)=   "txtid_estoque"
       Tab(1).Control(4)=   "Frame1"
-      Tab(1).Control(5)=   "txtid_estoque"
-      Tab(1).Control(6)=   "txtId_produto_lista"
-      Tab(1).Control(7)=   "cmdNota"
-      Tab(1).Control(8)=   "Txt_tipodest"
-      Tab(1).Control(8).Enabled=   0   'False
+      Tab(1).Control(5)=   "Frame2"
+      Tab(1).Control(6)=   "Lista_movimentacao"
+      Tab(1).Control(7)=   "USToolBar2"
+      Tab(1).Control(8)=   "PBLista1"
       Tab(1).ControlCount=   9
       Begin VB.TextBox Txt_tipodest 
          Alignment       =   2  'Center
@@ -562,7 +562,7 @@ Begin VB.Form frmEstoque_Recebimento_consignacao
                CalendarTitleBackColor=   8421504
                CalendarTitleForeColor=   16777215
                CalendarTrailingForeColor=   255
-               Format          =   127860737
+               Format          =   219021313
                CurrentDate     =   39057
             End
          End
@@ -1160,7 +1160,7 @@ Begin VB.Form frmEstoque_Recebimento_consignacao
             CalendarTitleBackColor=   8421504
             CalendarTitleForeColor=   16777215
             CalendarTrailingForeColor=   255
-            Format          =   196149249
+            Format          =   219086849
             CurrentDate     =   39057
          End
          Begin VB.Label Label23 
@@ -2492,6 +2492,8 @@ On Error GoTo tratar_erro
 Lista.ListItems.Clear
 Set TBLISTA = CreateObject("adodb.recordset")
 TBLISTA.Open StrSql_Localizar_Consignacao, Conexao, adOpenKeyset, adLockReadOnly
+Debug.Print StrSql_Localizar_Consignacao
+
 If TBLISTA.EOF = False Then
     PBLista.Min = 0
     PBLista.Max = TBLISTA.RecordCount

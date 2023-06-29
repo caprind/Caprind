@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.ocx"
-Object = "{8CA2526B-1F1A-4012-A04D-56C1849DD6A6}#1.5#0"; "DrawSuite2022.ocx"
+Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
 Begin VB.Form frmInstrumentos_abrir 
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   4  'Fixed ToolWindow
@@ -408,7 +408,7 @@ Begin VB.Form frmInstrumentos_abrir
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   490733569
+         Format          =   171835393
          CurrentDate     =   39057
       End
       Begin MSComCtl2.DTPicker Msk_inicio 
@@ -435,7 +435,7 @@ Begin VB.Form frmInstrumentos_abrir
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   490733569
+         Format          =   171835393
          CurrentDate     =   39057
       End
       Begin VB.Label Label2 
@@ -481,7 +481,7 @@ Attribute VB_Exposed = False
 Private Sub cmbFamilia_Click()
 On Error GoTo tratar_erro
 
-If cmbfamilia <> "" Then txtTexto = ""
+If cmbFamilia <> "" Then txtTexto = ""
 
 Exit Sub
 tratar_erro:
@@ -494,11 +494,11 @@ On Error GoTo tratar_erro
 
 If cmbfiltrarpor = "Família" Or cmbfiltrarpor = "Status" Then
     txtTexto.Visible = False
-    cmbfamilia.Visible = True
+    cmbFamilia.Visible = True
     If cmbfiltrarpor = "Família" Then
-        ProcCarregaComboFamilia cmbfamilia, "familia <> 'Null' and Qualidade = 'True'", True
+        ProcCarregaComboFamilia cmbFamilia, "familia <> 'Null' and Qualidade = 'True'", True
     Else
-        With cmbfamilia
+        With cmbFamilia
             .Clear
             .AddItem "Aprovado"
             .AddItem "Bloqueado"
@@ -510,7 +510,7 @@ If cmbfiltrarpor = "Família" Or cmbfiltrarpor = "Status" Then
     End If
 Else
     txtTexto.Visible = True
-    cmbfamilia.Visible = False
+    cmbFamilia.Visible = False
 End If
 
 Exit Sub
@@ -542,11 +542,11 @@ With frmInstrumentos
     INNERJOINTEXTO = "Select " & CamposFiltro & " from ((Instrumentos I LEFT JOIN Estoque_controle EC ON EC.IDestoque = I.IDestoque) LEFT JOIN Projproduto P ON P.Desenho = I.Numero) LEFT JOIN item_aplicacoes IA ON IA.Codproduto = P.Codproduto"
     TextoFiltroPadrao = DataFiltro & " group by " & CamposFiltro & " order by I.numero"
         
-    If txtTexto <> "" Or cmbfamilia <> "" Then
+    If txtTexto <> "" Or cmbFamilia <> "" Then
         If cmbfiltrarpor = "Família" Or cmbfiltrarpor = "Status" Then
             If cmbfiltrarpor = "Família" Then TextoFiltro = "I.Familia" Else TextoFiltro = "I.Status"
-            .StrSql_Instrumentos_Localizar = INNERJOINTEXTO & " where " & TextoFiltro & " = '" & cmbfamilia & "' and " & TextoFiltroPadrao
-            .FormulaRel_Instrumentos = "{" & Replace(TextoFiltro, "I.", "Instrumentos.") & "} = '" & cmbfamilia & "' and " & DataFiltroRel
+            .StrSql_Instrumentos_Localizar = INNERJOINTEXTO & " where " & TextoFiltro & " = '" & cmbFamilia & "' and " & TextoFiltroPadrao
+            .FormulaRel_Instrumentos = "{" & Replace(TextoFiltro, "I.", "Instrumentos.") & "} = '" & cmbFamilia & "' and " & DataFiltroRel
         Else
             TextoFiltro1 = ""
             Select Case cmbfiltrarpor
@@ -630,7 +630,7 @@ End Sub
 Private Sub txtTexto_Change()
 On Error GoTo tratar_erro
 
-If txtTexto <> "" Then cmbfamilia.ListIndex = -1
+If txtTexto <> "" Then cmbFamilia.ListIndex = -1
 
 Exit Sub
 tratar_erro:

@@ -336,6 +336,8 @@ Begin VB.Form frmprod_Novo_Nota
          Strikethrough   =   0   'False
       EndProperty
       Icon            =   "frmprod_Novo_nota.frx":D7FD
+      ShowMaximizeButton=   0   'False
+      ShowMinimizeButton=   0   'False
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00E0E0E0&

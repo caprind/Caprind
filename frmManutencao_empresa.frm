@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{8CA2526B-1F1A-4012-A04D-56C1849DD6A6}#1.5#0"; "DrawSuite2022.ocx"
+Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
 Begin VB.Form frmManutencao_empresa 
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   4  'Fixed ToolWindow
@@ -227,7 +227,7 @@ Conexao.Execute "Update Manutencao_data Set Solicitacao = '" & a & "' where ID =
 frmManutencao.txtSolicitacao = a
 
 Set TBAbrir = CreateObject("adodb.recordset")
-TBAbrir.Open "select * from Manutencao_defeito where idManutencao = " & frmManutencao.txtID, Conexao, adOpenKeyset, adLockOptimistic
+TBAbrir.Open "select * from Manutencao_defeito where idManutencao = " & frmManutencao.txtId, Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.EOF = False Then
     Do While TBAbrir.EOF = False
         Set TBCompras_Pedido = CreateObject("adodb.recordset")
