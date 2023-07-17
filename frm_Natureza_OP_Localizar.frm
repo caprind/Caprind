@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.ocx"
-Object = "{8CA2526B-1F1A-4012-A04D-56C1849DD6A6}#1.5#0"; "DrawSuite2022.ocx"
+Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
 Begin VB.Form frm_Natureza_OP_Localizar 
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   0  'None
@@ -60,8 +60,6 @@ Begin VB.Form frm_Natureza_OP_Localizar
          Strikethrough   =   0   'False
       EndProperty
       Icon            =   "frm_Natureza_OP_Localizar.frx":3650
-      ShowMaximize    =   0   'False
-      ShowMinimize    =   0   'False
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00E0E0E0&
@@ -80,25 +78,6 @@ Begin VB.Form frm_Natureza_OP_Localizar
       TabIndex        =   8
       Top             =   720
       Width           =   5115
-      Begin VB.CheckBox chkValidacao 
-         BackColor       =   &H00E0E0E0&
-         Caption         =   "Somente com validação"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   375
-         Left            =   750
-         TabIndex        =   14
-         Top             =   1590
-         Value           =   1  'Checked
-         Width           =   2535
-      End
       Begin MSMask.MaskEdBox txtTexto1 
          Height          =   255
          Left            =   3630
@@ -123,10 +102,6 @@ Begin VB.Form frm_Natureza_OP_Localizar
          _ExtentX        =   2090
          _ExtentY        =   714
          DibPicture      =   "frm_Natureza_OP_Localizar.frx":396A
-         BorderColor     =   5263559
-         BorderColorDisabled=   13160660
-         BorderColorDown =   4013465
-         BorderColorOver =   4408288
          Caption         =   "Filtrar"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Tahoma"
@@ -137,9 +112,10 @@ Begin VB.Form frm_Natureza_OP_Localizar
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   16777215
-         ForeColorDown   =   16777215
-         ForeColorOver   =   16777215
+         BorderColor     =   5263559
+         BorderColorDisabled=   13160660
+         BorderColorDown =   4013465
+         BorderColorOver =   4408288
          GradientColor1  =   5263559
          GradientColor2  =   5263559
          GradientColor3  =   5263559
@@ -148,17 +124,16 @@ Begin VB.Form frm_Natureza_OP_Localizar
          GradientColorDisabled2=   13160660
          GradientColorDisabled3=   13160660
          GradientColorDisabled4=   13160660
-         GradientColorDown1=   4013465
-         GradientColorDown2=   4013465
-         GradientColorDown3=   4013465
-         GradientColorDown4=   4013465
          GradientColorOver1=   4408288
          GradientColorOver2=   4408288
          GradientColorOver3=   4408288
          GradientColorOver4=   4408288
+         GradientColorDown1=   4013465
+         GradientColorDown2=   4013465
+         GradientColorDown3=   4013465
+         GradientColorDown4=   4013465
          PicSize         =   1
          ShowFocusRect   =   0   'False
-         ShowFocusRectDown=   0   'False
          Theme           =   4
       End
       Begin VB.Frame Frame2 
@@ -358,12 +333,6 @@ Dim varValidacao As String
 
 With frm_Natureza_OP
 
-If chkValidacao.Value = 1 Then
-varValidacao = " And (RespValidacao <> N'""')"
-Else
-varValidacao = " And RespValidacao IS NULL"
-End If
-
     If txtTexto <> "" Or txtTexto1.Text <> "_.___" Then
         Select Case cmbfiltrarpor
             Case "CFOP": TextoFiltro = "id_CFOP"
@@ -376,30 +345,26 @@ End If
         
         
         If Optinicio.Value = True Then
-            .StrSql_CFOP = "Select * from tbl_NaturezaOperacao where " & TextoFiltro & " like '" & varTexto & "%'" & varValidacao & " order by id_CFOP, IDCountCfop"
+            .StrSql_CFOP = "Select * from tbl_NaturezaOperacao where " & TextoFiltro & " like '" & varTexto & "%' order by id_CFOP, IDCountCfop"
             .FormulaRel_CFOP = "{tbl_NaturezaOperacao." & TextoFiltro & "} like '" & varTexto & "*'"
         End If
         If Optmeio.Value = True Then
-            .StrSql_CFOP = "Select * from tbl_NaturezaOperacao where " & TextoFiltro & " like '%" & varTexto & "%'" & varValidacao & " order by id_CFOP, IDCountCfop"
+            .StrSql_CFOP = "Select * from tbl_NaturezaOperacao where " & TextoFiltro & " like '%" & varTexto & "%' order by id_CFOP, IDCountCfop"
             .FormulaRel_CFOP = "{tbl_NaturezaOperacao." & TextoFiltro & "} like '*" & varTexto & "*'"
         End If
         If Optfim.Value = True Then
-            .StrSql_CFOP = "Select * from tbl_NaturezaOperacao where " & TextoFiltro & " like '%" & varTexto & "'" & varValidacao & " order by id_CFOP, IDCountCfop"
+            .StrSql_CFOP = "Select * from tbl_NaturezaOperacao where " & TextoFiltro & " like '%" & varTexto & "' order by id_CFOP, IDCountCfop"
             .FormulaRel_CFOP = "{tbl_NaturezaOperacao." & TextoFiltro & "} like '*" & varTexto & "'"
         End If
         If optIgual.Value = True Then
-            .StrSql_CFOP = "Select * from tbl_NaturezaOperacao where " & TextoFiltro & " = '" & varTexto & "'" & varValidacao & " order by id_CFOP, IDCountCfop"
+            .StrSql_CFOP = "Select * from tbl_NaturezaOperacao where " & TextoFiltro & " = '" & varTexto & "' order by id_CFOP, IDCountCfop"
             .FormulaRel_CFOP = "{tbl_NaturezaOperacao." & TextoFiltro & "} = '" & varTexto & "'"
         End If
     Else
-    If chkValidacao.Value = 1 Then
-    
-        .StrSql_CFOP = "Select * from tbl_NaturezaOperacao where (RespValidacao <> N'""') order by id_CFOP, IDCountCfop"
-        .FormulaRel_CFOP = ""
-    Else
+
         .StrSql_CFOP = "Select * from tbl_NaturezaOperacao order by id_CFOP, IDCountCfop"
         .FormulaRel_CFOP = ""
-    End If
+
     End If
     .ProcCarregaLista (1)
 End With

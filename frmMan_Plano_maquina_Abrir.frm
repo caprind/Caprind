@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{8CA2526B-1F1A-4012-A04D-56C1849DD6A6}#1.5#0"; "DrawSuite2022.ocx"
+Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmMan_Plano_maquina_Abrir 
    BackColor       =   &H00E0E0E0&
@@ -28,7 +28,7 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
    ScaleHeight     =   6645
    ScaleWidth      =   8895
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   2  'Centralziar na Tela
+   StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame1 
       BackColor       =   &H00E0E0E0&
       BeginProperty Font 
@@ -193,7 +193,7 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
       End
       Begin VB.Label Label5 
          AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparente
+         BackStyle       =   0  'Transparent
          Caption         =   "Filtrar por"
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -213,7 +213,7 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparente
+         BackStyle       =   0  'Transparent
          Caption         =   "Texto para pesquisa"
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -392,7 +392,7 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
       Top             =   5730
       Width           =   8805
       Begin VB.TextBox txtNreg 
-         Alignment       =   2  'Centralizar
+         Alignment       =   2  'Center
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -437,9 +437,6 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
          _ExtentX        =   926
          _ExtentY        =   556
          DibPicture      =   "frmMan_Plano_maquina_Abrir.frx":266D
-         BorderColor     =   14404026
-         BorderColorDown =   11632444
-         BorderColorOver =   11632444
          Caption         =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Tahoma"
@@ -450,15 +447,18 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         BorderColor     =   14404026
+         BorderColorDown =   11632444
+         BorderColorOver =   11632444
          GradientColor2  =   16777215
          GradientColor3  =   16777215
-         GradientColorDown2=   16246986
-         GradientColorDown3=   15189380
-         GradientColorDown4=   14596208
          GradientColorOver1=   16643560
          GradientColorOver2=   16576988
          GradientColorOver3=   16441780
          GradientColorOver4=   16178091
+         GradientColorDown2=   16246986
+         GradientColorDown3=   15189380
+         GradientColorDown4=   14596208
          PicSizeH        =   19
          PicSizeW        =   19
       End
@@ -472,9 +472,6 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
          _ExtentX        =   926
          _ExtentY        =   556
          DibPicture      =   "frmMan_Plano_maquina_Abrir.frx":5E14
-         BorderColor     =   14404026
-         BorderColorDown =   11632444
-         BorderColorOver =   11632444
          Caption         =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Tahoma"
@@ -485,15 +482,18 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         BorderColor     =   14404026
+         BorderColorDown =   11632444
+         BorderColorOver =   11632444
          GradientColor2  =   16777215
          GradientColor3  =   16777215
-         GradientColorDown2=   16246986
-         GradientColorDown3=   15189380
-         GradientColorDown4=   14596208
          GradientColorOver1=   16643560
          GradientColorOver2=   16576988
          GradientColorOver3=   16441780
          GradientColorOver4=   16178091
+         GradientColorDown2=   16246986
+         GradientColorDown3=   15189380
+         GradientColorDown4=   14596208
          PicSizeH        =   19
          PicSizeW        =   19
       End
@@ -505,9 +505,6 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
          Width           =   465
          _ExtentX        =   820
          _ExtentY        =   556
-         BorderColor     =   14404026
-         BorderColorDown =   11632444
-         BorderColorOver =   11632444
          Caption         =   "Ir"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Tahoma"
@@ -518,15 +515,18 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         BorderColor     =   14404026
+         BorderColorDown =   11632444
+         BorderColorOver =   11632444
          GradientColor2  =   16777215
          GradientColor3  =   16777215
-         GradientColorDown2=   16246986
-         GradientColorDown3=   15189380
-         GradientColorDown4=   14596208
          GradientColorOver1=   16643560
          GradientColorOver2=   16576988
          GradientColorOver3=   16441780
          GradientColorOver4=   16178091
+         GradientColorDown2=   16246986
+         GradientColorDown3=   15189380
+         GradientColorDown4=   14596208
          PicSizeH        =   19
          PicSizeW        =   19
       End
@@ -540,9 +540,6 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
          _ExtentX        =   926
          _ExtentY        =   556
          DibPicture      =   "frmMan_Plano_maquina_Abrir.frx":9922
-         BorderColor     =   14404026
-         BorderColorDown =   11632444
-         BorderColorOver =   11632444
          Caption         =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Tahoma"
@@ -553,15 +550,18 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         BorderColor     =   14404026
+         BorderColorDown =   11632444
+         BorderColorOver =   11632444
          GradientColor2  =   16777215
          GradientColor3  =   16777215
-         GradientColorDown2=   16246986
-         GradientColorDown3=   15189380
-         GradientColorDown4=   14596208
          GradientColorOver1=   16643560
          GradientColorOver2=   16576988
          GradientColorOver3=   16441780
          GradientColorOver4=   16178091
+         GradientColorDown2=   16246986
+         GradientColorDown3=   15189380
+         GradientColorDown4=   14596208
          PicSizeH        =   19
          PicSizeW        =   19
       End
@@ -575,9 +575,6 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
          _ExtentX        =   926
          _ExtentY        =   556
          DibPicture      =   "frmMan_Plano_maquina_Abrir.frx":DA16
-         BorderColor     =   14404026
-         BorderColorDown =   11632444
-         BorderColorOver =   11632444
          Caption         =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Tahoma"
@@ -588,21 +585,24 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         BorderColor     =   14404026
+         BorderColorDown =   11632444
+         BorderColorOver =   11632444
          GradientColor2  =   16777215
          GradientColor3  =   16777215
-         GradientColorDown2=   16246986
-         GradientColorDown3=   15189380
-         GradientColorDown4=   14596208
          GradientColorOver1=   16643560
          GradientColorOver2=   16576988
          GradientColorOver3=   16441780
          GradientColorOver4=   16178091
+         GradientColorDown2=   16246986
+         GradientColorDown3=   15189380
+         GradientColorDown4=   14596208
          PicSizeH        =   19
          PicSizeW        =   19
       End
       Begin VB.Label Label24 
          AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparente
+         BackStyle       =   0  'Transparent
          Caption         =   "Carregar               reg. p/ pág."
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -622,7 +622,7 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
       End
       Begin VB.Label lblPaginas 
          AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparente
+         BackStyle       =   0  'Transparent
          Caption         =   "Pág.: 0 de: 0"
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -642,7 +642,7 @@ Begin VB.Form frmMan_Plano_maquina_Abrir
       End
       Begin VB.Label lblRegistros 
          AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparente
+         BackStyle       =   0  'Transparent
          Caption         =   "Nº de reg.: 0"
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -772,3 +772,4 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+

@@ -354,6 +354,8 @@ Begin VB.Form frm_Localizarnota
          Strikethrough   =   0   'False
       EndProperty
       Icon            =   "frm_Localizarnota.frx":7272
+      ShowMaximizeButton=   0   'False
+      ShowMinimizeButton=   0   'False
    End
    Begin VB.CheckBox Chk_data 
       BackColor       =   &H00E0E0E0&
@@ -416,7 +418,7 @@ Begin VB.Form frm_Localizarnota
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   197525505
+         Format          =   176553985
          CurrentDate     =   39057
       End
       Begin MSComCtl2.DTPicker msk_fltInicio 
@@ -443,7 +445,7 @@ Begin VB.Form frm_Localizarnota
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   197525505
+         Format          =   176553985
          CurrentDate     =   39057
       End
       Begin VB.Label Label2 

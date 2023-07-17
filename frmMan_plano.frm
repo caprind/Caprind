@@ -472,7 +472,7 @@ On Error GoTo tratar_erro
 
 txt_CodPlano = GridPL.Cell(GridPL.ActiveCell.Row, 1).Text
 txt_Codigo = GridPL.Cell(GridPL.ActiveCell.Row, 2).Text
-txt_Descricao = GridPL.Cell(GridPL.ActiveCell.Row, 3).Text
+Txt_descricao = GridPL.Cell(GridPL.ActiveCell.Row, 3).Text
 cmbSetor.Text = GridPL.Cell(GridPL.ActiveCell.Row, 4).Text
 cmbPeridiocidade = GridPL.Cell(GridPL.ActiveCell.Row, 5).Text
 
@@ -601,15 +601,15 @@ TBAbrir.Open "Select * from Manutencao_Plano where CodPlano = '" & txt_CodPlano.
 If TBAbrir.EOF = False Then
 
 If TBAbrir!Predial = True Then
-txt_Tipo = "Predial"
+Txt_tipo = "Predial"
 End If
 
 If TBAbrir!Produto = True Then
-txt_Tipo = "Produto"
+Txt_tipo = "Produto"
 End If
 
 If TBAbrir!Equipamento = True Then
-txt_Tipo = "Equipamento"
+Txt_tipo = "Equipamento"
 End If
 
 End If
@@ -640,7 +640,6 @@ tratar_erro:
     Exit Sub
 End Sub
 
-
 Private Sub ProcEnviaDadosPlano()
 On Error GoTo tratar_erro
 
@@ -650,19 +649,19 @@ If TBAbrir.EOF = True Then
 TBAbrir.AddNew
 End If
 
-If txt_Tipo = "Predial" Then
+If Txt_tipo = "Predial" Then
 TBAbrir!Predial = True
 TBAbrir!Produto = False
 TBAbrir!Equipamento = False
 End If
 
-If txt_Tipo = "Produto" Then
+If Txt_tipo = "Produto" Then
 TBAbrir!Predial = False
 TBAbrir!Produto = True
 TBAbrir!Equipamento = False
 End If
 
-If txt_Tipo = "Equipamento" Then
+If Txt_tipo = "Equipamento" Then
 TBAbrir!Predial = False
 TBAbrir!Produto = False
 TBAbrir!Equipamento = True
@@ -670,10 +669,9 @@ End If
 
 TBAbrir!Codplano = txt_CodPlano
 TBAbrir!CODIGO = txt_Codigo
-TBAbrir!Descricao = txt_Descricao
+TBAbrir!Descricao = Txt_descricao
 TBAbrir!Setor = cmbSetor.Text
 TBAbrir!Peridiocidade = cmbPeridiocidade
-
 
 TBAbrir.Update
 

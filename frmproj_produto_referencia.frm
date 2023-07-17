@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
 Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmproj_produto_referencia 
    BackColor       =   &H00E0E0E0&
    Caption         =   "Engenharia - Produtos e serviços - Cadastro de códigos de referência"
@@ -21,9 +21,9 @@ Begin VB.Form frmproj_produto_referencia
       Top             =   0
       _ExtentX        =   847
       _ExtentY        =   847
-      Resolution      =   99
+      Resolution      =   26
       ScreenHeight    =   1080
-      ScreenWidth     =   2560
+      ScreenWidth     =   1920
       ScreenHeightDT  =   1080
       ScreenWidthDT   =   1920
       AutoResizeOnLoad=   0   'False
@@ -53,7 +53,7 @@ Begin VB.Form frmproj_produto_referencia
       MaxLength       =   50
       MouseIcon       =   "frmproj_produto_referencia.frx":0000
       MousePointer    =   99  'Custom
-      TabIndex        =   22
+      TabIndex        =   19
       Text            =   "0"
       ToolTipText     =   "Tipo."
       Top             =   4050
@@ -78,7 +78,7 @@ Begin VB.Form frmproj_produto_referencia
       MaxLength       =   50
       MouseIcon       =   "frmproj_produto_referencia.frx":030A
       MousePointer    =   99  'Custom
-      TabIndex        =   18
+      TabIndex        =   15
       ToolTipText     =   "Tipo."
       Top             =   4050
       Visible         =   0   'False
@@ -102,7 +102,7 @@ Begin VB.Form frmproj_produto_referencia
       MaxLength       =   50
       MouseIcon       =   "frmproj_produto_referencia.frx":0614
       MousePointer    =   99  'Custom
-      TabIndex        =   17
+      TabIndex        =   14
       Text            =   "0"
       ToolTipText     =   "ID do cliente/fornecedor."
       Top             =   4050
@@ -127,7 +127,7 @@ Begin VB.Form frmproj_produto_referencia
       MaxLength       =   50
       MouseIcon       =   "frmproj_produto_referencia.frx":091E
       MousePointer    =   99  'Custom
-      TabIndex        =   15
+      TabIndex        =   12
       Text            =   "0"
       ToolTipText     =   "Id."
       Top             =   4050
@@ -137,7 +137,7 @@ Begin VB.Form frmproj_produto_referencia
    Begin DrawSuite2022.USProgressBar PBLista 
       Height          =   255
       Left            =   55
-      TabIndex        =   24
+      TabIndex        =   21
       Top             =   9750
       Width           =   15195
       _ExtentX        =   26802
@@ -158,7 +158,7 @@ Begin VB.Form frmproj_produto_referencia
    Begin DrawSuite2022.USToolBar USToolBar1 
       Height          =   975
       Left            =   60
-      TabIndex        =   23
+      TabIndex        =   20
       Top             =   0
       Width           =   15195
       _ExtentX        =   26802
@@ -395,20 +395,32 @@ Begin VB.Form frmproj_produto_referencia
       ForeColor       =   &H00000000&
       Height          =   1455
       Left            =   55
-      TabIndex        =   10
+      TabIndex        =   7
       Top             =   990
       Width           =   15195
-      Begin VB.CommandButton Cmd_limpar_ClieForn 
+      Begin VB.TextBox txtdescricaoproduto 
+         Alignment       =   2  'Center
          Appearance      =   0  'Flat
-         BackColor       =   &H00C0C0C0&
-         Height          =   315
-         Left            =   14700
-         Picture         =   "frmproj_produto_referencia.frx":6108
-         Style           =   1  'Graphical
-         TabIndex        =   8
-         ToolTipText     =   "Limpar cliente/fornecedor."
-         Top             =   990
-         Width           =   315
+         BackColor       =   &H00E0E0E0&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000000&
+         Height          =   345
+         Left            =   2160
+         Locked          =   -1  'True
+         MaxLength       =   255
+         TabIndex        =   24
+         TabStop         =   0   'False
+         ToolTipText     =   "Cliente/Fornecedor."
+         Top             =   390
+         Width           =   8265
       End
       Begin VB.ComboBox cmbGrupo 
          Appearance      =   0  'Flat
@@ -424,20 +436,22 @@ Begin VB.Form frmproj_produto_referencia
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   330
-         ItemData        =   "frmproj_produto_referencia.frx":6246
+         ItemData        =   "frmproj_produto_referencia.frx":6109
          Left            =   180
-         List            =   "frmproj_produto_referencia.frx":6256
+         List            =   "frmproj_produto_referencia.frx":6119
          Locked          =   -1  'True
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   5
+         TabIndex        =   4
          TabStop         =   0   'False
          ToolTipText     =   "Grupo de clientes."
          Top             =   990
          Width           =   6690
       End
       Begin VB.TextBox txtaplicacao 
-         BackColor       =   &H00FFFFFF&
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -452,7 +466,7 @@ Begin VB.Form frmproj_produto_referencia
          Left            =   6870
          Locked          =   -1  'True
          MaxLength       =   255
-         TabIndex        =   6
+         TabIndex        =   5
          TabStop         =   0   'False
          ToolTipText     =   "Cliente/Fornecedor."
          Top             =   990
@@ -471,10 +485,10 @@ Begin VB.Form frmproj_produto_referencia
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000000&
-         Height          =   315
-         Left            =   12300
+         Height          =   345
+         Left            =   14550
          MaxLength       =   50
-         TabIndex        =   3
+         TabIndex        =   2
          ToolTipText     =   "Revisão."
          Top             =   390
          Width           =   495
@@ -492,25 +506,13 @@ Begin VB.Form frmproj_produto_referencia
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000000&
-         Height          =   315
-         Left            =   12810
+         Height          =   345
+         Left            =   12630
          MaxLength       =   50
-         TabIndex        =   4
+         TabIndex        =   3
          ToolTipText     =   "Número do desenho."
          Top             =   390
-         Width           =   2205
-      End
-      Begin VB.CommandButton cmdLocalizarCliente 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00C0C0C0&
-         Height          =   315
-         Left            =   14370
-         Picture         =   "frmproj_produto_referencia.frx":62A6
-         Style           =   1  'Graphical
-         TabIndex        =   7
-         ToolTipText     =   "Localizar cliente/fornecedor."
-         Top             =   990
-         Width           =   315
+         Width           =   1905
       End
       Begin VB.TextBox txtreferencia 
          Alignment       =   2  'Center
@@ -525,17 +527,18 @@ Begin VB.Form frmproj_produto_referencia
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000000&
-         Height          =   315
+         Height          =   345
          Left            =   10440
          MaxLength       =   50
-         TabIndex        =   2
+         TabIndex        =   1
          ToolTipText     =   "Código de referência."
          Top             =   390
-         Width           =   1845
+         Width           =   2175
       End
       Begin VB.TextBox txtdesenhoproduto 
          Alignment       =   2  'Center
-         BackColor       =   &H00FFFFFF&
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   8.25
@@ -546,7 +549,7 @@ Begin VB.Form frmproj_produto_referencia
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000000&
-         Height          =   315
+         Height          =   345
          Left            =   180
          Locked          =   -1  'True
          MaxLength       =   50
@@ -556,10 +559,19 @@ Begin VB.Form frmproj_produto_referencia
          Top             =   390
          Width           =   1965
       End
-      Begin VB.TextBox txtdescricaoproduto 
-         BackColor       =   &H00FFFFFF&
-         BeginProperty Font 
-            Name            =   "Arial"
+      Begin DrawSuite2022.USButton cmdLocalizarCliente 
+         Height          =   315
+         Left            =   14370
+         TabIndex        =   22
+         ToolTipText     =   "Localizar cliente | Fornecedor."
+         Top             =   990
+         Width           =   345
+         _ExtentX        =   609
+         _ExtentY        =   556
+         DibPicture      =   "frmproj_produto_referencia.frx":6169
+         Caption         =   ""
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
             Size            =   8.25
             Charset         =   0
             Weight          =   400
@@ -567,21 +579,69 @@ Begin VB.Form frmproj_produto_referencia
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00000000&
+         BorderColor     =   8421504
+         BorderColorDown =   7907521
+         BorderColorOver =   7907521
+         ForeColor       =   0
+         ForeColorOver   =   0
+         ForeColorDown   =   0
+         GradientColor1  =   16777215
+         GradientColor2  =   14737632
+         GradientColor3  =   12632256
+         GradientColor4  =   12632256
+         GradientColorOver1=   14417407
+         GradientColorOver2=   12317439
+         GradientColorOver3=   4838399
+         GradientColorOver4=   9627391
+         GradientColorDown1=   10802943
+         GradientColorDown2=   7979263
+         GradientColorDown3=   4370174
+         GradientColorDown4=   7395582
+         PicAlign        =   8
+         Theme           =   1
+      End
+      Begin DrawSuite2022.USButton Cmd_limpar_ClieForn 
          Height          =   315
-         Left            =   2160
-         Locked          =   -1  'True
-         MaxLength       =   255
-         TabIndex        =   1
-         TabStop         =   0   'False
-         ToolTipText     =   "Descrição."
-         Top             =   390
-         Width           =   8265
+         Left            =   14730
+         TabIndex        =   23
+         ToolTipText     =   "Localizar cliente | Fornecedor."
+         Top             =   990
+         Width           =   345
+         _ExtentX        =   609
+         _ExtentY        =   556
+         DibPicture      =   "frmproj_produto_referencia.frx":97B9
+         Caption         =   ""
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BorderColor     =   5263559
+         BorderColorDown =   2039646
+         BorderColorOver =   3026574
+         GradientColor1  =   5263559
+         GradientColor2  =   5263559
+         GradientColor3  =   5263559
+         GradientColor4  =   5263559
+         GradientColorOver1=   3026574
+         GradientColorOver2=   3026574
+         GradientColorOver3=   3026574
+         GradientColorOver4=   3026574
+         GradientColorDown1=   2039646
+         GradientColorDown2=   2039646
+         GradientColorDown3=   2039646
+         GradientColorDown4=   2039646
+         PicAlign        =   8
+         Theme           =   4
       End
       Begin VB.Label Label4 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Cliente/Fornecedor"
+         Caption         =   "Cliente | Fornecedor"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -593,10 +653,10 @@ Begin VB.Form frmproj_produto_referencia
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   195
-         Left            =   9922
-         TabIndex        =   21
+         Left            =   9877
+         TabIndex        =   18
          Top             =   780
-         Width           =   1380
+         Width           =   1470
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -614,7 +674,7 @@ Begin VB.Form frmproj_produto_referencia
          ForeColor       =   &H00000000&
          Height          =   195
          Left            =   3308
-         TabIndex        =   20
+         TabIndex        =   17
          Top             =   780
          Width           =   435
       End
@@ -633,8 +693,8 @@ Begin VB.Form frmproj_produto_referencia
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   195
-         Left            =   12360
-         TabIndex        =   19
+         Left            =   14610
+         TabIndex        =   16
          Top             =   180
          Width           =   375
       End
@@ -642,7 +702,7 @@ Begin VB.Form frmproj_produto_referencia
          Alignment       =   2  'Center
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Número do desenho"
+         Caption         =   "Código do projeto"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -654,10 +714,10 @@ Begin VB.Form frmproj_produto_referencia
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   195
-         Left            =   13065
-         TabIndex        =   16
+         Left            =   12795
+         TabIndex        =   13
          Top             =   180
-         Width           =   1695
+         Width           =   1515
       End
       Begin VB.Label Label15 
          AutoSize        =   -1  'True
@@ -672,10 +732,10 @@ Begin VB.Form frmproj_produto_referencia
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00000000&
+         ForeColor       =   &H00000080&
          Height          =   195
-         Left            =   10492
-         TabIndex        =   14
+         Left            =   10657
+         TabIndex        =   11
          Top             =   180
          Width           =   1740
       End
@@ -695,14 +755,14 @@ Begin VB.Form frmproj_produto_referencia
          ForeColor       =   &H00000000&
          Height          =   195
          Left            =   547
-         TabIndex        =   13
+         TabIndex        =   10
          Top             =   180
          Width           =   1230
       End
       Begin VB.Label Label17 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Descrição"
+         Caption         =   "Descrição do item"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -714,16 +774,16 @@ Begin VB.Form frmproj_produto_referencia
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   195
-         Left            =   5947
-         TabIndex        =   12
+         Left            =   5940
+         TabIndex        =   9
          Top             =   180
-         Width           =   690
+         Width           =   1260
       End
    End
    Begin MSComctlLib.ListView Lista 
       Height          =   7290
       Left            =   60
-      TabIndex        =   9
+      TabIndex        =   6
       Top             =   2460
       Width           =   15195
       _ExtentX        =   26802
@@ -789,7 +849,7 @@ Begin VB.Form frmproj_produto_referencia
       AutoSize        =   -1  'True
       Height          =   195
       Left            =   4680
-      TabIndex        =   11
+      TabIndex        =   8
       Top             =   1320
       Width           =   45
    End
@@ -807,8 +867,8 @@ On Error GoTo tratar_erro
 If cmbGrupo <> "" Then
     If cmbGrupo.ListIndex <> -1 And cmbGrupo.ListIndex <> 0 Then
         txtIDGrupo = cmbGrupo.ItemData(cmbGrupo.ListIndex)
-        cliente_excluir = txtAplicacao
-        txtAplicacao = ""
+        cliente_excluir = txtaplicacao
+        txtaplicacao = ""
         Txt_ID_cliente_forn = "0"
     End If
 End If
@@ -822,16 +882,16 @@ End Sub
 Private Sub ProcAnterior()
 On Error GoTo tratar_erro
 
-If txtId = 0 Then Exit Sub
+If txtid = 0 Then Exit Sub
 Set TBLISTA = CreateObject("adodb.recordset")
 TBLISTA.Open "Select * from item_aplicacoes where codproduto = " & frmproj_produto.txtcodproduto & " order by iditem", Conexao, adOpenKeyset, adLockOptimistic
 If TBLISTA.BOF = False Then
-    TBLISTA.Find ("iditem = " & txtId)
+    TBLISTA.Find ("iditem = " & txtid)
     TBLISTA.MovePrevious
     If TBLISTA.BOF = False Then
-        txtId = TBLISTA!IDitem
+        txtid = TBLISTA!IDitem
         Set TBAbrir = CreateObject("adodb.recordset")
-        TBAbrir.Open "Select * from item_aplicacoes where iditem = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select * from item_aplicacoes where iditem = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
         If TBAbrir.EOF = False Then
             ProcLimpaCampos
             ProcCarregaDados
@@ -854,7 +914,7 @@ txtIDGrupo = 0
 Clientes_Grupos = False
 cmbGrupo.ListIndex = -1
 Txt_ID_cliente_forn = 0
-txtAplicacao = ""
+txtaplicacao = ""
 
 Exit Sub
 tratar_erro:
@@ -877,16 +937,16 @@ End Sub
 Private Sub ProcProximo()
 On Error GoTo tratar_erro
 
-If txtId = 0 Then Exit Sub
+If txtid = 0 Then Exit Sub
 Set TBLISTA = CreateObject("adodb.recordset")
 TBLISTA.Open "Select * from item_aplicacoes where codproduto = " & frmproj_produto.txtcodproduto & " order by iditem", Conexao, adOpenKeyset, adLockOptimistic
 If TBLISTA.BOF = False Then
-    TBLISTA.Find ("iditem = " & txtId)
+    TBLISTA.Find ("iditem = " & txtid)
     TBLISTA.MoveNext
     If TBLISTA.EOF = False Then
-        txtId = TBLISTA!IDitem
+        txtid = TBLISTA!IDitem
         Set TBAbrir = CreateObject("adodb.recordset")
-        TBAbrir.Open "Select * from item_aplicacoes where iditem = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+        TBAbrir.Open "Select * from item_aplicacoes where iditem = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
         If TBAbrir.EOF = False Then
             ProcLimpaCampos
             ProcCarregaDados
@@ -936,7 +996,7 @@ If Vendas_Produtos = True Then
     Formulario = "Vendas/Produtos e serviços/Cadastro de códigos de referência"
 End If
 txtdesenhoproduto.Text = frmproj_produto.txtdesenhoproduto.Text
-txtDescricaoProduto.Text = frmproj_produto.txtDescricaoProduto
+txtdescricaoproduto.Text = frmproj_produto.txtdescricaoproduto
 ProcLimpaVariaveisPrincipais
 AtualizaLista
 
@@ -1099,12 +1159,12 @@ End Sub
 Private Sub ProcLimpaCampos()
 On Error GoTo tratar_erro
 
-txtId.Text = 0
+txtid.Text = 0
 txtIDGrupo = 0
 cmbGrupo.ListIndex = -1
 Txt_ID_cliente_forn = 0
 Txt_tipo = ""
-txtAplicacao.Text = ""
+txtaplicacao.Text = ""
 txtreferencia.Text = ""
 Txt_revisao = ""
 Txt_numero_desenho = ""
@@ -1153,7 +1213,7 @@ If TBItem.EOF = False Then
                     GoTo Referencia
                 End If
             End If
-        ElseIf Novo_Referencia = True Or TBItem!IDitem <> txtId Then
+        ElseIf Novo_Referencia = True Or TBItem!IDitem <> txtid Then
                 'If usMsgbox("Este código de referência já foi cadastrado para este produto, deseja prosseguir mesmo assim?", vbyesno, "CAPRIND v5.0") = vbNo Then
                 USMsgBox ("Este código de referência já foi cadastrado para este produto, favor alterar."), vbExclamation, "CAPRIND v5.0"
                 TBComponente.Close
@@ -1170,12 +1230,12 @@ Referencia:
 Alterar:
         If Novo_Referencia = True Then
             Set TBProduto = CreateObject("adodb.recordset")
-            TBProduto.Open "Select * from item_aplicacoes where iditem = " & txtId.Text, Conexao, adOpenKeyset, adLockOptimistic
+            TBProduto.Open "Select * from item_aplicacoes where iditem = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
             USMsgBox "Novo código de referência cadatrado com sucesso.", vbInformation, "CAPRIND v5.0"
             '==================================
             Modulo = Formulario
             Evento = "Novo"
-            ID_documento = txtId
+            ID_documento = txtid
             Documento = "Cód. interno: " & txtdesenhoproduto
             Documento1 = "Cód. referência: " & txtreferencia
             ProcGravaEvento
@@ -1184,12 +1244,12 @@ Alterar:
             If FunVerifValidacaoRegistro("alterar", frmproj_produto.txtDtValidacao, "registro", "este código de referência", True) = False Then Exit Sub
             
             Set TBProduto = CreateObject("adodb.recordset")
-            TBProduto.Open "Select * from item_aplicacoes where iditem = " & txtId.Text & " and n_referencia = '" & Lista.SelectedItem.ListSubItems(1) & "'", Conexao, adOpenKeyset, adLockOptimistic
+            TBProduto.Open "Select * from item_aplicacoes where iditem = " & txtid.Text & " and n_referencia = '" & Lista.SelectedItem.ListSubItems(1) & "'", Conexao, adOpenKeyset, adLockOptimistic
             USMsgBox ("Alteração efetuada com sucesso."), vbInformation, "CAPRIND v5.0"
             '==================================
             Modulo = Formulario
             Evento = "Alterar"
-            ID_documento = txtId
+            ID_documento = txtid
             Documento = "Cód. interno: " & txtdesenhoproduto
             Documento1 = "Cód. referência: " & Lista.SelectedItem.ListSubItems(1)
             ProcGravaEvento
@@ -1216,11 +1276,11 @@ Alterar:
         If txtreferencia.Text <> "" Then TBProduto!N_referencia = txtreferencia.Text
         TBProduto!Rev = Txt_revisao
         TBProduto!Desenho = Txt_numero_desenho
-        If txtAplicacao.Text <> "" Then TBProduto!Aplicacao = txtAplicacao Else TBProduto!Aplicacao = Null
-        If txtDescricaoProduto.Text <> "" Then TBProduto!Descricao = txtDescricaoProduto.Text
+        If txtaplicacao.Text <> "" Then TBProduto!Aplicacao = txtaplicacao Else TBProduto!Aplicacao = Null
+        If txtdescricaoproduto.Text <> "" Then TBProduto!Descricao = txtdescricaoproduto.Text
         TBProduto!idgrupo = txtIDGrupo
         TBProduto.Update
-        txtId = TBProduto!IDitem
+        txtid = TBProduto!IDitem
         TBProduto.Close
     Else
         With frmproj_produto
@@ -1461,7 +1521,7 @@ End Sub
 Private Sub ProcCarregaDados()
 On Error GoTo tratar_erro
 
-txtId.Text = TBAbrir!IDitem
+txtid.Text = TBAbrir!IDitem
 Txt_tipo = IIf(IsNull(TBAbrir!Tipo), "", TBAbrir!Tipo)
 Caption = "Engenharia - Produtos e serviços - Cadastro de códigos de referência - (Cód. de referência : " & IIf(IsNull(TBAbrir!N_referencia), "", TBAbrir!N_referencia) & ")"
 txtreferencia.Text = IIf(IsNull(TBAbrir!N_referencia), "", TBAbrir!N_referencia)
@@ -1485,7 +1545,7 @@ With cmbGrupo
     End If
 End With
 Txt_ID_cliente_forn = IIf(IsNull(TBAbrir!ID_cliente_forn), 0, TBAbrir!ID_cliente_forn)
-txtAplicacao.Text = IIf(IsNull(TBAbrir!Aplicacao), "", TBAbrir!Aplicacao)
+txtaplicacao.Text = IIf(IsNull(TBAbrir!Aplicacao), "", TBAbrir!Aplicacao)
 Novo_Referencia = False
 Frame2.Enabled = True
 
@@ -1512,7 +1572,7 @@ Do While TBClientes.EOF = False
     TBFIltro!Rev = Txt_revisao
     TBFIltro!Desenho = Txt_numero_desenho
     TBFIltro!Aplicacao = IIf(IsNull(TBClientes!NomeRazao), "", TBClientes!NomeRazao)
-    TBFIltro!Descricao = IIf(txtDescricaoProduto = "", Null, txtDescricaoProduto)
+    TBFIltro!Descricao = IIf(txtdescricaoproduto = "", Null, txtdescricaoproduto)
     TBFIltro!idgrupo = txtIDGrupo
     TBFIltro.Update
     TBFIltro.Close
@@ -1523,7 +1583,7 @@ USMsgBox "Novo código de referência cadatrado com sucesso.", vbInformation, "CAP
 '==================================
 Modulo = Formulario
 Evento = "Novo"
-ID_documento = txtId
+ID_documento = txtid
 Documento = "Cód. interno: " & txtdesenhoproduto
 Documento1 = "Cód. referência: " & txtreferencia
 ProcGravaEvento

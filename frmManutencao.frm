@@ -4,7 +4,7 @@ Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.ocx"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.ocx"
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
-Object = "{8CA2526B-1F1A-4012-A04D-56C1849DD6A6}#1.5#0"; "DrawSuite2022.ocx"
+Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmManutencao 
    BackColor       =   &H00E0E0E0&
@@ -363,7 +363,7 @@ Begin VB.Form frmManutencao
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   144506881
+         Format          =   915013633
          CurrentDate     =   39057
       End
       Begin MSMask.MaskEdBox Txt_data_conclusao1 
@@ -416,7 +416,7 @@ Begin VB.Form frmManutencao
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   144506882
+         Format          =   915079170
          CurrentDate     =   40504.5572337963
       End
       Begin MSMask.MaskEdBox Txt_Hora_conclusao1 
@@ -469,7 +469,7 @@ Begin VB.Form frmManutencao
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   144506881
+         Format          =   915079169
          CurrentDate     =   39057
       End
       Begin VB.Label Label36 
@@ -758,9 +758,9 @@ Begin VB.Form frmManutencao
       Top             =   0
       _ExtentX        =   847
       _ExtentY        =   847
-      Resolution      =   99
-      ScreenHeight    =   768
-      ScreenWidth     =   1366
+      Resolution      =   26
+      ScreenHeight    =   1080
+      ScreenWidth     =   1920
       ScreenHeightDT  =   1080
       ScreenWidthDT   =   1920
       AutoResizeOnLoad=   0   'False
@@ -1378,27 +1378,27 @@ Begin VB.Form frmManutencao
       TabCaption(1)   =   "Produtos para substituição"
       TabPicture(1)   =   "frmManutencao.frx":0DE7
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame3"
+      Tab(1).Control(0)=   "txtidProduto"
       Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "Frame7"
+      Tab(1).Control(1)=   "USImageList3"
       Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "USToolBar3"
       Tab(1).Control(2).Enabled=   0   'False
-      Tab(1).Control(3)=   "USImageList3"
+      Tab(1).Control(3)=   "Frame7"
       Tab(1).Control(3).Enabled=   0   'False
-      Tab(1).Control(4)=   "txtidProduto"
+      Tab(1).Control(4)=   "Frame3"
       Tab(1).Control(4).Enabled=   0   'False
       Tab(1).ControlCount=   5
       TabCaption(2)   =   "Check-list"
       TabPicture(2)   =   "frmManutencao.frx":0E03
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "USToolBar4"
+      Tab(2).Control(0)=   "Frame8"
       Tab(2).Control(0).Enabled=   0   'False
-      Tab(2).Control(1)=   "USImageList4"
+      Tab(2).Control(1)=   "txtID_check"
       Tab(2).Control(1).Enabled=   0   'False
-      Tab(2).Control(2)=   "txtID_check"
+      Tab(2).Control(2)=   "USImageList4"
       Tab(2).Control(2).Enabled=   0   'False
-      Tab(2).Control(3)=   "Frame8"
+      Tab(2).Control(3)=   "USToolBar4"
       Tab(2).Control(3).Enabled=   0   'False
       Tab(2).ControlCount=   4
       Begin DrawSuite2022.USToolBar USToolBar2 
@@ -3091,11 +3091,6 @@ Begin VB.Form frmManutencao
             _ExtentX        =   556
             _ExtentY        =   556
             DibPicture      =   "frmManutencao.frx":26300A
-            BorderColor     =   8421504
-            BorderColorDisabled=   13160660
-            BorderColorDown =   7907521
-            BorderColorOver =   7907521
-            ButtonShape     =   0
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -3106,6 +3101,10 @@ Begin VB.Form frmManutencao
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            BorderColor     =   8421504
+            BorderColorDisabled=   13160660
+            BorderColorDown =   7907521
+            BorderColorOver =   7907521
             GradientColor2  =   14737632
             GradientColor3  =   12632256
             GradientColor4  =   12632256
@@ -3113,14 +3112,14 @@ Begin VB.Form frmManutencao
             GradientColorDisabled2=   14215660
             GradientColorDisabled3=   14215660
             GradientColorDisabled4=   14215660
-            GradientColorDown1=   10802943
-            GradientColorDown2=   7979263
-            GradientColorDown3=   4370174
-            GradientColorDown4=   7395582
             GradientColorOver1=   14417407
             GradientColorOver2=   12317439
             GradientColorOver3=   4838399
             GradientColorOver4=   9627391
+            GradientColorDown1=   10802943
+            GradientColorDown2=   7979263
+            GradientColorDown3=   4370174
+            GradientColorDown4=   7395582
             GradientColors  =   1
             PicAlign        =   0
             Theme           =   1
@@ -3383,11 +3382,6 @@ Begin VB.Form frmManutencao
             _ExtentX        =   556
             _ExtentY        =   556
             DibPicture      =   "frmManutencao.frx":28110F
-            BorderColor     =   8421504
-            BorderColorDisabled=   13160660
-            BorderColorDown =   7907521
-            BorderColorOver =   7907521
-            ButtonShape     =   0
             Caption         =   ""
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -3398,6 +3392,10 @@ Begin VB.Form frmManutencao
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            BorderColor     =   8421504
+            BorderColorDisabled=   13160660
+            BorderColorDown =   7907521
+            BorderColorOver =   7907521
             GradientColor2  =   14737632
             GradientColor3  =   12632256
             GradientColor4  =   12632256
@@ -3405,14 +3403,14 @@ Begin VB.Form frmManutencao
             GradientColorDisabled2=   14215660
             GradientColorDisabled3=   14215660
             GradientColorDisabled4=   14215660
-            GradientColorDown1=   10802943
-            GradientColorDown2=   7979263
-            GradientColorDown3=   4370174
-            GradientColorDown4=   7395582
             GradientColorOver1=   14417407
             GradientColorOver2=   12317439
             GradientColorOver3=   4838399
             GradientColorOver4=   9627391
+            GradientColorDown1=   10802943
+            GradientColorDown2=   7979263
+            GradientColorDown3=   4370174
+            GradientColorDown4=   7395582
             GradientColors  =   1
             PicAlign        =   0
             Theme           =   1
@@ -3428,10 +3426,6 @@ Begin VB.Form frmManutencao
             _ExtentX        =   4842
             _ExtentY        =   1455
             DibPicture      =   "frmManutencao.frx":2882A2
-            BorderColor     =   4960354
-            BorderColorDisabled=   13160660
-            BorderColorDown =   4210752
-            BorderColorOver =   49152
             Caption         =   "Aprovar documento"
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
@@ -3442,9 +3436,10 @@ Begin VB.Form frmManutencao
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            ForeColor       =   16777215
-            ForeColorDown   =   16777215
-            ForeColorOver   =   16777215
+            BorderColor     =   4960354
+            BorderColorDisabled=   13160660
+            BorderColorDown =   4210752
+            BorderColorOver =   49152
             GradientColor1  =   4960354
             GradientColor2  =   4960354
             GradientColor3  =   4960354
@@ -3453,14 +3448,14 @@ Begin VB.Form frmManutencao
             GradientColorDisabled2=   14215660
             GradientColorDisabled3=   14215660
             GradientColorDisabled4=   14215660
-            GradientColorDown1=   32768
-            GradientColorDown2=   32768
-            GradientColorDown3=   32768
-            GradientColorDown4=   32768
             GradientColorOver1=   49152
             GradientColorOver2=   49152
             GradientColorOver3=   49152
             GradientColorOver4=   49152
+            GradientColorDown1=   32768
+            GradientColorDown2=   32768
+            GradientColorDown3=   32768
+            GradientColorDown4=   32768
             PicAlign        =   7
             PicSize         =   5
             PicSizeH        =   32
@@ -7088,7 +7083,7 @@ Sub ProcSair()
 On Error GoTo tratar_erro
 
 If Novo_manutencao = True Then
-    If USMsgBox("A manutenção ainda não foi salva, deseja salvar antes de fechar o módulo?", vbYesNo + vbQuestion, "CAPRIND v5.0") = vbYes Then
+    If USMsgBox("A manutenção ainda não foi salva, deseja salvar antes de fechar o módulo?", vbYesNo, "CAPRIND v5.0") = vbYes Then
         ProcSalvar
         If Novo_manutencao = True Then
             Exit Sub
@@ -7098,7 +7093,7 @@ If Novo_manutencao = True Then
     End If
 End If
 If Novo_manutencao2 = True Then
-    If USMsgBox("A data ainda não foi salva, deseja salvar antes de fechar o módulo?", vbYesNo + vbQuestion, "CAPRIND v5.0") = vbYes Then
+    If USMsgBox("A data ainda não foi salva, deseja salvar antes de fechar o módulo?", vbYesNo, "CAPRIND v5.0") = vbYes Then
         SSTab1.Tab = 1
         SSTab2.Tab = 0
         ProcSalvar_data
@@ -7110,7 +7105,7 @@ If Novo_manutencao2 = True Then
     End If
 End If
 If Novo_manutencao3 = True Then
-    If USMsgBox("O defeito ainda não foi salvo, deseja salvar antes de fechar o módulo?", vbYesNo + vbQuestion, "CAPRIND v5.0") = vbYes Then
+    If USMsgBox("O defeito ainda não foi salvo, deseja salvar antes de fechar o módulo?", vbYesNo, "CAPRIND v5.0") = vbYes Then
         SSTab1.Tab = 1
         SSTab2.Tab = 1
         procSalvar2

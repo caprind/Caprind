@@ -525,15 +525,6 @@ tratar_erro:
     USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
 End Sub
 
-Private Sub lblEmpresa_Click()
-On Error GoTo tratar_erro
-
-frmAbertura_Empresas.Show 1
-
-Exit Sub
-tratar_erro:
-    USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
-End Sub
 
 Private Sub lblLocalBanco_Click()
 On Error GoTo tratar_erro
@@ -1299,7 +1290,7 @@ If Dataini <> Date Then
     End
 End If
 
-'ProcLogonOutSemUtilizacao 'Verifica e apaga logon com a data menor que a atual
+ProcLogonOutSemUtilizacao 'Verifica e apaga logon com a data menor que a atual
 
 If DS.FileOrDirExists(Localrel) = False Then
     If USMsgBox("Não foi encontrado o caminho " & Localrel & " onde está armazenado os relatórios, se efetuar o login desta forma os relatórios não vão funcionar. " & vbCrLf & "Deseja prosseguir mesmo assim?", vbYesNo, "CAPRIND v5.0") = vbNo Then End
@@ -1327,6 +1318,16 @@ If TBUsuarios.EOF = False Then
         End If
     End If
 Else
+
+    With frmabertura
+        .txtUsuario.Enabled = True
+        .txtSenha.Enabled = True
+        .cmbBanco.Enabled = True
+        .Cmd_novo_local_bd.Enabled = True
+        .Cmd_chat.Enabled = True
+        .cmdAcessar.Enabled = True
+    End With
+
     USMsgBox ("Nome de usuário ou senha inválida."), vbExclamation, "CAPRIND v5.0"
     txtSenha.SetFocus
     TBUsuarios.Close

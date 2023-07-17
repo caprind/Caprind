@@ -4,7 +4,7 @@ Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.ocx"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
 Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmproj_produto 
    AutoRedraw      =   -1  'True
    BackColor       =   &H00E0E0E0&
@@ -1075,7 +1075,6 @@ Begin VB.Form frmproj_produto
       _ExtentY        =   17701
       _Version        =   393216
       Tabs            =   8
-      Tab             =   2
       TabsPerRow      =   8
       TabHeight       =   520
       BackColor       =   12632256
@@ -1090,22 +1089,26 @@ Begin VB.Form frmproj_produto
       EndProperty
       TabCaption(0)   =   "Dados principais"
       TabPicture(0)   =   "frmproj_produto.frx":12EAD
-      Tab(0).ControlEnabled=   0   'False
+      Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Frame2"
+      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "CommonDialog1"
+      Tab(0).Control(1).Enabled=   0   'False
       Tab(0).Control(2)=   "txtcodproduto"
+      Tab(0).Control(2).Enabled=   0   'False
       Tab(0).Control(3)=   "USToolBar1"
+      Tab(0).Control(3).Enabled=   0   'False
       Tab(0).ControlCount=   4
       TabCaption(1)   =   "Dados adicionais"
       TabPicture(1)   =   "frmproj_produto.frx":12EC9
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "txtIdFabricante"
-      Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "Frame4"
+      Tab(1).Control(0)=   "Frame4"
+      Tab(1).Control(1)=   "txtIdFabricante"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Impostos"
       TabPicture(2)   =   "frmproj_produto.frx":12EE5
-      Tab(2).ControlEnabled=   -1  'True
+      Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "Frame7"
       Tab(2).Control(0).Enabled=   0   'False
       Tab(2).Control(1)=   "Frame16"
@@ -1127,14 +1130,14 @@ Begin VB.Form frmproj_produto
       TabCaption(4)   =   "Clientes e forn."
       TabPicture(4)   =   "frmproj_produto.frx":12F1D
       Tab(4).ControlEnabled=   0   'False
-      Tab(4).Control(0)=   "Frame15"
-      Tab(4).Control(1)=   "txtIDGrupo"
+      Tab(4).Control(0)=   "txtIDGrupo"
+      Tab(4).Control(1)=   "Frame15"
       Tab(4).ControlCount=   2
       TabCaption(5)   =   "Conta contábil"
       TabPicture(5)   =   "frmproj_produto.frx":12F39
       Tab(5).ControlEnabled=   0   'False
-      Tab(5).Control(0)=   "Frame19"
-      Tab(5).Control(1)=   "Frame11"
+      Tab(5).Control(0)=   "Frame11"
+      Tab(5).Control(1)=   "Frame19"
       Tab(5).ControlCount=   2
       TabCaption(6)   =   "Imagem"
       TabPicture(6)   =   "frmproj_produto.frx":12F55
@@ -1144,18 +1147,18 @@ Begin VB.Form frmproj_produto
       TabCaption(7)   =   "Documentos"
       TabPicture(7)   =   "frmproj_produto.frx":12F71
       Tab(7).ControlEnabled=   0   'False
-      Tab(7).Control(0)=   "Frame14"
-      Tab(7).Control(1)=   "txtID_doc"
-      Tab(7).Control(1).Enabled=   0   'False
+      Tab(7).Control(0)=   "USToolBar3"
+      Tab(7).Control(1)=   "PBLista1"
       Tab(7).Control(2)=   "Lista_doc"
-      Tab(7).Control(3)=   "PBLista1"
-      Tab(7).Control(4)=   "USToolBar3"
+      Tab(7).Control(3)=   "txtID_doc"
+      Tab(7).Control(3).Enabled=   0   'False
+      Tab(7).Control(4)=   "Frame14"
       Tab(7).ControlCount=   5
       Begin VB.Frame Frame23 
          BackColor       =   &H00E0E0E0&
          Caption         =   "Aliquota INSS"
          Height          =   675
-         Left            =   10920
+         Left            =   -64080
          TabIndex        =   266
          Top             =   2190
          Width           =   1335
@@ -1197,7 +1200,7 @@ Begin VB.Form frmproj_produto
          EndProperty
          ForeColor       =   &H00000040&
          Height          =   675
-         Left            =   75
+         Left            =   -74925
          TabIndex        =   264
          Top             =   2190
          Width           =   7575
@@ -1229,7 +1232,7 @@ Begin VB.Form frmproj_produto
          BackColor       =   &H00E0E0E0&
          Caption         =   "Valor unid tributada"
          Height          =   675
-         Left            =   13590
+         Left            =   -61410
          TabIndex        =   262
          Top             =   2190
          Width           =   1695
@@ -1260,7 +1263,7 @@ Begin VB.Form frmproj_produto
          BackColor       =   &H00E0E0E0&
          Caption         =   "Unid tributada"
          Height          =   675
-         Left            =   12270
+         Left            =   -62730
          TabIndex        =   260
          Top             =   2190
          Width           =   1305
@@ -1281,7 +1284,7 @@ Begin VB.Form frmproj_produto
       End
       Begin DrawSuite2022.USToolBar USToolBar1 
          Height          =   975
-         Left            =   -74925
+         Left            =   75
          TabIndex        =   181
          Top             =   330
          Width           =   15255
@@ -1707,7 +1710,7 @@ Begin VB.Form frmproj_produto
       Begin VB.Frame Frame16 
          BackColor       =   &H00E0E0E0&
          Height          =   675
-         Left            =   7665
+         Left            =   -67335
          TabIndex        =   166
          Top             =   2190
          Width           =   3240
@@ -2179,7 +2182,7 @@ Begin VB.Form frmproj_produto
             Strikethrough   =   0   'False
          EndProperty
          Height          =   330
-         Left            =   -66435
+         Left            =   8565
          MaxLength       =   50
          MouseIcon       =   "frmproj_produto.frx":1FAA0
          MousePointer    =   99  'Custom
@@ -2190,7 +2193,7 @@ Begin VB.Form frmproj_produto
          Width           =   915
       End
       Begin MSComDlg.CommonDialog CommonDialog1 
-         Left            =   -65460
+         Left            =   9540
          Top             =   5280
          _ExtentX        =   847
          _ExtentY        =   847
@@ -2602,7 +2605,7 @@ Begin VB.Form frmproj_produto
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   3465
-         Left            =   -74910
+         Left            =   90
          TabIndex        =   141
          Top             =   1320
          Width           =   15195
@@ -5535,7 +5538,7 @@ Begin VB.Form frmproj_produto
             Strikethrough   =   0   'False
          EndProperty
          Height          =   855
-         Left            =   75
+         Left            =   -74925
          TabIndex        =   148
          Top             =   1350
          Width           =   2475

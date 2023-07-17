@@ -4,7 +4,7 @@ Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.ocx"
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
 Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmCompras_Pedido 
    BackColor       =   &H00E0E0E0&
    Caption         =   "Administrativo - Compras - Pedido"
@@ -106,7 +106,8 @@ Begin VB.Form frmCompras_Pedido
       Width           =   15195
       Begin VB.TextBox txt_baseICMS_ST 
          Alignment       =   2  'Center
-         BackColor       =   &H00FFFFFF&
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          Height          =   315
          Left            =   2610
          Locked          =   -1  'True
@@ -120,6 +121,8 @@ Begin VB.Form frmCompras_Pedido
       End
       Begin VB.TextBox txt_VlrICMS 
          Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          Height          =   315
          Left            =   1395
          Locked          =   -1  'True
@@ -133,6 +136,8 @@ Begin VB.Form frmCompras_Pedido
       End
       Begin VB.TextBox txt_BaseICMS 
          Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          Height          =   315
          Left            =   180
          Locked          =   -1  'True
@@ -146,7 +151,8 @@ Begin VB.Form frmCompras_Pedido
       End
       Begin VB.TextBox txtTotalSeguro 
          Alignment       =   2  'Center
-         BackColor       =   &H00FFFFFF&
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          Height          =   315
          Left            =   8610
          MaxLength       =   50
@@ -172,7 +178,8 @@ Begin VB.Form frmCompras_Pedido
       End
       Begin VB.TextBox txtTotalFrete 
          Alignment       =   2  'Center
-         BackColor       =   &H00FFFFFF&
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          Height          =   315
          Left            =   7458
          MaxLength       =   50
@@ -185,7 +192,8 @@ Begin VB.Form frmCompras_Pedido
       End
       Begin VB.TextBox txt_TotalIPI 
          Alignment       =   2  'Center
-         BackColor       =   &H00FFFFFF&
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          Height          =   315
          Left            =   11247
          Locked          =   -1  'True
@@ -195,11 +203,12 @@ Begin VB.Form frmCompras_Pedido
          Text            =   "0,00"
          ToolTipText     =   "Valor total do IPI."
          Top             =   390
-         Width           =   1185
+         Width           =   1035
       End
       Begin VB.TextBox txt_VlrTotalProd 
          Alignment       =   2  'Center
-         BackColor       =   &H00FFFFFF&
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          Height          =   315
          Left            =   5025
          Locked          =   -1  'True
@@ -213,7 +222,8 @@ Begin VB.Form frmCompras_Pedido
       End
       Begin VB.TextBox txtTotalServicos 
          Alignment       =   2  'Center
-         BackColor       =   &H00FFFFFF&
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          Height          =   315
          Left            =   6240
          Locked          =   -1  'True
@@ -227,7 +237,8 @@ Begin VB.Form frmCompras_Pedido
       End
       Begin VB.TextBox txtTotalPedido 
          Alignment       =   2  'Center
-         BackColor       =   &H00FFFFFF&
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -238,8 +249,8 @@ Begin VB.Form frmCompras_Pedido
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000080&
-         Height          =   315
-         Left            =   13830
+         Height          =   345
+         Left            =   13650
          Locked          =   -1  'True
          MaxLength       =   50
          TabIndex        =   72
@@ -247,13 +258,13 @@ Begin VB.Form frmCompras_Pedido
          Text            =   "0,00"
          ToolTipText     =   "Valor total do pedido."
          Top             =   390
-         Width           =   1185
+         Width           =   1425
       End
       Begin VB.TextBox txtTotalDesconto 
          Alignment       =   2  'Center
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         Left            =   12465
+         Left            =   12315
          MaxLength       =   50
          TabIndex        =   71
          Text            =   "0,00"
@@ -263,7 +274,8 @@ Begin VB.Form frmCompras_Pedido
       End
       Begin VB.TextBox txt_ICMS_ST 
          Alignment       =   2  'Center
-         BackColor       =   &H00FFFFFF&
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
          Height          =   315
          Left            =   3825
          Locked          =   -1  'True
@@ -320,8 +332,9 @@ Begin VB.Form frmCompras_Pedido
       End
       Begin DrawSuite2022.USButton cmdSalvar_desconto 
          Height          =   315
-         Left            =   13440
+         Left            =   13290
          TabIndex        =   409
+         ToolTipText     =   "Salva o total de desconto do pedido diluido em percentual nos itens e nos serviços do pedido."
          Top             =   390
          Width           =   345
          _ExtentX        =   609
@@ -383,7 +396,7 @@ Begin VB.Form frmCompras_Pedido
          ForeColor       =   &H00000080&
          Height          =   195
          Index           =   89
-         Left            =   12495
+         Left            =   12345
          TabIndex        =   349
          Top             =   180
          Width           =   795
@@ -588,8 +601,8 @@ Begin VB.Form frmCompras_Pedido
       TabCaption(4)   =   "Lista de serviços"
       TabPicture(4)   =   "frmCompras_Pedido.frx":115C8
       Tab(4).ControlEnabled=   0   'False
-      Tab(4).Control(0)=   "SSTab3"
-      Tab(4).Control(1)=   "USToolBar5"
+      Tab(4).Control(0)=   "USToolBar5"
+      Tab(4).Control(1)=   "SSTab3"
       Tab(4).ControlCount=   2
       TabCaption(5)   =   "Escopo de fornecimento"
       TabPicture(5)   =   "frmCompras_Pedido.frx":115E4
@@ -5214,14 +5227,14 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   330
                ItemData        =   "frmCompras_Pedido.frx":1297EE
-               Left            =   3390
+               Left            =   2610
                List            =   "frmCompras_Pedido.frx":1297F0
                Sorted          =   -1  'True
                Style           =   2  'Dropdown List
                TabIndex        =   101
                ToolTipText     =   "Código de referencia."
                Top             =   390
-               Width           =   3435
+               Width           =   2265
             End
             Begin VB.TextBox txt_ID_CFOP_prod 
                Alignment       =   2  'Center
@@ -5259,13 +5272,13 @@ Begin VB.Form frmCompras_Pedido
                EndProperty
                ForeColor       =   &H00000000&
                Height          =   315
-               Left            =   3390
+               Left            =   2610
                MaxLength       =   255
                TabIndex        =   100
                ToolTipText     =   "Código de referência."
                Top             =   390
                Visible         =   0   'False
-               Width           =   3435
+               Width           =   2235
             End
             Begin VB.Frame framePrazo 
                BackColor       =   &H00E0E0E0&
@@ -5303,7 +5316,8 @@ Begin VB.Form frmCompras_Pedido
             End
             Begin VB.TextBox TxtVlrTotal 
                Alignment       =   2  'Center
-               BackColor       =   &H00FFFFFF&
+               Appearance      =   0  'Flat
+               BackColor       =   &H00E0E0E0&
                BeginProperty Font 
                   Name            =   "Arial"
                   Size            =   8.25
@@ -5431,13 +5445,13 @@ Begin VB.Form frmCompras_Pedido
                TabIndex        =   96
                ToolTipText     =   "Código interno."
                Top             =   390
-               Width           =   2115
+               Width           =   1395
             End
             Begin VB.CommandButton cmdfiltrar 
                Appearance      =   0  'Flat
                BackColor       =   &H00C0C0C0&
                Height          =   315
-               Left            =   2310
+               Left            =   1590
                Picture         =   "frmCompras_Pedido.frx":1297F2
                Style           =   1  'Graphical
                TabIndex        =   97
@@ -5446,7 +5460,7 @@ Begin VB.Form frmCompras_Pedido
                Width           =   315
             End
             Begin VB.TextBox txtvalorunitario 
-               Alignment       =   1  'Right Justify
+               Alignment       =   2  'Center
                BackColor       =   &H00FFFFFF&
                BeginProperty Font 
                   Name            =   "Arial"
@@ -5464,7 +5478,7 @@ Begin VB.Form frmCompras_Pedido
                TabIndex        =   128
                ToolTipText     =   "Valor unitário."
                Top             =   3015
-               Width           =   1065
+               Width           =   1515
             End
             Begin VB.TextBox txtipi 
                Alignment       =   2  'Center
@@ -5578,7 +5592,7 @@ Begin VB.Form frmCompras_Pedido
                TabIndex        =   124
                ToolTipText     =   "Detalhe."
                Top             =   2385
-               Width           =   2225
+               Width           =   2130
             End
             Begin VB.TextBox txtObs 
                Alignment       =   2  'Center
@@ -5604,7 +5618,7 @@ Begin VB.Form frmCompras_Pedido
                Width           =   6765
             End
             Begin VB.TextBox txtvalorunitariodesc 
-               Alignment       =   1  'Right Justify
+               Alignment       =   2  'Center
                BackColor       =   &H00FFFFFF&
                BeginProperty Font 
                   Name            =   "Arial"
@@ -5627,7 +5641,7 @@ Begin VB.Form frmCompras_Pedido
                Width           =   1395
             End
             Begin VB.TextBox txtvalordesconto 
-               Alignment       =   1  'Right Justify
+               Alignment       =   2  'Center
                BackColor       =   &H00FFFFFF&
                BeginProperty Font 
                   Name            =   "Arial"
@@ -5663,20 +5677,20 @@ Begin VB.Form frmCompras_Pedido
                EndProperty
                ForeColor       =   &H00000000&
                Height          =   315
-               Left            =   1260
+               Left            =   1710
                Locked          =   -1  'True
                MaxLength       =   6
                TabIndex        =   129
                TabStop         =   0   'False
                ToolTipText     =   "Valor do desconto (%)."
                Top             =   3015
-               Width           =   1065
+               Width           =   615
             End
             Begin VB.CommandButton CmdEscolher_item 
                Appearance      =   0  'Flat
                BackColor       =   &H00C0C0C0&
                Height          =   315
-               Left            =   2640
+               Left            =   1920
                Picture         =   "frmCompras_Pedido.frx":129C11
                Style           =   1  'Graphical
                TabIndex        =   98
@@ -5686,7 +5700,8 @@ Begin VB.Form frmCompras_Pedido
             End
             Begin VB.TextBox txtstatus_item 
                Alignment       =   2  'Center
-               BackColor       =   &H00FFFFFF&
+               Appearance      =   0  'Flat
+               BackColor       =   &H00E0E0E0&
                BeginProperty Font 
                   Name            =   "Arial"
                   Size            =   8.25
@@ -5698,14 +5713,14 @@ Begin VB.Form frmCompras_Pedido
                EndProperty
                ForeColor       =   &H00000000&
                Height          =   315
-               Left            =   6840
+               Left            =   4890
                Locked          =   -1  'True
                MaxLength       =   50
                TabIndex        =   102
                TabStop         =   0   'False
                ToolTipText     =   "Status."
                Top             =   390
-               Width           =   4545
+               Width           =   3015
             End
             Begin VB.CheckBox chkRemessa 
                BackColor       =   &H00E0E0E0&
@@ -5770,31 +5785,31 @@ Begin VB.Form frmCompras_Pedido
                   Strikethrough   =   0   'False
                EndProperty
                Height          =   315
-               Left            =   11295
+               Left            =   11205
                TabIndex        =   125
                ToolTipText     =   "Número da ordem de produção."
                Top             =   2385
-               Width           =   1035
+               Width           =   885
             End
             Begin VB.CheckBox Chk_desc 
                BackColor       =   &H00E0E0E0&
-               Caption         =   "Desc. (%)"
+               Caption         =   "(%)"
                ForeColor       =   &H00000000&
                Height          =   195
-               Left            =   1275
+               Left            =   1725
                TabIndex        =   142
                Top             =   2820
-               Width           =   1035
+               Width           =   615
             End
             Begin VB.CheckBox Chk_valor_desc 
                BackColor       =   &H00E0E0E0&
-               Caption         =   "Vlr. do desc."
+               Caption         =   "Desconto"
                ForeColor       =   &H00000000&
                Height          =   195
-               Left            =   2415
+               Left            =   2535
                TabIndex        =   143
                Top             =   2820
-               Width           =   1215
+               Width           =   1005
             End
             Begin VB.TextBox txtDescricao_comercial 
                BackColor       =   &H00FFFFFF&
@@ -5855,17 +5870,17 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   330
                ItemData        =   "frmCompras_Pedido.frx":129D17
-               Left            =   12345
+               Left            =   12105
                List            =   "frmCompras_Pedido.frx":129D19
                Sorted          =   -1  'True
                Style           =   2  'Dropdown List
                TabIndex        =   126
                ToolTipText     =   "Número da OS."
                Top             =   2385
-               Width           =   1185
+               Width           =   945
             End
             Begin VB.TextBox txtQuantidade_est 
-               Alignment       =   1  'Right Justify
+               Alignment       =   2  'Center
                BackColor       =   &H00FFFFFF&
                BeginProperty Font 
                   Name            =   "Arial"
@@ -6032,7 +6047,7 @@ Begin VB.Form frmCompras_Pedido
                Appearance      =   0  'Flat
                BackColor       =   &H00C0C0C0&
                Height          =   315
-               Left            =   2970
+               Left            =   2250
                Picture         =   "frmCompras_Pedido.frx":12A3A6
                Style           =   1  'Graphical
                TabIndex        =   99
@@ -6041,7 +6056,7 @@ Begin VB.Form frmCompras_Pedido
                Width           =   315
             End
             Begin VB.TextBox txtFrete 
-               Alignment       =   1  'Right Justify
+               Alignment       =   2  'Center
                BackColor       =   &H00FFFFFF&
                BeginProperty Font 
                   Name            =   "Arial"
@@ -6062,7 +6077,7 @@ Begin VB.Form frmCompras_Pedido
                Width           =   885
             End
             Begin VB.TextBox txtAcessorias 
-               Alignment       =   1  'Right Justify
+               Alignment       =   2  'Center
                BackColor       =   &H00FFFFFF&
                BeginProperty Font 
                   Name            =   "Arial"
@@ -6083,7 +6098,7 @@ Begin VB.Form frmCompras_Pedido
                Width           =   1205
             End
             Begin VB.TextBox txtSeguro 
-               Alignment       =   1  'Right Justify
+               Alignment       =   2  'Center
                BackColor       =   &H00FFFFFF&
                BeginProperty Font 
                   Name            =   "Arial"
@@ -6123,8 +6138,9 @@ Begin VB.Form frmCompras_Pedido
                Width           =   1365
             End
             Begin VB.TextBox Txt_vlr_unit_ultima_compra_prod 
-               Alignment       =   1  'Right Justify
-               BackColor       =   &H00FFFFFF&
+               Alignment       =   2  'Center
+               Appearance      =   0  'Flat
+               BackColor       =   &H00E0E0E0&
                BeginProperty Font 
                   Name            =   "Arial"
                   Size            =   8.25
@@ -6136,14 +6152,14 @@ Begin VB.Form frmCompras_Pedido
                EndProperty
                ForeColor       =   &H00000000&
                Height          =   315
-               Left            =   13550
+               Left            =   13065
                Locked          =   -1  'True
                MaxLength       =   50
                TabIndex        =   127
                TabStop         =   0   'False
                ToolTipText     =   "Valor unitário da última compra."
                Top             =   2385
-               Width           =   1395
+               Width           =   1875
             End
             Begin VB.TextBox Txt_CF 
                Alignment       =   2  'Center
@@ -6240,7 +6256,7 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   195
                Index           =   108
-               Left            =   12832
+               Left            =   12435
                TabIndex        =   368
                Top             =   2190
                Width           =   210
@@ -6253,7 +6269,7 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   195
                Index           =   107
-               Left            =   11707
+               Left            =   11542
                TabIndex        =   367
                Top             =   2190
                Width           =   210
@@ -6266,7 +6282,7 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   195
                Index           =   106
-               Left            =   9895
+               Left            =   9848
                TabIndex        =   366
                Top             =   2190
                Width           =   555
@@ -6417,7 +6433,7 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   195
                Index           =   95
-               Left            =   8835
+               Left            =   6120
                TabIndex        =   355
                Top             =   180
                Width           =   555
@@ -6456,7 +6472,7 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   195
                Index           =   27
-               Left            =   7920
+               Left            =   7830
                TabIndex        =   267
                Top             =   2820
                Width           =   495
@@ -6513,7 +6529,7 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   195
                Index           =   16
-               Left            =   622
+               Left            =   285
                TabIndex        =   264
                Top             =   180
                Width           =   1230
@@ -6535,7 +6551,7 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000080&
                Height          =   195
                Index           =   22
-               Left            =   225
+               Left            =   405
                TabIndex        =   263
                Top             =   2820
                Width           =   975
@@ -6561,7 +6577,7 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   195
                Index           =   17
-               Left            =   4470
+               Left            =   3090
                TabIndex        =   261
                Top             =   180
                Width           =   1275
@@ -6611,7 +6627,7 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   195
                Index           =   19
-               Left            =   3090
+               Left            =   2782
                TabIndex        =   257
                Top             =   810
                Width           =   690
@@ -6684,7 +6700,7 @@ Begin VB.Form frmCompras_Pedido
                ForeColor       =   &H00000000&
                Height          =   195
                Index           =   57
-               Left            =   13610
+               Left            =   13365
                TabIndex        =   252
                Top             =   2190
                Width           =   1275
@@ -9493,7 +9509,7 @@ Begin VB.Form frmCompras_Pedido
                CalendarTitleBackColor=   8421504
                CalendarTitleForeColor=   16777215
                CalendarTrailingForeColor=   255
-               Format          =   184287233
+               Format          =   305790977
                CurrentDate     =   39057
             End
             Begin VB.ComboBox cmbTexto_sol 

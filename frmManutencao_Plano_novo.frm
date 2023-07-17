@@ -197,7 +197,7 @@ Attribute VB_Exposed = False
 Private Sub btnEmpresa_Click()
 On Error GoTo tratar_erro
 
-frmManutencao_empresa Show
+frmManutencao_empresa.Show 1
 Unload Me
 
 Exit Sub
@@ -209,7 +209,7 @@ End Sub
 Private Sub btnEquipamento_Click()
 On Error GoTo tratar_erro
 
-frmManutencao_maquina_Abrir Show
+frmManutencao_maquina_Abrir.Show 1
 Unload Me
 
 Exit Sub
@@ -221,7 +221,7 @@ End Sub
 Private Sub btnProduto_Click()
 On Error GoTo tratar_erro
 
-frmManutencao_item Show
+frmManutencao_item.Show 1
 Unload Me
 
 Exit Sub

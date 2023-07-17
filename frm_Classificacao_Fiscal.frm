@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.ocx"
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
 Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frm_Classificacao_Fiscal 
    BackColor       =   &H00E0E0E0&
    Caption         =   "Administrativo - Faturamento - Fiscal - Classificação fiscal"
@@ -32,9 +32,9 @@ Begin VB.Form frm_Classificacao_Fiscal
       Top             =   0
       _ExtentX        =   847
       _ExtentY        =   847
-      Resolution      =   99
+      Resolution      =   26
       ScreenHeight    =   1080
-      ScreenWidth     =   2560
+      ScreenWidth     =   1920
       ScreenHeightDT  =   1080
       ScreenWidthDT   =   1920
       AutoResizeOnLoad=   0   'False
@@ -552,12 +552,12 @@ Begin VB.Form frm_Classificacao_Fiscal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00000000&
+      ForeColor       =   &H00000080&
       Height          =   210
-      Left            =   240
+      Left            =   90
       TabIndex        =   9
       Top             =   2340
-      Width           =   2685
+      Width           =   2865
    End
    Begin VB.CheckBox chkReducao 
       BackColor       =   &H00E0E0E0&
@@ -571,12 +571,12 @@ Begin VB.Form frm_Classificacao_Fiscal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00000000&
+      ForeColor       =   &H00000080&
       Height          =   210
-      Left            =   240
+      Left            =   90
       TabIndex        =   8
       Top             =   2115
-      Width           =   2415
+      Width           =   2595
    End
    Begin VB.TextBox TxtID 
       Alignment       =   2  'Center
@@ -2497,16 +2497,16 @@ End Sub
 Private Sub ProcAnterior()
 On Error GoTo tratar_erro
 
-If txtId = 0 Then Exit Sub
+If txtid = 0 Then Exit Sub
 Set TBAbrir = CreateObject("adodb.recordset")
 TBAbrir.Open "Select * from tbl_ClassificacaoFiscal order by IDIntClasse", Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.BOF = False Then
-    TBAbrir.Find ("Idclass = " & txtId)
+    TBAbrir.Find ("Idclass = " & txtid)
     TBAbrir.MovePrevious
     If TBAbrir.BOF = False Then
-        txtId = TBAbrir!Idclass
+        txtid = TBAbrir!Idclass
         Set TBLISTA = CreateObject("adodb.recordset")
-        TBLISTA.Open "Select * from tbl_ClassificacaoFiscal where Idclass = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+        TBLISTA.Open "Select * from tbl_ClassificacaoFiscal where Idclass = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
         ProcLimpaCampos
         ProcCarregaDados
     Else
@@ -2523,16 +2523,16 @@ End Sub
 Private Sub ProcProximo()
 On Error GoTo tratar_erro
 
-If txtId = 0 Then Exit Sub
+If txtid = 0 Then Exit Sub
 Set TBAbrir = CreateObject("adodb.recordset")
 TBAbrir.Open "Select * from tbl_ClassificacaoFiscal order by IDIntClasse", Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.BOF = False Then
-    TBAbrir.Find ("Idclass = " & txtId)
+    TBAbrir.Find ("Idclass = " & txtid)
     TBAbrir.MoveNext
     If TBAbrir.EOF = False Then
-        txtId = TBAbrir!Idclass
+        txtid = TBAbrir!Idclass
         Set TBLISTA = CreateObject("adodb.recordset")
-        TBLISTA.Open "Select * from tbl_ClassificacaoFiscal where Idclass = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+        TBLISTA.Open "Select * from tbl_ClassificacaoFiscal where Idclass = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
         ProcLimpaCampos
         ProcCarregaDados
     Else
@@ -2690,7 +2690,7 @@ End Sub
 Sub ProcLimpaCampos()
 On Error GoTo tratar_erro
 
-txtId = 0
+txtid = 0
 txtData = Format(Date, "dd/mm/yy")
 txtResponsavel = pubUsuario
 txtDtValidacao = ""
@@ -2999,13 +2999,13 @@ If Txt_aliq_importacao = "" Then
 End If
 
 Set TBAliquota = CreateObject("adodb.recordset")
-TBAliquota.Open "Select * from Tbl_ClassificacaoFiscal where IDIntClasse = '" & mskClassificacao.Text & "' and Idclass <> " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBAliquota.Open "Select * from Tbl_ClassificacaoFiscal where IDIntClasse = '" & mskClassificacao.Text & "' and Idclass <> " & txtid, Conexao, adOpenKeyset, adLockOptimistic
 If TBAliquota.EOF = False Then
     If USMsgBox("Este código de classificação está sendo utilizado, deseja prosseguir assim mesmo?", vbYesNo, "CAPRIND v5.0") = vbNo Then Exit Sub
 End If
 
 Set TBAliquota = CreateObject("adodb.recordset")
-TBAliquota.Open "Select * from Tbl_ClassificacaoFiscal where IDClass = " & txtId, Conexao, adOpenKeyset, adLockOptimistic
+TBAliquota.Open "Select * from Tbl_ClassificacaoFiscal where IDClass = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
 If TBAliquota.EOF = True Then
     TBAliquota.AddNew
 Else
@@ -3013,7 +3013,7 @@ Else
 End If
 ProcEnviaDados
 TBAliquota.Update
-txtId = TBAliquota!Idclass
+txtid = TBAliquota!Idclass
 TBAliquota.Close
 If Novo_CF = True Then
     USMsgBox ("Nova classificação fiscal cadastrada com sucesso."), vbInformation, "CAPRIND v5.0"
@@ -3031,7 +3031,7 @@ Else
 End If
 '==================================
 Modulo = "Faturamento/Fiscal/Classificação fiscal"
-ID_documento = txtId
+ID_documento = txtid
 Documento = "Classificação: " & mskClassificacao
 Documento1 = ""
 ProcGravaEvento
@@ -3275,7 +3275,7 @@ End Sub
 Public Sub ProcCarregaDados()
 On Error GoTo tratar_erro
 
-txtId.Text = IIf(IsNull(TBLISTA!Idclass) = False, TBLISTA!Idclass, "")
+txtid.Text = IIf(IsNull(TBLISTA!Idclass) = False, TBLISTA!Idclass, "")
 txtData = IIf(IsNull(TBLISTA!Data), "", Format(TBLISTA!Data, "dd/mm/yy"))
 txtResponsavel = IIf(IsNull(TBLISTA!Responsavel), "", TBLISTA!Responsavel)
 txtDtValidacao = IIf(IsNull(TBLISTA!DtValidacao), "", TBLISTA!DtValidacao)

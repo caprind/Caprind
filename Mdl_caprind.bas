@@ -11647,7 +11647,7 @@ End If
 'If Logon = True Then
 '    With frmabertura
 '        .txtUsuario.Enabled = True
-'        .txtsenha.Enabled = True
+'        .txtSenha.Enabled = True
 '        .cmbBanco.Enabled = True
 '        .Cmd_novo_local_bd.Enabled = True
 '        .Cmd_chat.Enabled = True
@@ -12304,7 +12304,7 @@ Loop
 
 Set TBTotaisnota = CreateObject("adodb.recordset")
 'TBTotaisnota.Open "Select Sum(preco_unitario) AS unit, Sum(Quant_Comp) AS quantcomp, Sum(preco_total) as Valor, Sum(vlripi) as SumIPI, Sum(Valor_ICMS_ST) as TotalICMSCST, Sum(BC_ICMS) as BASECALCULO, Sum(vlricms) as TotalICMS, Sum(BC_ICMS_ST) as TotalBCICMSCST, Sum(Frete) as SumFrete, Sum(Seguro) as SumSeguro, Sum(Acessorias) as SumAcessorias from compras_pedido_lista where IDPedido = " & ID & " and Tipo = 'P' and Remessa = 'False' and status_item <> 'CANCELADO'", Conexao, adOpenKeyset, adLockOptimistic
-TBTotaisnota.Open "Select Sum(ValorDesconto * Quant_Comp) as TotalDesconto, Sum(preco_total) as Valor, Sum(vlripi) as SumIPI, Sum(Valor_ICMS_ST) as TotalICMSCST, Sum(BC_ICMS) as BASECALCULO, Sum(vlricms) as TotalICMS, Sum(BC_ICMS_ST) as TotalBCICMSCST, Sum(Frete) as SumFrete, Sum(Seguro) as SumSeguro, Sum(Acessorias) as SumAcessorias from compras_pedido_lista where IDPedido = " & ID & "  and Remessa = 'False' and status_item <> 'CANCELADO'", Conexao, adOpenKeyset, adLockOptimistic
+TBTotaisnota.Open "Select Sum(ValorDesconto * Quant_Comp) as TotalDesconto, Sum(preco_total) as Valor, Sum(vlripi) as SumIPI, Sum(Valor_ICMS_ST) as TotalICMSCST, Sum(BC_ICMS) as BASECALCULO, Sum(vlricms) as TotalICMS, Sum(BC_ICMS_ST) as TotalBCICMSCST, Sum(Frete) as SumFrete, Sum(Seguro) as SumSeguro, Sum(Acessorias) as SumAcessorias from compras_pedido_lista where IDPedido = " & ID & " and Tipo = 'P' and Remessa = 'False' and status_item <> 'CANCELADO'", Conexao, adOpenKeyset, adLockOptimistic
 If TBTotaisnota.EOF = False Then
 '    If IsNull(TBTotaisnota!unit) = False And IsNull(TBTotaisnota!quantcomp) = False Then
 '        TotalProduto = Format(TBTotaisnota!unit * TBTotaisnota!quantcomp, "###,##0.00")
@@ -12328,13 +12328,14 @@ TotalServicos = 0
 Qtde = 0
 Set TBTotaisnota = CreateObject("adodb.recordset")
 StrSql = "Select Sum(valordesconto * Quant_Comp)  as TotalDesconto,Sum(ROUND(preco_unitario * Quant_Comp, 2)) as TotalServicos, Sum(ROUND(preco_total, 2)) as Valor1 from compras_pedido_lista where IDPedido = " & ID & " and Tipo = 'S' and status_item <> 'CANCELADO'"
-'Debug.print StrSql
+Debug.Print StrSql
 
 TBTotaisnota.Open StrSql, Conexao, adOpenKeyset, adLockOptimistic
 If TBTotaisnota.EOF = False Then
     TotalServicos = IIf(IsNull(TBTotaisnota!TotalServicos), 0, Format(TBTotaisnota!TotalServicos, "###,##0.00"))
     Qtde = IIf(IsNull(TBTotaisnota!Valor1), 0, Format(TBTotaisnota!Valor1, "###,##0.00"))
     TotalDescontoServico = IIf(IsNull(TBTotaisnota!TotalDesconto), 0, Format(TBTotaisnota!TotalDesconto, "###,##0.00"))
+    'TotalServicos = TotalServicos - TotalDescontoServico
 End If
 TBTotaisnota.Close
 
@@ -12360,6 +12361,7 @@ TBCarteira!Total_Frete = Format(Valor1, "###,##0.00")
 TBCarteira!Total_Seguro = Format(Valor2, "###,##0.00")
 TBCarteira!Total_Acessorias = Format(Valor3, "###,##0.00")
 TBCarteira!dbl_valor_total = Format((SubTotal - TotalDesconto) + SumIPI + TotalICMSCST + Valor1 + Valor2 + Valor3, "###,##0.00")
+'TBCarteira!dbl_valor_total = Format((SubTotal) + SumIPI + TotalICMSCST + Valor1 + Valor2 + Valor3, "###,##0.00")
 TBCarteira.Update
 TBCarteira.Close
 

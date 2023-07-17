@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{48E59290-9880-11CF-9754-00AA00C00908}#1.0#0"; "MSINET.ocx"
 Object = "{935C9182-411B-4FFB-9512-97C8745743BC}#2.5#0"; "AResize.ocx"
 Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Object = "{BD0C1912-66C3-49CC-8B12-7B347BF6C846}#19.3#0"; "Codejock.SkinFramework.v19.3.0.ocx"
 Begin VB.MDIForm frmMDI 
    Appearance      =   0  'Flat
@@ -1341,11 +1341,30 @@ End Sub
 Private Sub Mnu_importacao_XML_Click()
 On Error GoTo tratar_erro
 
-frmEstoque_Recebimento_Importacao_xml.Show
+If FunVefificaModuloLocacao(True, False, True) = False Then Exit Sub
+
+Formulario = "Faturamento/Nota fiscal/Terceiros"
+ProcLiberaAcessos True
+If Acessos = False Then Exit Sub
+
+If Formulario_nota = "Faturamento/Nota fiscal/Própria" Or Formulario_nota = "Estoque/Ordem de faturamento" Or Formulario_nota = "Estoque/Nota fiscal" Then
+    If FunVerifFormAberto(frmFaturamento_Prod_Serv) = True Then
+        If USMsgBox("O módulo " & Formulario_nota & " está aberto, deseja fechá-lo para prosseguir?", vbYesNo, "CAPRIND v5.0") = vbNo Then Exit Sub Else Unload frmFaturamento_Prod_Serv
+    End If
+End If
+
+Formulario = "Faturamento/Nota fiscal/Terceiros"
+Faturamento_NF_Saida = False
+'======================================================
+Faturamento_NF_Terceiro = True
+Faturamento_NF_Propria = False
+TPNota = "T"
+'======================================================
+frmFaturamento_Prod_Serv.Show
 
 Exit Sub
 tratar_erro:
-    MsgBox ("Descrição do erro : " + Error()), vbCritical
+    USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
     Exit Sub
 End Sub
 

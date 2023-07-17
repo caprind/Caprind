@@ -96,11 +96,11 @@ Begin VB.Form frmFaturamento_Prod_Serv_NFe_NS
       TabCaption(1)   =   "Lista de produtos"
       TabPicture(1)   =   "frmFaturamento_Prod_Serv_Nfe_NS.frx":105E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "listaProdutos"
-      Tab(1).Control(1)=   "USToolBar2"
+      Tab(1).Control(0)=   "Frame_comb_lub"
+      Tab(1).Control(1)=   "txtID_item"
       Tab(1).Control(2)=   "FrameCST"
-      Tab(1).Control(3)=   "txtID_item"
-      Tab(1).Control(4)=   "Frame_comb_lub"
+      Tab(1).Control(3)=   "USToolBar2"
+      Tab(1).Control(4)=   "listaProdutos"
       Tab(1).ControlCount=   5
       Begin VB.Frame Frame1 
          BackColor       =   &H00E0E0E0&
@@ -637,17 +637,17 @@ Begin VB.Form frmFaturamento_Prod_Serv_NFe_NS
          TabCaption(1)   =   "Retorno SEFAZ"
          TabPicture(1)   =   "frmFaturamento_Prod_Serv_Nfe_NS.frx":F486
          Tab(1).ControlEnabled=   0   'False
-         Tab(1).Control(0)=   "Frame8"
-         Tab(1).Control(1)=   "Frame7"
-         Tab(1).Control(2)=   "Frame6"
-         Tab(1).Control(3)=   "Frame5"
-         Tab(1).Control(4)=   "Frame11"
+         Tab(1).Control(0)=   "TxtRetorno"
+         Tab(1).Control(1)=   "BtnValidadorXML"
+         Tab(1).Control(2)=   "Frame15"
+         Tab(1).Control(3)=   "Frame14"
+         Tab(1).Control(4)=   "Frame13"
          Tab(1).Control(5)=   "Frame12"
-         Tab(1).Control(6)=   "Frame13"
-         Tab(1).Control(7)=   "Frame14"
-         Tab(1).Control(8)=   "Frame15"
-         Tab(1).Control(9)=   "BtnValidadorXML"
-         Tab(1).Control(10)=   "TxtRetorno"
+         Tab(1).Control(6)=   "Frame11"
+         Tab(1).Control(7)=   "Frame5"
+         Tab(1).Control(8)=   "Frame6"
+         Tab(1).Control(9)=   "Frame7"
+         Tab(1).Control(10)=   "Frame8"
          Tab(1).ControlCount=   11
          Begin VB.TextBox TxtRetorno 
             BorderStyle     =   0  'None
@@ -4824,8 +4824,8 @@ ProcLimpaCampos
 ProcPuxaDados
 
 With frmFaturamento_Prod_Serv
-    If .txtId <> "" And .txtId <> "0" And .txtDtValidacao <> "" Then
-        txtID_nota = .txtId
+    If .txtid <> "" And .txtid <> "0" And .txtDtValidacao <> "" Then
+        txtID_nota = .txtid
         txtNota = IIf(.txtNFiscal = "", Null, .txtNFiscal)
         txtSerie = .txtSerie
         ProcCarregaEntrega
@@ -5044,7 +5044,7 @@ Modulo = Formulario
 ID_documento = txtID_nota
 With frmFaturamento_Prod_Serv
     .ProcVerificaTipoNF False
-    If .txtNFiscal = "" Then NomeCampo = "N° ordem: " & .txtId Else NomeCampo = "N° nota: " & .txtNFiscal
+    If .txtNFiscal = "" Then NomeCampo = "N° ordem: " & .txtid Else NomeCampo = "N° nota: " & .txtNFiscal
     Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & .txtSerie
 End With
 Documento1 = ""
@@ -5061,7 +5061,7 @@ If TBProduto.EOF = False Then
     ID_documento = TBProduto!ID
     With frmFaturamento_Prod_Serv
         .ProcVerificaTipoNF False
-        If .txtNFiscal = "" Then NomeCampo = "N° ordem: " & .txtId Else NomeCampo = "N° nota: " & .txtNFiscal
+        If .txtNFiscal = "" Then NomeCampo = "N° ordem: " & .txtid Else NomeCampo = "N° nota: " & .txtNFiscal
         Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & .txtSerie
     End With
     Documento1 = "Transportadora: " & TBProduto!txt_Razao
@@ -5697,7 +5697,7 @@ Evento = "Alterar dados do produto da nota fiscal"
 ID_documento = ListaProdutos.SelectedItem
 With frmFaturamento_Prod_Serv
     .ProcVerificaTipoNF False
-    If .txtNFiscal = "" Then NomeCampo = "N° ordem: " & .txtId Else NomeCampo = "N° nota: " & .txtNFiscal
+    If .txtNFiscal = "" Then NomeCampo = "N° ordem: " & .txtid Else NomeCampo = "N° nota: " & .txtNFiscal
     Documento = NomeCampo & " - Tipo: " & TipoNF & " - Série: " & .txtSerie
 End With
 Documento1 = "Cód. interno: " & ListaProdutos.SelectedItem.ListSubItems(1)

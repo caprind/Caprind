@@ -1,14 +1,14 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.ocx"
 Object = "{4F446E73-0578-46E4-81BC-6A88ADF59FEA}#2.3#0"; "DrawSuite2022.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.ocx"
 Begin VB.Form frmProjproduto_Abrir 
    BackColor       =   &H00E0E0E0&
-   BorderStyle     =   4  'Fixed ToolWindow
+   BorderStyle     =   0  'None
    Caption         =   "Engenharia - Produtos e serviços - Localizar"
-   ClientHeight    =   3960
-   ClientLeft      =   45
-   ClientTop       =   285
+   ClientHeight    =   4785
+   ClientLeft      =   0
+   ClientTop       =   -105
    ClientWidth     =   9990
    ControlBox      =   0   'False
    BeginProperty Font 
@@ -20,15 +20,49 @@ Begin VB.Form frmProjproduto_Abrir
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
+   Icon            =   "frmProjproduto_Abrir.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    LockControls    =   -1  'True
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3960
+   ScaleHeight     =   4785
    ScaleWidth      =   9990
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
+   Begin DrawSuite2022.USForm USForm1 
+      Align           =   1  'Align Top
+      Height          =   420
+      Left            =   0
+      TabIndex        =   40
+      Top             =   0
+      Width           =   9990
+      _ExtentX        =   17621
+      _ExtentY        =   741
+      DibPicture      =   "frmProjproduto_Abrir.frx":000C
+      CaptionOnCenter =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ShowMaximizeButton=   0   'False
+      ShowMinimizeButton=   0   'False
+   End
+   Begin DrawSuite2022.USStatusBar USStatusBar1 
+      Align           =   2  'Align Bottom
+      Height          =   405
+      Left            =   0
+      TabIndex        =   39
+      Top             =   4380
+      Width           =   9990
+      _ExtentX        =   17621
+      _ExtentY        =   714
+   End
    Begin VB.Frame Frame7 
       BackColor       =   &H00E0E0E0&
       Caption         =   "Registros"
@@ -42,9 +76,9 @@ Begin VB.Form frmProjproduto_Abrir
          Strikethrough   =   0   'False
       EndProperty
       Height          =   795
-      Left            =   3720
+      Left            =   3690
       TabIndex        =   37
-      Top             =   990
+      Top             =   1410
       Width           =   3135
       Begin VB.CheckBox chkEmbalagem 
          BackColor       =   &H00E0E0E0&
@@ -114,9 +148,9 @@ Begin VB.Form frmProjproduto_Abrir
          Strikethrough   =   0   'False
       EndProperty
       Height          =   795
-      Left            =   8700
+      Left            =   8670
       TabIndex        =   36
-      Top             =   990
+      Top             =   1380
       Width           =   1275
       Begin VB.ComboBox Cmb_validado 
          BackColor       =   &H00FFFFFF&
@@ -131,9 +165,9 @@ Begin VB.Form frmProjproduto_Abrir
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   330
-         ItemData        =   "frmProjproduto_Abrir.frx":0000
+         ItemData        =   "frmProjproduto_Abrir.frx":365C
          Left            =   180
-         List            =   "frmProjproduto_Abrir.frx":000D
+         List            =   "frmProjproduto_Abrir.frx":3669
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   23
@@ -155,9 +189,9 @@ Begin VB.Form frmProjproduto_Abrir
          Strikethrough   =   0   'False
       EndProperty
       Height          =   795
-      Left            =   6870
+      Left            =   6840
       TabIndex        =   33
-      Top             =   990
+      Top             =   1410
       Width           =   1815
       Begin VB.ComboBox cmbStatus 
          BackColor       =   &H00FFFFFF&
@@ -172,9 +206,9 @@ Begin VB.Form frmProjproduto_Abrir
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   330
-         ItemData        =   "frmProjproduto_Abrir.frx":001D
+         ItemData        =   "frmProjproduto_Abrir.frx":3679
          Left            =   180
-         List            =   "frmProjproduto_Abrir.frx":002A
+         List            =   "frmProjproduto_Abrir.frx":3686
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   22
@@ -195,9 +229,9 @@ Begin VB.Form frmProjproduto_Abrir
          Strikethrough   =   0   'False
       EndProperty
       Height          =   795
-      Left            =   55
+      Left            =   30
       TabIndex        =   32
-      Top             =   990
+      Top             =   1410
       Width           =   1275
       Begin VB.CheckBox chkServicos 
          BackColor       =   &H00E0E0E0&
@@ -251,9 +285,9 @@ Begin VB.Form frmProjproduto_Abrir
          Strikethrough   =   0   'False
       EndProperty
       Height          =   795
-      Left            =   1350
+      Left            =   1320
       TabIndex        =   31
-      Top             =   990
+      Top             =   1410
       Width           =   2355
       Begin VB.CheckBox chkCompras 
          BackColor       =   &H00E0E0E0&
@@ -343,15 +377,15 @@ Begin VB.Form frmProjproduto_Abrir
       Height          =   195
       Left            =   4110
       TabIndex        =   10
-      Top             =   3570
+      Top             =   3990
       Width           =   1755
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00E0E0E0&
       Height          =   1515
-      Left            =   55
+      Left            =   30
       TabIndex        =   25
-      Top             =   1770
+      Top             =   2190
       Width           =   9915
       Begin VB.Frame Frame4 
          BackColor       =   &H00E0E0E0&
@@ -403,7 +437,7 @@ Begin VB.Form frmProjproduto_Abrir
          BackColor       =   &H00C0C0C0&
          Height          =   315
          Left            =   9420
-         Picture         =   "frmProjproduto_Abrir.frx":0045
+         Picture         =   "frmProjproduto_Abrir.frx":36A1
          Style           =   1  'Graphical
          TabIndex        =   8
          ToolTipText     =   "Excluir filtro para pesquisa (F4)."
@@ -415,7 +449,7 @@ Begin VB.Form frmProjproduto_Abrir
          BackColor       =   &H00C0C0C0&
          Height          =   315
          Left            =   9090
-         Picture         =   "frmProjproduto_Abrir.frx":0183
+         Picture         =   "frmProjproduto_Abrir.frx":37DF
          Style           =   1  'Graphical
          TabIndex        =   7
          ToolTipText     =   "Salvar filtro para pesquisa (F3)."
@@ -426,9 +460,9 @@ Begin VB.Form frmProjproduto_Abrir
          BackColor       =   &H00FFFFFF&
          ForeColor       =   &H00000000&
          Height          =   330
-         ItemData        =   "frmProjproduto_Abrir.frx":01D6
+         ItemData        =   "frmProjproduto_Abrir.frx":3832
          Left            =   180
-         List            =   "frmProjproduto_Abrir.frx":0207
+         List            =   "frmProjproduto_Abrir.frx":3863
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   0
@@ -520,20 +554,26 @@ Begin VB.Form frmProjproduto_Abrir
    End
    Begin DrawSuite2022.USToolBar USToolBar1 
       Height          =   975
-      Left            =   60
+      Left            =   30
       TabIndex        =   30
-      Top             =   0
-      Width           =   9915
-      _ExtentX        =   17489
+      Top             =   420
+      Width           =   9945
+      _ExtentX        =   17542
       _ExtentY        =   1720
       ButtonCount     =   5
+      GradientColor1  =   16777215
       GradientColor2  =   14737632
-      GradientColorOverRight1=   16315633
-      GradientColorOverRight2=   15195350
-      GripperColor    =   15195350
+      GradientColorDown1=   10802943
+      GradientColorDown2=   7979263
+      GradientColorDownRight1=   10802943
+      GradientColorDownRight2=   7979263
+      GradientColorOver1=   14417407
+      GradientColorOver2=   12317439
+      GradientColorOverRight1=   14417407
+      GradientColorOverRight2=   12317439
       IsStrech        =   -1  'True
-      RightColor1     =   0
-      RightColor2     =   0
+      RightColor1     =   14737632
+      RightColor2     =   16777215
       ShowEndPanel    =   0   'False
       Theme           =   1
       ButtonCaption1  =   "Filtrar"
@@ -635,7 +675,7 @@ Begin VB.Form frmProjproduto_Abrir
          Top             =   240
          _ExtentX        =   900
          _ExtentY        =   767
-         Img1            =   "frmProjproduto_Abrir.frx":02D1
+         Img1            =   "frmProjproduto_Abrir.frx":392D
          Count           =   1
       End
    End
@@ -652,17 +692,17 @@ Begin VB.Form frmProjproduto_Abrir
          Strikethrough   =   0   'False
       EndProperty
       Height          =   675
-      Left            =   55
+      Left            =   30
       TabIndex        =   28
-      Top             =   3285
+      Top             =   3705
       Width           =   9915
       Begin VB.ComboBox Cmb_ordenar 
          BackColor       =   &H00FFFFFF&
          ForeColor       =   &H00000000&
          Height          =   330
-         ItemData        =   "frmProjproduto_Abrir.frx":24B9
+         ItemData        =   "frmProjproduto_Abrir.frx":5B15
          Left            =   1350
-         List            =   "frmProjproduto_Abrir.frx":24C3
+         List            =   "frmProjproduto_Abrir.frx":5B1F
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   9
@@ -694,7 +734,7 @@ Begin VB.Form frmProjproduto_Abrir
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   180092929
+         Format          =   176488449
          CurrentDate     =   39057
       End
       Begin MSComCtl2.DTPicker Msk_inicio 
@@ -721,7 +761,7 @@ Begin VB.Form frmProjproduto_Abrir
          CalendarTitleBackColor=   8421504
          CalendarTitleForeColor=   16777215
          CalendarTrailingForeColor=   255
-         Format          =   180092929
+         Format          =   176488449
          CurrentDate     =   39057
       End
       Begin VB.Label Label3 
@@ -791,7 +831,7 @@ Begin VB.Form frmProjproduto_Abrir
       Height          =   2115
       Left            =   60
       TabIndex        =   24
-      Top             =   3970
+      Top             =   4815
       Visible         =   0   'False
       Width           =   9915
       _ExtentX        =   17489
