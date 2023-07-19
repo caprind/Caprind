@@ -60,6 +60,8 @@ Begin VB.Form frm_Natureza_OP_Localizar
          Strikethrough   =   0   'False
       EndProperty
       Icon            =   "frm_Natureza_OP_Localizar.frx":3650
+      ShowMaximizeButton=   0   'False
+      ShowMinimizeButton=   0   'False
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00E0E0E0&
@@ -241,7 +243,7 @@ Begin VB.Form frm_Natureza_OP_Localizar
          Height          =   315
          ItemData        =   "frm_Natureza_OP_Localizar.frx":6FBA
          Left            =   330
-         List            =   "frm_Natureza_OP_Localizar.frx":6FC4
+         List            =   "frm_Natureza_OP_Localizar.frx":6FC7
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   1
@@ -339,6 +341,9 @@ With frm_Natureza_OP
             varTexto = txtTexto1.Text
             
             Case "Natureza da operação": TextoFiltro = "txt_Descricao"
+            varTexto = txtTexto.Text
+            
+            Case "ID": TextoFiltro = "IDCountCfop"
             varTexto = txtTexto.Text
 
         End Select

@@ -41,7 +41,7 @@ Begin VB.Form frm_Natureza_OP
    Begin DrawSuite2022.USProgressBar PBLista 
       Height          =   255
       Left            =   55
-      TabIndex        =   35
+      TabIndex        =   33
       Top             =   9720
       Width           =   15195
       _ExtentX        =   26802
@@ -64,7 +64,7 @@ Begin VB.Form frm_Natureza_OP
    Begin TabDlg.SSTab SSTab1 
       Height          =   10035
       Left            =   0
-      TabIndex        =   34
+      TabIndex        =   32
       Top             =   0
       Width           =   15600
       _ExtentX        =   27517
@@ -112,18 +112,22 @@ Begin VB.Form frm_Natureza_OP
       Tab(0).Control(11).Enabled=   0   'False
       Tab(0).Control(12)=   "Frame12"
       Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).ControlCount=   13
+      Tab(0).Control(13)=   "Frame13"
+      Tab(0).Control(13).Enabled=   0   'False
+      Tab(0).Control(14)=   "Chk_retem"
+      Tab(0).Control(14).Enabled=   0   'False
+      Tab(0).ControlCount=   15
       TabCaption(1)   =   "Texto dados adicionais da CFOP por cliente"
       TabPicture(1)   =   "frm_Natureza_OP.frx":0028
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "txtID_CFOP_Cliente"
-      Tab(1).Control(1)=   "Frame8"
-      Tab(1).Control(2)=   "USToolBar2"
-      Tab(1).Control(3)=   "ListaCliente"
+      Tab(1).Control(0)=   "ListaCliente"
+      Tab(1).Control(1)=   "USToolBar2"
+      Tab(1).Control(2)=   "Frame8"
+      Tab(1).Control(3)=   "txtID_CFOP_Cliente"
       Tab(1).ControlCount=   4
-      Begin VB.Frame Frame12 
+      Begin VB.CheckBox Chk_retem 
          BackColor       =   &H00E0E0E0&
-         Caption         =   "Outras opções"
+         Caption         =   "Tem impostos ?"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -133,14 +137,34 @@ Begin VB.Form frm_Natureza_OP
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1065
-         Left            =   11190
-         TabIndex        =   122
+         ForeColor       =   &H00000000&
+         Height          =   210
+         Left            =   7170
+         TabIndex        =   128
+         ToolTipText     =   "Se selecionado calcula o icms, ipi pis e cofins."
          Top             =   1320
-         Width           =   4095
-         Begin VB.CheckBox chkSuframa 
+         Width           =   1410
+      End
+      Begin VB.Frame Frame13 
+         BackColor       =   &H00E0E0E0&
+         Caption         =   "Base de cálculo ICMS"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1125
+         Left            =   8730
+         TabIndex        =   123
+         Top             =   1320
+         Width           =   2295
+         Begin VB.CheckBox Chk_somar_IPI_BC_ICMSST 
             BackColor       =   &H00E0E0E0&
-            Caption         =   "Desconto SUFRAMA"
+            Caption         =   "Soma IPI (BC ICMS ST) ?"
             BeginProperty Font 
                Name            =   "Tahoma"
                Size            =   6.75
@@ -151,49 +175,11 @@ Begin VB.Form frm_Natureza_OP
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00000000&
-            Height          =   210
-            Left            =   2220
-            TabIndex        =   128
-            Top             =   495
-            Width           =   1680
-         End
-         Begin VB.CheckBox Chk_soma_retorno_total 
-            BackColor       =   &H00E0E0E0&
-            Caption         =   "Soma retorno nos totais ?"
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   6.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00800000&
             Height          =   210
             Left            =   120
-            TabIndex        =   127
-            Top             =   255
-            Width           =   2070
-         End
-         Begin VB.CheckBox Chk_MPA 
-            BackColor       =   &H00E0E0E0&
-            Caption         =   "Matéria-prima aplicada"
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   6.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00000000&
-            Height          =   210
-            Left            =   2220
             TabIndex        =   126
-            Top             =   240
-            Width           =   1680
+            Top             =   300
+            Width           =   1980
          End
          Begin VB.CheckBox chkReducao_BC 
             BackColor       =   &H00E0E0E0&
@@ -211,12 +197,68 @@ Begin VB.Form frm_Natureza_OP
             Height          =   210
             Left            =   120
             TabIndex        =   125
-            Top             =   765
+            Top             =   750
             Width           =   2070
          End
-         Begin VB.CheckBox Chk_somar_IPI_BC_ICMSST 
+         Begin VB.CheckBox chk_Somar 
             BackColor       =   &H00E0E0E0&
-            Caption         =   "Soma IPI (BC ICMS ST) ?"
+            Caption         =   "Soma IPI (BC ICMS) ?"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   6.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00000000&
+            Height          =   240
+            Left            =   120
+            TabIndex        =   124
+            ToolTipText     =   "Se selecionado soma o ipi na base de cálculo do icms."
+            Top             =   510
+            Width           =   1770
+         End
+      End
+      Begin VB.Frame Frame12 
+         BackColor       =   &H00E0E0E0&
+         Caption         =   "Outras opções"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1125
+         Left            =   11040
+         TabIndex        =   118
+         Top             =   1320
+         Width           =   4245
+         Begin VB.CheckBox chkIcmsBasePisCofins 
+            BackColor       =   &H00E0E0E0&
+            Caption         =   "Abater ICMS (BC PIS Cofins) ?"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   6.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   90
+            TabIndex        =   127
+            Top             =   780
+            Width           =   2325
+         End
+         Begin VB.CheckBox chkSuframa 
+            BackColor       =   &H00E0E0E0&
+            Caption         =   "Desconto SUFRAMA"
             BeginProperty Font 
                Name            =   "Tahoma"
                Size            =   6.75
@@ -228,10 +270,48 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   210
-            Left            =   120
-            TabIndex        =   124
-            Top             =   495
-            Width           =   1980
+            Left            =   90
+            TabIndex        =   122
+            Top             =   585
+            Width           =   1680
+         End
+         Begin VB.CheckBox Chk_soma_retorno_total 
+            BackColor       =   &H00E0E0E0&
+            Caption         =   "Soma retorno nos totais ?"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   6.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00800000&
+            Height          =   210
+            Left            =   90
+            TabIndex        =   121
+            Top             =   345
+            Width           =   1920
+         End
+         Begin VB.CheckBox Chk_MPA 
+            BackColor       =   &H00E0E0E0&
+            Caption         =   "Matéria-prima aplicada"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   6.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00000000&
+            Height          =   210
+            Left            =   2250
+            TabIndex        =   120
+            Top             =   570
+            Width           =   1680
          End
          Begin VB.CheckBox chkCreditaCentroCusto 
             BackColor       =   &H00E0E0E0&
@@ -247,15 +327,14 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   210
-            Left            =   2220
-            TabIndex        =   123
-            Top             =   750
+            Left            =   2250
+            TabIndex        =   119
+            Top             =   330
             Width           =   1800
          End
       End
       Begin VB.Frame Frame1 
          BackColor       =   &H00E0E0E0&
-         Caption         =   "Opções para cálculo dos impostos"
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -267,14 +346,14 @@ Begin VB.Form frm_Natureza_OP
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000000&
-         Height          =   1065
-         Left            =   7620
-         TabIndex        =   71
+         Height          =   1125
+         Left            =   7080
+         TabIndex        =   69
          Top             =   1320
-         Width           =   3570
+         Width           =   1650
          Begin VB.CheckBox chk_PIS 
             BackColor       =   &H00E0E0E0&
-            Caption         =   "Tem PIS ?"
+            Caption         =   "Calcula PIS ?"
             BeginProperty Font 
                Name            =   "Tahoma"
                Size            =   6.75
@@ -285,17 +364,16 @@ Begin VB.Form frm_Natureza_OP
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00000080&
-            Height          =   240
-            Left            =   1710
+            Height          =   165
+            Left            =   90
             TabIndex        =   12
             ToolTipText     =   "Se selecionado calcula o pis."
-            Top             =   487
-            Visible         =   0   'False
-            Width           =   1620
+            Top             =   670
+            Width           =   1530
          End
          Begin VB.CheckBox chk_COFINS 
             BackColor       =   &H00E0E0E0&
-            Caption         =   "Tem COFINS ?"
+            Caption         =   "Calcula COFINS ?"
             BeginProperty Font 
                Name            =   "Tahoma"
                Size            =   6.75
@@ -306,37 +384,16 @@ Begin VB.Form frm_Natureza_OP
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00000080&
-            Height          =   240
-            Left            =   1710
+            Height          =   165
+            Left            =   90
             TabIndex        =   13
             ToolTipText     =   "Se selecionado calcula o Cofins."
-            Top             =   735
-            Visible         =   0   'False
-            Width           =   1620
-         End
-         Begin VB.CheckBox Chk_retem 
-            BackColor       =   &H00E0E0E0&
-            Caption         =   "Tem impostos ?"
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   6.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00000000&
-            Height          =   240
-            Left            =   120
-            TabIndex        =   15
-            ToolTipText     =   "Se selecionado calcula o icms, ipi pis e cofins."
-            Top             =   240
+            Top             =   870
             Width           =   1500
          End
          Begin VB.CheckBox chk_ICMS 
             BackColor       =   &H00E0E0E0&
-            Caption         =   "Tem ICMS ?"
+            Caption         =   "Calcula ICMS ?"
             BeginProperty Font 
                Name            =   "Tahoma"
                Size            =   6.75
@@ -347,17 +404,16 @@ Begin VB.Form frm_Natureza_OP
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00000080&
-            Height          =   240
-            Left            =   120
+            Height          =   165
+            Left            =   90
             TabIndex        =   10
             ToolTipText     =   "Se selecionado calcula o icms."
-            Top             =   487
-            Visible         =   0   'False
+            Top             =   270
             Width           =   1500
          End
          Begin VB.CheckBox chk_IPI 
             BackColor       =   &H00E0E0E0&
-            Caption         =   "Tem IPI ?"
+            Caption         =   "Calcula IPI ?"
             BeginProperty Font 
                Name            =   "Tahoma"
                Size            =   6.75
@@ -368,34 +424,12 @@ Begin VB.Form frm_Natureza_OP
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00000080&
-            Height          =   240
-            Left            =   120
+            Height          =   165
+            Left            =   90
             TabIndex        =   11
             ToolTipText     =   "Se selecionado calcula o ipi."
-            Top             =   735
-            Visible         =   0   'False
-            Width           =   1500
-         End
-         Begin VB.CheckBox chk_Somar 
-            BackColor       =   &H00E0E0E0&
-            Caption         =   "Soma IPI (BC ICMS) ?"
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   6.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00000080&
-            Height          =   240
-            Left            =   1710
-            TabIndex        =   14
-            ToolTipText     =   "Se selecionado soma o ipi na base de cálculo do icms."
-            Top             =   240
-            Visible         =   0   'False
-            Width           =   1770
+            Top             =   470
+            Width           =   1410
          End
       End
       Begin VB.Frame Frame10 
@@ -411,20 +445,20 @@ Begin VB.Form frm_Natureza_OP
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000080&
-         Height          =   2730
+         Height          =   2700
          Left            =   12240
-         TabIndex        =   117
-         Top             =   2370
+         TabIndex        =   115
+         Top             =   2460
          Width           =   3045
          Begin DrawSuite2022.USButton btnCST 
-            Height          =   435
+            Height          =   345
             Left            =   180
-            TabIndex        =   119
+            TabIndex        =   117
             ToolTipText     =   "Cadastrar CST da CFOP"
             Top             =   2220
             Width           =   2625
             _ExtentX        =   4630
-            _ExtentY        =   767
+            _ExtentY        =   609
             DibPicture      =   "frm_Natureza_OP.frx":0044
             Caption         =   "Cadastro de CST´s"
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -462,7 +496,7 @@ Begin VB.Form frm_Natureza_OP
          Begin MSComctlLib.ListView Lista 
             Height          =   1800
             Left            =   180
-            TabIndex        =   118
+            TabIndex        =   116
             ToolTipText     =   "Lista de CST's permitidas pela CFOP"
             Top             =   330
             Width           =   2625
@@ -535,11 +569,11 @@ Begin VB.Form frm_Natureza_OP
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1065
+         Height          =   1125
          Left            =   60
-         TabIndex        =   110
+         TabIndex        =   108
          Top             =   1320
-         Width           =   1080
+         Width           =   1050
          Begin VB.OptionButton OptSaida 
             BackColor       =   &H00E0E0E0&
             Caption         =   "Saida"
@@ -554,9 +588,9 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             Height          =   210
             Left            =   60
-            TabIndex        =   112
+            TabIndex        =   110
             Top             =   630
-            Width           =   975
+            Width           =   885
          End
          Begin VB.OptionButton optEntrada 
             BackColor       =   &H00E0E0E0&
@@ -572,9 +606,9 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             Height          =   210
             Left            =   60
-            TabIndex        =   111
+            TabIndex        =   109
             Top             =   390
-            Width           =   975
+            Width           =   885
          End
       End
       Begin VB.TextBox txtID_CFOP_Cliente 
@@ -592,7 +626,7 @@ Begin VB.Form frm_Natureza_OP
          ForeColor       =   &H00000000&
          Height          =   315
          Left            =   -73260
-         TabIndex        =   104
+         TabIndex        =   102
          Text            =   "0"
          ToolTipText     =   "Natureza da operação"
          Top             =   4500
@@ -614,7 +648,7 @@ Begin VB.Form frm_Natureza_OP
          ForeColor       =   &H00000000&
          Height          =   315
          Left            =   3600
-         TabIndex        =   101
+         TabIndex        =   99
          Text            =   "0"
          ToolTipText     =   "Natureza da operação"
          Top             =   6720
@@ -626,7 +660,7 @@ Begin VB.Form frm_Natureza_OP
          ForeColor       =   &H00000000&
          Height          =   615
          Left            =   75
-         TabIndex        =   90
+         TabIndex        =   88
          Top             =   9090
          Width           =   15195
          Begin VB.ComboBox Cmb_opcao_lista 
@@ -647,7 +681,7 @@ Begin VB.Form frm_Natureza_OP
             List            =   "frm_Natureza_OP.frx":A171
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   107
+            TabIndex        =   105
             TabStop         =   0   'False
             Top             =   180
             Width           =   1965
@@ -665,7 +699,7 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             Height          =   315
             Left            =   2730
-            TabIndex        =   92
+            TabIndex        =   90
             Text            =   "30"
             ToolTipText     =   "Número de registros por página."
             Top             =   180
@@ -683,7 +717,7 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             Height          =   315
             Left            =   9540
-            TabIndex        =   91
+            TabIndex        =   89
             ToolTipText     =   "Número da página."
             Top             =   180
             Width           =   555
@@ -691,7 +725,7 @@ Begin VB.Form frm_Natureza_OP
          Begin DrawSuite2022.USButton cmdPagProx 
             Height          =   315
             Left            =   11760
-            TabIndex        =   93
+            TabIndex        =   91
             ToolTipText     =   "Próxima página."
             Top             =   180
             Width           =   525
@@ -726,7 +760,7 @@ Begin VB.Form frm_Natureza_OP
          Begin DrawSuite2022.USButton cmdPagAnt 
             Height          =   315
             Left            =   11220
-            TabIndex        =   94
+            TabIndex        =   92
             ToolTipText     =   "Página anterior."
             Top             =   180
             Width           =   525
@@ -761,7 +795,7 @@ Begin VB.Form frm_Natureza_OP
          Begin DrawSuite2022.USButton cmdPagIr 
             Height          =   315
             Left            =   10110
-            TabIndex        =   95
+            TabIndex        =   93
             Top             =   180
             Width           =   465
             _ExtentX        =   820
@@ -794,7 +828,7 @@ Begin VB.Form frm_Natureza_OP
          Begin DrawSuite2022.USButton cmdPagPrim 
             Height          =   315
             Left            =   10680
-            TabIndex        =   96
+            TabIndex        =   94
             ToolTipText     =   "Primeira página."
             Top             =   180
             Width           =   525
@@ -829,7 +863,7 @@ Begin VB.Form frm_Natureza_OP
          Begin DrawSuite2022.USButton cmdPagUlt 
             Height          =   315
             Left            =   12300
-            TabIndex        =   97
+            TabIndex        =   95
             ToolTipText     =   "Última página."
             Top             =   180
             Width           =   525
@@ -877,7 +911,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   3360
-            TabIndex        =   109
+            TabIndex        =   107
             Top             =   240
             Width           =   1440
          End
@@ -898,7 +932,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   29
             Left            =   5610
-            TabIndex        =   108
+            TabIndex        =   106
             Top             =   233
             Width           =   1260
          End
@@ -918,7 +952,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   2040
-            TabIndex        =   100
+            TabIndex        =   98
             Top             =   240
             Width           =   645
          End
@@ -938,7 +972,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   180
-            TabIndex        =   99
+            TabIndex        =   97
             Top             =   240
             Width           =   1275
          End
@@ -958,7 +992,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   13050
-            TabIndex        =   98
+            TabIndex        =   96
             Top             =   240
             Width           =   1095
          End
@@ -976,10 +1010,10 @@ Begin VB.Form frm_Natureza_OP
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000080&
-         Height          =   615
+         Height          =   585
          Left            =   75
-         TabIndex        =   89
-         Top             =   5100
+         TabIndex        =   87
+         Top             =   5160
          Width           =   15195
          Begin VB.TextBox Text4 
             Appearance      =   0  'Flat
@@ -996,7 +1030,7 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             Height          =   285
             Left            =   11310
-            TabIndex        =   116
+            TabIndex        =   114
             Text            =   "@NfVlrAproxTrib valor aproximado dos tributos"
             Top             =   270
             Width           =   3585
@@ -1016,7 +1050,7 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             Height          =   285
             Left            =   390
-            TabIndex        =   115
+            TabIndex        =   113
             Text            =   "@NfVlrICMSSN Valor do ICMS SN"
             Top             =   270
             Width           =   2475
@@ -1036,7 +1070,7 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             Height          =   285
             Left            =   4020
-            TabIndex        =   114
+            TabIndex        =   112
             Text            =   "@NfAliqICMSSN Alíquota do ICMS SN"
             Top             =   270
             Width           =   2835
@@ -1056,7 +1090,7 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             Height          =   285
             Left            =   8010
-            TabIndex        =   113
+            TabIndex        =   111
             Text            =   "@NfVlrTotal  Valor total da nota  "
             Top             =   270
             Width           =   2595
@@ -1067,7 +1101,7 @@ Begin VB.Form frm_Natureza_OP
          Enabled         =   0   'False
          Height          =   2190
          Left            =   -74925
-         TabIndex        =   83
+         TabIndex        =   81
          Top             =   1320
          Width           =   15195
          Begin VB.CommandButton cmdCliente 
@@ -1076,7 +1110,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   14670
             Picture         =   "frm_Natureza_OP.frx":18DB1
             Style           =   1  'Graphical
-            TabIndex        =   30
+            TabIndex        =   28
             ToolTipText     =   "Localizar cliente."
             Top             =   375
             Width           =   315
@@ -1096,7 +1130,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   315
             Left            =   4980
-            TabIndex        =   28
+            TabIndex        =   26
             ToolTipText     =   "Código do cliente."
             Top             =   375
             Width           =   855
@@ -1117,7 +1151,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   5850
             Locked          =   -1  'True
             MaxLength       =   60
-            TabIndex        =   29
+            TabIndex        =   27
             TabStop         =   0   'False
             ToolTipText     =   "Razão social."
             Top             =   375
@@ -1138,7 +1172,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   1320
             Locked          =   -1  'True
-            TabIndex        =   27
+            TabIndex        =   25
             TabStop         =   0   'False
             ToolTipText     =   "Responsável pelo cadastro."
             Top             =   375
@@ -1160,7 +1194,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   180
             Locked          =   -1  'True
             MaxLength       =   50
-            TabIndex        =   26
+            TabIndex        =   24
             TabStop         =   0   'False
             ToolTipText     =   "Data do cadastro."
             Top             =   375
@@ -1182,7 +1216,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   7620
             MultiLine       =   -1  'True
             ScrollBars      =   2  'Vertical
-            TabIndex        =   32
+            TabIndex        =   30
             ToolTipText     =   "Texto padrão para corpo da nota."
             Top             =   945
             Width           =   7365
@@ -1203,7 +1237,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   180
             MultiLine       =   -1  'True
             ScrollBars      =   2  'Vertical
-            TabIndex        =   31
+            TabIndex        =   29
             ToolTipText     =   "Texto padrão para dados adicionais da nota."
             Top             =   950
             Width           =   7395
@@ -1227,7 +1261,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   2
             Left            =   9765
-            TabIndex        =   103
+            TabIndex        =   101
             Top             =   180
             Width           =   975
          End
@@ -1248,7 +1282,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   3
             Left            =   5325
-            TabIndex        =   102
+            TabIndex        =   100
             Top             =   180
             Width           =   165
          End
@@ -1269,7 +1303,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   2
             Left            =   2685
-            TabIndex        =   87
+            TabIndex        =   85
             Top             =   180
             Width           =   915
          End
@@ -1291,7 +1325,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   570
-            TabIndex        =   86
+            TabIndex        =   84
             Top             =   180
             Width           =   345
          End
@@ -1314,7 +1348,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   1
             Left            =   9780
-            TabIndex        =   85
+            TabIndex        =   83
             Top             =   750
             Width           =   3045
          End
@@ -1337,7 +1371,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   1
             Left            =   2400
-            TabIndex        =   84
+            TabIndex        =   82
             Top             =   750
             Width           =   2955
          End
@@ -1355,11 +1389,11 @@ Begin VB.Form frm_Natureza_OP
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1065
-         Left            =   1155
-         TabIndex        =   74
+         Height          =   1125
+         Left            =   1125
+         TabIndex        =   72
          Top             =   1320
-         Width           =   1410
+         Width           =   1380
          Begin VB.CheckBox chk_Proprio 
             BackColor       =   &H00E0E0E0&
             Caption         =   "Nota própria"
@@ -1412,11 +1446,11 @@ Begin VB.Form frm_Natureza_OP
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1065
-         Left            =   2580
-         TabIndex        =   73
+         Height          =   1125
+         Left            =   2520
+         TabIndex        =   71
          Top             =   1320
-         Width           =   1725
+         Width           =   1665
          Begin VB.OptionButton optFE 
             BackColor       =   &H00E0E0E0&
             Caption         =   "Fora do estado"
@@ -1433,7 +1467,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   60
             TabIndex        =   3
             Top             =   630
-            Width           =   1605
+            Width           =   1515
          End
          Begin VB.OptionButton optDE 
             BackColor       =   &H00E0E0E0&
@@ -1451,7 +1485,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   60
             TabIndex        =   2
             Top             =   375
-            Width           =   1635
+            Width           =   1545
          End
       End
       Begin VB.Frame Frame4 
@@ -1468,11 +1502,11 @@ Begin VB.Form frm_Natureza_OP
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000000&
-         Height          =   1065
-         Left            =   4320
-         TabIndex        =   72
+         Height          =   1125
+         Left            =   4200
+         TabIndex        =   70
          Top             =   1320
-         Width           =   3285
+         Width           =   2865
          Begin VB.CheckBox Chk_remessa 
             BackColor       =   &H00E0E0E0&
             Caption         =   "(5) Remessa"
@@ -1487,10 +1521,10 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   210
-            Left            =   1830
+            Left            =   1560
             TabIndex        =   8
             Top             =   540
-            Width           =   1410
+            Width           =   1260
          End
          Begin VB.CheckBox Chk_retorno 
             BackColor       =   &H00E0E0E0&
@@ -1506,10 +1540,10 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   210
-            Left            =   1830
+            Left            =   1560
             TabIndex        =   9
             Top             =   780
-            Width           =   1410
+            Width           =   1260
          End
          Begin VB.CheckBox Chk_demonstracao 
             BackColor       =   &H00E0E0E0&
@@ -1582,17 +1616,17 @@ Begin VB.Form frm_Natureza_OP
             EndProperty
             ForeColor       =   &H00000080&
             Height          =   210
-            Left            =   1830
+            Left            =   1560
             TabIndex        =   7
             Top             =   285
-            Width           =   1410
+            Width           =   1260
          End
       End
       Begin VB.Frame Frame6 
          BackColor       =   &H00E0E0E0&
          Height          =   2055
          Left            =   -74925
-         TabIndex        =   36
+         TabIndex        =   34
          Top             =   1320
          Width           =   15195
          Begin VB.CommandButton Cmd_visualizar_arquivo 
@@ -1602,7 +1636,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   14695
             Picture         =   "frm_Natureza_OP.frx":18EB3
             Style           =   1  'Graphical
-            TabIndex        =   55
+            TabIndex        =   53
             ToolTipText     =   "Visualizar arquivo."
             Top             =   1590
             Width           =   315
@@ -1614,7 +1648,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   14370
             Picture         =   "frm_Natureza_OP.frx":19475
             Style           =   1  'Graphical
-            TabIndex        =   54
+            TabIndex        =   52
             ToolTipText     =   "Limpar caminho."
             Top             =   1590
             Width           =   315
@@ -1634,7 +1668,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   1515
             Picture         =   "frm_Natureza_OP.frx":195B3
             Style           =   1  'Graphical
-            TabIndex        =   53
+            TabIndex        =   51
             ToolTipText     =   "Filtrar por valor pago."
             Top             =   370
             Width           =   315
@@ -1655,7 +1689,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   7320
             Locked          =   -1  'True
             MaxLength       =   255
-            TabIndex        =   52
+            TabIndex        =   50
             TabStop         =   0   'False
             ToolTipText     =   "Caminho do comprovante."
             Top             =   1590
@@ -1668,7 +1702,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   14040
             Picture         =   "frm_Natureza_OP.frx":199CE
             Style           =   1  'Graphical
-            TabIndex        =   51
+            TabIndex        =   49
             ToolTipText     =   "Localizar comprovante."
             Top             =   1590
             Width           =   315
@@ -1693,7 +1727,7 @@ Begin VB.Form frm_Natureza_OP
             Locked          =   -1  'True
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   50
+            TabIndex        =   48
             ToolTipText     =   "Forma da baixa."
             Top             =   370
             Width           =   3360
@@ -1714,7 +1748,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   7755
             Locked          =   -1  'True
-            TabIndex        =   49
+            TabIndex        =   47
             TabStop         =   0   'False
             ToolTipText     =   "Valor total de juros."
             Top             =   370
@@ -1736,7 +1770,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   180
             Locked          =   -1  'True
-            TabIndex        =   48
+            TabIndex        =   46
             TabStop         =   0   'False
             ToolTipText     =   "Valor baixado."
             Top             =   370
@@ -1758,7 +1792,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   9045
             Locked          =   -1  'True
-            TabIndex        =   47
+            TabIndex        =   45
             TabStop         =   0   'False
             ToolTipText     =   "Valor da multa."
             Top             =   370
@@ -1780,7 +1814,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   5130
             Locked          =   -1  'True
-            TabIndex        =   46
+            TabIndex        =   44
             TabStop         =   0   'False
             Text            =   "0"
             ToolTipText     =   "Dias em atraso."
@@ -1803,7 +1837,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   180
             MultiLine       =   -1  'True
             ScrollBars      =   2  'Vertical
-            TabIndex        =   45
+            TabIndex        =   43
             ToolTipText     =   "Observações do pagamento."
             Top             =   990
             Width           =   7065
@@ -1823,7 +1857,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   13505
             Locked          =   -1  'True
-            TabIndex        =   44
+            TabIndex        =   42
             TabStop         =   0   'False
             ToolTipText     =   "Número do documento baixa."
             Top             =   990
@@ -1844,7 +1878,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   11940
             Locked          =   -1  'True
-            TabIndex        =   43
+            TabIndex        =   41
             TabStop         =   0   'False
             ToolTipText     =   "N° da conta corrente."
             Top             =   990
@@ -1865,7 +1899,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   3300
             Picture         =   "frm_Natureza_OP.frx":19C18
             Style           =   1  'Graphical
-            TabIndex        =   42
+            TabIndex        =   40
             ToolTipText     =   "Filtrar por data de pagamento."
             Top             =   370
             Width           =   315
@@ -1885,7 +1919,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   11550
             Picture         =   "frm_Natureza_OP.frx":1A033
             Style           =   1  'Graphical
-            TabIndex        =   41
+            TabIndex        =   39
             ToolTipText     =   "Filtrar por instituição bancária."
             Top             =   990
             Width           =   315
@@ -1906,7 +1940,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   3720
-            TabIndex        =   40
+            TabIndex        =   38
             Top             =   420
             Width           =   1335
          End
@@ -1926,7 +1960,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   6390
             Locked          =   -1  'True
-            TabIndex        =   39
+            TabIndex        =   37
             TabStop         =   0   'False
             ToolTipText     =   "Valor diário do juros de mora."
             Top             =   370
@@ -1948,7 +1982,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   10380
             Locked          =   -1  'True
-            TabIndex        =   38
+            TabIndex        =   36
             TabStop         =   0   'False
             ToolTipText     =   "Valor do desconto."
             Top             =   370
@@ -1971,7 +2005,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   7320
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   37
+            TabIndex        =   35
             ToolTipText     =   "Instituição bancária."
             Top             =   990
             Width           =   4215
@@ -1979,7 +2013,7 @@ Begin VB.Form frm_Natureza_OP
          Begin MSComCtl2.DTPicker txtBaixado 
             Height          =   315
             Left            =   1905
-            TabIndex        =   56
+            TabIndex        =   54
             ToolTipText     =   "Data da baixa."
             Top             =   375
             Width           =   1395
@@ -2000,7 +2034,7 @@ Begin VB.Form frm_Natureza_OP
             CalendarTitleBackColor=   8421504
             CalendarTitleForeColor=   16777215
             CalendarTrailingForeColor=   255
-            Format          =   200998915
+            Format          =   306708483
             CurrentDate     =   39057
          End
          Begin VB.Label Label40 
@@ -2019,7 +2053,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   9757
-            TabIndex        =   69
+            TabIndex        =   67
             Top             =   1380
             Width           =   1830
          End
@@ -2042,7 +2076,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   7900
-            TabIndex        =   68
+            TabIndex        =   66
             Top             =   180
             Width           =   990
          End
@@ -2064,7 +2098,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   9510
-            TabIndex        =   67
+            TabIndex        =   65
             Top             =   180
             Width           =   390
          End
@@ -2087,7 +2121,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   278
-            TabIndex        =   66
+            TabIndex        =   64
             Top             =   180
             Width           =   1155
          End
@@ -2109,7 +2143,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   5220
-            TabIndex        =   65
+            TabIndex        =   63
             Top             =   180
             Width           =   1065
          End
@@ -2132,7 +2166,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   240
             Left            =   180
-            TabIndex        =   64
+            TabIndex        =   62
             Top             =   780
             Width           =   7065
             WordWrap        =   -1  'True
@@ -2155,7 +2189,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   9210
-            TabIndex        =   63
+            TabIndex        =   61
             Top             =   780
             Width           =   435
          End
@@ -2178,7 +2212,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   13510
-            TabIndex        =   62
+            TabIndex        =   60
             Top             =   780
             Width           =   1505
          End
@@ -2201,7 +2235,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   12173
-            TabIndex        =   61
+            TabIndex        =   59
             Top             =   780
             Width           =   1095
          End
@@ -2224,7 +2258,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   2227
-            TabIndex        =   60
+            TabIndex        =   58
             Top             =   180
             Width           =   750
          End
@@ -2248,7 +2282,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   1
             Left            =   12780
-            TabIndex        =   59
+            TabIndex        =   57
             Top             =   180
             Width           =   1110
          End
@@ -2271,7 +2305,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   6450
-            TabIndex        =   58
+            TabIndex        =   56
             Top             =   180
             Width           =   1230
          End
@@ -2295,7 +2329,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   0
             Left            =   10673
-            TabIndex        =   57
+            TabIndex        =   55
             Top             =   180
             Width           =   675
          End
@@ -2303,7 +2337,7 @@ Begin VB.Form frm_Natureza_OP
       Begin DrawSuite2022.USToolBar USToolBar1 
          Height          =   975
          Left            =   75
-         TabIndex        =   70
+         TabIndex        =   68
          Top             =   330
          Width           =   15195
          _ExtentX        =   26802
@@ -2575,7 +2609,7 @@ Begin VB.Form frm_Natureza_OP
       Begin DrawSuite2022.USToolBar USToolBar2 
          Height          =   975
          Left            =   -74925
-         TabIndex        =   88
+         TabIndex        =   86
          Top             =   330
          Width           =   15195
          _ExtentX        =   26802
@@ -2800,7 +2834,7 @@ Begin VB.Form frm_Natureza_OP
       Begin MSComctlLib.ListView lst_NatOp 
          Height          =   3360
          Left            =   75
-         TabIndex        =   25
+         TabIndex        =   23
          Top             =   5730
          Width           =   15195
          _ExtentX        =   26802
@@ -2829,7 +2863,7 @@ Begin VB.Form frm_Natureza_OP
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Object.Tag             =   "N"
             Text            =   "ID"
-            Object.Width           =   1058
+            Object.Width           =   1234
          EndProperty
          BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Alignment       =   2
@@ -2930,7 +2964,7 @@ Begin VB.Form frm_Natureza_OP
       Begin MSComctlLib.ListView ListaCliente 
          Height          =   6180
          Left            =   -74925
-         TabIndex        =   33
+         TabIndex        =   31
          Top             =   3525
          Width           =   15195
          _ExtentX        =   26802
@@ -2986,47 +3020,11 @@ Begin VB.Form frm_Natureza_OP
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   2730
+         Height          =   2700
          Left            =   75
-         TabIndex        =   75
-         Top             =   2370
+         TabIndex        =   73
+         Top             =   2460
          Width           =   12165
-         Begin VB.Frame Frame11 
-            BackColor       =   &H00E0E0E0&
-            Caption         =   "Base de cálculo PIS e Cofins"
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   585
-            Left            =   9510
-            TabIndex        =   120
-            Top             =   720
-            Width           =   2445
-            Begin VB.CheckBox chkIcmsBasePisCofins 
-               BackColor       =   &H00E0E0E0&
-               Caption         =   "Abater valor do ICMS"
-               BeginProperty Font 
-                  Name            =   "Tahoma"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   195
-               Left            =   180
-               TabIndex        =   121
-               Top             =   300
-               Width           =   2085
-            End
-         End
          Begin VB.TextBox txtDtValidacao 
             Alignment       =   2  'Center
             Appearance      =   0  'Flat
@@ -3044,7 +3042,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   4200
             Locked          =   -1  'True
-            TabIndex        =   18
+            TabIndex        =   16
             TabStop         =   0   'False
             ToolTipText     =   "Data e hora da validação."
             Top             =   375
@@ -3067,7 +3065,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   5850
             Locked          =   -1  'True
-            TabIndex        =   19
+            TabIndex        =   17
             TabStop         =   0   'False
             ToolTipText     =   "Responsável pela validação."
             Top             =   375
@@ -3089,7 +3087,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   180
             MaxLength       =   50
-            TabIndex        =   20
+            TabIndex        =   18
             ToolTipText     =   "Natureza da operação."
             Top             =   950
             Width           =   855
@@ -3110,7 +3108,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   180
             MultiLine       =   -1  'True
             ScrollBars      =   2  'Vertical
-            TabIndex        =   22
+            TabIndex        =   20
             ToolTipText     =   "Texto padrão para dados adicionais da nota."
             Top             =   1545
             Width           =   3855
@@ -3131,7 +3129,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   4050
             MultiLine       =   -1  'True
             ScrollBars      =   2  'Vertical
-            TabIndex        =   23
+            TabIndex        =   21
             ToolTipText     =   "Texto padrão para corpo da nota."
             Top             =   1545
             Width           =   3855
@@ -3152,10 +3150,10 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   1050
             MaxLength       =   50
-            TabIndex        =   21
+            TabIndex        =   19
             ToolTipText     =   "Descrição da natureza da operação."
             Top             =   950
-            Width           =   8370
+            Width           =   10890
          End
          Begin VB.TextBox txtData 
             Alignment       =   2  'Center
@@ -3175,7 +3173,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   180
             Locked          =   -1  'True
             MaxLength       =   50
-            TabIndex        =   16
+            TabIndex        =   14
             TabStop         =   0   'False
             ToolTipText     =   "Data do cadastro."
             Top             =   375
@@ -3198,7 +3196,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   315
             Left            =   1050
             Locked          =   -1  'True
-            TabIndex        =   17
+            TabIndex        =   15
             TabStop         =   0   'False
             ToolTipText     =   "Responsável pelo cadastro."
             Top             =   375
@@ -3220,7 +3218,7 @@ Begin VB.Form frm_Natureza_OP
             Left            =   7920
             MultiLine       =   -1  'True
             ScrollBars      =   2  'Vertical
-            TabIndex        =   24
+            TabIndex        =   22
             ToolTipText     =   "Observações."
             Top             =   1545
             Width           =   4035
@@ -3244,7 +3242,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   3
             Left            =   4305
-            TabIndex        =   106
+            TabIndex        =   104
             Top             =   180
             Width           =   1455
          End
@@ -3267,7 +3265,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   2
             Left            =   7912
-            TabIndex        =   105
+            TabIndex        =   103
             Top             =   180
             Width           =   1980
          End
@@ -3290,7 +3288,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   0
             Left            =   450
-            TabIndex        =   82
+            TabIndex        =   80
             Top             =   750
             Width           =   495
          End
@@ -3312,8 +3310,8 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Index           =   0
-            Left            =   4388
-            TabIndex        =   81
+            Left            =   5648
+            TabIndex        =   79
             Top             =   750
             Width           =   1695
          End
@@ -3336,7 +3334,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   0
             Left            =   630
-            TabIndex        =   80
+            TabIndex        =   78
             Top             =   1350
             Width           =   2955
          End
@@ -3359,7 +3357,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   0
             Left            =   4455
-            TabIndex        =   79
+            TabIndex        =   77
             Top             =   1350
             Width           =   3045
          End
@@ -3381,7 +3379,7 @@ Begin VB.Form frm_Natureza_OP
             ForeColor       =   &H00000000&
             Height          =   195
             Left            =   435
-            TabIndex        =   78
+            TabIndex        =   76
             Top             =   180
             Width           =   345
          End
@@ -3402,7 +3400,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   9
             Left            =   2160
-            TabIndex        =   77
+            TabIndex        =   75
             Top             =   180
             Width           =   915
          End
@@ -3426,7 +3424,7 @@ Begin VB.Form frm_Natureza_OP
             Height          =   195
             Index           =   1
             Left            =   9465
-            TabIndex        =   76
+            TabIndex        =   74
             Top             =   1350
             Width           =   945
          End
@@ -3471,16 +3469,16 @@ End Sub
 Private Sub ProcAnterior()
 On Error GoTo tratar_erro
 
-If txtid = 0 Then Exit Sub
+If txtID = 0 Then Exit Sub
 Set TBAbrir = CreateObject("adodb.recordset")
 TBAbrir.Open "Select * from tbl_NaturezaOperacao order by IDCountCfop", Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.BOF = False Then
-    TBAbrir.Find ("IDCountCfop = " & txtid)
+    TBAbrir.Find ("IDCountCfop = " & txtID)
     TBAbrir.MovePrevious
     If TBAbrir.BOF = False Then
-        txtid = TBAbrir!IDCountCfop
+        txtID = TBAbrir!IDCountCfop
         Set TBLISTA = CreateObject("adodb.recordset")
-        TBLISTA.Open "Select * from tbl_NaturezaOperacao where IDCountCfop = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
+        TBLISTA.Open "Select * from tbl_NaturezaOperacao where IDCountCfop = " & txtID, Conexao, adOpenKeyset, adLockOptimistic
         ProcLimpaCampos
         ProcCarregaDados
     Else
@@ -3523,16 +3521,16 @@ End Sub
 Private Sub ProcProximo()
 On Error GoTo tratar_erro
 
-If txtid = 0 Then Exit Sub
+If txtID = 0 Then Exit Sub
 Set TBAbrir = CreateObject("adodb.recordset")
 TBAbrir.Open "Select * from tbl_NaturezaOperacao order by IDCountCfop", Conexao, adOpenKeyset, adLockOptimistic
 If TBAbrir.BOF = False Then
-    TBAbrir.Find ("IDCountCfop = " & txtid)
+    TBAbrir.Find ("IDCountCfop = " & txtID)
     TBAbrir.MoveNext
     If TBAbrir.EOF = False Then
-        txtid = TBAbrir!IDCountCfop
+        txtID = TBAbrir!IDCountCfop
         Set TBLISTA = CreateObject("adodb.recordset")
-        TBLISTA.Open "Select * from tbl_NaturezaOperacao where IDCountCfop = " & txtid, Conexao, adOpenKeyset, adLockOptimistic
+        TBLISTA.Open "Select * from tbl_NaturezaOperacao where IDCountCfop = " & txtID, Conexao, adOpenKeyset, adLockOptimistic
         ProcLimpaCampos
         ProcCarregaDados
     Else
@@ -3616,20 +3614,6 @@ tratar_erro:
     Exit Sub
 End Sub
 
-Private Sub Chk_retem_Click()
-On Error GoTo tratar_erro
-
-chk_ICMS.Visible = Chk_retem.Value
-chk_IPI.Visible = Chk_retem.Value
-chk_PIS.Visible = Chk_retem.Value
-chk_COFINS.Visible = Chk_retem.Value
-chk_Somar.Visible = Chk_retem.Value
-
-Exit Sub
-tratar_erro:
-    USMsgBox ("Descrição do erro : " + Error()), vbCritical, "CAPRIND v5.0"
-    Exit Sub
-End Sub
 
 Private Sub Cmb_opcao_lista_Click()
 On Error GoTo tratar_erro
@@ -4344,7 +4328,7 @@ End Sub
 Public Sub ProcCarregaDados()
 On Error GoTo tratar_erro
  
-txtid.Text = TBLISTA!IDCountCfop
+txtID.Text = TBLISTA!IDCountCfop
 txtData = IIf(IsNull(TBLISTA!Data), "", Format(TBLISTA!Data, "dd/mm/yy"))
 txtResponsavel = IIf(IsNull(TBLISTA!Responsavel), "", TBLISTA!Responsavel)
 txtDtValidacao = IIf(IsNull(TBLISTA!DtValidacao), "", TBLISTA!DtValidacao)
@@ -4354,14 +4338,14 @@ Caption = "Administrativo - Faturamento - Fiscal - Natureza da operação (CFOP : 
 txt_NatOP.Text = IIf(IsNull(TBLISTA!Txt_descricao), "", TBLISTA!Txt_descricao)
 txt_dados_adicionais.Text = IIf(IsNull(TBLISTA!txt_dados_adicionais), "", TBLISTA!txt_dados_adicionais)
 txt_corpo_nota.Text = IIf(IsNull(TBLISTA!txt_corpo_nota), "", TBLISTA!txt_corpo_nota)
-txt_observacoes = IIf(IsNull(TBLISTA!Obs), "", TBLISTA!Obs)
-If TBLISTA!Vendas = True Then chkVendas.Value = 1 Else chkVendas.Value = 0
+Txt_observacoes = IIf(IsNull(TBLISTA!Obs), "", TBLISTA!Obs)
+If TBLISTA!Vendas = True Then Chkvendas.Value = 1 Else Chkvendas.Value = 0
 If TBLISTA!MaoObra = True Then chkMaoObra.Value = 1 Else chkMaoObra.Value = 0
 If TBLISTA!Demonstracao = True Then Chk_demonstracao.Value = 1 Else Chk_demonstracao.Value = 0
 If TBLISTA!Devolucao = True Then Chk_devolucao.Value = 1 Else Chk_devolucao.Value = 0
 If TBLISTA!Remessa = True Then Chk_remessa.Value = 1 Else Chk_remessa.Value = 0
 If TBLISTA!retorno = True Then Chk_retorno.Value = 1 Else Chk_retorno.Value = 0
-If TBLISTA!De = True Then OptDE.Value = True Else OptDE.Value = False
+If TBLISTA!De = True Then optDE.Value = True Else optDE.Value = False
 If TBLISTA!FE = True Then optFE.Value = True Else optFE.Value = False
 If TBLISTA!Proprio = True Then chk_Proprio.Value = 1 Else chk_Proprio.Value = 0
 If TBLISTA!Terceiros = True Then chk_Terceiros.Value = 1 Else chk_Terceiros.Value = 0
@@ -4377,7 +4361,7 @@ If TBLISTA!Soma_retorno_totalnf = True Then Chk_soma_retorno_total.Value = 1 Els
 If TBLISTA!Suframa = True Then chkSuframa.Value = 1 Else chkSuframa.Value = 0
 If TBLISTA!MPA = True Then Chk_MPA.Value = 1 Else Chk_MPA.Value = 0
 If TBLISTA!Retem = True Then Chk_retem.Value = 1 Else Chk_retem.Value = 0
-If TBLISTA!Tipo_CFOP = "1" Then optSaida.Value = True Else optEntrada.Value = True
+If TBLISTA!Tipo_CFOP = "1" Then OptSaida.Value = True Else optEntrada.Value = True
 
 If TBLISTA!AbateICMSBasePisCofins = True Then chkIcmsBasePisCofins.Value = 1 Else chkIcmsBasePisCofins.Value = 0
 Novo_CFOP = False
@@ -4394,7 +4378,7 @@ On Error GoTo tratar_erro
 txtID_CFOP_Cliente.Text = TBLISTA!ID
 txtData_cliente = IIf(IsNull(TBLISTA!Data), "", Format(TBLISTA!Data, "dd/mm/yy"))
 txtResponsavel_cliente = IIf(IsNull(TBLISTA!Responsavel), "", TBLISTA!Responsavel)
-txtid_cliente = IIf(IsNull(TBLISTA!ID_Cliente), "", TBLISTA!ID_Cliente)
+txtID_cliente = IIf(IsNull(TBLISTA!ID_Cliente), "", TBLISTA!ID_Cliente)
 txtDadosAdicionais_cliente.Text = IIf(IsNull(TBLISTA!dados_adicionais), "", TBLISTA!dados_adicionais)
 txtCorpoNota_cliente.Text = IIf(IsNull(TBLISTA!Corpo_nota), "", TBLISTA!Corpo_nota)
 Novo_CFOP_Cliente = False
@@ -4429,7 +4413,7 @@ On Error GoTo tratar_erro
 
 ListaCliente.ListItems.Clear
 Set TBLISTA = CreateObject("adodb.recordset")
-TBLISTA.Open "Select NC.*, C.NomeRazao from tbl_NaturezaOperacao_Cliente NC INNER JOIN Clientes C ON C.IDCliente = NC.ID_Cliente where NC.ID_CFOP = " & IIf(txtid = "", 0, txtid) & " order by C.NomeRazao", Conexao, adOpenKeyset, adLockOptimistic
+TBLISTA.Open "Select NC.*, C.NomeRazao from tbl_NaturezaOperacao_Cliente NC INNER JOIN Clientes C ON C.IDCliente = NC.ID_Cliente where NC.ID_CFOP = " & IIf(txtID = "", 0, txtID) & " order by C.NomeRazao", Conexao, adOpenKeyset, adLockOptimistic
 If TBLISTA.EOF = False Then
     TBLISTA.MoveLast
     PBLista.Min = 0
@@ -4521,7 +4505,7 @@ End Sub
 Sub ProcLimpaCampos()
 On Error GoTo tratar_erro
 
-txtid.Text = 0
+txtID.Text = 0
 txtData = Format(Date, "dd/mm/yy")
 txtResponsavel = pubUsuario
 txtDtValidacao = ""
@@ -4530,16 +4514,16 @@ mskcfop.Text = ""
 txt_NatOP.Text = ""
 txt_dados_adicionais.Text = ""
 txt_corpo_nota.Text = ""
-txt_observacoes = ""
+Txt_observacoes = ""
 
-chkVendas.Value = 0
+Chkvendas.Value = 0
 chkMaoObra.Value = 0
 Chk_demonstracao.Value = 0
 Chk_devolucao.Value = 0
 Chk_remessa.Value = 0
 Chk_retorno.Value = 0
 
-OptDE.Value = False
+optDE.Value = False
 optFE.Value = False
 
 chk_Proprio.Value = 0
@@ -4571,7 +4555,7 @@ Sub ProcLimpaCampos_Cliente()
 On Error GoTo tratar_erro
 
 txtID_CFOP_Cliente.Text = 0
-txtid_cliente.Text = 0
+txtID_cliente.Text = 0
 txtData_cliente = Format(Date, "dd/mm/yy")
 txtResponsavel_cliente = pubUsuario
 txtRazao.Text = ""
@@ -4602,7 +4586,7 @@ If chk_Proprio.Value = 0 And chk_Terceiros.Value = 0 Then
     ProcVerificaAcao
     Exit Sub
 End If
-If OptDE.Value = False And optFE.Value = False Then
+If optDE.Value = False And optFE.Value = False Then
     NomeCampo = "o destino"
     ProcVerificaAcao
     Exit Sub
@@ -4626,7 +4610,7 @@ If txt_NatOP.Text = "" Then
 End If
 
 Set TBGravar = CreateObject("adodb.recordset")
-TBGravar.Open "Select * from tbl_NaturezaOperacao where IDcountCFOP = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBGravar.Open "Select * from tbl_NaturezaOperacao where IDcountCFOP = " & txtID.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBGravar.EOF = True Then
     TBGravar.AddNew
 Else
@@ -4639,9 +4623,9 @@ TBGravar!ID_CFOP = mskcfop.Text
 TBGravar!Txt_descricao = txt_NatOP.Text
 TBGravar!txt_dados_adicionais = txt_dados_adicionais.Text
 TBGravar!txt_corpo_nota = txt_corpo_nota.Text
-TBGravar!Obs = txt_observacoes
+TBGravar!Obs = Txt_observacoes
 
-If chkVendas.Value = 1 Then
+If Chkvendas.Value = 1 Then
 TBGravar!Vendas = True
 TBGravar!Tipo_Operacao = "1"
 Else
@@ -4683,11 +4667,11 @@ Else
 TBGravar!retorno = False
 End If
 
-If OptDE.Value = True Then TBGravar!De = True Else TBGravar!De = False
+If optDE.Value = True Then TBGravar!De = True Else TBGravar!De = False
 If optFE.Value = True Then TBGravar!FE = True Else TBGravar!FE = False
 
 If optEntrada.Value = True Then TBGravar!Tipo_CFOP = "2"
-If optSaida.Value = True Then TBGravar!Tipo_CFOP = "1"
+If OptSaida.Value = True Then TBGravar!Tipo_CFOP = "1"
 
 If chk_Proprio.Value = 1 Then TBGravar!Proprio = 1 Else TBGravar!Proprio = 0
 If chk_Terceiros.Value = 1 Then TBGravar!Terceiros = 1 Else TBGravar!Terceiros = 0
@@ -4707,12 +4691,12 @@ If chkCreditaCentroCusto = 1 Then TBGravar!CreditaCentroCusto = True Else TBGrav
 If chkIcmsBasePisCofins.Value = 1 Then TBGravar!AbateICMSBasePisCofins = True Else TBGravar!AbateICMSBasePisCofins = False
 
 TBGravar.Update
-txtid = TBGravar!IDCountCfop
+txtID = TBGravar!IDCountCfop
 TBGravar.Close
 If Novo_CFOP = True Then
     USMsgBox ("Nova natureza de operação cadastrada com sucesso."), vbInformation, "CAPRIND v5.0"
     Evento = "Novo"
-    StrSql_CFOP = "Select * from tbl_NaturezaOperacao where IDcountCFOP = " & txtid.Text
+    StrSql_CFOP = "Select * from tbl_NaturezaOperacao where IDcountCFOP = " & txtID.Text
     ProcCarregaLista (1)
 Else
     USMsgBox ("Alteração efetuada com sucesso."), vbInformation, "CAPRIND v5.0"
@@ -4726,7 +4710,7 @@ End If
 1:
     '==================================
     Modulo = "Faturamento/Fiscal/Natureza de operação"
-    ID_documento = txtid
+    ID_documento = txtID
     Documento = "CFOP: " & mskcfop & " - Descrição: " & txt_NatOP
     Documento1 = ""
     ProcGravaEvento
@@ -4753,7 +4737,7 @@ If Frame8.Enabled = False Then
 End If
 If FunVerifValidacaoRegistro("alterar", txtDtValidacao, "natureza de operação", "cliente", False) = False Then Exit Sub
 Acao = "salvar"
-If txtid_cliente.Text = "0" Or txtid_cliente.Text = "" Then
+If txtID_cliente.Text = "0" Or txtID_cliente.Text = "" Then
     NomeCampo = "o cliente"
     ProcVerificaAcao
     cmdcliente_Click
@@ -4761,7 +4745,7 @@ If txtid_cliente.Text = "0" Or txtid_cliente.Text = "" Then
 End If
 
 Set TBClientes = CreateObject("adodb.recordset")
-TBClientes.Open "Select * from tbl_NaturezaOperacao_Cliente where ID_CFOP = " & txtid.Text & " and ID_cliente = " & txtid_cliente & " and ID <> " & txtID_CFOP_Cliente, Conexao, adOpenKeyset, adLockOptimistic
+TBClientes.Open "Select * from tbl_NaturezaOperacao_Cliente where ID_CFOP = " & txtID.Text & " and ID_cliente = " & txtID_cliente & " and ID <> " & txtID_CFOP_Cliente, Conexao, adOpenKeyset, adLockOptimistic
 If TBClientes.EOF = False Then
     USMsgBox ("Já existe cadastro deste cliente para esta CFOP."), vbExclamation, "CAPRIND v5.0"
     TBClientes.Close
@@ -4774,8 +4758,8 @@ TBGravar.Open "Select * from tbl_NaturezaOperacao_Cliente where ID = " & txtID_C
 If TBGravar.EOF = True Then TBGravar.AddNew
 TBGravar!Data = IIf(txtData_cliente = "", Date, txtData_cliente)
 TBGravar!Responsavel = IIf(txtResponsavel_cliente = "", pubUsuario, txtResponsavel_cliente)
-TBGravar!ID_CFOP = txtid
-TBGravar!ID_Cliente = txtid_cliente
+TBGravar!ID_CFOP = txtID
+TBGravar!ID_Cliente = txtID_cliente
 TBGravar!dados_adicionais = txtDadosAdicionais_cliente.Text
 TBGravar!Corpo_nota = txtCorpoNota_cliente.Text
 TBGravar.Update
@@ -4796,9 +4780,9 @@ Else
 End If
 '==================================
 Modulo = "Faturamento/Fiscal/Natureza de operação"
-ID_documento = txtid
+ID_documento = txtID
 Documento = "CFOP: " & mskcfop & " - Descrição: " & txt_NatOP
-Documento1 = "ID: " & txtid_cliente & " cliente: " & txtRazao
+Documento1 = "ID: " & txtID_cliente & " cliente: " & txtRazao
 ProcGravaEvento
 '==================================
 Novo_CFOP_Cliente = False
@@ -4822,7 +4806,7 @@ If Novo_CFOP = True Then
     Exit Sub
 End If
 Acao = "cadastrar as CST"
-If txtid = 0 Then
+If txtID = 0 Then
     NomeCampo = "a CFOP"
     ProcVerificaAcao
     Exit Sub
@@ -4838,7 +4822,7 @@ End Sub
 Private Sub SSTab1_Click(PreviousTab As Integer)
 On Error GoTo tratar_erro
 
-If txtid = 0 Then
+If txtID = 0 Then
     SSTab1.Tab = 0
     Exit Sub
 End If
@@ -4874,7 +4858,7 @@ USMsgBox Left$(Texto, 5)
 
 If Left$(Texto, 5) = "VENDA" Then
 USMsgBox "Venda"
-chkVendas.Value = 1
+Chkvendas.Value = 1
 End If
 
 If Left$(Texto, 9) = "DEVOLUCAO" Or Left$(Texto, 9) = "DEVOLUÇÃO" Then
@@ -4907,12 +4891,12 @@ End Sub
 Private Sub txtID_Change()
 On Error GoTo tratar_erro
 
-If txtid.Text = "" Then Exit Sub
+If txtID.Text = "" Then Exit Sub
 
 Lista.ListItems.Clear
 
 Set TBCST = CreateObject("adodb.recordset")
-TBCST.Open "Select * from tbl_NaturezaOperacao_CST where ID_CFOP = " & txtid.Text, Conexao, adOpenKeyset, adLockOptimistic
+TBCST.Open "Select * from tbl_NaturezaOperacao_CST where ID_CFOP = " & txtID.Text, Conexao, adOpenKeyset, adLockOptimistic
 If TBCST.EOF = False Then
     Do While TBCST.EOF = False
         With Lista.ListItems
@@ -4937,16 +4921,16 @@ Private Sub txtID_cliente_Change()
 On Error GoTo tratar_erro
 
 txtRazao = ""
-If txtid_cliente <> "" Then
-    VerifNumero = txtid_cliente
+If txtID_cliente <> "" Then
+    VerifNumero = txtID_cliente
     ProcVerificaNumero
     If VerifNumero = False Then
-        txtid_cliente = ""
-        txtid_cliente.SetFocus
+        txtID_cliente = ""
+        txtID_cliente.SetFocus
         Exit Sub
     End If
     Set TBFI = CreateObject("adodb.recordset")
-    TBFI.Open "Select * from Clientes where IDCliente = " & txtid_cliente, Conexao, adOpenKeyset, adLockOptimistic
+    TBFI.Open "Select * from Clientes where IDCliente = " & txtID_cliente, Conexao, adOpenKeyset, adLockOptimistic
     If TBFI.EOF = False Then
         txtRazao = IIf(IsNull(TBFI!NomeRazao), "", (TBFI!NomeRazao))
     End If
